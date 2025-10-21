@@ -68,11 +68,8 @@ export function ServicesSection() {
             Nossos Serviços
           </Badge>
 
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6">
-            Tratamentos&nbsp;
-            <span className="bg-linear-to-r from-secondary to-primary bg-clip-text text-transparent">
-              Especializados
-            </span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 bg-linear-to-r from-secondary to-primary bg-clip-text text-wrap">
+            Tratamentos Especializados
           </h2>
 
           <p className="text-lg sm:text-xl text-tertiary leading-relaxed">
@@ -132,7 +129,7 @@ export function ServicesSection() {
                     className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all group/link"
                   >
                     <span>Saiba mais</span>
-                    <ArrowRight className="w-5 h-5 group-hover/link:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-5 h-5 group-hover/link:animate-pulse transition-transform" />
                   </a>
 
                   {/* Hover Gradient Border Effect */}
@@ -171,7 +168,7 @@ export function ServicesSection() {
                 newTab
                 variant="default"
                 size="xl"
-                className="bg-white text-primary hover:bg-white/90 shadow-xl hover:shadow-2xl hover:scale-105"
+                className="bg-white text-primary hover:bg-white/90 shadow-xl hover:shadow-2xl hover:scale-105 py-2"
               >
                 Conversar com um especialista
               </LinkButton>

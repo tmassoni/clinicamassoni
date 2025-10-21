@@ -57,11 +57,11 @@ export function ContactSection() {
               <div className="absolute bottom-0 left-0 w-48 h-48 bg-secondary/20 rounded-full blur-2xl" />
 
               <div className="relative flex flex-col sm:flex-row items-center justify-between gap-4 lg:gap-5 h-full">
-                <div className="flex items-center gap-3 lg:gap-4 flex-1">
+                <div className="flex items-center gap-3 lg:gap-4 flex-1 w-full">
                   <div className="shrink-0 w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-white/20 backdrop-blur-sm flex items-center justify-center group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                     <WhatsappIcon className="w-7 h-7 lg:w-8 lg:h-8" />
                   </div>
-                  <div className="text-center sm:text-left">
+                  <div className="ps-2 text-start sm:text-left w-full">
                     <p className="text-xs md:text-sm font-medium opacity-90 mb-1">
                       Atendimento via WhatsApp
                     </p>
