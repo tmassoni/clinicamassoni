@@ -1,0 +1,182 @@
+@import "tailwindcss";
+
+@theme {
+  /* Typography */
+  --font-family-sans: var(--font-inter), system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --font-family-serif: var(--font-playfair), Georgia, Cambria, 'Times New Roman', serif;
+
+  /* Brand Colors - Extracted from logo */
+  --color-primary: #042B48;
+  --color-secondary: #3C576A;
+  --color-tertiary: #6A7E8B;
+  --color-accent: #C8CFD3;
+  --color-brand-primary: #042B48;
+  --color-background: #ffffff;
+
+  /* Text Hierarchy (WCAG AAA Compliant) */
+  --color-text-heading: #1a1a1a;
+  --color-text-body: #333333;
+  --color-text-muted: #666666;
+
+  /* Card Backgrounds */
+  --color-card-bg: #f8f9fa;
+  --color-card-bg-hover: #f0f1f3;
+
+  /* Subtle Elements */
+  --color-border-subtle: #e5e7eb;
+  --color-bg-subtle: #fafbfc;
+
+  /* Extended spacing */
+  --spacing-18: 4.5rem;
+  --spacing-88: 22rem;
+  --spacing-100: 25rem;
+  --spacing-112: 28rem;
+  --spacing-128: 32rem;
+
+  /* Custom max-width */
+  --max-width-container: 1432px;
+
+  /* Brand shadows using primary color */
+  --shadow-brand: 0 4px 14px 0 rgba(4, 43, 72, 0.15);
+  --shadow-brand-lg: 0 10px 25px 0 rgba(4, 43, 72, 0.2);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: var(--color-background);
+  }
+
+  body {
+    min-height: 100vh;
+    overscroll-behavior: none;
+    background-color: var(--color-background);
+  }
+
+  main {
+    max-width: 1760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+  }
+
+  h1 {
+    font-size: 2.25rem;
+    line-height: 1.2;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    line-height: 1.3;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  p {
+    margin-bottom: 0.5rem;
+    line-height: 1.75;
+    max-width: 65ch;
+  }
+
+  section, [id] {
+    scroll-margin-top: 100px;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+}
+
+@layer components {
+  .container {
+    max-width: 1760px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+
+  .section {
+    padding-bottom: 4rem;
+    padding-top: 2rem;
+  }
+
+  .text-heading {
+    color: var(--color-text-heading);
+  }
+
+  .text-body {
+    color: var(--color-text-body);
+  }
+
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+
+  .bg-card {
+    background-color: var(--color-card-bg);
+  }
+
+  .bg-card-hover {
+    background-color: var(--color-card-bg-hover);
+  }
+}
+
+@media (min-width: 640px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  .container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 3.75rem;
+  }
+
+  h2 {
+    font-size: 2.25rem;
+  }
+
+  h3 {
+    font-size: 1.875rem;
+  }
+
+  .container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
