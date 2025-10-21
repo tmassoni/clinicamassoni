@@ -3,6 +3,7 @@
 ## Logo Processing
 
 ### Current Asset
+
 - **File**: `/workspace/jobs/massoni/Logo em PDF.pdf`
 - **Format**: PDF (30KB)
 - **Status**: Needs conversion to web-optimized formats
@@ -11,7 +12,8 @@
 
 #### 1. Extract Logo from PDF
 
-**Option A: Using Inkscape (Recommended for SVG)**
+> **Option A: Using Inkscape (Recommended for SVG)**
+
 ```bash
 # Install Inkscape (if not installed)
 brew install inkscape
@@ -25,7 +27,8 @@ inkscape "Logo em PDF.pdf" \
 # This preserves vector quality for all screen sizes
 ```
 
-**Option B: Using ImageMagick (For PNG)**
+> **Option B: Using ImageMagick (For PNG)**
+
 ```bash
 # Install ImageMagick (if not installed)
 brew install imagemagick
@@ -43,12 +46,14 @@ convert logo.png -resize 400x logo-400w.png
 convert logo.png -resize 800x logo-800w.png
 ```
 
-**Option C: Using Online Tools**
-- https://cloudconvert.com/pdf-to-svg (PDF → SVG)
-- https://www.adobe.com/express/feature/image/convert/pdf-to-png (PDF → PNG)
+> **Option C: Using Online Tools**
+
+- <https://cloudconvert.com/pdf-to-svg> (PDF → SVG)
+- <https://www.adobe.com/express/feature/image/convert/pdf-to-png> (PDF → PNG)
 - Manual trace in Figma or Adobe Illustrator
 
 #### 2. Optimize SVG (if using SVG)
+
 ```bash
 # Install SVGO
 npm install -g svgo
@@ -58,7 +63,8 @@ svgo logo.svg -o logo-optimized.svg
 ```
 
 #### 3. Place in Project
-```
+
+```bash
 /workspace/jobs/massoni/web/public/images/
 ├── logo.svg          # Primary logo (vector)
 ├── logo.png          # Fallback for older browsers
@@ -70,7 +76,8 @@ svgo logo.svg -o logo-optimized.svg
 
 ### Logo Usage in Components
 
-**Header Component**
+- **Header Component**
+
 ```tsx
 import Image from 'next/image'
 
@@ -98,24 +105,28 @@ import Image from 'next/image'
 ### Extraction Methods
 
 #### Method 1: From PDF Logo
+
 1. Open PDF in design tool (Figma, Adobe Illustrator, Inkscape)
 2. Use color picker to extract exact hex values
 3. Identify primary, secondary, and accent colors
-4. Check contrast ratios at https://webaim.org/resources/contrastchecker/
+4. Check contrast ratios at <https://webaim.org/resources/contrastchecker/>
 
 #### Method 2: From Converted Logo
+
 ```bash
 # Extract dominant colors using ImageMagick
 convert logo.png -colors 5 -unique-colors txt:- | grep -v ImageMagick
 ```
 
 #### Method 3: Manual Analysis with Color Picker
+
 - Use browser extension like ColorZilla
 - Or macOS Digital Color Meter (Cmd+Space → "Digital Color Meter")
 
 ### Dental Practice Color Psychology
 
 **Recommended Palettes for Dental Practices**:
+
 - **Trust & Professionalism**: Blues, teals, navy
 - **Clean & Modern**: Whites, light grays, soft blues
 - **Warm & Welcoming**: Soft greens, beiges, warm grays
@@ -195,7 +206,8 @@ const config: Config = {
 
 ### Font Recommendations for Dental Practice
 
-**Option 1: Modern & Professional**
+- **Option 1: Modern & Professional**
+
 ```typescript
 // layout.tsx
 import { Inter, Playfair_Display } from 'next/font/google'
@@ -213,7 +225,8 @@ const playfair = Playfair_Display({
 })
 ```
 
-**Option 2: Clean & Medical**
+- **Option 2: Clean & Medical**
+
 ```typescript
 import { Poppins, Lora } from 'next/font/google'
 
@@ -232,7 +245,8 @@ const lora = Lora({
 })
 ```
 
-**Option 3: Contemporary & Trustworthy**
+- **Option 3: Contemporary & Trustworthy**
+
 ```typescript
 import { Montserrat, Literata } from 'next/font/google'
 
@@ -292,6 +306,7 @@ boxShadow: {
 ```
 
 Example (if primary is blue #2563eb):
+
 ```typescript
 boxShadow: {
   'brand': '0 4px 14px 0 rgba(37, 99, 235, 0.15)',
@@ -302,18 +317,21 @@ boxShadow: {
 ## WCAG Accessibility Requirements
 
 ### Minimum Contrast Ratios
+
 - **Normal text (< 18pt)**: 4.5:1 (AA) | 7:1 (AAA)
 - **Large text (≥ 18pt)**: 3:1 (AA) | 4.5:1 (AAA)
 - **UI components**: 3:1 minimum
 
 ### Testing Tools
-- WebAIM Contrast Checker: https://webaim.org/resources/contrastchecker/
+
+- WebAIM Contrast Checker: <https://webaim.org/resources/contrastchecker/>
 - Chrome DevTools: Inspect element → Accessibility panel
 - Lighthouse audit (built into Chrome)
 
 ### Example Compliant Text Colors
 
 For white background (#ffffff):
+
 ```css
 --color-text-heading: #1a1a1a;  /* 14.8:1 contrast - AAA */
 --color-text-body: #333333;     /* 12.6:1 contrast - AAA */
@@ -321,6 +339,7 @@ For white background (#ffffff):
 ```
 
 For dark background (#1a1a1a):
+
 ```css
 --color-text-heading: #ffffff;  /* 14.8:1 contrast - AAA */
 --color-text-body: #e5e5e5;     /* 11.2:1 contrast - AAA */
@@ -330,7 +349,8 @@ For dark background (#1a1a1a):
 ## Favicon Generation
 
 ### Using Real Favicon Generator
-1. Visit https://realfavicongenerator.net/
+
+1. Visit <https://realfavicongenerator.net/>
 2. Upload logo.png (at least 512x512)
 3. Configure settings:
    - iOS: Choose background color from brand palette
@@ -339,6 +359,7 @@ For dark background (#1a1a1a):
 4. Download package and place in `/public/`
 
 ### Manual Generation (macOS)
+
 ```bash
 # Create favicon from logo
 sips -z 16 16 logo.png --out favicon-16x16.png
@@ -367,7 +388,7 @@ sips -z 512 512 logo.png --out android-chrome-512x512.png
 
 This will be filled in after logo extraction. Template:
 
-```
+```bash
 PRIMARY COLOR: #[HEX]
 - Usage: Main CTAs, header links, focus states
 - Contrast on white: [RATIO]:1
@@ -395,6 +416,7 @@ SHADOW:
 ## Reference
 
 Based on proven brand system from analu-procto:
+
 - See `/workspace/jobs/analu-procto/src/app/globals.css` for CSS variable patterns
 - See `/workspace/jobs/analu-procto/tailwind.config.ts` for Tailwind color structure
 - See `/workspace/jobs/analu-procto/src/app/layout.tsx` for font loading pattern

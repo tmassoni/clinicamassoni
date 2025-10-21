@@ -4,7 +4,7 @@ import {
   ServicesSection,
   GallerySection,
   ContactSection,
-} from '@/components/sections'
+} from '@/app/src/components/sections'
 
 export default function Home() {
   return (

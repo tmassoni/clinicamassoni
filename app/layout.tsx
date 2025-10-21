@@ -1,9 +1,11 @@
 import type { Metadata, Viewport } from 'next'
 import { Inter, Playfair_Display } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
-import { Header } from '@/components/layout/Header'
-import { Footer } from '@/components/layout/Footer'
-import { getStructuredData } from '@/lib/structured-data'
+import { Header } from '@/app/src/components/layout/Header'
+import { Footer } from '@/app/src/components/layout/Footer'
+import { getStructuredData } from '@/app/src/lib/structured-data'
 import {
   DOCTOR_NAME,
   DOCTOR_SPECIALTY,
@@ -11,7 +13,7 @@ import {
   CLINIC_ADDRESS_CITY,
   CLINIC_ADDRESS_STATE,
   CLINIC_WEBSITE,
-} from '@/lib/constants'
+} from '@/app/src/lib/constants'
 
 // Font configurations
 const inter = Inter({
@@ -131,6 +133,8 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

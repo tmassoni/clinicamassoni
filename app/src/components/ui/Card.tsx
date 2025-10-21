@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
-import { cn } from '@/lib/utils'
+import { cn } from '@/app/src/lib/utils'
 
 interface CardProps {
   title: string
@@ -31,12 +31,12 @@ export function Card({
     >
       <h3
         className={cn(
-          '!font-sans',
+          'font-sans!',
           variant === 'treatment'
-            ? 'text-lg sm:text-xl lg:text-xl xl:text-2xl text-[#042B48] font-bold leading-tight'
+            ? 'text-lg sm:text-xl lg:text-xl xl:text-2xl text-primary font-bold leading-tight'
             : variant === 'service'
-            ? 'text-xl sm:text-2xl text-[#042B48] font-bold leading-tight'
-            : 'text-lg sm:text-xl text-[#3C576A] font-bold'
+            ? 'text-xl sm:text-2xl text-primary font-bold leading-tight'
+            : 'text-lg sm:text-xl text-secondary font-bold'
         )}
       >
         {title}
@@ -50,7 +50,7 @@ export function Card({
               ? 'text-sm sm:text-base text-body'
               : variant === 'service'
               ? 'text-sm sm:text-base text-body'
-              : 'text-sm sm:text-base text-[#6A7E8B]'
+              : 'text-sm sm:text-base text-tertiary'
           )}
         >
           {description}

@@ -4,6 +4,7 @@
 
 **Doctor Name**: Dr. Enor Massoni
 **Specialties**:
+
 - Implantes Dentários (Dental Implants)
 - Cirurgia Buco-Maxilo-Facial (Oral and Maxillofacial Surgery)
 
@@ -14,7 +15,9 @@
 ## Project Scope
 
 ### Phase 1: Landing Page (Current)
+
 Single-page website with the following sections:
+
 - Hero Section (with professional photo)
 - About Section (doctor's credentials and approach)
 - Services Section (dental implants + maxillofacial procedures)
@@ -22,6 +25,7 @@ Single-page website with the following sections:
 - Contact Section (WhatsApp CTA, location map)
 
 ### Future Phases
+
 - Blog system for patient education
 - Online appointment booking
 - Advanced SEO optimization
@@ -30,6 +34,7 @@ Single-page website with the following sections:
 ## Technical Stack
 
 ### Core Framework
+
 - **Next.js**: 15.x (App Router)
 - **React**: 19.x
 - **TypeScript**: 5.x
@@ -37,6 +42,7 @@ Single-page website with the following sections:
 - **Node.js**: >= 22.0.0
 
 ### Styling & UI
+
 - **TailwindCSS**: v4 (with @tailwindcss/postcss)
 - **Component Strategy**: Hybrid approach
   - shadcn/ui for complex components (forms, dialogs, accordions)
@@ -46,6 +52,7 @@ Single-page website with the following sections:
 - **Utilities**: clsx, tailwind-merge, class-variance-authority
 
 ### SEO & Analytics
+
 - **Structured Data**: schema.org (Dentist + Medical Organization)
 - **Analytics**:
   - Vercel Analytics
@@ -55,6 +62,7 @@ Single-page website with the following sections:
 - **Meta Tags**: Comprehensive Open Graph + Twitter Cards
 
 ### Development Tools
+
 - **Linting**: ESLint with Next.js config
 - **Testing**: Vitest + React Testing Library (optional for Phase 1)
 - **Bundle Analysis**: @next/bundle-analyzer
@@ -62,7 +70,7 @@ Single-page website with the following sections:
 
 ## Project Structure
 
-```
+```bash
 /workspace/jobs/massoni/
 ├── web/                          # Next.js application root
 │   ├── src/
@@ -123,6 +131,7 @@ Single-page website with the following sections:
 ## Development Workflow
 
 ### Local Development
+
 ```bash
 cd /Users/diegovfeder/workspace/jobs/massoni/web
 bun install
@@ -130,6 +139,7 @@ bun run dev          # Start development server on localhost:3000
 ```
 
 ### Production Build
+
 ```bash
 bun run build        # Build for production
 bun run start        # Start production server
@@ -137,6 +147,7 @@ bun run lint         # Run ESLint
 ```
 
 ### Quality Assurance
+
 ```bash
 bun run analyze      # Analyze bundle sizes
 bun run lighthouse   # Run Lighthouse audit locally
@@ -147,6 +158,7 @@ bun run lighthouse   # Run Lighthouse audit locally
 This project is based on the proven architecture from `/workspace/jobs/analu-procto`, which features:
 
 ### Successfully Ported Patterns
+
 1. **Single-page landing structure** with section components
 2. **WCAG AAA compliant color system** with CSS variables
 3. **LGPD-compliant cookie consent** system
@@ -157,6 +169,7 @@ This project is based on the proven architecture from `/workspace/jobs/analu-pro
 8. **Accessibility standards** (keyboard nav, focus rings, ARIA labels)
 
 ### Adaptations for Dental Practice
+
 1. **Different medical specialty** (dentistry vs. proctology)
 2. **Different location SEO** (Cascavel PR vs. Curitiba PR)
 3. **Hybrid component strategy** (shadcn/ui + custom components)
@@ -166,18 +179,21 @@ This project is based on the proven architecture from `/workspace/jobs/analu-pro
 ## Success Metrics
 
 ### Technical Performance
+
 - Lighthouse Performance: 90+
 - Lighthouse Accessibility: 100
 - Lighthouse Best Practices: 100
 - Lighthouse SEO: 100
 
 ### SEO Targets
+
 - Google ranking for "implantes dentários Cascavel"
 - Google ranking for "cirurgia maxilofacial Cascavel"
 - Google ranking for "dentista Cascavel"
 - Local SEO optimization for Cascavel PR
 
 ### User Experience
+
 - Mobile-first responsive design
 - Fast page load (<3s on 3G)
 - WCAG AA minimum compliance (AAA preferred)

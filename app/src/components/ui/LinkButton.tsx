@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { forwardRef } from 'react'
 import { VariantProps } from 'class-variance-authority'
-import { cn } from '@/lib/utils'
+import { cn } from '@/app/src/lib/utils'
 import { buttonVariants } from './Button'
 
 interface LinkButtonProps extends VariantProps<typeof buttonVariants> {
@@ -10,6 +10,7 @@ interface LinkButtonProps extends VariantProps<typeof buttonVariants> {
   className?: string
   external?: boolean
   newTab?: boolean
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>
 }
 
 const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
@@ -22,6 +23,7 @@ const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
       children,
       external = false,
       newTab = false,
+      onClick,
       ...props
     },
     ref
@@ -29,6 +31,7 @@ const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
     const linkProps = {
       className: cn(buttonVariants({ variant, size, className })),
       ref,
+      onClick,
       ...props,
     }
 

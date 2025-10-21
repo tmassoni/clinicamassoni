@@ -3,17 +3,20 @@
 ## SEO Strategy Overview
 
 ### Target Location
+
 **City**: Cascavel, Paraná, Brazil
 **Population**: ~330,000 (6th largest city in PR)
 **Region**: Oeste Paranaense (Western Paraná)
 **Economic Profile**: Agricultural hub, growing healthcare sector
 
 ### Local SEO Focus
+
 - Primary: Cascavel, PR
 - Secondary: Região Oeste Paranaense
 - Tertiary: Paraná state-wide
 
 ### Target Audience Segments
+
 1. **Patients seeking dental implants** (age 40-70)
 2. **Accident victims** needing maxillofacial surgery (age 18-50)
 3. **Referring dentists** looking for specialist
@@ -23,7 +26,8 @@
 
 ### Primary Keywords (High Priority)
 
-**Dental Implants**
+> **Dental Implants**
+
 - implantes dentários Cascavel
 - implante dentário Cascavel PR
 - dentista implantes Cascavel
@@ -31,14 +35,16 @@
 - implante de dente Cascavel
 - quanto custa implante dentário Cascavel
 
-**Maxillofacial Surgery**
+> **Maxillofacial Surgery**
+
 - cirurgia bucomaxilofacial Cascavel
 - cirurgião bucomaxilofacial Cascavel
 - cirurgia maxilofacial Cascavel
 - cirurgia de mandíbula Cascavel
 - cirurgia ortognática Cascavel
 
-**General Dental**
+> **General Dental**
+
 - dentista Cascavel
 - clínica odontológica Cascavel
 - odontologia Cascavel
@@ -46,7 +52,8 @@
 
 ### Secondary Keywords (Medium Priority)
 
-**Procedures**
+> **Procedures**
+
 - enxerto ósseo dental Cascavel
 - all-on-4 Cascavel
 - protocolo dentário Cascavel
@@ -54,7 +61,8 @@
 - cirurgia de ATM Cascavel
 - traumatismo facial Cascavel
 
-**Local Modifiers**
+> **Local Modifiers**
+
 - dentista região oeste PR
 - implantes dentários oeste do Paraná
 - cirurgião maxilofacial Paraná
@@ -71,6 +79,7 @@
 ### Competitor Keywords (Research Phase)
 
 Search these to analyze competition:
+
 - Top 3 dentists in Cascavel for implants
 - Top 3 maxillofacial surgeons in Cascavel
 - Dental clinics with strong web presence
@@ -80,10 +89,12 @@ Search these to analyze competition:
 ### Landing Page Sections
 
 #### 1. Hero Section
+
 **Goal**: Immediate trust and clear value proposition
 
 **Content Template**:
-```
+
+```bash
 Heading: "Implantes Dentários e Cirurgia Maxilofacial em Cascavel"
 Subheading: "Sorriso completo e saúde facial com [X] anos de experiência"
 CTA: "Agende sua avaliação gratuita"
@@ -92,15 +103,18 @@ Hero Image: Professional photo of Dr. Massoni in clinical setting
 ```
 
 **SEO Elements**:
+
 - H1 with primary keyword
 - Structured data: Dentist + LocalBusiness
 - Image alt text with location + specialty
 
 #### 2. About Section
+
 **Goal**: Establish credibility and personal connection
 
 **Content Template**:
-```
+
+```bash
 Heading: "Dr. Enor Massoni - Especialista em Implantodontia e Cirurgia Maxilofacial"
 
 Content:
@@ -115,11 +129,13 @@ CTA: "Conheça minha abordagem"
 ```
 
 **SEO Elements**:
+
 - H2 with doctor name + specialty
 - Schema: Physician credentials
 - Emphasis on local training/experience if applicable
 
 #### 3. Services Section
+
 **Goal**: Cover all procedures for keyword coverage
 
 **Service Cards**:
@@ -143,20 +159,24 @@ CTA: "Conheça minha abordagem"
    - Remoção de lesões bucais
 
 **SEO Elements**:
+
 - H3 for each service category
 - Keyword-rich descriptions
 - Internal anchor links from navigation
 
 #### 4. Photo Gallery Section
+
 **Goal**: Build trust through visual evidence and professional environment
 
 **Content Organization**:
+
 - Consultório e equipamentos (clinic photos)
 - Equipe (team photos - if applicable)
 - Antes e depois (before/after - if ethically appropriate and consented)
 - Eventos e formações (professional events)
 
 **Gallery Categories** (from 26 HEIC images):
+
 1. Clinic exterior/interior
 2. Modern equipment (dental chair, imaging equipment)
 3. Professional photos of Dr. Massoni
@@ -164,14 +184,17 @@ CTA: "Conheça minha abordagem"
 5. Sterilization/safety protocols
 
 **SEO Elements**:
+
 - Descriptive alt text for every image
 - Image schema markup
 - Lazy loading for performance
 
 #### 5. FAQ Section (Optional but Recommended for SEO)
+
 **Goal**: Capture long-tail search queries
 
 **Sample Questions**:
+
 1. Quanto custa um implante dentário em Cascavel?
 2. Qual a diferença entre implante e prótese?
 3. Implante dentário dói?
@@ -182,15 +205,18 @@ CTA: "Conheça minha abordagem"
 8. Qual o tempo de recuperação da cirurgia maxilofacial?
 
 **SEO Elements**:
+
 - FAQ Schema markup
 - Natural language matching search queries
 - Links to relevant services
 
 #### 6. Location/Contact Section
+
 **Goal**: Local SEO and conversion
 
 **Content Elements**:
-```
+
+```bash
 Address: [Clinic Address], Cascavel, PR, [CEP]
 Phone: [Phone Number]
 WhatsApp: [WhatsApp Number]
@@ -203,6 +229,7 @@ Nearby landmarks for easy finding
 ```
 
 **SEO Elements**:
+
 - LocalBusiness schema with geo coordinates
 - OpeningHours specification
 - Prominent WhatsApp CTA (Brazilian preference)
@@ -210,6 +237,7 @@ Nearby landmarks for easy finding
 ## Meta Tags Template
 
 ### Homepage
+
 ```typescript
 // app/layout.tsx - Metadata
 export const metadata: Metadata = {
@@ -412,12 +440,14 @@ export const structuredData = {
 ## Content Writing Guidelines
 
 ### Tone & Voice
+
 - **Professional but approachable**: Not overly clinical, warm and reassuring
 - **Patient-focused**: Emphasize benefits and outcomes, not just procedures
 - **Trustworthy**: Use credentials, experience, modern technology
 - **Clear**: Avoid excessive medical jargon, explain when necessary
 
 ### Brazilian Portuguese Conventions
+
 - Use Brazilian spelling (implante, not implant)
 - Formal "você" for patient address (not "tu")
 - Professional titles: Dr. Enor Massoni (never just "Enor")
@@ -452,16 +482,19 @@ export const structuredData = {
 ## Call-to-Action Strategy
 
 ### Primary CTAs
+
 1. **"Agende sua avaliação"** (Schedule your evaluation)
 2. **"Fale conosco pelo WhatsApp"** (Contact us on WhatsApp)
 3. **"Ligue agora: (45) XXXX-XXXX"** (Call now)
 
 ### Secondary CTAs
+
 1. "Saiba mais sobre implantes"
 2. "Conheça nossa clínica"
 3. "Veja nossa galeria de casos"
 
 ### CTA Placement
+
 - Hero section: Primary WhatsApp CTA
 - After each service: "Agende sua consulta"
 - Footer: Phone + WhatsApp + Email
@@ -470,6 +503,7 @@ export const structuredData = {
 ## Local SEO Optimization
 
 ### Google Business Profile
+
 - Claim/verify Google Business listing
 - Category: "Dentist", "Oral Surgeon", "Dental Implants Provider"
 - Service areas: Cascavel, Toledo, Foz do Iguaçu (if serving wider region)
@@ -478,8 +512,9 @@ export const structuredData = {
 - Reviews: Encourage patient reviews
 
 ### Local Citations
+
 - List on:
-  - Doctoralia (https://www.doctoralia.com.br/)
+  - Doctoralia (<https://www.doctoralia.com.br/>)
   - Google Meu Negócio
   - Bing Places
   - Facebook Business Page
@@ -487,6 +522,7 @@ export const structuredData = {
   - Local directories (Guia Mais, Telelistas)
 
 ### Backlink Opportunities
+
 - Local news features (dental health articles)
 - Partnerships with local dentists (referral network)
 - Health plan provider directories
@@ -495,6 +531,7 @@ export const structuredData = {
 ## Content Gaps to Fill (Future Phases)
 
 ### Blog Topics
+
 1. "Quanto custa um implante dentário em 2025?"
 2. "Como funciona a cirurgia ortognática passo a passo"
 3. "Implante dentário: mitos e verdades"
@@ -502,12 +539,14 @@ export const structuredData = {
 5. "Cuidados após cirurgia de implante dentário"
 
 ### Video Content (Future)
+
 - Virtual clinic tour
 - Meet Dr. Massoni (introduction video)
 - Implant procedure explanation (animated)
 - Patient testimonials
 
 ### Downloadable Resources
+
 - Implant care guide PDF
 - Pre-surgery preparation checklist
 - Post-op recovery instructions
@@ -515,6 +554,7 @@ export const structuredData = {
 ## Analytics & Tracking
 
 ### Key Metrics to Monitor
+
 - Organic search traffic from Cascavel
 - Keyword rankings for primary keywords
 - Google Business Profile insights
@@ -523,6 +563,7 @@ export const structuredData = {
 - Average time on page
 
 ### Conversion Events to Track
+
 1. WhatsApp click
 2. Phone number click
 3. Contact form submission
@@ -543,6 +584,7 @@ export const structuredData = {
 ## Reference
 
 Content strategy adapted from analu-procto with modifications for:
+
 - Dental specialty (vs. proctology)
 - Cascavel market (vs. Curitiba)
 - Different patient demographics

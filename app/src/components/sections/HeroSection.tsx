@@ -1,16 +1,16 @@
 import Image from 'next/image'
-import { LinkButton } from '@/components/ui/LinkButton'
+import { LinkButton } from '@/app/src/components/ui/LinkButton'
 import {
   CONTACT_WHATSAPP_NUMBER,
   DOCTOR_NAME,
   DOCTOR_SPECIALTY,
-} from '@/lib/constants'
+} from '@/app/src/lib/constants'
 import { Phone } from 'lucide-react'
 
 export function HeroSection() {
   return (
     <section
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-white via-[#C8CFD3]/10 to-[#042B48]/5"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-linear-to-br from-white via-accent/10 to-primary/5"
       id="hero"
     >
       {/* Background Pattern */}
@@ -22,10 +22,10 @@ export function HeroSection() {
           <div className="flex flex-col space-y-6 sm:space-y-8 text-center lg:text-left order-2 lg:order-1">
             {/* Badge */}
             <div className="inline-flex items-center justify-center lg:justify-start">
-              <div className="inline-flex items-center gap-2 rounded-full bg-[#042B48]/5 px-4 py-2 text-sm font-medium text-[#042B48] border border-[#042B48]/10">
+              <div className="inline-flex items-center gap-2 rounded-full bg-primary/5 px-4 py-2 text-sm font-medium text-primary border border-primary/10">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#042B48] opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2 w-2 bg-[#042B48]"></span>
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </span>
                 Atendimento em Cascavel, PR
               </div>
@@ -33,24 +33,24 @@ export function HeroSection() {
 
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
-              <span className="bg-gradient-to-r from-[#042B48] via-[#3C576A] to-[#042B48] bg-clip-text text-transparent">
+              <span className="bg-linear-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
                 Seu Sorriso
               </span>
               <br />
-              <span className="text-[#042B48]">Completo e Saudável</span>
+              <span className="text-primary">Completo e Saudável</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-lg sm:text-xl md:text-2xl text-[#6A7E8B] leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Especialista em{' '}
-              <span className="font-semibold text-[#3C576A]">
+            <p className="text-lg sm:text-xl md:text-2xl text-tertiary leading-relaxed max-w-2xl mx-auto lg:mx-0">
+              Especialista em&nbsp;
+              <span className="font-semibold text-secondary">
                 Implantes Dentários
-              </span>{' '}
-              e{' '}
-              <span className="font-semibold text-[#3C576A]">
+              </span>
+              &nbsp; e&nbsp;
+              <span className="font-semibold text-secondary">
                 Cirurgia Maxilofacial
-              </span>{' '}
-              com tecnologia de ponta e atendimento humanizado
+              </span>
+              &nbsp; com tecnologia de ponta e atendimento humanizado
             </p>
 
             {/* CTA Buttons */}
@@ -64,27 +64,18 @@ export function HeroSection() {
                 newTab
                 variant="primary"
                 size="xl"
-                className="group shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                className="group shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-nowrap"
               >
-                <Phone className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform" />
-                Agende sua Consulta
-              </LinkButton>
-
-              <LinkButton
-                href="#servicos"
-                variant="outline"
-                size="xl"
-                className="hover:scale-105 transition-all duration-300"
-              >
-                Conheça os Serviços
+                <Phone className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform " />
+                Agende sua consulta
               </LinkButton>
             </div>
 
             {/* Trust Indicators */}
             <div className="flex flex-wrap gap-6 sm:gap-8 justify-center lg:justify-start pt-8 text-sm sm:text-base">
-              <div className="flex items-center gap-2 text-[#6A7E8B]">
+              <div className="flex items-center gap-2 text-tertiary">
                 <svg
-                  className="w-5 h-5 text-[#042B48]"
+                  className="w-5 h-5 text-primary"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -97,9 +88,9 @@ export function HeroSection() {
                 <span className="font-medium">CRO-PR 4982</span>
               </div>
 
-              <div className="flex items-center gap-2 text-[#6A7E8B]">
+              <div className="flex items-center gap-2 text-tertiary">
                 <svg
-                  className="w-5 h-5 text-[#042B48]"
+                  className="w-5 h-5 text-primary"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -112,9 +103,9 @@ export function HeroSection() {
                 <span className="font-medium">Tecnologia Avançada</span>
               </div>
 
-              <div className="flex items-center gap-2 text-[#6A7E8B]">
+              <div className="flex items-center gap-2 text-tertiary">
                 <svg
-                  className="w-5 h-5 text-[#042B48]"
+                  className="w-5 h-5 text-primary"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                 >
@@ -131,40 +122,45 @@ export function HeroSection() {
 
           {/* Image - Right side on desktop, top on mobile */}
           <div className="relative order-1 lg:order-2">
-            <div className="relative aspect-[4/5] sm:aspect-square lg:aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
-              {/* Gradient Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#042B48]/20 via-transparent to-transparent z-10" />
+            <div className="relative aspect-4/5 sm:aspect-square lg:aspect-4/5 rounded-3xl overflow-hidden shadow-2xl group">
+              {/* Multi-layer Gradient Overlays for depth */}
+              <div className="absolute inset-0 bg-linear-to-t from-primary/30 via-primary/5 to-transparent z-10" />
+              <div className="absolute inset-0 bg-linear-to-br from-transparent via-transparent to-primary/10 z-10" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(4,43,72,0.15)_100%)] z-10" />
 
               {/* Professional Photo */}
               <Image
                 src="/images/gallery/gallery-01.webp"
                 alt={`${DOCTOR_NAME}, cirurgião dentista especialista em ${DOCTOR_SPECIALTY} em Cascavel, PR`}
                 fill
-                className="object-cover"
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
                 priority
                 quality={90}
               />
 
-              {/* Decorative Elements */}
-              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-gradient-to-br from-[#042B48]/20 to-transparent rounded-full blur-3xl" />
-              <div className="absolute -top-6 -left-6 w-32 h-32 bg-gradient-to-br from-[#3C576A]/20 to-transparent rounded-full blur-3xl" />
+              {/* Decorative Elements with animation */}
+              <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-linear-to-br from-primary/30 to-transparent rounded-full blur-3xl animate-pulse" />
+              <div className="absolute -top-8 -left-8 w-40 h-40 bg-linear-to-br from-secondary/30 to-transparent rounded-full blur-3xl" />
+
+              {/* Inner glow border effect */}
+              <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/20 z-10" />
             </div>
 
-            {/* Floating Badge */}
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 lg:left-8 lg:translate-x-0 z-20">
-              <div className="bg-white rounded-2xl shadow-xl px-6 py-4 border border-[#C8CFD3]/50 backdrop-blur-sm">
+            {/* Floating Badge with enhanced styling */}
+            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 lg:left-8 lg:translate-x-0 z-20 transition-transform hover:scale-105 duration-300">
+              <div className="bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl px-6 py-4 border border-accent/50 hover:border-primary/20 transition-all duration-300">
                 <div className="flex items-center gap-3">
                   <div className="flex -space-x-2">
-                    <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#042B48] to-[#3C576A] flex items-center justify-center text-white font-bold text-sm border-2 border-white">
+                    <div className="w-10 h-10 rounded-full bg-linear-to-br from-primary via-secondary to-primary flex items-center justify-center text-white font-bold text-sm border-2 border-white shadow-lg">
                       EM
                     </div>
                   </div>
                   <div className="text-left">
-                    <p className="text-sm font-bold text-[#042B48]">
+                    <p className="text-sm font-bold text-primary">
                       {DOCTOR_NAME}
                     </p>
-                    <p className="text-xs text-[#6A7E8B]">
+                    <p className="text-xs text-tertiary">
                       Especialista CRO-PR 4982
                     </p>
                   </div>
@@ -173,27 +169,6 @@ export function HeroSection() {
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden lg:block">
-        <a
-          href="#sobre"
-          className="flex flex-col items-center gap-2 text-[#6A7E8B] hover:text-[#042B48] transition-colors group"
-        >
-          <span className="text-sm font-medium">Deslize para saber mais</span>
-          <svg
-            className="w-6 h-6 animate-bounce"
-            fill="none"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-          </svg>
-        </a>
       </div>
     </section>
   )

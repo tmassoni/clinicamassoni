@@ -85,7 +85,7 @@
   }
 
   section, [id] {
-    scroll-margin-top: 100px;
+    scroll-margin-top: 64px;
   }
 
   .sr-only {
@@ -111,8 +111,7 @@
   }
 
   .section {
-    padding-bottom: 4rem;
-    padding-top: 2rem;
+    @apply py-16 md:py-24;
   }
 
   .text-heading {

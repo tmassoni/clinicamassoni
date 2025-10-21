@@ -1,14 +1,14 @@
 import { ReactNode } from 'react'
 import { cva, type VariantProps } from 'class-variance-authority'
-import { cn } from '@/lib/utils'
+import { cn } from '@/app/src/lib/utils'
 
 const badgeVariants = cva(
   'inline-flex items-center rounded-full text-xs font-medium',
   {
     variants: {
       variant: {
-        primary: 'bg-[#042B48]/10 text-[#042B48]',
-        secondary: 'bg-[#3C576A]/30 text-[#042B48]',
+        primary: 'bg-primary/10 text-primary',
+        secondary: 'bg-secondary/30 text-primary',
         success: 'bg-green-100 text-green-800',
         warning: 'bg-yellow-100 text-yellow-800',
         error: 'bg-red-100 text-red-800',

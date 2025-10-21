@@ -3,9 +3,11 @@
 ## Asset Inventory
 
 ### Current Assets
+
 **Location**: `/Users/diegovfeder/workspace/jobs/massoni/`
 
 **Files**:
+
 - 1 PDF logo file (`Logo em PDF.pdf` - 30KB)
 - 26 HEIC image files (IMG_4492.HEIC through IMG_4527.HEIC)
 - 1 MOV video file (IMG_4494.MOV - 30MB)
@@ -17,6 +19,7 @@
 See **BRAND_IDENTITY.md** for detailed logo extraction instructions.
 
 **Quick Reference**:
+
 ```bash
 # Convert PDF to SVG (preferred)
 inkscape "Logo em PDF.pdf" --export-type=svg --export-filename=logo.svg
@@ -32,6 +35,7 @@ convert -density 300 "Logo em PDF.pdf" -quality 100 -background transparent logo
 ### Why Convert HEIC?
 
 HEIC (High Efficiency Image Container) is:
+
 - ✅ Efficient on iOS devices
 - ❌ Not widely supported in browsers
 - ❌ Cannot be used with Next.js Image component directly
@@ -41,6 +45,7 @@ HEIC (High Efficiency Image Container) is:
 ### Recommended Format: WebP
 
 **Benefits**:
+
 - 25-35% smaller than JPEG at same quality
 - Supports transparency (like PNG)
 - Supported by all modern browsers
@@ -51,11 +56,13 @@ HEIC (High Efficiency Image Container) is:
 #### Method 1: ImageMagick (macOS Command Line)
 
 **Install ImageMagick**:
+
 ```bash
 brew install imagemagick
 ```
 
 **Single File Conversion**:
+
 ```bash
 # HEIC → WebP (90% quality)
 magick IMG_4492.HEIC -quality 90 img-4492.webp
@@ -65,6 +72,7 @@ magick IMG_4492.HEIC -quality 90 img-4492.jpg
 ```
 
 **Batch Conversion** (All 26 Files):
+
 ```bash
 # Navigate to massoni folder
 cd /Users/diegovfeder/workspace/jobs/massoni/
@@ -82,6 +90,7 @@ done
 ```
 
 **With Sequential Naming**:
+
 ```bash
 # Create numbered files for easier gallery management
 counter=1
@@ -94,11 +103,13 @@ done
 #### Method 2: heic2any NPM Package (Node.js)
 
 **Install**:
+
 ```bash
 npm install -g heic-convert
 ```
 
 **Usage**:
+
 ```bash
 heic-convert IMG_4492.HEIC img-4492.jpg
 ```
@@ -106,11 +117,13 @@ heic-convert IMG_4492.HEIC img-4492.jpg
 #### Method 3: Online Conversion Tools
 
 **Recommended Services**:
-- https://cloudconvert.com/heic-to-webp (batch upload supported)
-- https://heic.online/ (free, unlimited)
-- https://www.freeconvert.com/heic-to-webp
+
+- <https://cloudconvert.com/heic-to-webp> (batch upload supported)
+- <https://heic.online/> (free, unlimited)
+- <https://www.freeconvert.com/heic-to-webp>
 
 **Steps**:
+
 1. Upload all 26 HEIC files
 2. Select WebP as output format
 3. Configure quality (90%)
@@ -120,6 +133,7 @@ heic-convert IMG_4492.HEIC img-4492.jpg
 #### Method 4: macOS Preview App
 
 **Steps**:
+
 1. Open HEIC file in Preview
 2. File → Export
 3. Format: JPEG or PNG
@@ -127,6 +141,7 @@ heic-convert IMG_4492.HEIC img-4492.jpg
 5. Save
 
 **Note**: Preview doesn't support WebP, so convert to JPEG then use ImageMagick:
+
 ```bash
 magick image.jpg -quality 90 image.webp
 ```
@@ -136,11 +151,13 @@ magick image.jpg -quality 90 image.webp
 **Step-by-Step**:
 
 1. **Create target directory**:
+
    ```bash
    mkdir -p /Users/diegovfeder/workspace/jobs/massoni/web/public/images/gallery
    ```
 
 2. **Convert with optimized settings**:
+
    ```bash
    cd /Users/diegovfeder/workspace/jobs/massoni/
 
@@ -165,12 +182,14 @@ magick image.jpg -quality 90 image.webp
    - `-strip`: Remove EXIF metadata (privacy + smaller file size)
 
 3. **Verify conversion**:
+
    ```bash
    ls -lh web/public/images/gallery/
    # Should show 26 .webp files with reasonable sizes (200-800KB each)
    ```
 
 4. **Create responsive variants** (Optional - Next.js can do this automatically):
+
    ```bash
    cd web/public/images/gallery/
 
@@ -215,6 +234,7 @@ import Image from 'next/image'
 ```
 
 **Next.js will automatically generate**:
+
 - Multiple sizes (640w, 750w, 828w, 1080w, 1200w, 1920w, etc.)
 - Optimized formats (WebP, AVIF if supported)
 - Lazy loading
@@ -239,7 +259,7 @@ cd /Users/diegovfeder/workspace/jobs/massoni/
 
 **Step 2**: Create organized structure:
 
-```
+```bash
 web/public/images/
 ├── logo.svg
 ├── logo.png
@@ -265,7 +285,8 @@ web/public/images/
 ```
 
 **Alternative**: Flat structure with descriptive names:
-```
+
+```bash
 gallery/
 ├── gallery-exterior-01.webp
 ├── gallery-reception-01.webp
@@ -309,6 +330,7 @@ export const galleryImages: GalleryImage[] = [
 ```
 
 **Usage in GallerySection**:
+
 ```tsx
 import { galleryImages } from '@/data/gallery'
 
@@ -327,11 +349,12 @@ export function GallerySection() {
 
 **Current Video**: IMG_4494.MOV (30MB)
 
-### Options:
+### Options
 
 1. **Skip for Phase 1** (recommended - save for future "virtual tour" feature)
 
 2. **Convert to optimized MP4**:
+
    ```bash
    ffmpeg -i IMG_4494.MOV \
      -vcodec libx264 \
@@ -344,6 +367,7 @@ export function GallerySection() {
    ```
 
 3. **Extract key frames as images**:
+
    ```bash
    # Extract 1 frame every 2 seconds
    ffmpeg -i IMG_4494.MOV -vf fps=1/2 video-frame-%03d.webp
@@ -352,6 +376,7 @@ export function GallerySection() {
 ## Open Graph Image Creation
 
 ### Requirements
+
 - Dimensions: 1200x630 pixels
 - Format: PNG or JPEG
 - Content: Logo + text + background
@@ -359,18 +384,21 @@ export function GallerySection() {
 ### Creation Methods
 
 #### Method 1: Canva (Easiest)
-1. Go to https://www.canva.com/
+
+1. Go to <https://www.canva.com/>
 2. Create custom size: 1200x630
 3. Add logo, doctor name, specialty
 4. Use brand colors
 5. Download as PNG
 
 #### Method 2: Figma
+
 1. Create frame 1200x630
 2. Design with logo + text
 3. Export as PNG 2x
 
 #### Method 3: ImageMagick (Automated)
+
 ```bash
 # After extracting logo
 convert -size 1200x630 xc:"#[BRAND_PRIMARY_COLOR]" \
@@ -380,7 +408,8 @@ convert -size 1200x630 xc:"#[BRAND_PRIMARY_COLOR]" \
 ```
 
 ### Template Content
-```
+
+```text
 Dr. Enor Massoni
 Implantes Dentários e Cirurgia Maxilofacial
 Cascavel, PR | CRO-PR 4982
@@ -390,7 +419,7 @@ Cascavel, PR | CRO-PR 4982
 
 ### Using Real Favicon Generator (Recommended)
 
-1. Visit https://realfavicongenerator.net/
+1. Visit <https://realfavicongenerator.net/>
 2. Upload logo.png (minimum 512x512)
 3. Configure:
    - **iOS**: Background color = brand primary
@@ -400,7 +429,8 @@ Cascavel, PR | CRO-PR 4982
 5. Extract to `/workspace/jobs/massoni/web/public/`
 
 **Files generated**:
-```
+
+```bash
 public/
 ├── favicon.ico
 ├── favicon-16x16.png
@@ -430,21 +460,23 @@ convert logo.png -define icon:auto-resize=64,48,32,16 favicon.ico
 
 ### SEO-Optimized Alt Text Formula
 
-```
+```text
 [What] + [Location] + [Context]
 ```
 
 **Examples**:
 
 ✅ **Good**:
-```
+
+```text
 "Dr. Enor Massoni realizando implante dentário em Cascavel, PR"
 "Consultório odontológico moderno com equipamento de última geração - Cascavel"
 "Sala de cirurgia bucomaxilofacial equipada com tecnologia digital"
 ```
 
 ❌ **Bad**:
-```
+
+```text
 "IMG_4492"
 "Imagem da clínica"
 "Foto"
@@ -475,16 +507,19 @@ export const galleryImages = [
 ### Priority Loading
 
 **Hero Image**: `priority` prop
+
 ```tsx
 <Image src="/images/hero.webp" priority />
 ```
 
 **Above-the-fold images**: `loading="eager"`
+
 ```tsx
 <Image src="/images/about.webp" loading="eager" />
 ```
 
 **Gallery images**: `loading="lazy"` (default)
+
 ```tsx
 <Image src="/images/gallery/gallery-01.webp" loading="lazy" />
 ```
@@ -502,6 +537,7 @@ Enable blur placeholder for smooth loading:
 ```
 
 **Generate blur placeholders**:
+
 ```bash
 # Using plaiceholder library
 npm install plaiceholder sharp
@@ -513,6 +549,7 @@ convert gallery-01.webp -resize 10x10 -quality 50 - | base64
 ## Asset Processing Checklist
 
 ### Logo
+
 - [ ] Extract logo from PDF to SVG format
 - [ ] Create PNG fallback (800x800)
 - [ ] Create multiple PNG sizes (200w, 400w, 800w)
@@ -520,6 +557,7 @@ convert gallery-01.webp -resize 10x10 -quality 50 - | base64
 - [ ] Place in `/public/images/`
 
 ### Gallery Images
+
 - [ ] Convert all 26 HEIC files to WebP
 - [ ] Resize to max 1920px dimension
 - [ ] Strip EXIF metadata
@@ -529,17 +567,20 @@ convert gallery-01.webp -resize 10x10 -quality 50 - | base64
 - [ ] Write descriptive alt text for each image
 
 ### OG Image
+
 - [ ] Create 1200x630 PNG with logo + text
 - [ ] Use brand colors
 - [ ] Save as `/public/images/og.png`
 
 ### Favicon
+
 - [ ] Generate favicon suite (16, 32, 180, 192, 512)
 - [ ] Create favicon.ico
 - [ ] Create site.webmanifest
 - [ ] Place all files in `/public/`
 
 ### Performance
+
 - [ ] Verify all images < 1MB
 - [ ] Enable Next.js Image optimization
 - [ ] Configure image domains if using external CDN
@@ -587,8 +628,8 @@ export default nextConfig
 
 ## Reference Tools
 
-- **ImageMagick**: https://imagemagick.org/
-- **Real Favicon Generator**: https://realfavicongenerator.net/
-- **TinyPNG**: https://tinypng.com/ (additional compression)
-- **Squoosh**: https://squoosh.app/ (browser-based image optimizer)
-- **Next.js Image**: https://nextjs.org/docs/app/api-reference/components/image
+- **ImageMagick**: <https://imagemagick.org/>
+- **Real Favicon Generator**: <https://realfavicongenerator.net/>
+- **TinyPNG**: <https://tinypng.com/> (additional compression)
+- **Squoosh**: <https://squoosh.app/> (browser-based image optimizer)
+- **Next.js Image**: <https://nextjs.org/docs/app/api-reference/components/image>

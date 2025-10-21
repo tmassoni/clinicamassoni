@@ -10,6 +10,7 @@ This document provides a sequential, step-by-step plan for building the Dr. Enor
 ## Prerequisites
 
 Before starting, ensure you have:
+
 - [ ] Node.js >= 22.0.0 installed
 - [ ] Bun >= 1.2.0 installed
 - [ ] Git installed and configured
@@ -53,19 +54,22 @@ svgo logo.svg -o logo-optimized.svg
 **Goal**: Extract primary, secondary, and accent colors from logo
 
 **Manual Method**:
+
 1. Open logo.svg in Figma or Adobe Illustrator
 2. Use eyedropper tool to extract exact hex values
 3. Document 3-5 colors
-4. Test contrast ratios at https://webaim.org/resources/contrastchecker/
+4. Test contrast ratios at <https://webaim.org/resources/contrastchecker/>
 
 **Automated Method**:
+
 ```bash
 # Extract dominant colors
 convert logo.png -colors 5 -unique-colors txt:- | grep -v ImageMagick
 ```
 
 **Document Results** in a temporary file:
-```
+
+```bash
 PRIMARY_COLOR=#[HEX]
 SECONDARY_COLOR=#[HEX]
 TERTIARY_COLOR=#[HEX]
@@ -113,6 +117,7 @@ cd web
 ```
 
 **Configuration during setup**:
+
 - ✅ TypeScript
 - ✅ ESLint
 - ✅ Tailwind CSS
@@ -142,6 +147,7 @@ npx shadcn@latest init
 ```
 
 **Configuration**:
+
 - Style: Default
 - Base color: [Use extracted primary color]
 - CSS variables: Yes
@@ -592,6 +598,7 @@ Copy entire file
 Copy entire file (no changes needed)
 
 **Also create**: `components/analytics/index.ts`
+
 ```typescript
 export { AnalyticsProvider } from './AnalyticsProvider'
 ```
@@ -628,7 +635,7 @@ export function HeroSection() {
             />
           </div>
 
-          <div className="order-2 lg:order-1 flex-shrink-0 text-center lg:text-left lg:flex-1 px-6 pt-16 lg:pt-28 sm:px-8 lg:px-10 xl:px-12">
+          <div className="order-2 lg:order-1 shrink-0 text-center lg:text-left lg:flex-1 px-6 pt-16 lg:pt-28 sm:px-8 lg:px-10 xl:px-12">
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-primary mb-6">
               Implantes Dentários e Cirurgia Maxilofacial em Cascavel
             </h1>
@@ -666,6 +673,7 @@ Create based on analu-procto pattern with Dr. Massoni content
 **File**: `components/sections/ServicesSection.tsx`
 
 Create with 3 service cards:
+
 1. Implantes Dentários
 2. Cirurgia Bucomaxilofacial
 3. Cirurgias Orais
@@ -838,7 +846,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 bun run dev
 ```
 
-Visit http://localhost:3000 and test:
+Visit <http://localhost:3000> and test:
+
 - [ ] Hero section renders with image
 - [ ] All sections render correctly
 - [ ] Navigation works (smooth scroll)
@@ -869,6 +878,7 @@ lighthouse http://localhost:3000 --view  # In another
 ```
 
 **Target scores**:
+
 - Performance: 90+
 - Accessibility: 100
 - Best Practices: 100
@@ -877,6 +887,7 @@ lighthouse http://localhost:3000 --view  # In another
 ### Step 6.4: Fix Issues
 
 Common issues and fixes:
+
 - **Low performance**: Optimize images further, reduce bundle size
 - **Accessibility**: Add missing alt tags, improve contrast
 - **SEO**: Add missing meta tags, improve structured data
@@ -886,7 +897,8 @@ Common issues and fixes:
 ### Step 7.1: Environment Variables
 
 Create `.env.local`:
-```
+
+```env
 NEXT_PUBLIC_GA_ID=G-XXXXXXXXXX
 NEXT_PUBLIC_GTM_ID=GTM-XXXXXXX
 ```
@@ -907,6 +919,7 @@ vercel
 ```
 
 Follow prompts:
+
 - Link to existing project or create new
 - Set environment variables
 - Deploy
@@ -942,6 +955,7 @@ Basic usage instructions for client
 ### Step 8.3: Content Checklist
 
 Create list of placeholders to fill:
+
 - [ ] Contact information (phone, WhatsApp, email)
 - [ ] Clinic address and coordinates
 - [ ] Opening hours
@@ -954,6 +968,7 @@ Create list of placeholders to fill:
 ### Step 8.4: Training Materials
 
 Create simple guide for client:
+
 - How to update contact info
 - How to add/remove gallery images
 - How to update services
@@ -962,6 +977,7 @@ Create simple guide for client:
 ## Verification Checklist
 
 ### Functionality
+
 - [ ] All sections render correctly
 - [ ] Navigation works (smooth scroll)
 - [ ] Mobile responsive on all screen sizes
@@ -973,6 +989,7 @@ Create simple guide for client:
 - [ ] Images load with proper lazy loading
 
 ### SEO
+
 - [ ] Meta tags present and correct
 - [ ] Structured data validates (use schema.org validator)
 - [ ] Sitemap accessible at /sitemap.xml
@@ -981,12 +998,14 @@ Create simple guide for client:
 - [ ] Canonical URL set correctly
 
 ### Performance
+
 - [ ] Lighthouse Performance > 90
 - [ ] All images optimized (WebP format)
 - [ ] No console errors
 - [ ] Fast page load (< 3s on 3G)
 
 ### Accessibility
+
 - [ ] Lighthouse Accessibility = 100
 - [ ] Keyboard navigation works
 - [ ] Focus states visible
@@ -994,6 +1013,7 @@ Create simple guide for client:
 - [ ] Color contrast WCAG AA minimum
 
 ### Brand
+
 - [ ] Logo displays correctly
 - [ ] Colors match brand palette
 - [ ] Fonts load correctly
@@ -1003,18 +1023,23 @@ Create simple guide for client:
 ## Common Issues & Solutions
 
 ### Issue: Images not loading
+
 **Solution**: Check paths are correct, ensure images are in public/ folder
 
 ### Issue: Tailwind styles not applying
+
 **Solution**: Check tailwind.config.ts content paths include all component folders
 
 ### Issue: Build fails
+
 **Solution**: Check for TypeScript errors, ensure all imports are correct
 
 ### Issue: Analytics not loading
+
 **Solution**: Check environment variables, verify consent is accepted
 
 ### Issue: Performance score low
+
 **Solution**: Enable image optimization, check bundle size with analyzer
 
 ## Next Steps (Future Phases)
@@ -1022,17 +1047,20 @@ Create simple guide for client:
 After Phase 1 landing page is complete:
 
 ### Phase 2: Content Enhancement
+
 - Add blog system for SEO
 - Create patient resources/downloads
 - Add video content (virtual tour)
 
 ### Phase 3: Features
+
 - Online appointment booking
 - Patient portal
 - Before/after gallery (with consent)
 - Testimonials section
 
 ### Phase 4: Marketing
+
 - Google Ads integration
 - Email newsletter signup
 - Social media feed integration
@@ -1042,14 +1070,15 @@ After Phase 1 landing page is complete:
 
 - **Reference Project**: `/workspace/jobs/analu-procto/`
 - **Planning Docs**: All markdown files in `/workspace/jobs/massoni/`
-- **Next.js Docs**: https://nextjs.org/docs
-- **shadcn/ui Docs**: https://ui.shadcn.com/
-- **Tailwind Docs**: https://tailwindcss.com/docs
-- **Vercel Docs**: https://vercel.com/docs
+- **Next.js Docs**: <https://nextjs.org/docs>
+- **shadcn/ui Docs**: <https://ui.shadcn.com/>
+- **Tailwind Docs**: <https://tailwindcss.com/docs>
+- **Vercel Docs**: <https://vercel.com/docs>
 
 ## Support
 
 If you encounter issues:
+
 1. Check the planning documents in this folder
 2. Reference the analu-procto project
 3. Consult Next.js/shadcn documentation

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
-import { navigationItems } from '@/lib/navigation'
+import { navigationItems } from '@/app/src/lib/navigation'
 import {
   DOCTOR_NAME,
   DOCTOR_CRO,
@@ -11,14 +11,21 @@ import {
   CONTACT_EMAIL,
   CLINIC_ADDRESS_FULL,
   SOCIAL_INSTAGRAM_URL,
-} from '@/lib/constants'
-import { MapPin, Phone, Mail, Instagram, Facebook, Linkedin } from 'lucide-react'
+} from '@/app/src/lib/constants'
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Instagram,
+  Facebook,
+  Linkedin,
+} from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative bg-gradient-to-br from-[#042B48] via-[#3C576A] to-[#042B48] text-white overflow-hidden">
+    <footer className="relative bg-linear-to-br from-primary via-secondary to-primary text-white overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.05),transparent_70%)] pointer-events-none" />
 
@@ -26,32 +33,30 @@ export function Footer() {
         {/* Main Footer Content */}
         <div className="container px-6 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
-
             {/* Column 1 - About */}
             <div className="space-y-6">
               <Link href="/#hero" className="inline-block group">
                 <div className="flex items-center gap-3">
-                  <div className="relative w-14 h-14 transition-transform group-hover:scale-105">
+                  <div className="relative w-20 h-20 transition-transform rounded-lg p-1.5">
                     <Image
-                      src="/images/logo.svg"
+                      src="/images/logo.png"
                       alt={`${DOCTOR_NAME} - Logo`}
                       fill
-                      className="object-contain brightness-0 invert"
+                      className="object-contain"
                     />
                   </div>
                   <div>
                     <p className="font-bold text-lg text-white">
                       {DOCTOR_NAME}
                     </p>
-                    <p className="text-sm text-white/80">
-                      {DOCTOR_CRO}
-                    </p>
+                    <p className="text-sm text-white/80">{DOCTOR_CRO}</p>
                   </div>
                 </div>
               </Link>
 
               <p className="text-white/80 leading-relaxed text-sm">
-                Especialista em {DOCTOR_SPECIALTY} oferecendo tratamentos modernos e humanizados em Cascavel, PR.
+                Especialista em {DOCTOR_SPECIALTY} oferecendo tratamentos
+                modernos e humanizados em Cascavel, PR.
               </p>
 
               {/* Social Media */}
@@ -86,9 +91,7 @@ export function Footer() {
 
             {/* Column 2 - Quick Links */}
             <div>
-              <h3 className="text-lg font-bold mb-6 text-white">
-                Navegação
-              </h3>
+              <h4 className="text-lg font-bold mb-4 text-white">Navegação</h4>
               <ul className="space-y-3">
                 {navigationItems.map((item) => (
                   <li key={item.href}>
@@ -106,32 +109,45 @@ export function Footer() {
 
             {/* Column 3 - Services */}
             <div>
-              <h3 className="text-lg font-bold mb-6 text-white">
-                Serviços
-              </h3>
+              <h4 className="text-lg font-bold mb-4 text-white">Serviços</h4>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <a href="#servicos" className="text-white/80 hover:text-white transition-colors">
+                  <a
+                    href="#servicos"
+                    className="text-white/80 hover:text-white transition-colors"
+                  >
                     Implantes Dentários
                   </a>
                 </li>
                 <li>
-                  <a href="#servicos" className="text-white/80 hover:text-white transition-colors">
+                  <a
+                    href="#servicos"
+                    className="text-white/80 hover:text-white transition-colors"
+                  >
                     Cirurgia Bucomaxilofacial
                   </a>
                 </li>
                 <li>
-                  <a href="#servicos" className="text-white/80 hover:text-white transition-colors">
+                  <a
+                    href="#servicos"
+                    className="text-white/80 hover:text-white transition-colors"
+                  >
                     Cirurgia Ortognática
                   </a>
                 </li>
                 <li>
-                  <a href="#servicos" className="text-white/80 hover:text-white transition-colors">
+                  <a
+                    href="#servicos"
+                    className="text-white/80 hover:text-white transition-colors"
+                  >
                     Enxerto Ósseo
                   </a>
                 </li>
                 <li>
-                  <a href="#servicos" className="text-white/80 hover:text-white transition-colors">
+                  <a
+                    href="#servicos"
+                    className="text-white/80 hover:text-white transition-colors"
+                  >
                     Extração de Sisos
                   </a>
                 </li>
@@ -140,15 +156,16 @@ export function Footer() {
 
             {/* Column 4 - Contact */}
             <div>
-              <h3 className="text-lg font-bold mb-6 text-white">
-                Contato
-              </h3>
+              <h4 className="text-lg font-bold mb-4 text-white">Contato</h4>
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 flex-shrink-0 mt-0.5 text-white/60" />
+                  <Phone className="w-5 h-5 shrink-0 mt-0.5 text-white/60" />
                   <div>
                     <a
-                      href={`https://wa.me/${CONTACT_WHATSAPP_NUMBER.replace(/\D/g, '')}`}
+                      href={`https://wa.me/${CONTACT_WHATSAPP_NUMBER.replace(
+                        /\D/g,
+                        ''
+                      )}`}
                       className="text-white/80 hover:text-white transition-colors block"
                     >
                       {CONTACT_WHATSAPP_FORMATTED}
@@ -163,7 +180,7 @@ export function Footer() {
                 </li>
 
                 <li className="flex items-start gap-3">
-                  <Mail className="w-5 h-5 flex-shrink-0 mt-0.5 text-white/60" />
+                  <Mail className="w-5 h-5 shrink-0 mt-0.5 text-white/60" />
                   <a
                     href={`mailto:${CONTACT_EMAIL}`}
                     className="text-white/80 hover:text-white transition-colors break-all"
@@ -173,14 +190,13 @@ export function Footer() {
                 </li>
 
                 <li className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 flex-shrink-0 mt-0.5 text-white/60" />
+                  <MapPin className="w-5 h-5 shrink-0 mt-0.5 text-white/60" />
                   <p className="text-white/80 leading-relaxed">
                     {CLINIC_ADDRESS_FULL}
                   </p>
                 </li>
               </ul>
             </div>
-
           </div>
         </div>
 
@@ -206,7 +222,7 @@ export function Footer() {
       </div>
 
       {/* Decorative Elements */}
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tl from-white/5 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-linear-to-tl from-white/5 via-transparent to-transparent rounded-full blur-3xl pointer-events-none" />
     </footer>
   )
 }

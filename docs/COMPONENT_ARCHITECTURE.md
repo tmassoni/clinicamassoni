@@ -3,18 +3,21 @@
 ## Hybrid Component Strategy
 
 This project uses a **hybrid approach**:
+
 - **shadcn/ui**: For complex, interactive components (forms, dialogs, accordions, carousels)
 - **Custom components**: Ported from analu-procto for brand-specific UI (buttons, cards, layout)
 
 ### Why Hybrid?
 
 **Benefits of shadcn/ui**:
+
 - Copy-paste components (no package bloat)
 - Built on Radix UI primitives (accessibility)
 - Customizable with Tailwind
 - Active community and documentation
 
 **Benefits of custom components**:
+
 - Full control over styling
 - Proven patterns from analu-procto
 - Medical website-specific patterns
@@ -22,7 +25,7 @@ This project uses a **hybrid approach**:
 
 ## Directory Structure
 
-```
+```bash
 src/
 ├── components/
 │   ├── ui/                          # UI components (mix of custom + shadcn)
@@ -69,11 +72,13 @@ src/
 **Source**: `/workspace/jobs/analu-procto/src/components/ui/Button.tsx`
 
 **Features**:
+
 - 8 variants using class-variance-authority
 - Size variants (sm, default, lg, xl, icon)
 - Accessibility features (focus rings, aria support)
 
 **Variants**:
+
 ```tsx
 variant: 'default' | 'primary' | 'secondary' | 'subtle' |
          'outline' | 'ghost' | 'link' | 'destructive'
@@ -81,12 +86,14 @@ size: 'sm' | 'default' | 'lg' | 'xl' | 'icon'
 ```
 
 **Port Strategy**:
+
 1. Copy entire file
 2. Update colors to match new brand palette
 3. Adjust shadow values if needed
 4. Keep all accessibility features
 
 **Usage Example**:
+
 ```tsx
 import { Button } from '@/components/ui/Button'
 
@@ -100,12 +107,14 @@ import { Button } from '@/components/ui/Button'
 **Source**: `/workspace/jobs/analu-procto/src/components/ui/LinkButton.tsx`
 
 **Features**:
+
 - Link component with button styling
 - External link support
 - New tab handling
 - Uses Button variants
 
 **Port Strategy**:
+
 1. Copy entire file
 2. Ensure Next.js Link import is correct
 3. Update to match Button variant updates
@@ -115,17 +124,20 @@ import { Button } from '@/components/ui/Button'
 **Source**: `/workspace/jobs/analu-procto/src/components/ui/Card.tsx`
 
 **Features**:
+
 - Reusable card container
 - Hover effects
 - Consistent padding and shadows
 - Responsive
 
 **Port Strategy**:
+
 1. Copy entire file
 2. Adjust background color to match brand
 3. Update shadow values if needed
 
 **Usage Example**:
+
 ```tsx
 import { Card } from '@/components/ui/Card'
 
@@ -140,11 +152,13 @@ import { Card } from '@/components/ui/Card'
 **Source**: `/workspace/jobs/analu-procto/src/components/ui/Badge.tsx`
 
 **Features**:
+
 - Small label component
 - Multiple variants
 - Used for tags/labels
 
 **Port Strategy**:
+
 1. Copy entire file
 2. Adjust colors to match brand
 
@@ -153,6 +167,7 @@ import { Card } from '@/components/ui/Card'
 **Source**: `/workspace/jobs/analu-procto/src/components/ui/Header.tsx`
 
 **Adaptations Needed**:
+
 - Replace doctor name
 - Update logo path
 - Adjust navigation links
@@ -160,9 +175,11 @@ import { Card } from '@/components/ui/Card'
 - Keep mobile menu functionality
 
 **Port Strategy**:
+
 1. Copy file structure
 2. Replace all analu-procto constants with massoni constants
 3. Update navigation items:
+
    ```tsx
    const navItems = [
      { href: '#sobre', label: 'Sobre' },
@@ -171,6 +188,7 @@ import { Card } from '@/components/ui/Card'
      { href: '#contato', label: 'Contato' },
    ]
    ```
+
 4. Keep sticky behavior and animations
 
 #### 6. Footer (`components/ui/Footer.tsx`)
@@ -178,6 +196,7 @@ import { Card } from '@/components/ui/Card'
 **Source**: `/workspace/jobs/analu-procto/src/components/ui/Footer.tsx`
 
 **Adaptations Needed**:
+
 - Replace doctor info
 - Update social links
 - Update address/location
@@ -185,6 +204,7 @@ import { Card } from '@/components/ui/Card'
 - Keep structure and styling
 
 **Port Strategy**:
+
 1. Copy file structure
 2. Replace constants
 3. Update links (Instagram, WhatsApp, etc.)
@@ -195,10 +215,12 @@ import { Card } from '@/components/ui/Card'
 **Source**: `/workspace/jobs/analu-procto/src/components/ui/Divider.tsx`
 
 **Features**:
+
 - Visual section separator
 - Decorative element
 
 **Port Strategy**:
+
 1. Copy entire file
 2. Adjust color to match brand
 
@@ -207,12 +229,14 @@ import { Card } from '@/components/ui/Card'
 **Source**: `/workspace/jobs/analu-procto/src/components/layout/CookieConsent.tsx`
 
 **Features**:
+
 - LGPD/GDPR compliant
 - Progressive disclosure UX
 - localStorage persistence
 - Responsive (mobile/desktop)
 
 **Port Strategy**:
+
 1. Copy entire file
 2. Update text to mention "Dr. Enor Massoni"
 3. Keep all functionality intact
@@ -223,11 +247,13 @@ import { Card } from '@/components/ui/Card'
 **Source**: `/workspace/jobs/analu-procto/src/components/analytics/AnalyticsProvider.tsx`
 
 **Features**:
+
 - Consent-based analytics loading
 - Google Analytics + GTM integration
 - Checks localStorage for consent
 
 **Port Strategy**:
+
 1. Copy entire file
 2. No changes needed (uses env variables)
 
@@ -254,6 +280,7 @@ npx shadcn@latest add label
 **Use Case**: FAQ section, service details collapsible
 
 **Usage**:
+
 ```tsx
 import {
   Accordion,
@@ -277,6 +304,7 @@ import {
 **Use Case**: Modal for image gallery lightbox, appointment form
 
 **Usage**:
+
 ```tsx
 import {
   Dialog,
@@ -305,6 +333,7 @@ import {
 **Use Case**: Photo gallery section (26 images)
 
 **Usage**:
+
 ```tsx
 import {
   Carousel,
@@ -332,6 +361,7 @@ import {
 **Use Case**: Contact form in ContactSection
 
 **Usage**:
+
 ```tsx
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
@@ -394,16 +424,19 @@ function ContactForm() {
 **Adapted from**: analu-procto HeroSection
 
 **Content**:
+
 - Professional photo of Dr. Massoni
 - Heading: "Implantes Dentários e Cirurgia Maxilofacial em Cascavel"
 - Subheading: Value proposition
 - Primary CTA: WhatsApp button
 
 **Layout**:
+
 - Mobile: Image top, text bottom
 - Desktop: Two-column (text left, image right)
 
 **Code Structure**:
+
 ```tsx
 export function HeroSection() {
   return (
@@ -435,6 +468,7 @@ export function HeroSection() {
 **Adapted from**: analu-procto AboutSection
 
 **Content**:
+
 - Doctor bio
 - Education/credentials
 - CRO-PR 4982
@@ -448,11 +482,13 @@ export function HeroSection() {
 **Adapted from**: analu-procto ServicesSection
 
 **Content**:
+
 - Service categories in cards
 - Each card: icon, title, description, CTA
 - Grid layout (3 columns desktop, 1 mobile)
 
 **Services**:
+
 1. Implantes Dentários
 2. Cirurgia Bucomaxilofacial
 3. Cirurgias Orais
@@ -462,11 +498,13 @@ export function HeroSection() {
 **New Component** (uses shadcn Carousel)
 
 **Content**:
+
 - 26 WebP images from converted HEIC files
 - Image categories/filters (optional)
 - Lightbox on click (Dialog component)
 
 **Code Structure**:
+
 ```tsx
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import { Dialog, DialogContent, DialogTrigger } from '@/components/ui/dialog'
@@ -525,6 +563,7 @@ export function GallerySection() {
 **Adapted from**: analu-procto ContactSection
 
 **Content**:
+
 - Contact form (shadcn/ui form)
 - WhatsApp CTA
 - Phone number
@@ -607,6 +646,7 @@ export const navigationItems = [
 ## Component Porting Checklist
 
 ### Phase 1: Core UI Components
+
 - [ ] Copy Button.tsx from analu-procto
 - [ ] Copy LinkButton.tsx
 - [ ] Copy Card.tsx
@@ -616,6 +656,7 @@ export const navigationItems = [
 - [ ] Test all variants in Storybook or dev environment
 
 ### Phase 2: Layout Components
+
 - [ ] Copy Header.tsx and adapt
 - [ ] Replace navigation items
 - [ ] Update logo path
@@ -625,12 +666,14 @@ export const navigationItems = [
 - [ ] Update social links
 
 ### Phase 3: Analytics & Consent
+
 - [ ] Copy CookieConsent.tsx
 - [ ] Update consent text
 - [ ] Copy AnalyticsProvider.tsx
 - [ ] Set up environment variables
 
 ### Phase 4: Install shadcn/ui
+
 - [ ] Run `npx shadcn@latest init`
 - [ ] Install accordion component
 - [ ] Install dialog component
@@ -639,6 +682,7 @@ export const navigationItems = [
 - [ ] Configure components.json for brand colors
 
 ### Phase 5: Section Components
+
 - [ ] Create HeroSection (adapt from analu-procto)
 - [ ] Create AboutSection (adapt)
 - [ ] Create ServicesSection (adapt)
@@ -647,6 +691,7 @@ export const navigationItems = [
 - [ ] Create barrel export index.ts
 
 ### Phase 6: Utilities
+
 - [ ] Create lib/utils.ts (cn function)
 - [ ] Create lib/constants.ts (update with client info)
 - [ ] Create lib/structured-data.ts (from CONTENT_STRATEGY.md)
@@ -658,7 +703,7 @@ export const navigationItems = [
 
 When running `npx shadcn@latest init`, configure:
 
-```
+```bash
 ✔ Which style would you like to use? › Default
 ✔ Which color would you like to use as base color? › [Brand Primary Color]
 ✔ Would you like to use CSS variables for colors? › yes
@@ -691,11 +736,13 @@ All shadcn components can be customized via `globals.css` CSS variables:
 ### Component Testing (Optional for Phase 1)
 
 If implementing tests:
+
 ```bash
 bun add -d vitest @testing-library/react @testing-library/jest-dom
 ```
 
 Test custom components:
+
 ```tsx
 import { render, screen } from '@testing-library/react'
 import { Button } from '@/components/ui/Button'
@@ -719,5 +766,5 @@ describe('Button', () => {
 ## Reference
 
 - analu-procto components: `/workspace/jobs/analu-procto/src/components/`
-- shadcn/ui docs: https://ui.shadcn.com/
-- Radix UI primitives: https://www.radix-ui.com/
+- shadcn/ui docs: <https://ui.shadcn.com/>
+- Radix UI primitives: <https://www.radix-ui.com/>

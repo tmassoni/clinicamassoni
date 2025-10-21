@@ -1,0 +1,30 @@
+{
+  "version": 1.1,
+  "atDirectives": [
+    {
+      "name": "@theme",
+      "description": "Tailwind CSS v4 theme configuration directive"
+    },
+    {
+      "name": "@apply",
+      "description": "Apply Tailwind utility classes inline"
+    },
+    {
+      "name": "@layer",
+      "description": "Declare a Tailwind CSS layer (base, components, utilities)"
+    },
+    {
+      "name": "@import",
+      "description": "Import another CSS file or Tailwind CSS"
+    },
+    {
+      "name": "@tailwind",
+      "description": "Inject Tailwind CSS styles (v3 syntax)"
+    },
+    {
+      "name": "@config",
+      "description": "Specify a custom Tailwind config path"
+    }
+  ]
+}
+
