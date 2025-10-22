@@ -125,7 +125,7 @@ export function HeroSection() {
               {/* Professional Photo */}
               <Image
                 src="/images/hero.webp"
-                alt={`${DOCTOR_NAME}, cirurgião dentista especialista em ${DOCTOR_SPECIALTY} em Cascavel, PR`}
+                alt={`Retrato profissional de ${DOCTOR_NAME}, especialista em ${DOCTOR_SPECIALTY}, em Cascavel, PR. CRO-PR ${DOCTOR_CRO}`}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"

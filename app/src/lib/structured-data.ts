@@ -25,6 +25,49 @@ export const structuredData = {
             url: 'https://www.cropr.org.br',
           },
         },
+        {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'Graduação',
+          name: 'Odontologia',
+          educationalLevel: 'Graduação',
+          recognizedBy: {
+            '@type': 'Organization',
+            name: 'Universidade Federal de Pelotas',
+            alternateName: 'UFPEL',
+          },
+          dateCreated: '1984',
+        },
+        {
+          '@type': 'EducationalOccupationalCredential',
+          credentialCategory: 'Especialização',
+          name: 'Cirurgia e Traumatologia Bucomaxilofacial',
+          educationalLevel: 'Especialização',
+          recognizedBy: {
+            '@type': 'Organization',
+            name: 'Universidade de São Paulo',
+            alternateName: 'USP',
+            location: 'Bauru, SP',
+          },
+          dateCreated: '1991',
+        },
+      ],
+
+      memberOf: [
+        {
+          '@type': 'Organization',
+          name: 'Academia Brasileira de Osseointegração',
+          description:
+            'Associação profissional focada no desenvolvimento e pesquisa em implantodontia',
+        },
+      ],
+
+      alumniOf: [
+        {
+          '@type': 'EducationalOrganization',
+          name: 'Universidade Estadual do Oeste do Paraná',
+          alternateName: 'Unioeste',
+          description: 'Ex-professor de Cirurgia do curso de Odontologia',
+        },
       ],
 
       medicalSpecialty: CLINIC_INFO.specialties,
@@ -86,15 +129,21 @@ export const structuredData = {
       description:
         'Tratamento especializado para reabilitação oral e cirurgias faciais',
       procedureType: [
-        'Implantes dentários',
+        'Implantes dentários unitários',
+        'Implantes dentários múltiplos',
         'Protocolo sobre implantes (All-on-4)',
-        'Enxerto ósseo',
-        'Levantamento de seio maxilar',
+        'Implantes imediatos em área estética',
+        'Enxerto ósseo com materiais sintéticos e biológicos',
+        'Cirurgias guiadas com tecnologia 3D',
+        'Cirurgia plástica periodontal',
+        'Recobrimento de recessões gengivais',
+        'Aumento de coroa clínica',
+        'Gengivoplastia estética',
+        'Cirurgias de cistos e tumores bucomaxilofaciais',
+        'Extração de sisos e dentes retidos',
         'Cirurgia ortognática',
-        'Tratamento de ATM',
-        'Traumatismo facial',
-        'Extração de sisos',
-        'Frenectomia',
+        'Traumatismo e fraturas faciais',
+        'Frenectomias',
         'Biópsias orais',
       ],
       performer: {

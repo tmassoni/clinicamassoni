@@ -104,31 +104,39 @@ export function AboutSection() {
 
             <div className="prose prose-lg max-w-none">
               <p className="text-base sm:text-lg text-tertiary leading-relaxed">
-                Especialista em&nbsp;
+                Graduado em Odontologia pela&nbsp;
                 <strong className="text-secondary">
-                  Cirurgia e Traumatologia Bucomaxilofacial
+                  Universidade Federal de Pelotas (1984)
                 </strong>
-                , com 35 anos de experiência em implantes dentários e
-                procedimentos complexos de reabilitação oral e cirurgias
-                faciais.
+                &nbsp;e especialista em&nbsp;
+                <strong className="text-secondary">
+                  Cirurgia e Traumatologia Bucomaxilofacial pela USP (1991)
+                </strong>
+                , com 38 anos de carreira dedicados exclusivamente à saúde bucal
+                em Cascavel.
               </p>
 
               <p className="text-base sm:text-lg text-tertiary leading-relaxed">
-                Com formação sólida e atualização constante nas mais modernas
-                técnicas da odontologia, o Dr. Enor Massoni oferece tratamentos
-                personalizados que aliam&nbsp;
-                <strong className="text-secondary">tecnologia de ponta</strong>
-                &nbsp; e&nbsp;
+                Membro da&nbsp;
                 <strong className="text-secondary">
-                  atendimento humanizado
+                  Academia Brasileira de Osseointegração
                 </strong>
-                .
+                &nbsp;e ex-professor de Cirurgia na Unioeste, acompanhou o
+                desenvolvimento da implantodontia no Brasil desde o início dos
+                anos 1990, dominando todas as técnicas modernas, desde cirurgias
+                guiadas 3D até procedimentos minimamente invasivos.
               </p>
 
               <p className="text-base sm:text-lg text-tertiary leading-relaxed">
-                Cada paciente recebe atenção individualizada, com planejamento
-                detalhado e acompanhamento em todas as etapas do tratamento,
-                garantindo resultados excepcionais e duradouros.
+                A&nbsp;
+                <strong className="text-secondary">
+                  humanização do atendimento
+                </strong>
+                &nbsp;é o pilar fundamental da clínica: ambiente acolhedor,
+                escuta atenta, acompanhamento completo no pré e pós-cirúrgico, e
+                rigor absoluto em biossegurança. Seus primeiros pacientes das
+                décadas de 1980 e 90 continuam confiando no tratamento e já
+                trouxeram filhos e netos.
               </p>
             </div>
           </div>
@@ -137,7 +145,7 @@ export function AboutSection() {
         {/* Credentials Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           <Card
-            title="Formação Especializada"
+            title="38 Anos em Cascavel"
             variant="service"
             className="group hover:border-primary/30 transition-all duration-300"
           >
@@ -145,13 +153,13 @@ export function AboutSection() {
               <BookOpen className="w-6 h-6 text-primary" />
             </div>
             <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-              Especialização em Cirurgia e Traumatologia Bucomaxilofacial com
-              certificações nacionais
+              Graduado pela UFPEL (1984) e especialista pela USP (1991). Membro
+              da Academia Brasileira de Osseointegração
             </p>
           </Card>
 
           <Card
-            title="Tecnologia Avançada"
+            title="Cirurgias Guiadas 3D"
             variant="service"
             className="group hover:border-primary/30 transition-all duration-300"
           >
@@ -159,13 +167,13 @@ export function AboutSection() {
               <Award className="w-6 h-6 text-primary" />
             </div>
             <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-              Equipamentos modernos para diagnóstico preciso e procedimentos
-              minimamente invasivos
+              Scanner intraoral Sirios, câmera Skycam e tecnologia 3D para
+              cirurgias precisas e menos invasivas
             </p>
           </Card>
 
           <Card
-            title="Atendimento Humanizado"
+            title="Humanização e Acolhimento"
             variant="service"
             className="group hover:border-primary/30 transition-all duration-300"
           >
@@ -173,13 +181,13 @@ export function AboutSection() {
               <Heart className="w-6 h-6 text-primary" />
             </div>
             <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-              Cuidado personalizado com foco no conforto e bem-estar de cada
-              paciente
+              Ambiente acolhedor, escuta atenta e acompanhamento completo no pré
+              e pós-cirúrgico. Rigor em biossegurança
             </p>
           </Card>
 
           <Card
-            title="Resultados Comprovados"
+            title="Gerações de Confiança"
             variant="service"
             className="group hover:border-primary/30 transition-all duration-300"
           >
@@ -187,8 +195,8 @@ export function AboutSection() {
               <Users className="w-6 h-6 text-primary" />
             </div>
             <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-              Milhares de pacientes satisfeitos com tratamentos de excelência e
-              acompanhamento contínuo
+              Pacientes desde os anos 80 e 90 continuam retornando e trazem
+              filhos e netos. Confiança que resiste ao tempo
             </p>
           </Card>
         </div>

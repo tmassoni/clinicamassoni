@@ -56,10 +56,15 @@ export const CLINIC_ADDRESS_ZIP = '85812-011'
 export const CLINIC_ADDRESS_FULL = `${CLINIC_ADDRESS_STREET}, ${CLINIC_ADDRESS_NEIGHBORHOOD}, ${CLINIC_ADDRESS_CITY} - ${CLINIC_ADDRESS_STATE}, ${CLINIC_ADDRESS_ZIP}`
 
 // GPS Coordinates for Rua Paraná 3033, Centro Empresarial Formato
+// Extracted from official Google Maps embed
 export const CLINIC_COORDINATES = {
-  latitude: -24.9446875,
-  longitude: -53.4384674,
+  latitude: -24.95439597786806,
+  longitude: -53.46219242377044,
 }
+
+// Google Maps Embed URL (shows business name and address)
+export const CLINIC_MAP_EMBED_URL =
+  'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.344357826297!2d-53.46219242377044!3d-24.95439597786806!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d4120d037c41%3A0xf1d730448eec351e!2sCentro%20Empresarial%20Formato!5e0!3m2!1spt-BR!2sus!4v1761159734339!5m2!1spt-BR!2sus'
 
 // Business Hours
 export const CLINIC_HOURS = 'Mo-Fr 08:00-12:00,13:30-18:00' // Schema.org format
@@ -88,7 +93,13 @@ export const SEO_KEYWORDS = [
   'protocolo dentário Cascavel',
   'cirurgia ortognática Cascavel',
   'extração siso Cascavel',
-  'CRO PR 4892',
+  'CRO PR 4982',
+  'cirurgia plástica periodontal Cascavel',
+  'recessão gengival Cascavel',
+  'recobrimento de raízes Cascavel',
+  'enxerto ósseo Cascavel',
+  '38 anos experiência Cascavel',
+  'academia brasileira osseointegração',
   'dentista região oeste Paraná',
 ]
 
