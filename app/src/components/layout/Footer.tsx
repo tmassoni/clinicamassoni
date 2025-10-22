@@ -5,21 +5,15 @@ import {
   DOCTOR_NAME,
   DOCTOR_CRO,
   DOCTOR_SPECIALTY,
-  CONTACT_WHATSAPP_NUMBER,
+  CONTACT_WHATSAPP_URL,
   CONTACT_WHATSAPP_FORMATTED,
   CONTACT_PHONE_FORMATTED,
   CONTACT_EMAIL,
   CLINIC_ADDRESS_FULL,
   SOCIAL_INSTAGRAM_URL,
+  SOCIAL_LINKEDIN_URL,
 } from '@/app/src/lib/constants'
-import {
-  MapPin,
-  Phone,
-  Mail,
-  Instagram,
-  Facebook,
-  Linkedin,
-} from 'lucide-react'
+import { MapPin, Phone, Mail, Instagram, Linkedin } from 'lucide-react'
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -72,20 +66,17 @@ export function Footer() {
                     <Instagram className="w-5 h-5" />
                   </a>
                 )}
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all hover:scale-110"
-                  aria-label="Facebook"
-                >
-                  <Facebook className="w-5 h-5" />
-                </a>
-                <a
-                  href="#"
-                  className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all hover:scale-110"
-                  aria-label="LinkedIn"
-                >
-                  <Linkedin className="w-5 h-5" />
-                </a>
+                {SOCIAL_LINKEDIN_URL && (
+                  <a
+                    href={SOCIAL_LINKEDIN_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all hover:scale-110"
+                    aria-label="LinkedIn"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                )}
               </div>
             </div>
 
@@ -162,13 +153,12 @@ export function Footer() {
                   <Phone className="w-5 h-5 shrink-0 mt-0.5 text-white/60" />
                   <div>
                     <a
-                      href={`https://wa.me/${CONTACT_WHATSAPP_NUMBER.replace(
-                        /\D/g,
-                        ''
-                      )}`}
+                      href={CONTACT_WHATSAPP_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="text-white/80 hover:text-white transition-colors block"
                     >
-                      {CONTACT_WHATSAPP_FORMATTED}
+                      {CONTACT_WHATSAPP_FORMATTED} (WhatsApp)
                     </a>
                     <a
                       href={`tel:${CONTACT_PHONE_FORMATTED.replace(/\D/g, '')}`}

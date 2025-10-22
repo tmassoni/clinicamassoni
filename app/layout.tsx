@@ -37,11 +37,13 @@ export const metadata: Metadata = {
     template: `%s | ${DOCTOR_NAME}`,
   },
 
-  description: `${DOCTOR_NAME}, cirurgião dentista especialista em ${DOCTOR_SPECIALTY}. Atendimento com tecnologia de ponta e cuidado humanizado em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}. Agende sua consulta!`,
+  description: `${DOCTOR_NAME}, cirurgião dentista especialista em ${DOCTOR_SPECIALTY} com 38 anos de experiência em ${CLINIC_ADDRESS_CITY}. Implantes dentários, cirurgia plástica periodontal, recobrimento de recessões gengivais e cirurgias guiadas 3D. Atendimento humanizado e tecnologia de ponta. Agende sua consulta!`,
 
   keywords: [
     'implantes dentários',
     'cirurgia bucomaxilofacial',
+    'cirurgia plástica periodontal',
+    'recobrimento recessão gengival',
     'cirurgião dentista',
     'dentista Cascavel',
     'implante dentário Cascavel',
@@ -49,6 +51,10 @@ export const metadata: Metadata = {
     'extração de sisos',
     'enxerto ósseo dental',
     'protocolo all-on-4',
+    'implantes imediatos área estética',
+    'cirurgias guiadas 3D',
+    '38 anos experiência',
+    'academia brasileira osseointegração',
     'dentista PR',
     DOCTOR_NAME,
     'CRO-PR 4982',
@@ -76,7 +82,7 @@ export const metadata: Metadata = {
     url: CLINIC_WEBSITE,
     siteName: `${DOCTOR_NAME} - Dentista`,
     title: `${DOCTOR_NAME} - ${DOCTOR_SPECIALTY}`,
-    description: `Especialista em ${DOCTOR_SPECIALTY} em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}. Tecnologia de ponta e atendimento humanizado.`,
+    description: `Especialista em ${DOCTOR_SPECIALTY} com 38 anos de experiência em ${CLINIC_ADDRESS_CITY}. Implantes dentários, cirurgia plástica periodontal e cirurgias guiadas 3D. Atendimento humanizado.`,
     images: [
       {
         url: '/images/og.png',
@@ -90,7 +96,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: `${DOCTOR_NAME} - ${DOCTOR_SPECIALTY}`,
-    description: `Especialista em ${DOCTOR_SPECIALTY} em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}`,
+    description: `Especialista em ${DOCTOR_SPECIALTY} com 38 anos de experiência. Implantes dentários, cirurgia plástica periodontal e tecnologia 3D em ${CLINIC_ADDRESS_CITY}`,
     images: ['/images/og.png'],
   },
 

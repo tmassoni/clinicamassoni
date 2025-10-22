@@ -1,163 +1,45 @@
-# PROJECT OVERVIEW - Dr. Enor Massoni Website
+# Project Guide – Dr. Enor Massoni Website
 
-## Client Information
+## Snapshot
 
-**Doctor Name**: Dr. Enor Massoni
-**Specialties**:
+- Single-page marketing site for `Dr. Enor Massoni – Implantes e Cirurgia Maxilofacial`, live in the Next.js App Router (`app/`).
+- Tech stack: Next.js 15, React 19, TypeScript (strict, no emit), Tailwind CSS 4, shadcn-based UI primitives, Bun scripts.
+- Contact, SEO, and clinic metadata live in `app/src/lib/constants.ts`; keep this file authoritative for any copy or structured data changes.
 
-- Implantes Dentários (Dental Implants)
-- Cirurgia Buco-Maxilo-Facial (Oral and Maxillofacial Surgery)
+## Key Paths
 
-**Registration**: CRO-PR 4982
-**Location**: Cascavel, PR, Brazil
-**Target Domain**: enormassoni.com.br (placeholder - domain TBD)
+| Area | Location | Notes |
+| ---- | -------- | ----- |
+| Layout & routing | `app/layout.tsx`, `app/page.tsx`, `app/(...)` | Global providers, metadata, and page assembly. |
+| Components | `app/src/components` | `sections/` renders each homepage slice; `ui/` mixes shadcn clones (accordion, dialog) with custom buttons/cards; `layout/` exposes header/footer/flyouts. |
+| Data & helpers | `app/src/lib` | `gallery-data.ts` drives categories/order, `structured-data.ts` builds JSON-LD, `utils.ts` hosts `cn`. |
+| Assets | `public/images` | Hero + gallery WebP files; keep naming `gallery-XX.webp`. Logos remain pending final client export (see TODO). |
+| Documentation | `docs/` | Working notes: this guide, `TODO.md`, and `CLIENT_NEXT_STEPS.md`. |
 
-## Project Scope
-
-### Phase 1: Landing Page (Current)
-
-Single-page website with the following sections:
-
-- Hero Section (with professional photo)
-- About Section (doctor's credentials and approach)
-- Services Section (dental implants + maxillofacial procedures)
-- Photo Gallery (26 HEIC images from client)
-- Contact Section (WhatsApp CTA, location map)
-
-### Future Phases
-
-- Blog system for patient education
-- Online appointment booking
-- Advanced SEO optimization
-- Testimonials/reviews integration
-
-## Technical Stack
-
-### Core Framework
-
-- **Next.js**: 15.x (App Router)
-- **React**: 19.x
-- **TypeScript**: 5.x
-- **Package Manager**: Bun >= 1.2.0
-- **Node.js**: >= 22.0.0
-
-### Styling & UI
-
-- **TailwindCSS**: v4 (with @tailwindcss/postcss)
-- **Component Strategy**: Hybrid approach
-  - shadcn/ui for complex components (forms, dialogs, accordions)
-  - Custom components ported from analu-procto (Button, Header, Footer, Card)
-- **Icons**: lucide-react
-- **Fonts**: Google Fonts via next/font/google
-- **Utilities**: clsx, tailwind-merge, class-variance-authority
-
-### SEO & Analytics
-
-- **Structured Data**: schema.org (Dentist + Medical Organization)
-- **Analytics**:
-  - Vercel Analytics
-  - Google Analytics 4 (consent-based)
-  - Google Tag Manager (consent-based)
-- **Cookie Consent**: LGPD-compliant (ported from analu-procto)
-- **Meta Tags**: Comprehensive Open Graph + Twitter Cards
-
-### Development Tools
-
-- **Linting**: ESLint with Next.js config
-- **Testing**: Vitest + React Testing Library (optional for Phase 1)
-- **Bundle Analysis**: @next/bundle-analyzer
-- **Performance**: Lighthouse auditing
-
-## Project Structure
+## Runbook
 
 ```bash
-/workspace/jobs/massoni/
-├── web/                          # Next.js application root
-│   ├── src/
-│   │   ├── app/
-│   │   │   ├── layout.tsx       # Root layout with SEO
-│   │   │   ├── page.tsx         # Landing page
-│   │   │   ├── globals.css      # Global styles + CSS variables
-│   │   │   └── sitemap.ts       # Dynamic sitemap
-│   │   ├── components/
-│   │   │   ├── ui/              # Reusable UI components
-│   │   │   │   ├── Button.tsx   # Ported from analu-procto
-│   │   │   │   ├── Header.tsx   # Custom navigation
-│   │   │   │   ├── Footer.tsx   # Custom footer
-│   │   │   │   ├── Card.tsx     # Custom card component
-│   │   │   │   └── LinkButton.tsx
-│   │   │   ├── sections/        # Landing page sections
-│   │   │   │   ├── HeroSection.tsx
-│   │   │   │   ├── AboutSection.tsx
-│   │   │   │   ├── ServicesSection.tsx
-│   │   │   │   ├── GallerySection.tsx
-│   │   │   │   └── ContactSection.tsx
-│   │   │   ├── layout/          # Layout components
-│   │   │   │   └── CookieConsent.tsx
-│   │   │   └── analytics/       # Analytics components
-│   │   │       └── AnalyticsProvider.tsx
-│   │   ├── lib/
-│   │   │   ├── constants.ts     # App constants
-│   │   │   ├── structured-data.ts # Schema.org generation
-│   │   │   ├── navigation.ts    # Nav configuration
-│   │   │   └── utils.ts         # Utility functions (cn, etc.)
-│   │   └── hooks/               # Custom React hooks
-│   ├── public/
-│   │   ├── images/              # Optimized images
-│   │   │   ├── logo.svg         # Converted from PDF
-│   │   │   ├── logo.png         # Fallback
-│   │   │   ├── hero.webp        # Hero image
-│   │   │   ├── about.webp       # About section image
-│   │   │   ├── og.png           # Open Graph image
-│   │   │   └── gallery/         # Gallery images (WebP)
-│   │   └── fonts/               # Custom fonts (if any)
-│   ├── tailwind.config.ts       # Tailwind configuration
-│   ├── next.config.ts           # Next.js configuration
-│   ├── package.json             # Dependencies
-│   ├── bun.lockb                # Bun lockfile
-│   ├── tsconfig.json            # TypeScript config
-│   ├── .eslintrc.json           # ESLint config
-│   └── CLAUDE.md                # Project-specific AI instructions
-├── PROJECT_OVERVIEW.md          # This file
-├── BRAND_IDENTITY.md            # Brand guide
-├── CONTENT_STRATEGY.md          # Content & SEO strategy
-├── COMPONENT_ARCHITECTURE.md    # Component design
-├── ASSET_PROCESSING.md          # Image processing guide
-├── ACTION_PLAN.md               # Execution steps
-└── [26 HEIC images + PDF logo]  # Source assets
-
+bun install          # dependencies
+bun run dev          # turbopack dev server
+bun run build        # production bundle
+bun run start        # serve build locally
+bun run lint         # eslint 9 / next rules
 ```
 
-## Development Workflow
+Deploy previews currently run through local builds; add further scripts (tests, analyze) only when tooling lands.
 
-### Local Development
+## Content & UX Notes
 
-```bash
-cd /Users/diegovfeder/workspace/jobs/massoni/web
-bun install
-bun run dev          # Start development server on localhost:3000
-```
+- Homepage sections cover hero, about, services, gallery carousel, and contact CTA. Animations lean on Tailwind utilities; keep timings consistent (200–300ms).
+- Gallery management: drop new WebP files in `public/images/gallery/`, then register them in `gallery-data.ts` with descriptive `alt` text and one of the existing categories (`facilities`, `equipment`, `team`, `procedures`). Categories are type-checked—adjust the union if you introduce new ones.
+- Copywriting guidelines: highlight “Cirurgia e Traumatologia Bucomaxilofacial” as the only title; present implant expertise as experience, not specialization.
+- The 22/10/2025 interview anchors messaging around 38 years practicing in Cascavel, humanized care, 3D guided surgeries, strict biosafety, and multi-generation trust—make sure long-form copy reflects those pillars.
+- Analytics placeholders (`ANALYTICS_GA_ID`, `ANALYTICS_GTM_ID`) remain empty—update via environment variables or constants when the client provides IDs.
 
-### Production Build
+## Coordination
 
-```bash
-bun run build        # Build for production
-bun run start        # Start production server
-bun run lint         # Run ESLint
-```
-
-### Quality Assurance
-
-```bash
-bun run analyze      # Analyze bundle sizes
-bun run lighthouse   # Run Lighthouse audit locally
-```
-
-## Reference Architecture
-
-This project is based on the proven architecture from `/workspace/jobs/analu-procto`, which features:
-
-### Successfully Ported Patterns
+- Active work items live in `docs/TODO.md` (logo conversions, new sections, photo curation).
+- Client deliverables and approval checkpoints are tracked in `docs/CLIENT_NEXT_STEPS.md` (Portuguese). Update it after each review call so both sides share the same checklist.
 
 1. **Single-page landing structure** with section components
 2. **WCAG AAA compliant color system** with CSS variables

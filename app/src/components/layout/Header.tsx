@@ -5,7 +5,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { LinkButton } from '@/app/src/components/ui/LinkButton'
 import { navigationItems } from '@/app/src/lib/navigation'
-import { DOCTOR_NAME, CONTACT_WHATSAPP_NUMBER } from '@/app/src/lib/constants'
+import {
+  DOCTOR_NAME,
+  CONTACT_WHATSAPP_URL,
+  DOCTOR_CRO,
+} from '@/app/src/lib/constants'
 import { Menu, X, Phone } from 'lucide-react'
 
 export function Header() {
@@ -71,7 +75,7 @@ export function Header() {
                   {DOCTOR_NAME}
                 </p>
                 <p className="text-xs lg:text-sm text-tertiary transition-colors">
-                  CRO-PR 4982
+                  {DOCTOR_CRO}
                 </p>
               </div>
             </Link>
@@ -95,10 +99,7 @@ export function Header() {
             {/* CTA Button - Desktop */}
             <div className="hidden lg:block">
               <LinkButton
-                href={`https://wa.me/${CONTACT_WHATSAPP_NUMBER.replace(
-                  /\D/g,
-                  ''
-                )}`}
+                href={CONTACT_WHATSAPP_URL}
                 external
                 newTab
                 variant="primary"
@@ -188,10 +189,7 @@ export function Header() {
             }}
           >
             <LinkButton
-              href={`https://wa.me/${CONTACT_WHATSAPP_NUMBER.replace(
-                /\D/g,
-                ''
-              )}`}
+              href={CONTACT_WHATSAPP_URL}
               external
               newTab
               variant="default"

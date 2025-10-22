@@ -3,13 +3,13 @@
 import { Badge } from '@/app/src/components/ui/Badge'
 
 import {
-  CONTACT_WHATSAPP_NUMBER,
+  CONTACT_WHATSAPP_URL,
   CONTACT_WHATSAPP_FORMATTED,
   CONTACT_PHONE_FORMATTED,
   CONTACT_EMAIL,
   CLINIC_ADDRESS_FULL,
   CLINIC_HOURS_FORMATTED,
-  CLINIC_COORDINATES,
+  CLINIC_MAP_EMBED_URL,
 } from '@/app/src/lib/constants'
 import { MapPin, Phone, Mail, Clock } from 'lucide-react'
 import { WhatsappIcon } from '../icons'
@@ -46,7 +46,7 @@ export function ContactSection() {
         <div className="grid lg:grid-cols-6 gap-6 lg:gap-8 mb-8 lg:mb-12">
           {/* WhatsApp CTA */}
           <a
-            href={`https://wa.me/${CONTACT_WHATSAPP_NUMBER.replace(/\D/g, '')}`}
+            href={CONTACT_WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="lg:col-span-4 block group"
@@ -116,7 +116,7 @@ export function ContactSection() {
             <div className="rounded-3xl overflow-hidden shadow-2xl border border-accent/50 h-full">
               <div className="relative w-full h-full min-h-[400px] lg:min-h-[500px] bg-accent/20">
                 <iframe
-                  src={`https://www.google.com/maps?q=${CLINIC_COORDINATES.latitude},${CLINIC_COORDINATES.longitude}&hl=pt-BR&z=15&output=embed`}
+                  src={CLINIC_MAP_EMBED_URL}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -124,7 +124,7 @@ export function ContactSection() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                   className="absolute inset-0"
-                  title="Localização da Clínica Dr. Enor Massoni"
+                  title="Localização da Clínica Dr. Enor Massoni - Centro Empresarial Formato"
                 />
               </div>
             </div>
@@ -133,18 +133,18 @@ export function ContactSection() {
           {/* Contact Cards - Right Side */}
           <div className="lg:col-span-1 order-1 lg:order-2 flex flex-col gap-4 lg:gap-6">
             {/* Phone Card */}
-            <div className="bg-white rounded-2xl lg:rounded-3xl border border-accent/50 p-5 lg:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 flex-1">
-              <div className="flex items-start gap-4">
-                <div className="shrink-0 w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                  <Phone className="w-5 h-5 text-primary" />
+            <div className="bg-white rounded-2xl lg:rounded-3xl border border-accent/50 p-5 lg:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-auto lg:h-auto">
+              <div className="flex items-center gap-4 h-full">
+                <div className="shrink-0 w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <Phone className="w-6 h-6 lg:w-7 lg:h-7 text-primary" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-xs sm:text-sm font-medium text-tertiary mb-1">
+                  <p className="text-sm font-medium text-tertiary mb-1">
                     Telefone
                   </p>
                   <a
                     href={`tel:${CONTACT_PHONE_FORMATTED.replace(/\D/g, '')}`}
-                    className="text-base lg:text-lg font-bold text-primary hover:text-secondary transition-colors block"
+                    className="text-lg lg:text-xl font-bold text-primary hover:text-secondary transition-colors block"
                   >
                     {CONTACT_PHONE_FORMATTED}
                   </a>
@@ -153,18 +153,18 @@ export function ContactSection() {
             </div>
 
             {/* Email Card */}
-            <div className="bg-white rounded-2xl lg:rounded-3xl border border-accent/50 p-5 lg:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 flex-1">
-              <div className="flex items-start gap-4">
-                <div className="shrink-0 w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                  <Mail className="w-5 h-5 text-primary" />
+            <div className="bg-white rounded-2xl lg:rounded-3xl border border-accent/50 p-5 lg:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-auto lg:h-auto">
+              <div className="flex items-center gap-4 h-full">
+                <div className="shrink-0 w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <Mail className="w-6 h-6 lg:w-7 lg:h-7 text-primary" />
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs sm:text-sm font-medium text-tertiary mb-1">
+                  <p className="text-sm font-medium text-tertiary mb-1">
                     Email
                   </p>
                   <a
                     href={`mailto:${CONTACT_EMAIL}`}
-                    className="text-sm lg:text-base font-bold text-primary hover:text-secondary transition-colors truncate block"
+                    className="text-base lg:text-lg font-bold text-primary hover:text-secondary transition-colors truncate block"
                   >
                     {CONTACT_EMAIL}
                   </a>
@@ -173,16 +173,16 @@ export function ContactSection() {
             </div>
 
             {/* Address Card */}
-            <div className="bg-white rounded-2xl lg:rounded-3xl border border-accent/50 p-5 lg:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 flex-1">
-              <div className="flex items-start gap-4">
-                <div className="shrink-0 w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center">
-                  <MapPin className="w-5 h-5 text-primary" />
+            <div className="bg-white rounded-2xl lg:rounded-3xl border border-accent/50 p-5 lg:p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 h-auto lg:h-auto">
+              <div className="flex items-center gap-4 h-full">
+                <div className="shrink-0 w-14 h-14 lg:w-16 lg:h-16 rounded-2xl bg-primary/10 flex items-center justify-center">
+                  <MapPin className="w-6 h-6 lg:w-7 lg:h-7 text-primary" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-xs sm:text-sm font-medium text-tertiary mb-1">
+                  <p className="text-sm font-medium text-tertiary mb-1">
                     Endereço
                   </p>
-                  <p className="text-sm lg:text-base font-semibold text-primary leading-relaxed">
+                  <p className="text-base lg:text-lg font-semibold text-primary leading-relaxed">
                     {CLINIC_ADDRESS_FULL}
                   </p>
                 </div>
