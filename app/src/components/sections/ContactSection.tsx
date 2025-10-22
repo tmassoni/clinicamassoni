@@ -3,7 +3,7 @@
 import { Badge } from '@/app/src/components/ui/Badge'
 
 import {
-  CONTACT_WHATSAPP_NUMBER,
+  CONTACT_WHATSAPP_URL,
   CONTACT_WHATSAPP_FORMATTED,
   CONTACT_PHONE_FORMATTED,
   CONTACT_EMAIL,
@@ -46,7 +46,7 @@ export function ContactSection() {
         <div className="grid lg:grid-cols-6 gap-6 lg:gap-8 mb-8 lg:mb-12">
           {/* WhatsApp CTA */}
           <a
-            href={`https://wa.me/${CONTACT_WHATSAPP_NUMBER.replace(/\D/g, '')}`}
+            href={CONTACT_WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="lg:col-span-4 block group"

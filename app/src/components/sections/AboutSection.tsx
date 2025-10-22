@@ -94,10 +94,10 @@ export function AboutSection() {
                   {DOCTOR_CRO}
                 </Badge>
                 <Badge variant="secondary" size="lg">
-                  Implantodontia
+                  Cirurgia Bucomaxilofacial
                 </Badge>
                 <Badge variant="secondary" size="lg">
-                  Cirurgia Maxilofacial
+                  35 Anos de Experiência
                 </Badge>
               </div>
             </div>
@@ -105,13 +105,12 @@ export function AboutSection() {
             <div className="prose prose-lg max-w-none">
               <p className="text-base sm:text-lg text-tertiary leading-relaxed">
                 Especialista em&nbsp;
-                <strong className="text-secondary">Implantes Dentários</strong>
-                &nbsp; e&nbsp;
                 <strong className="text-secondary">
-                  Cirurgia Bucomaxilofacial
+                  Cirurgia e Traumatologia Bucomaxilofacial
                 </strong>
-                , com ampla experiência em procedimentos complexos de
-                reabilitação oral e cirurgias faciais.
+                , com 35 anos de experiência em implantes dentários e
+                procedimentos complexos de reabilitação oral e cirurgias
+                faciais.
               </p>
 
               <p className="text-base sm:text-lg text-tertiary leading-relaxed">
@@ -146,7 +145,7 @@ export function AboutSection() {
               <BookOpen className="w-6 h-6 text-primary" />
             </div>
             <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-              Especialização em Implantodontia e Cirurgia Bucomaxilofacial com
+              Especialização em Cirurgia e Traumatologia Bucomaxilofacial com
               certificações nacionais
             </p>
           </Card>

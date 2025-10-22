@@ -1,9 +1,10 @@
 import Image from 'next/image'
 import { LinkButton } from '@/app/src/components/ui/LinkButton'
 import {
-  CONTACT_WHATSAPP_NUMBER,
+  CONTACT_WHATSAPP_URL,
   DOCTOR_NAME,
   DOCTOR_SPECIALTY,
+  DOCTOR_CRO,
 } from '@/app/src/lib/constants'
 import { Phone } from 'lucide-react'
 
@@ -42,24 +43,17 @@ export function HeroSection() {
 
             {/* Subheadline */}
             <p className="text-lg sm:text-xl md:text-2xl text-tertiary leading-relaxed max-w-2xl mx-auto lg:mx-0">
-              Especialista em&nbsp;
               <span className="font-semibold text-secondary">
-                Implantes Dentários
+                {DOCTOR_SPECIALTY}
               </span>
-              &nbsp; e&nbsp;
-              <span className="font-semibold text-secondary">
-                Cirurgia Maxilofacial
-              </span>
-              &nbsp; com tecnologia de ponta e atendimento humanizado
+              &nbsp; com 35 anos de experiência em implantes dentários,
+              tecnologia de ponta e atendimento humanizado
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start pt-4">
               <LinkButton
-                href={`https://wa.me/${CONTACT_WHATSAPP_NUMBER.replace(
-                  /\D/g,
-                  ''
-                )}`}
+                href={CONTACT_WHATSAPP_URL}
                 external
                 newTab
                 variant="primary"
@@ -85,7 +79,7 @@ export function HeroSection() {
                     clipRule="evenodd"
                   />
                 </svg>
-                <span className="font-medium">CRO-PR 4982</span>
+                <span className="font-medium">{DOCTOR_CRO}</span>
               </div>
 
               <div className="flex items-center gap-2 text-tertiary">
@@ -130,7 +124,7 @@ export function HeroSection() {
 
               {/* Professional Photo */}
               <Image
-                src="/images/gallery/gallery-01.webp"
+                src="/images/hero.webp"
                 alt={`${DOCTOR_NAME}, cirurgião dentista especialista em ${DOCTOR_SPECIALTY} em Cascavel, PR`}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -161,7 +155,7 @@ export function HeroSection() {
                       {DOCTOR_NAME}
                     </p>
                     <p className="text-xs text-tertiary">
-                      Especialista CRO-PR 4982
+                      Especialista {DOCTOR_CRO}
                     </p>
                   </div>
                 </div>

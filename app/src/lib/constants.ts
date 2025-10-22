@@ -10,63 +10,61 @@ export const CLINIC_WEBSITE = 'https://enormassoni.com.br'
 // Doctor Information
 export const DOCTOR_NAME = 'Dr. Enor Massoni'
 export const DOCTOR_CRO = 'CRO-PR 4982'
-export const DOCTOR_SPECIALTY =
-  'Implantes Dentários e Cirurgia Bucomaxilofacial'
+export const DOCTOR_SPECIALTY = 'Cirurgia e Traumatologia Bucomaxilofacial'
 export const DOCTOR_SPECIALTIES = [
-  'Implantodontia',
-  'Cirurgia Bucomaxilofacial',
+  'Cirurgia e Traumatologia Bucomaxilofacial',
   'Cirurgia Ortognática',
-  'Traumatologia Maxilofacial',
+  'Implantes Dentários (35 anos de experiência)',
 ]
 
 // Website
 export const WEBSITE_URL = 'https://enormassoni.com.br'
 
 // Contact Information
-// TODO_WHATSAPP: Replace with actual WhatsApp number (format: +5545XXXXXXXXX)
-export const CONTACT_WHATSAPP_NUMBER = '+5545999999999'
-export const CONTACT_WHATSAPP_FORMATTED = '(45) 99999-9999'
+// WhatsApp Business Link (direct business message link)
+export const CONTACT_WHATSAPP_URL = 'https://wa.me/message/GMRDOOCPQ2TNO1'
+export const CONTACT_WHATSAPP_NUMBER = '+5545991492390'
+export const CONTACT_WHATSAPP_FORMATTED = '(45) 99149-2390'
 
-// TODO_PHONE: Replace with actual clinic phone number
-export const CONTACT_PHONE_NUMBER = '(45) 3333-3333'
-export const CONTACT_PHONE_FORMATTED = '(45) 3333-3333'
+// Clinic Phone Number
+export const CONTACT_PHONE_NUMBER = '(45) 3223-3234'
+export const CONTACT_PHONE_FORMATTED = '(45) 3223-3234'
 
-// TODO_EMAIL: Replace with actual clinic email
-export const CONTACT_EMAIL = 'contato@enormassoni.com.br'
+// Clinic Email
+export const CONTACT_EMAIL = 'clinica_massoni@hotmail.com'
 
 // Social Media
-// TODO_INSTAGRAM: Replace with actual Instagram handle (without @)
-export const SOCIAL_INSTAGRAM_HANDLE = 'dr.enormassoni'
+export const SOCIAL_INSTAGRAM_HANDLE = 'enormassoni'
 export const SOCIAL_INSTAGRAM_URL = `https://www.instagram.com/${SOCIAL_INSTAGRAM_HANDLE}/`
-
-// TODO_FACEBOOK: Replace with actual Facebook page URL if available
-export const SOCIAL_FACEBOOK_URL = ''
+export const SOCIAL_LINKEDIN_URL =
+  'https://www.linkedin.com/in/dr-enor-massoni-a74442233/'
 
 // Clinic Information
 export const CLINIC_NAME =
   'Dr. Enor Massoni - Implantes e Cirurgia Maxilofacial'
 
-// TODO_ADDRESS: Replace with actual clinic address
-export const CLINIC_ADDRESS_STREET = 'Rua Exemplo, 1234'
+// Clinic Address
+export const CLINIC_ADDRESS_STREET =
+  'Rua Paraná, 3033, Centro Empresarial Formato, 6º Andar'
 export const CLINIC_ADDRESS_NEIGHBORHOOD = 'Centro'
 export const CLINIC_ADDRESS_CITY = 'Cascavel'
 export const CLINIC_ADDRESS_STATE = 'PR'
 export const CLINIC_ADDRESS_COUNTRY = 'Brasil'
-export const CLINIC_ADDRESS_ZIP = '85800-000'
+export const CLINIC_ADDRESS_ZIP = '85812-011'
 
 // Full address string
 export const CLINIC_ADDRESS_FULL = `${CLINIC_ADDRESS_STREET}, ${CLINIC_ADDRESS_NEIGHBORHOOD}, ${CLINIC_ADDRESS_CITY} - ${CLINIC_ADDRESS_STATE}, ${CLINIC_ADDRESS_ZIP}`
 
-// TODO_COORDINATES: Replace with actual clinic coordinates (get from Google Maps)
+// GPS Coordinates for Rua Paraná 3033, Centro Empresarial Formato
 export const CLINIC_COORDINATES = {
-  latitude: -24.9555, // Cascavel approximate - UPDATE WITH EXACT LOCATION
-  longitude: -53.4552, // Cascavel approximate - UPDATE WITH EXACT LOCATION
+  latitude: -24.9446875,
+  longitude: -53.4384674,
 }
 
-// TODO_HOURS: Replace with actual opening hours
-export const CLINIC_HOURS = 'Mo-Fr 08:00-18:00' // Schema.org format
+// Business Hours
+export const CLINIC_HOURS = 'Mo-Fr 08:00-12:00,13:30-18:00' // Schema.org format
 export const CLINIC_HOURS_FORMATTED = {
-  weekdays: 'Segunda a Sexta: 8h às 18h',
+  weekdays: 'Segunda a Sexta: 8h às 12h / 13h30 às 18h',
   saturday: 'Sábado: Fechado',
   sunday: 'Domingo: Fechado',
 }
@@ -90,7 +88,7 @@ export const SEO_KEYWORDS = [
   'protocolo dentário Cascavel',
   'cirurgia ortognática Cascavel',
   'extração siso Cascavel',
-  'CRO PR 4982',
+  'CRO PR 4892',
   'dentista região oeste Paraná',
 ]
 
@@ -117,12 +115,11 @@ export const CLINIC_INFO = {
   },
   contact: {
     phone: CONTACT_PHONE_NUMBER,
-    whatsapp: CONTACT_WHATSAPP_NUMBER,
+    whatsappUrl: CONTACT_WHATSAPP_URL,
     email: CONTACT_EMAIL,
   },
   social: {
     instagram: SOCIAL_INSTAGRAM_URL,
-    facebook: SOCIAL_FACEBOOK_URL,
   },
   coordinates: CLINIC_COORDINATES,
   hours: CLINIC_HOURS,

@@ -1,6 +1,6 @@
 import { Badge } from '@/app/src/components/ui/Badge'
 import { LinkButton } from '@/app/src/components/ui/LinkButton'
-import { CONTACT_WHATSAPP_NUMBER } from '@/app/src/lib/constants'
+import { CONTACT_WHATSAPP_URL } from '@/app/src/lib/constants'
 import { Smile, Bone, Scissors, Check, ArrowRight } from 'lucide-react'
 
 const services = [
@@ -160,10 +160,7 @@ export function ServicesSection() {
               </p>
 
               <LinkButton
-                href={`https://wa.me/${CONTACT_WHATSAPP_NUMBER.replace(
-                  /\D/g,
-                  ''
-                )}`}
+                href={CONTACT_WHATSAPP_URL}
                 external
                 newTab
                 variant="default"
