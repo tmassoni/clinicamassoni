@@ -8,7 +8,7 @@ const services = [
     icon: Smile,
     title: 'Implantes Dentários',
     description:
-      'Especialidade com 38 anos de experiência. Grandes reabilitações e reconstrução completa de arcadas com resultados imperceptíveis',
+      'Especialidade com 40 anos de experiência desde 1984. Grandes reabilitações e reconstrução completa de arcadas com resultados imperceptíveis',
     procedures: [
       'Implantes unitários',
       'Implantes múltiplos',
@@ -165,9 +165,9 @@ export function ServicesSection() {
                 newTab
                 variant="default"
                 size="xl"
-                className="bg-white text-primary hover:bg-white/90 shadow-xl hover:shadow-2xl hover:scale-105 py-2 text-m"
+                className="bg-white text-primary hover:bg-white/90 active:bg-primary active:text-white focus:text-white shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 text-sm sm:text-base md:text-lg px-6 py-3 sm:px-8 sm:py-4"
               >
-                Conversar com um especialista
+                <span className="text-center">Conversar com um especialista</span>
               </LinkButton>
             </div>
 

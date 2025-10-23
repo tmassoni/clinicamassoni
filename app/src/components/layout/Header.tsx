@@ -63,7 +63,7 @@ export function Header() {
             >
               <div className="relative w-12 h-12 lg:w-14 lg:h-14">
                 <Image
-                  src="/images/logo.png"
+                  src="/images/logo-primary.png"
                   alt={`${DOCTOR_NAME} - Logo`}
                   fill
                   className="object-contain"
@@ -107,7 +107,7 @@ export function Header() {
                 className="shadow-lg hover:shadow-xl"
               >
                 <Phone className="w-4 h-4 mr-2" />
-                Agendar Consulta
+                Agendar consulta
               </LinkButton>
             </div>
 
@@ -146,6 +146,15 @@ export function Header() {
           }
         `}
       >
+        {/* Close Button - Top Right */}
+        <button
+          onClick={() => setIsMobileMenuOpen(false)}
+          className="absolute top-6 right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 active:bg-white/30 transition-all duration-300 group z-110"
+          aria-label="Close menu"
+        >
+          <X className="w-6 h-6 text-white" />
+        </button>
+
         <div className="flex flex-col items-center justify-center min-h-screen px-6 py-20">
           {/* Mobile Navigation Links */}
           <nav className="flex flex-col items-center gap-8 mb-12">
@@ -194,11 +203,11 @@ export function Header() {
               newTab
               variant="default"
               size="xl"
-              className="bg-white text-primary hover:bg-white/90 shadow-2xl"
+              className="bg-white text-primary hover:bg-white/90 active:bg-primary active:text-white focus:text-white shadow-2xl hover:shadow-3xl active:scale-95 transition-all duration-200"
               onClick={handleNavClick}
             >
               <Phone className="w-5 h-5 mr-2" />
-              Agendar Consulta
+              Agendar consulta
             </LinkButton>
           </div>
 

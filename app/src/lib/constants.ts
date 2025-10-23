@@ -14,7 +14,7 @@ export const DOCTOR_SPECIALTY = 'Cirurgia e Traumatologia Buco-Maxilo-Facial'
 export const DOCTOR_SPECIALTIES = [
   'Cirurgia e Traumatologia Buco-Maxilo-Facial',
   'Cirurgia Ortognática',
-  'Implantes Dentários (35 anos de experiência)',
+  'Implantes Dentários (34 anos de experiência)',
 ]
 
 // Website
@@ -98,7 +98,8 @@ export const SEO_KEYWORDS = [
   'recessão gengival Cascavel',
   'recobrimento de raízes Cascavel',
   'enxerto ósseo Cascavel',
-  '38 anos experiência Cascavel',
+  '40 anos de formado',
+  '40 anos experiência Cascavel',
   'academia brasileira osseointegração',
   'dentista região oeste Paraná',
 ]

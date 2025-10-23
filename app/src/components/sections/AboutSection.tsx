@@ -76,23 +76,22 @@ export function AboutSection() {
                   Cirurgia Buco-Maxilo-Facial
                 </Badge>
                 <Badge variant="secondary" size="lg">
-                  35 Anos de Experiência
+                  40 Anos de Formado
                 </Badge>
               </div>
             </div>
 
             <div className="prose prose-lg max-w-none">
               <p className="text-base sm:text-lg text-tertiary leading-relaxed">
-                Graduado em Odontologia pela&nbsp;
+                Com&nbsp;
                 <strong className="text-secondary">
-                  Universidade Federal de Pelotas (1984)
+                  40 anos de formado desde 1984 pela Universidade Federal de Pelotas
                 </strong>
                 &nbsp;e especialista em&nbsp;
                 <strong className="text-secondary">
                   Cirurgia e Traumatologia Buco-Maxilo-Facial pela USP (1991)
                 </strong>
-                , com 38 anos de carreira dedicados exclusivamente à saúde bucal
-                em Cascavel.
+                , dedica toda sua carreira exclusivamente à saúde bucal em Cascavel.
               </p>
 
               <p className="text-base sm:text-lg text-tertiary leading-relaxed">
@@ -124,7 +123,7 @@ export function AboutSection() {
         {/* Credentials Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           <Card
-            title="38 Anos em Cascavel"
+            title="40 Anos de Formado"
             variant="service"
             className="group hover:border-primary/30 transition-all duration-300"
           >
@@ -132,7 +131,7 @@ export function AboutSection() {
               <BookOpen className="w-6 h-6 text-primary" />
             </div>
             <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-              Graduado pela UFPEL (1984) e especialista pela USP (1991). Membro
+              Graduado pela UFPEL em 1984 e especialista pela USP (1991). Membro
               da Academia Brasileira de Osseointegração
             </p>
           </Card>
