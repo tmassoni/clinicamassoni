@@ -61,9 +61,9 @@ export function Header() {
               className="flex items-center gap-3 group relative z-110"
               onClick={handleNavClick}
             >
-              <div className="relative w-12 h-12 lg:w-14 lg:h-14 transition-transform group-hover:scale-105">
+              <div className="relative w-12 h-12 lg:w-14 lg:h-14">
                 <Image
-                  src="/images/logo.svg"
+                  src="/images/logo.png"
                   alt={`${DOCTOR_NAME} - Logo`}
                   fill
                   className="object-contain"
@@ -71,12 +71,12 @@ export function Header() {
                 />
               </div>
               <div className="hidden sm:block">
-                <p className="font-bold text-lg lg:text-xl text-primary transition-colors">
+                <div className="font-serif font-bold text-lg lg:text-xl bg-linear-to-r from-[#28338d] to-[#5a6b91] bg-clip-text text-transparent tracking-tight">
                   {DOCTOR_NAME}
-                </p>
-                <p className="text-xs lg:text-sm text-tertiary transition-colors">
+                </div>
+                <div className="text-xs lg:text-sm text-[#9c9c9a] font-medium tracking-wide">
                   {DOCTOR_CRO}
-                </p>
+                </div>
               </div>
             </Link>
 

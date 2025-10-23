@@ -76,6 +76,17 @@ export const metadata: Metadata = {
     },
   },
 
+  icons: {
+    icon: [
+      { url: '/images/icon.png', sizes: '512x512', type: 'image/png' },
+      { url: '/images/icon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    apple: [
+      { url: '/images/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/images/icon.png',
+  },
+
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
@@ -88,7 +99,7 @@ export const metadata: Metadata = {
         url: '/images/og.png',
         width: 1200,
         height: 630,
-        alt: `${DOCTOR_NAME} - Clínica Odontológica`,
+        alt: `${DOCTOR_NAME} - Clínica Odontológica em Cascavel, PR`,
       },
     ],
   },

@@ -33,17 +33,17 @@ export function Footer() {
                 <div className="flex items-center gap-3">
                   <div className="relative w-20 h-20 transition-transform rounded-lg p-1.5">
                     <Image
-                      src="/images/logo.png"
+                      src="/images/logo-white.png"
                       alt={`${DOCTOR_NAME} - Logo`}
                       fill
                       className="object-contain"
                     />
                   </div>
-                  <div>
-                    <p className="font-bold text-lg text-white">
+                  <div className="ps-1">
+                    <div className="font-serif font-bold text-lg text-white text-nowrap">
                       {DOCTOR_NAME}
-                    </p>
-                    <p className="text-sm text-white/80">{DOCTOR_CRO}</p>
+                    </div>
+                    <div className="text-sm text-white/80">{DOCTOR_CRO}</div>
                   </div>
                 </div>
               </Link>
@@ -115,7 +115,7 @@ export function Footer() {
                     href="#servicos"
                     className="text-white/80 hover:text-white transition-colors"
                   >
-                    Cirurgia Bucomaxilofacial
+                    Cirurgia Buco-Maxilo-Facial
                   </a>
                 </li>
                 <li>

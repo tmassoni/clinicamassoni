@@ -10,9 +10,9 @@ export const CLINIC_WEBSITE = 'https://enormassoni.com.br'
 // Doctor Information
 export const DOCTOR_NAME = 'Dr. Enor Massoni'
 export const DOCTOR_CRO = 'CRO-PR 4982'
-export const DOCTOR_SPECIALTY = 'Cirurgia e Traumatologia Bucomaxilofacial'
+export const DOCTOR_SPECIALTY = 'Cirurgia e Traumatologia Buco-Maxilo-Facial'
 export const DOCTOR_SPECIALTIES = [
-  'Cirurgia e Traumatologia Bucomaxilofacial',
+  'Cirurgia e Traumatologia Buco-Maxilo-Facial',
   'Cirurgia Ortognática',
   'Implantes Dentários (35 anos de experiência)',
 ]
@@ -104,7 +104,7 @@ export const SEO_KEYWORDS = [
 ]
 
 // Analytics IDs
-// TODO_ANALYTICS: Replace with actual Google Analytics and GTM IDs from client
+// TODO_ANALYTICS: Replace with actual Google Analytics and GTM IDs from client - this should actually be in .env
 export const ANALYTICS_GA_ID = '' // Example: 'G-XXXXXXXXXX'
 export const ANALYTICS_GTM_ID = '' // Example: 'GTM-XXXXXXX'
 

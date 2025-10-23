@@ -52,27 +52,6 @@ export function AboutSection() {
                 quality={90}
               />
 
-              {/* Overlay Badge */}
-              <div className="absolute bottom-6 left-6 right-6 z-20">
-                <div className="bg-white/95 backdrop-blur-md rounded-2xl p-6 border border-accent/50 shadow-2xl hover:shadow-3xl hover:scale-105 transition-all duration-300">
-                  <div className="flex items-center gap-4">
-                    <div className="shrink-0">
-                      <div className="w-16 h-16 rounded-full bg-linear-to-br from-primary via-secondary to-primary flex items-center justify-center shadow-lg">
-                        <Award className="w-8 h-8 text-white" />
-                      </div>
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-tertiary mb-1">
-                        Registro Profissional
-                      </p>
-                      <p className="text-2xl font-bold text-primary">
-                        {DOCTOR_CRO}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
               {/* Decorative Border */}
               <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-3xl pointer-events-none z-10" />
             </div>
@@ -94,7 +73,7 @@ export function AboutSection() {
                   {DOCTOR_CRO}
                 </Badge>
                 <Badge variant="secondary" size="lg">
-                  Cirurgia Bucomaxilofacial
+                  Cirurgia Buco-Maxilo-Facial
                 </Badge>
                 <Badge variant="secondary" size="lg">
                   35 Anos de Experiência
@@ -110,7 +89,7 @@ export function AboutSection() {
                 </strong>
                 &nbsp;e especialista em&nbsp;
                 <strong className="text-secondary">
-                  Cirurgia e Traumatologia Bucomaxilofacial pela USP (1991)
+                  Cirurgia e Traumatologia Buco-Maxilo-Facial pela USP (1991)
                 </strong>
                 , com 38 anos de carreira dedicados exclusivamente à saúde bucal
                 em Cascavel.

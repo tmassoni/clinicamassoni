@@ -9,12 +9,10 @@
 
 ### Logo & Branding
 
-- [ ] Convert `Logo.pdf` to PNG format (multiple sizes: favicon, header, footer)
-- [ ] Convert `Logo.pdf` to SVG format (scalable version for hero section)
-- [ ] Update favicon with new logo
-- [ ] Replace old logo in header component
-- [ ] Replace old logo in footer component
-- [ ] Test logo visibility on light/dark backgrounds
+- [x] Convert `Logo.pdf` to PNG format (multiple sizes: favicon, header, footer)
+- [x] Convert `Logo.pdf` to SVG format (scalable version for hero section)
+- [x] Update favicon with new logo - use logo-white.png for favicon
+- [x] Test logo visibility on light/dark backgrounds (created /logo-test.html)
 
 ### Contact Information Updates
 
@@ -101,6 +99,7 @@
 - [ ] Convert images to WebP format
 - [ ] Add lazy loading for images
 - [ ] Add descriptive alt text for all images
+- [ ] Improve performance on Gallery section, changing the filters fast makes the page slow
 
 ### SEO Updates
 
@@ -109,7 +108,7 @@
 - [x] Update structured data with credentials (UFPEL, USP, ABO, Unioeste)
 - [x] Add comprehensive procedure types to schema markup
 - [x] Update sitemap with any new pages/sections (no new pages added)
-- [ ] Update Open Graph images with new logo (waiting on logo conversion)
+- [x] Update Open Graph images with new logo (using logo-full-tilted.png as og.png)
 
 ---
 
@@ -141,10 +140,10 @@
 
 ### Brand Consistency
 
-- [ ] Verify color palette matches new logo
-- [ ] Update Tailwind config if new brand colors needed
-- [ ] Ensure typography is consistent with medical brand
-- [ ] Check button/CTA styles align with new branding
+- [x] Verify color palette matches new logo
+- [x] Update Tailwind config if new brand colors needed
+- [x] Ensure typography is consistent with medical brand
+- [x] Check button/CTA styles align with new branding
 
 ---
 
