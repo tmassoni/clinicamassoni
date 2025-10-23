@@ -36,7 +36,7 @@ const services = [
   },
   {
     icon: Bone,
-    title: 'Cirurgia Bucomaxilofacial',
+    title: 'Cirurgia Buco-Maxilo-Facial',
     description:
       'Tratamento de cistos, tumores, traumas faciais e dentes retidos com técnicas modernas',
     procedures: [
@@ -165,7 +165,7 @@ export function ServicesSection() {
                 newTab
                 variant="default"
                 size="xl"
-                className="bg-white text-primary hover:bg-white/90 shadow-xl hover:shadow-2xl hover:scale-105 py-2"
+                className="bg-white text-primary hover:bg-white/90 shadow-xl hover:shadow-2xl hover:scale-105 py-2 text-m"
               >
                 Conversar com um especialista
               </LinkButton>
