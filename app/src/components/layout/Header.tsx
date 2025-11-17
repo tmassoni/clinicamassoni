@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { LinkButton } from "@/app/src/components/ui/LinkButton";
+import { LinkButton } from "@/app/src/components/custom/LinkButton";
 import { navigationItems } from "@/app/src/lib/navigation";
 import {
   DOCTOR_NAME,

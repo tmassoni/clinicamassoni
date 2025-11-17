@@ -1,55 +1,55 @@
-import { Badge } from '@/app/src/components/ui/Badge'
-import { LinkButton } from '@/app/src/components/ui/LinkButton'
-import { CONTACT_WHATSAPP_URL } from '@/app/src/lib/constants'
-import { Smile, Bone, Scissors, Check, ArrowRight } from 'lucide-react'
+import { Badge } from "@/app/src/components/ui/badge";
+import { LinkButton } from "@/app/src/components/custom/LinkButton";
+import { CONTACT_WHATSAPP_URL } from "@/app/src/lib/constants";
+import { Smile, Bone, Scissors, Check, ArrowRight } from "lucide-react";
 
 const services = [
   {
     icon: Smile,
-    title: 'Implantes Dentários',
+    title: "Implantes Dentários",
     description:
-      'Especialidade com 40 anos de experiência desde 1984. Grandes reabilitações e reconstrução completa de arcadas com resultados imperceptíveis',
+      "Especialidade com 40 anos de experiência desde 1984. Grandes reabilitações e reconstrução completa de arcadas com resultados imperceptíveis",
     procedures: [
-      'Implantes unitários',
-      'Implantes múltiplos',
-      'Protocolo fixo (All-on-4/6)',
-      'Implantes imediatos em área estética',
-      'Enxerto ósseo (materiais sintéticos e biológicos)',
-      'Cirurgias guiadas com tecnologia 3D',
+      "Implantes unitários",
+      "Implantes múltiplos",
+      "Protocolo fixo (All-on-4/6)",
+      "Implantes imediatos em área estética",
+      "Enxerto ósseo (materiais sintéticos e biológicos)",
+      "Cirurgias guiadas com tecnologia 3D",
     ],
-    gradient: 'from-primary to-[#3C576A]',
+    gradient: "from-primary to-[#3C576A]",
   },
   {
     icon: Scissors,
-    title: 'Cirurgia Plástica Periodontal',
+    title: "Cirurgia Plástica Periodontal",
     description:
-      'Tratamentos estéticos da gengiva para harmonia do sorriso e correção de sensibilidade',
+      "Tratamentos estéticos da gengiva para harmonia do sorriso e correção de sensibilidade",
     procedures: [
-      'Recobrimento de recessões gengivais',
-      'Tratamento de raízes expostas',
-      'Aumento de coroa clínica',
-      'Gengivoplastia estética',
-      'Correção de dentes longos e assimétricos',
-      'Procedimentos minimamente invasivos',
+      "Recobrimento de recessões gengivais",
+      "Tratamento de raízes expostas",
+      "Aumento de coroa clínica",
+      "Gengivoplastia estética",
+      "Correção de dentes longos e assimétricos",
+      "Procedimentos minimamente invasivos",
     ],
-    gradient: 'from-[#3C576A] to-[#6A7E8B]',
+    gradient: "from-[#3C576A] to-[#6A7E8B]",
   },
   {
     icon: Bone,
-    title: 'Cirurgia Buco-Maxilo-Facial',
+    title: "Cirurgia Buco-Maxilo-Facial",
     description:
-      'Tratamento de cistos, tumores, traumas faciais e dentes retidos com técnicas modernas',
+      "Tratamento de cistos, tumores, traumas faciais e dentes retidos com técnicas modernas",
     procedures: [
-      'Cirurgias de cistos e tumores',
-      'Extração de sisos e dentes retidos',
-      'Traumatismo e fraturas faciais',
-      'Cirurgia ortognática',
-      'Frenectomias',
-      'Biópsias orais',
+      "Cirurgias de cistos e tumores",
+      "Extração de sisos e dentes retidos",
+      "Traumatismo e fraturas faciais",
+      "Cirurgia ortognática",
+      "Frenectomias",
+      "Biópsias orais",
     ],
-    gradient: 'from-[#6A7E8B] to-[#C8CFD3]',
+    gradient: "from-[#6A7E8B] to-[#C8CFD3]",
   },
-]
+];
 
 export function ServicesSection() {
   return (
@@ -81,7 +81,7 @@ export function ServicesSection() {
         {/* Services Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 mb-16 sm:mb-20">
           {services.map((service, index) => {
-            const Icon = service.icon
+            const Icon = service.icon;
             return (
               <div key={index} className="group relative h-full">
                 {/* Card */}
@@ -140,7 +140,7 @@ export function ServicesSection() {
                   />
                 </div>
               </div>
-            )
+            );
           })}
         </div>
 
@@ -169,7 +169,9 @@ export function ServicesSection() {
                 size="xl"
                 className="bg-white text-primary hover:bg-white/90 active:bg-primary active:text-white focus:text-white shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 text-sm sm:text-base md:text-lg px-6 py-3 sm:px-8 sm:py-4"
               >
-                <span className="text-center">Conversar com um especialista</span>
+                <span className="text-center">
+                  Conversar com um especialista
+                </span>
               </LinkButton>
             </div>
 
@@ -180,5 +182,5 @@ export function ServicesSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

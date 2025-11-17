@@ -1,54 +1,54 @@
-'use client'
+"use client";
 
-import { useState, useRef, useLayoutEffect } from 'react'
-import Image from 'next/image'
-import { Badge } from '@/app/src/components/ui/Badge'
+import { useState, useRef, useLayoutEffect } from "react";
+import Image from "next/image";
+import { Badge } from "@/app/src/components/ui/badge";
 import {
   Carousel,
   CarouselContent,
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from '@/app/src/components/ui/carousel'
+} from "@/app/src/components/ui/carousel";
 import {
   Dialog,
   DialogContent,
   DialogTitle,
   DialogTrigger,
-} from '@/app/src/components/ui/dialog'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+} from "@/app/src/components/ui/dialog";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   categories,
   galleryImages,
   getImagesByCategory,
   type GalleryCategory,
-} from '@/app/src/lib/gallery-data'
+} from "@/app/src/lib/gallery-data";
 
 export function GallerySection() {
   const [selectedCategory, setSelectedCategory] =
-    useState<GalleryCategory>('all')
-  const filterRef = useRef<HTMLDivElement>(null)
-  const filterTopRef = useRef<number>(0)
+    useState<GalleryCategory>("all");
+  const filterRef = useRef<HTMLDivElement>(null);
+  const filterTopRef = useRef<number>(0);
 
-  const filteredImages = getImagesByCategory(selectedCategory)
+  const filteredImages = getImagesByCategory(selectedCategory);
 
   // Keep scroll anchored to filter position
   useLayoutEffect(() => {
     if (filterRef.current && filterTopRef.current) {
-      const currentTop = filterRef.current.getBoundingClientRect().top
-      const diff = currentTop - filterTopRef.current
+      const currentTop = filterRef.current.getBoundingClientRect().top;
+      const diff = currentTop - filterTopRef.current;
       if (diff !== 0) {
-        window.scrollBy(0, diff)
+        window.scrollBy(0, diff);
       }
     }
-  }, [filteredImages])
+  }, [filteredImages]);
 
   const handleCategoryChange = (category: GalleryCategory) => {
     if (filterRef.current) {
-      filterTopRef.current = filterRef.current.getBoundingClientRect().top
+      filterTopRef.current = filterRef.current.getBoundingClientRect().top;
     }
-    setSelectedCategory(category)
-  }
+    setSelectedCategory(category);
+  };
 
   return (
     <section className="relative section bg-white overflow-hidden" id="galeria">
@@ -81,7 +81,7 @@ export function GallerySection() {
           className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-12"
         >
           {categories.map((category) => {
-            const Icon = category.icon
+            const Icon = category.icon;
             return (
               <button
                 key={category.id}
@@ -90,15 +90,15 @@ export function GallerySection() {
                   inline-flex items-center gap-2 px-6 py-3 rounded-full font-medium transition-all duration-300 cursor-pointer
                   ${
                     selectedCategory === category.id
-                      ? 'bg-primary text-white shadow-lg scale-105'
-                      : 'bg-white text-tertiary border-2 border-accent hover:border-primary/30 hover:text-primary hover:scale-105'
+                      ? "bg-primary text-white shadow-lg scale-105"
+                      : "bg-white text-tertiary border-2 border-accent hover:border-primary/30 hover:text-primary hover:scale-105"
                   }
                 `}
               >
                 <Icon className="w-4 h-4" />
                 <span>{category.label}</span>
               </button>
-            )
+            );
           })}
         </div>
 
@@ -113,7 +113,7 @@ export function GallerySection() {
         <div className="md:hidden transition-all duration-300">
           <Carousel
             opts={{
-              align: 'start',
+              align: "start",
               loop: true,
             }}
             className="w-full"
@@ -156,7 +156,7 @@ export function GallerySection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 /**
@@ -165,29 +165,29 @@ export function GallerySection() {
  */
 interface GalleryImageCardProps {
   image: {
-    id: string
-    src: string
-    alt: string
-    description?: string
-  }
-  isMobile?: boolean
+    id: string;
+    src: string;
+    alt: string;
+    description?: string;
+  };
+  isMobile?: boolean;
 }
 
 function GalleryImageCard({ image, isMobile = false }: GalleryImageCardProps) {
-  const aspectRatio = isMobile ? 'aspect-4/5' : 'aspect-square'
+  const aspectRatio = isMobile ? "aspect-4/5" : "aspect-square";
   const hoverScale = isMobile
-    ? 'group-active:scale-95'
-    : 'group-hover:scale-110'
+    ? "group-active:scale-95"
+    : "group-hover:scale-110";
   const overlayOpacity = isMobile
-    ? 'bg-linear-to-t from-primary/40 via-transparent to-transparent'
-    : 'bg-linear-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'
+    ? "bg-linear-to-t from-primary/40 via-transparent to-transparent"
+    : "bg-linear-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300";
 
   return (
     <Dialog>
       <DialogTrigger asChild>
         <button
           className={`group relative ${aspectRatio} w-full rounded-2xl overflow-hidden bg-accent/10 cursor-pointer transition-transform duration-300 ${
-            !isMobile ? 'hover:scale-105 hover:z-10' : ''
+            !isMobile ? "hover:scale-105 hover:z-10" : ""
           }`}
         >
           <Image
@@ -195,12 +195,12 @@ function GalleryImageCard({ image, isMobile = false }: GalleryImageCardProps) {
             alt={image.alt}
             fill
             className={`object-cover ${hoverScale} transition-transform duration-${
-              isMobile ? '300' : '500'
+              isMobile ? "300" : "500"
             }`}
             sizes={
               isMobile
-                ? '85vw'
-                : '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw'
+                ? "85vw"
+                : "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             }
             quality={85}
           />
@@ -230,7 +230,7 @@ function GalleryImageCard({ image, isMobile = false }: GalleryImageCardProps) {
           {/* Decorative Border */}
           <div
             className={`absolute inset-0 ring-1 ring-inset ring-primary/10 ${
-              !isMobile ? 'group-hover:ring-primary/30 transition-all' : ''
+              !isMobile ? "group-hover:ring-primary/30 transition-all" : ""
             } rounded-2xl pointer-events-none`}
           />
         </button>
@@ -238,15 +238,15 @@ function GalleryImageCard({ image, isMobile = false }: GalleryImageCardProps) {
 
       <DialogContent
         className={`${
-          isMobile ? 'max-w-[95vw] p-2' : 'max-w-4xl p-0'
+          isMobile ? "max-w-[95vw] p-2" : "max-w-4xl p-0"
         } bg-transparent border-none [&>button]:absolute [&>button]:-top-12 ${
-          isMobile ? '[&>button]:right-2' : '[&>button]:right-0'
+          isMobile ? "[&>button]:right-2" : "[&>button]:right-0"
         } [&>button]:bg-white [&>button]:text-primary [&>button]:hover:bg-primary [&>button]:hover:text-white [&>button]:w-10 [&>button]:h-10 [&>button]:rounded-full [&>button]:shadow-lg [&>button]:opacity-100`}
       >
         <DialogTitle className="sr-only">{image.alt}</DialogTitle>
         <div
           className={`relative ${
-            isMobile ? 'aspect-4/5' : 'aspect-4/3'
+            isMobile ? "aspect-4/5" : "aspect-4/3"
           } w-full rounded-2xl overflow-hidden`}
         >
           <Image
@@ -254,11 +254,11 @@ function GalleryImageCard({ image, isMobile = false }: GalleryImageCardProps) {
             alt={image.alt}
             fill
             className="object-contain"
-            sizes={isMobile ? '95vw' : '90vw'}
+            sizes={isMobile ? "95vw" : "90vw"}
             quality={95}
           />
         </div>
       </DialogContent>
     </Dialog>
-  )
+  );
 }
