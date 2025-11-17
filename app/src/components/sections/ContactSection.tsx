@@ -1,6 +1,6 @@
 "use client";
 
-import { Badge } from "@/app/src/components/ui/xBadge";
+import { Badge } from "@/app/src/components/ui/badge";
 
 import {
   CONTACT_WHATSAPP_URL,

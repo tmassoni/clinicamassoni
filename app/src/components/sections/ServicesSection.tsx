@@ -1,4 +1,4 @@
-import { Badge } from "@/app/src/components/ui/xBadge";
+import { Badge } from "@/app/src/components/ui/badge";
 import { LinkButton } from "@/app/src/components/custom/LinkButton";
 import { CONTACT_WHATSAPP_URL } from "@/app/src/lib/constants";
 import { Smile, Bone, Scissors, Check, ArrowRight } from "lucide-react";

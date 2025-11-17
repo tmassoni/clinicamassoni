@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Badge } from "@/app/src/components/ui/xBadge";
-import { Card } from "@/app/src/components/ui/xCard";
+import { Badge } from "@/app/src/components/ui/badge";
+import { Card } from "@/app/src/components/ui/card";
 import { ProcedureCard } from "@/app/src/components/custom/ProcedureCard";
 import {
   DOCTOR_NAME,

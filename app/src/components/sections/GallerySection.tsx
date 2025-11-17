@@ -2,7 +2,7 @@
 
 import { useState, useRef, useLayoutEffect } from "react";
 import Image from "next/image";
-import { Badge } from "@/app/src/components/ui/xBadge";
+import { Badge } from "@/app/src/components/ui/badge";
 import {
   Carousel,
   CarouselContent,
