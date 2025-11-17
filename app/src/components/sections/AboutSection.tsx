@@ -1,12 +1,26 @@
-import Image from 'next/image'
-import { Badge } from '@/app/src/components/ui/Badge'
-import { Card } from '@/app/src/components/ui/Card'
+import Image from "next/image";
+import { Badge } from "@/app/src/components/ui/Badge";
+import { Card } from "@/app/src/components/ui/Card";
 import {
   DOCTOR_NAME,
   DOCTOR_CRO,
   DOCTOR_SPECIALTY,
-} from '@/app/src/lib/constants'
-import { Award, BookOpen, Heart, Users } from 'lucide-react'
+  DOCTOR_THIAGO_NAME,
+  DOCTOR_THIAGO_CRO,
+  DOCTOR_THIAGO_SPECIALTIES,
+} from "@/app/src/lib/constants";
+import {
+  Award,
+  BookOpen,
+  Heart,
+  Users,
+  Sparkles,
+  Smile,
+  PaintBucket,
+  Gem,
+  Shield,
+  Stethoscope,
+} from "lucide-react";
 
 export function AboutSection() {
   return (
@@ -19,7 +33,7 @@ export function AboutSection() {
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-12 sm:mb-16 lg:mb-20">
           <Badge variant="primary" size="lg" className="mb-4">
-            Sobre o Especialista
+            Nossos Especialistas
           </Badge>
 
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1b384e] mb-6">
@@ -35,16 +49,16 @@ export function AboutSection() {
         </div>
 
         {/* Main Content Grid */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center mb-20">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center mb-12">
           {/* Left - Image */}
-          <div className="relative order-2 lg:order-1">
+          <div className="relative order-1">
             <div className="relative aspect-4/5 rounded-3xl overflow-hidden shadow-2xl group">
               {/* Image overlays for depth */}
               <div className="absolute inset-0 bg-linear-to-t from-primary/20 via-transparent to-transparent z-10" />
               <div className="absolute inset-0 bg-linear-to-br from-transparent via-transparent to-primary/10 z-10" />
 
               <Image
-                src="/images/gallery/gallery-02.webp"
+                src="/images/team/enor.webp"
                 alt={`${DOCTOR_NAME} - Especialista em ${DOCTOR_SPECIALTY}`}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -62,7 +76,7 @@ export function AboutSection() {
           </div>
 
           {/* Right - Content */}
-          <div className="order-1 lg:order-2 space-y-6 sm:space-y-8">
+          <div className="order-2 space-y-6 sm:space-y-8">
             <div className="space-y-4">
               <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
                 {DOCTOR_NAME}
@@ -85,13 +99,15 @@ export function AboutSection() {
               <p className="text-base sm:text-lg text-tertiary leading-relaxed">
                 Com&nbsp;
                 <strong className="text-secondary">
-                  40 anos de formado desde 1984 pela Universidade Federal de Pelotas
+                  40 anos de formado desde 1984 pela Universidade Federal de
+                  Pelotas
                 </strong>
                 &nbsp;e especialista em&nbsp;
                 <strong className="text-secondary">
                   Cirurgia e Traumatologia Buco-Maxilo-Facial pela USP (1991)
                 </strong>
-                , dedica toda sua carreira exclusivamente à saúde bucal em Cascavel.
+                , dedica toda sua carreira exclusivamente à saúde bucal em
+                Cascavel.
               </p>
 
               <p className="text-base sm:text-lg text-tertiary leading-relaxed">
@@ -178,7 +194,186 @@ export function AboutSection() {
             </p>
           </Card>
         </div>
+
+        {/* Dr. Thiago Massoni Section */}
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 xl:gap-20 items-center mt-20 pt-20 border-t border-border-subtle">
+          {/* Left - Content (inverse layout) */}
+          <div className="order-2 lg:order-1 space-y-6 sm:space-y-8">
+            <div className="space-y-4">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary">
+                {DOCTOR_THIAGO_NAME}
+              </h3>
+
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="primary" size="lg">
+                  {DOCTOR_THIAGO_CRO}
+                </Badge>
+                {DOCTOR_THIAGO_SPECIALTIES.map((specialty) => (
+                  <Badge key={specialty} variant="secondary" size="lg">
+                    {specialty}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            <div className="prose prose-lg max-w-none space-y-4">
+              <p className="text-base sm:text-lg text-tertiary leading-relaxed">
+                <strong className="text-secondary">
+                  Graduado pela PUCPR (2018-2022)
+                </strong>
+                &nbsp;e especialista em&nbsp;
+                <strong className="text-secondary">
+                  Dentística Restauradora pela Zenith (2023-2025)
+                </strong>
+                , atualmente cursando especialização em&nbsp;
+                <strong className="text-secondary">
+                  Prótese Dentária pela PUCPR (2025-2027)
+                </strong>
+                .
+              </p>
+
+              <p className="text-base sm:text-lg text-tertiary leading-relaxed">
+                Especializado em&nbsp;
+                <strong className="text-secondary">
+                  Odontologia Preventiva e Restauradora
+                </strong>
+                , oferece tratamentos modernos e personalizados com foco em
+                estética dental e preservação da saúde bucal.
+              </p>
+
+              <div className="pt-4">
+                <h4 className="text-xl sm:text-2xl font-bold text-primary mb-6">
+                  Procedimentos Realizados
+                </h4>
+                <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
+                  {/* Procedure Card 1 */}
+                  <div className="group relative bg-gradient-to-br from-bg-subtle to-white p-4 rounded-2xl border border-border-subtle hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
+                        <PaintBucket className="w-5 h-5 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm sm:text-base font-medium text-secondary group-hover:text-primary transition-colors">
+                          Restaurações diretas e indiretas em resina composta
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Procedure Card 2 */}
+                  <div className="group relative bg-gradient-to-br from-bg-subtle to-white p-4 rounded-2xl border border-border-subtle hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
+                        <Sparkles className="w-5 h-5 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm sm:text-base font-medium text-secondary group-hover:text-primary transition-colors">
+                          Estética dental
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Procedure Card 3 */}
+                  <div className="group relative bg-gradient-to-br from-bg-subtle to-white p-4 rounded-2xl border border-border-subtle hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
+                        <Smile className="w-5 h-5 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm sm:text-base font-medium text-secondary group-hover:text-primary transition-colors">
+                          Clareamento dental
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Procedure Card 4 */}
+                  <div className="group relative bg-gradient-to-br from-bg-subtle to-white p-4 rounded-2xl border border-border-subtle hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
+                        <Gem className="w-5 h-5 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm sm:text-base font-medium text-secondary group-hover:text-primary transition-colors">
+                          Facetas em resina composta e porcelana
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Procedure Card 5 */}
+                  <div className="group relative bg-gradient-to-br from-bg-subtle to-white p-4 rounded-2xl border border-border-subtle hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
+                        <Award className="w-5 h-5 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm sm:text-base font-medium text-secondary group-hover:text-primary transition-colors">
+                          Restaurações em porcelana
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Procedure Card 6 */}
+                  <div className="group relative bg-gradient-to-br from-bg-subtle to-white p-4 rounded-2xl border border-border-subtle hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
+                        <Shield className="w-5 h-5 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm sm:text-base font-medium text-secondary group-hover:text-primary transition-colors">
+                          Próteses unitárias e de múltiplos elementos
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Procedure Card 7 */}
+                  <div className="group relative bg-gradient-to-br from-bg-subtle to-white p-4 rounded-2xl border border-border-subtle hover:border-primary/30 hover:shadow-lg transition-all duration-300">
+                    <div className="flex items-start gap-3">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
+                        <Stethoscope className="w-5 h-5 text-primary" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm sm:text-base font-medium text-secondary group-hover:text-primary transition-colors">
+                          Profilaxia e raspagens periodontais
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Right - Image (inverse layout) */}
+          <div className="relative order-1 lg:order-2">
+            <div className="relative aspect-4/5 rounded-3xl overflow-hidden shadow-2xl group">
+              {/* Image overlays for depth */}
+              <div className="absolute inset-0 bg-linear-to-t from-primary/20 via-transparent to-transparent z-10" />
+              <div className="absolute inset-0 bg-linear-to-br from-transparent via-transparent to-primary/10 z-10" />
+
+              <Image
+                src="/images/team/thiago.webp"
+                alt={`${DOCTOR_THIAGO_NAME} - ${DOCTOR_THIAGO_SPECIALTIES[0]}`}
+                fill
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                quality={90}
+              />
+
+              {/* Decorative Border */}
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/20 rounded-3xl pointer-events-none z-10" />
+            </div>
+
+            {/* Floating Decoration with animation */}
+            <div className="absolute -z-10 -top-8 -right-8 w-72 h-72 bg-linear-to-br from-primary/15 to-transparent rounded-full blur-3xl" />
+            <div className="absolute -z-10 -bottom-8 -left-8 w-72 h-72 bg-linear-to-br from-secondary/15 to-transparent rounded-full blur-3xl animate-pulse" />
+          </div>
+        </div>
       </div>
     </section>
-  )
+  );
 }

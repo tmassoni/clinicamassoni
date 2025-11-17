@@ -1,46 +1,48 @@
-'use client'
+"use client";
 
-import { useState, useEffect } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { LinkButton } from '@/app/src/components/ui/LinkButton'
-import { navigationItems } from '@/app/src/lib/navigation'
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { LinkButton } from "@/app/src/components/ui/LinkButton";
+import { navigationItems } from "@/app/src/lib/navigation";
 import {
   DOCTOR_NAME,
   CONTACT_WHATSAPP_URL,
   DOCTOR_CRO,
-} from '@/app/src/lib/constants'
-import { Menu, X, Phone } from 'lucide-react'
+} from "@/app/src/lib/constants";
+import { Menu, X, Phone } from "lucide-react";
 
 export function Header() {
-  const [isScrolled, setIsScrolled] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollY = window.scrollY
+      const currentScrollY = window.scrollY;
       // Set scrolled state for styling - add background after 20px
-      setIsScrolled(currentScrollY > 20)
-    }
+      setIsScrolled(currentScrollY > 20);
+    };
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   // Close mobile menu when clicking on a link
   const handleNavClick = () => {
-    setIsMobileMenuOpen(false)
-  }
+    setIsMobileMenuOpen(false);
+  };
 
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
-      document.body.style.overflow = 'hidden'
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset'
+      document.body.style.overflow = "unset";
     }
-  }, [isMobileMenuOpen])
+  }, [isMobileMenuOpen]);
 
+  // TODO: Hold the className below when item is selected.
+  // component is already client side, so no problem doing that programatically if we cant do it only with css.
   return (
     <>
       <header
@@ -48,8 +50,8 @@ export function Header() {
           fixed top-0 left-0 right-0 z-50 transition-all duration-300
           ${
             isScrolled
-              ? 'bg-white/95 backdrop-blur-lg shadow-lg'
-              : 'bg-white/80 backdrop-blur-sm'
+              ? "bg-white/95 backdrop-blur-lg shadow-lg"
+              : "bg-white/80 backdrop-blur-sm"
           }
         `}
       >
@@ -118,8 +120,8 @@ export function Header() {
                 lg:hidden relative z-110 p-2 rounded-lg transition-colors
                 ${
                   isMobileMenuOpen
-                    ? 'bg-white text-primary'
-                    : 'bg-primary/5 text-primary hover:bg-primary/10'
+                    ? "bg-white text-primary"
+                    : "bg-primary/5 text-primary hover:bg-primary/10"
                 }
               `}
               aria-label="Toggle menu"
@@ -141,8 +143,8 @@ export function Header() {
           lg:hidden fixed inset-0 z-100 bg-primary transition-all duration-300 ease-in-out
           ${
             isMobileMenuOpen
-              ? 'opacity-100 pointer-events-auto'
-              : 'opacity-0 pointer-events-none'
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
           }
         `}
       >
@@ -168,12 +170,12 @@ export function Header() {
                   transform hover:scale-110
                   ${
                     isMobileMenuOpen
-                      ? 'translate-y-0 opacity-100'
-                      : 'translate-y-4 opacity-0'
+                      ? "translate-y-0 opacity-100"
+                      : "translate-y-4 opacity-0"
                   }
                 `}
                 style={{
-                  transitionDelay: isMobileMenuOpen ? `${index * 75}ms` : '0ms',
+                  transitionDelay: isMobileMenuOpen ? `${index * 75}ms` : "0ms",
                 }}
               >
                 {item.label}
@@ -187,14 +189,14 @@ export function Header() {
               transition-all duration-300
               ${
                 isMobileMenuOpen
-                  ? 'translate-y-0 opacity-100'
-                  : 'translate-y-4 opacity-0'
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-4 opacity-0"
               }
             `}
             style={{
               transitionDelay: isMobileMenuOpen
                 ? `${navigationItems.length * 75}ms`
-                : '0ms',
+                : "0ms",
             }}
           >
             <LinkButton
@@ -217,5 +219,5 @@ export function Header() {
         </div>
       </div>
     </>
-  )
+  );
 }

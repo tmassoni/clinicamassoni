@@ -83,9 +83,9 @@ export function ServicesSection() {
           {services.map((service, index) => {
             const Icon = service.icon
             return (
-              <div key={index} className="group relative">
+              <div key={index} className="group relative h-full">
                 {/* Card */}
-                <div className="relative h-full bg-white rounded-3xl border border-accent/50 hover:border-primary/30 p-8 transition-all duration-500 hover:shadow-3xl hover:-translate-y-3">
+                <div className="relative flex flex-col h-full bg-white rounded-3xl border border-accent/50 hover:border-primary/30 p-8 transition-all duration-500 hover:shadow-3xl hover:-translate-y-3">
                   {/* Icon with Gradient Background */}
                   <div className="relative mb-6">
                     <div
@@ -123,14 +123,16 @@ export function ServicesSection() {
                     ))}
                   </div>
 
-                  {/* Learn More Link */}
-                  <a
-                    href="#contato"
-                    className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all group/link"
-                  >
-                    <span>Saiba mais</span>
-                    <ArrowRight className="w-5 h-5 group-hover/link:animate-pulse transition-transform" />
-                  </a>
+                  {/* Learn More Link - Pushed to bottom */}
+                  <div className="mt-auto">
+                    <a
+                      href="#contato"
+                      className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all group/link"
+                    >
+                      <span>Saiba mais</span>
+                      <ArrowRight className="w-5 h-5 group-hover/link:animate-pulse transition-transform" />
+                    </a>
+                  </div>
 
                   {/* Hover Gradient Border Effect */}
                   <div

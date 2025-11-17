@@ -1,12 +1,12 @@
-import Image from 'next/image'
-import { LinkButton } from '@/app/src/components/ui/LinkButton'
+import Image from "next/image";
+import { LinkButton } from "@/app/src/components/ui/LinkButton";
 import {
   CONTACT_WHATSAPP_URL,
   DOCTOR_NAME,
   DOCTOR_SPECIALTY,
   DOCTOR_CRO,
-} from '@/app/src/lib/constants'
-import { Phone } from 'lucide-react'
+} from "@/app/src/lib/constants";
+import { Phone } from "lucide-react";
 
 export function HeroSection() {
   return (
@@ -66,7 +66,7 @@ export function HeroSection() {
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap gap-6 sm:gap-8 justify-center lg:justify-start pt-8 text-sm sm:text-base">
+            <div className="flex flex-wrap gap-6 sm:gap-8 justify-center lg:justify-start pt-6 text-sm sm:text-base">
               <div className="flex items-center gap-2 text-tertiary">
                 <svg
                   className="w-5 h-5 text-primary"
@@ -109,7 +109,7 @@ export function HeroSection() {
 
               {/* Professional Photo */}
               <Image
-                src="/images/hero.webp"
+                src="/images/gallery/gallery-01.webp"
                 alt={`Retrato profissional de ${DOCTOR_NAME}, especialista em ${DOCTOR_SPECIALTY}, em Cascavel, PR. CRO-PR ${DOCTOR_CRO}`}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
@@ -150,5 +150,5 @@ export function HeroSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
