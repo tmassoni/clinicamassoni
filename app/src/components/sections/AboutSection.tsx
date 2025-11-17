@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { Badge } from "@/app/src/components/ui/Badge";
-import { Card } from "@/app/src/components/ui/Card";
+import { Badge } from "@/app/src/components/ui/xBadge";
+import { Card } from "@/app/src/components/ui/xCard";
+import { ProcedureCard } from "@/app/src/components/custom/ProcedureCard";
 import {
   DOCTOR_NAME,
   DOCTOR_CRO,
@@ -15,12 +16,44 @@ import {
   Heart,
   Users,
   Sparkles,
-  Smile,
   PaintBucket,
   Gem,
   Shield,
   Stethoscope,
+  type LucideIcon,
 } from "lucide-react";
+
+interface Procedure {
+  icon: LucideIcon;
+  text: string;
+}
+
+const procedures: Procedure[] = [
+  {
+    icon: PaintBucket,
+    text: "Restaurações diretas e indiretas em resina composta",
+  },
+  {
+    icon: Sparkles,
+    text: "Estética dental",
+  },
+  {
+    icon: Gem,
+    text: "Facetas em resina composta e porcelana",
+  },
+  {
+    icon: Award,
+    text: "Restaurações em porcelana",
+  },
+  {
+    icon: Shield,
+    text: "Próteses unitárias e de múltiplos elementos",
+  },
+  {
+    icon: Stethoscope,
+    text: "Profilaxia e raspagens periodontais",
+  },
+];
 
 export function AboutSection() {
   return (
@@ -246,103 +279,13 @@ export function AboutSection() {
                   Procedimentos Realizados
                 </h4>
                 <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
-                  {/* Procedure Card 1 */}
-                  <div className="group relative bg-gradient-to-br from-bg-subtle to-white p-4 rounded-2xl border border-border-subtle hover:border-primary/30 hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
-                        <PaintBucket className="w-5 h-5 text-primary" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm sm:text-base font-medium text-secondary group-hover:text-primary transition-colors">
-                          Restaurações diretas e indiretas em resina composta
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Procedure Card 2 */}
-                  <div className="group relative bg-gradient-to-br from-bg-subtle to-white p-4 rounded-2xl border border-border-subtle hover:border-primary/30 hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
-                        <Sparkles className="w-5 h-5 text-primary" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm sm:text-base font-medium text-secondary group-hover:text-primary transition-colors">
-                          Estética dental
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Procedure Card 3 */}
-                  <div className="group relative bg-gradient-to-br from-bg-subtle to-white p-4 rounded-2xl border border-border-subtle hover:border-primary/30 hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
-                        <Smile className="w-5 h-5 text-primary" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm sm:text-base font-medium text-secondary group-hover:text-primary transition-colors">
-                          Clareamento dental
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Procedure Card 4 */}
-                  <div className="group relative bg-gradient-to-br from-bg-subtle to-white p-4 rounded-2xl border border-border-subtle hover:border-primary/30 hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
-                        <Gem className="w-5 h-5 text-primary" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm sm:text-base font-medium text-secondary group-hover:text-primary transition-colors">
-                          Facetas em resina composta e porcelana
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Procedure Card 5 */}
-                  <div className="group relative bg-gradient-to-br from-bg-subtle to-white p-4 rounded-2xl border border-border-subtle hover:border-primary/30 hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
-                        <Award className="w-5 h-5 text-primary" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm sm:text-base font-medium text-secondary group-hover:text-primary transition-colors">
-                          Restaurações em porcelana
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Procedure Card 6 */}
-                  <div className="group relative bg-gradient-to-br from-bg-subtle to-white p-4 rounded-2xl border border-border-subtle hover:border-primary/30 hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
-                        <Shield className="w-5 h-5 text-primary" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm sm:text-base font-medium text-secondary group-hover:text-primary transition-colors">
-                          Próteses unitárias e de múltiplos elementos
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Procedure Card 7 */}
-                  <div className="group relative bg-gradient-to-br from-bg-subtle to-white p-4 rounded-2xl border border-border-subtle hover:border-primary/30 hover:shadow-lg transition-all duration-300">
-                    <div className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-primary/10 group-hover:bg-primary/20 flex items-center justify-center transition-colors">
-                        <Stethoscope className="w-5 h-5 text-primary" />
-                      </div>
-                      <div className="flex-1 min-w-0">
-                        <p className="text-sm sm:text-base font-medium text-secondary group-hover:text-primary transition-colors">
-                          Profilaxia e raspagens periodontais
-                        </p>
-                      </div>
-                    </div>
-                  </div>
+                  {procedures.map((procedure, index) => (
+                    <ProcedureCard
+                      key={index}
+                      icon={procedure.icon}
+                      text={procedure.text}
+                    />
+                  ))}
                 </div>
               </div>
             </div>

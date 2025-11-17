@@ -1,16 +1,16 @@
-import Link from 'next/link'
-import { forwardRef } from 'react'
-import { VariantProps } from 'class-variance-authority'
-import { cn } from '@/app/src/lib/utils'
-import { buttonVariants } from './Button'
+import Link from "next/link";
+import { forwardRef } from "react";
+import { VariantProps } from "class-variance-authority";
+import { cn } from "@/app/src/lib/utils";
+import { buttonVariants } from "../ui/xButton";
 
 interface LinkButtonProps extends VariantProps<typeof buttonVariants> {
-  href: string
-  children: React.ReactNode
-  className?: string
-  external?: boolean
-  newTab?: boolean
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>
+  href: string;
+  children: React.ReactNode;
+  className?: string;
+  external?: boolean;
+  newTab?: boolean;
+  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
@@ -33,30 +33,30 @@ const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(
       ref,
       onClick,
       ...props,
-    }
+    };
 
     // Use <a> tag for external links and new tab behavior for proper browser handling
     if (external || newTab) {
       return (
         <a
           href={href}
-          target={newTab ? '_blank' : undefined}
-          rel={external || newTab ? 'noopener noreferrer' : undefined}
+          target={newTab ? "_blank" : undefined}
+          rel={external || newTab ? "noopener noreferrer" : undefined}
           {...linkProps}
         >
           {children}
         </a>
-      )
+      );
     }
 
     return (
       <Link href={href} {...linkProps}>
         {children}
       </Link>
-    )
+    );
   }
-)
+);
 
-LinkButton.displayName = 'LinkButton'
+LinkButton.displayName = "LinkButton";
 
-export { LinkButton }
+export { LinkButton };

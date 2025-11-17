@@ -1,6 +1,6 @@
-'use client'
+"use client";
 
-import { Badge } from '@/app/src/components/ui/Badge'
+import { Badge } from "@/app/src/components/ui/xBadge";
 
 import {
   CONTACT_WHATSAPP_URL,
@@ -10,9 +10,9 @@ import {
   CLINIC_ADDRESS_FULL,
   CLINIC_HOURS_FORMATTED,
   CLINIC_MAP_EMBED_URL,
-} from '@/app/src/lib/constants'
-import { MapPin, Phone, Mail, Clock } from 'lucide-react'
-import { WhatsappIcon } from '../icons'
+} from "@/app/src/lib/constants";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { WhatsappIcon } from "../icons";
 
 export function ContactSection() {
   return (
@@ -143,7 +143,7 @@ export function ContactSection() {
                     Telefone
                   </p>
                   <a
-                    href={`tel:${CONTACT_PHONE_FORMATTED.replace(/\D/g, '')}`}
+                    href={`tel:${CONTACT_PHONE_FORMATTED.replace(/\D/g, "")}`}
                     className="text-lg lg:text-xl font-bold text-primary hover:text-secondary transition-colors block"
                   >
                     {CONTACT_PHONE_FORMATTED}
@@ -192,5 +192,5 @@ export function ContactSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { LinkButton } from "@/app/src/components/ui/LinkButton";
+import { LinkButton } from "@/app/src/components/custom/LinkButton";
 import {
   CONTACT_WHATSAPP_URL,
   DOCTOR_NAME,
@@ -127,6 +127,7 @@ export function HeroSection() {
             </div>
 
             {/* Floating Badge with enhanced styling - optimized for mobile */}
+            {/* TODO: Decide if we are going to use these Badges, and if the hero image is going to be enor.webp or other */}
             <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 lg:left-8 lg:translate-x-0 z-20 transition-transform hover:scale-105 duration-300 w-[85%] max-w-[320px] lg:w-auto lg:max-w-none">
               <div className="bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-2xl px-4 py-2.5 sm:px-6 sm:py-4 border border-[#5a6b91]/20 hover:border-[#28338d]/30 transition-all duration-300">
                 <div className="flex items-center gap-2 sm:gap-3">
