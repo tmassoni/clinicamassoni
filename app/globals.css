@@ -112,7 +112,7 @@
   }
 
   .section {
-    @apply py-16 md:py-24;
+    @apply pt-12 pb-8 md:pt-20 md:pb-16 ;
   }
 
   .text-heading {

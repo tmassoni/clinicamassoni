@@ -17,6 +17,15 @@ export const DOCTOR_SPECIALTIES = [
   'Implantes Dentários (34 anos de experiência)',
 ]
 
+// Dr. Thiago Massoni Information
+export const DOCTOR_THIAGO_NAME = 'Dr. Thiago Massoni'
+export const DOCTOR_THIAGO_CRO = 'CRO-PR XXXXX' // TODO: Get actual CRO number
+export const DOCTOR_THIAGO_TITLE = 'Cirurgião Dentista'
+export const DOCTOR_THIAGO_SPECIALTIES = [
+  'Especialista em Dentística Restauradora',
+  'Especializando em Prótese Dentária',
+]
+
 // Website
 export const WEBSITE_URL = 'https://enormassoni.com.br'
 
