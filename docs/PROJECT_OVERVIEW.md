@@ -14,7 +14,7 @@
 | Components | `app/src/components` | `sections/` renders each homepage slice; `ui/` mixes shadcn clones (accordion, dialog) with custom buttons/cards; `layout/` exposes header/footer/flyouts. |
 | Data & helpers | `app/src/lib` | `gallery-data.ts` drives categories/order, `structured-data.ts` builds JSON-LD, `utils.ts` hosts `cn`. |
 | Assets | `public/images` | Hero + gallery WebP files; keep naming `gallery-XX.webp`. Logos remain pending final client export (see TODO). |
-| Documentation | `docs/` | Working notes: this guide, `TODO.md`, and `CLIENT_NEXT_STEPS.md`. |
+| Documentation | `docs/` | Working notes: this guide (`PROJECT_OVERVIEW.md`). |
 
 ## Runbook
 
@@ -36,10 +36,6 @@ Deploy previews currently run through local builds; add further scripts (tests, 
 - The 22/10/2025 interview anchors messaging around 38 years practicing in Cascavel, humanized care, 3D guided surgeries, strict biosafety, and multi-generation trust—make sure long-form copy reflects those pillars.
 - Analytics placeholders (`ANALYTICS_GA_ID`, `ANALYTICS_GTM_ID`) remain empty—update via environment variables or constants when the client provides IDs.
 
-## Coordination
-
-- Active work items live in `docs/TODO.md` (logo conversions, new sections, photo curation).
-- Client deliverables and approval checkpoints are tracked in `docs/CLIENT_NEXT_STEPS.md` (Portuguese). Update it after each review call so both sides share the same checklist.
 
 1. **Single-page landing structure** with section components
 2. **WCAG AAA compliant color system** with CSS variables

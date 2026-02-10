@@ -104,7 +104,7 @@ export function Footer() {
               <ul className="space-y-3 text-sm">
                 <li>
                   <a
-                    href="#servicos"
+                    href="/#servicos"
                     className="text-white/80 hover:text-white transition-colors"
                   >
                     Implantes Dentários
@@ -112,7 +112,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="#servicos"
+                    href="/#servicos"
                     className="text-white/80 hover:text-white transition-colors"
                   >
                     Cirurgia Buco-Maxilo-Facial
@@ -120,7 +120,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="#servicos"
+                    href="/#servicos"
                     className="text-white/80 hover:text-white transition-colors"
                   >
                     Cirurgia Ortognática
@@ -128,7 +128,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="#servicos"
+                    href="/#servicos"
                     className="text-white/80 hover:text-white transition-colors"
                   >
                     Enxerto Ósseo
@@ -136,7 +136,7 @@ export function Footer() {
                 </li>
                 <li>
                   <a
-                    href="#servicos"
+                    href="/#servicos"
                     className="text-white/80 hover:text-white transition-colors"
                   >
                     Extração de Sisos
