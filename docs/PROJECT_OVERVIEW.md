@@ -81,18 +81,6 @@ Deploy previews currently run through local builds; add further scripts (tests, 
 - WCAG AA minimum compliance (AAA preferred)
 - Intuitive navigation and CTAs
 
-## Key Differences from analu-procto
-
-| Aspect | analu-procto | massoni/web |
-|--------|--------------|-------------|
-| **Specialty** | Coloproctologia | Odontologia + Cirurgia Maxilofacial |
-| **Location** | Curitiba, PR | Cascavel, PR |
-| **Components** | 100% custom | Hybrid (shadcn + custom) |
-| **Gallery** | PhotoSection (small) | GallerySection (26+ images) |
-| **Blog** | Full MDX system | Not in Phase 1 |
-| **Package Manager** | Bun | Bun |
-| **Color Palette** | Brown/beige medical | TBD from logo extraction |
-
 ## Next Steps
 
 1. Extract logo from PDF and generate color palette (see BRAND_IDENTITY.md)

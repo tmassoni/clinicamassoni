@@ -30,10 +30,11 @@ export const DOCTOR_THIAGO_SPECIALTIES = [
 export const WEBSITE_URL = "https://enormassoni.com.br";
 
 // Contact Information
-// WhatsApp Business Link (direct business message link)
-export const CONTACT_WHATSAPP_URL = "https://wa.me/message/GMRDOOCPQ2TNO1";
-export const CONTACT_WHATSAPP_NUMBER = "+5545991492390";
 export const CONTACT_WHATSAPP_FORMATTED = "(45) 99149-2390";
+export const CONTACT_WHATSAPP_NUMBER = "5545991492390";
+export const CONTACT_WHATSAPP_DEFAULT_TEXT =
+  "Olá! Encontrei vocês pelo site e gostaria de agendar uma consulta.";
+export const CONTACT_WHATSAPP_URL = `https://wa.me/${CONTACT_WHATSAPP_NUMBER}?text=${encodeURIComponent(CONTACT_WHATSAPP_DEFAULT_TEXT)}`;
 
 // Clinic Phone Number
 export const CONTACT_PHONE_NUMBER = "(45) 3223-3234";

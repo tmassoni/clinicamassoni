@@ -8,7 +8,7 @@ const services = [
     icon: Smile,
     title: "Implantes Dentários",
     description:
-      "Especialidade com 40 anos de experiência desde 1984. Grandes reabilitações e reconstrução completa de arcadas com resultados imperceptíveis",
+      "Especialidade com quase 40 anos de experiência desde 1991. Grandes reabilitações e reconstrução completa de arcadas com resultados imperceptíveis",
     procedures: [
       "Implantes unitários",
       "Implantes múltiplos",
@@ -23,7 +23,7 @@ const services = [
     icon: Scissors,
     title: "Cirurgia Plástica Periodontal",
     description:
-      "Tratamentos estéticos da gengiva para harmonia do sorriso e correção de sensibilidade",
+      "Tratamentos estéticos da gengiva para harmonia do sorriso e tratamento de sensibilidade",
     procedures: [
       "Recobrimento de recessões gengivais",
       "Tratamento de raízes expostas",

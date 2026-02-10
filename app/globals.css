@@ -42,9 +42,12 @@
 }
 
 @layer base {
+  :root {
+    --anchor-offset: 5.75rem;
+  }
+
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 40px;
     background-color: var(--color-background);
   }
 
@@ -86,7 +89,7 @@
   }
 
   section, [id] {
-    scroll-margin-top: 160px;
+    scroll-margin-top: var(--anchor-offset);
   }
 
   .sr-only {
@@ -156,6 +159,10 @@
 }
 
 @media (min-width: 1024px) {
+  :root {
+    --anchor-offset: 6.75rem;
+  }
+
   h1 {
     font-size: 3.75rem;
   }
