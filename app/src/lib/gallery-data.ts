@@ -56,7 +56,6 @@ export const categories: CategoryConfig[] = [
 //   description: "Tecnologia de ponta",
 // },
 
-// FIXME: Update alt and description for each iamge
 // TODO: When we are sure those are the categories and images,
 // let's update the name of each image
 
@@ -154,7 +153,7 @@ export const galleryImages: GalleryImage[] = [
  * Get images filtered by category
  */
 export const getImagesByCategory = (
-  category: GalleryCategory
+  category: GalleryCategory,
 ): GalleryImage[] => {
   if (category === "all") {
     return galleryImages;
@@ -173,7 +172,7 @@ export const getCategoryCount = (category: GalleryCategory): number => {
  * Get category configuration by ID
  */
 export const getCategoryById = (
-  id: GalleryCategory
+  id: GalleryCategory,
 ): CategoryConfig | undefined => {
   return categories.find((cat) => cat.id === id);
 };

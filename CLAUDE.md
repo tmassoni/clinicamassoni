@@ -8,7 +8,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with th
 **Specialty**: Implantes Dentários (Dental Implants) e Cirurgia Bucomaxilofacial (Oral & Maxillofacial Surgery)
 **Registration**: CRO-PR 4982
 **Location**: Cascavel, PR, Brazil
-**Domain**: enormassoni.com.br (TBD)
+**Domain**: clinicamassoni.com.br (TBD)
 
 ### Project Type
 
@@ -533,9 +533,9 @@ Located in `/Users/diegovfeder/workspace/jobs/massoni/web/docs/`:
 Edit `app/src/lib/constants.ts`:
 
 ```typescript
-export const WHATSAPP_NUMBER = '+5545XXXXXXXXX'
-export const PHONE_NUMBER = '(45) XXXX-XXXX'
-export const EMAIL = 'contato@enormassoni.com.br'
+export const WHATSAPP_NUMBER = '5545991492390'
+export const PHONE_NUMBER = '(45) 3223-3234'
+export const EMAIL = 'clinica_massoni@hotmail.com'
 ```
 
 ### Add FAQ section

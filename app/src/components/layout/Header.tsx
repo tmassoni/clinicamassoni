@@ -41,8 +41,6 @@ export function Header() {
     }
   }, [isMobileMenuOpen]);
 
-  // TODO: Hold the className below when item is selected.
-  // component is already client side, so no problem doing that programatically if we cant do it only with css.
   return (
     <>
       <header

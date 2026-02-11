@@ -1,11 +1,9 @@
 // ==========================================
 // DR. ENOR MASSONI - CONTACT CONSTANTS
 // ==========================================
-// TODO: Update all placeholder values with actual client information
-// Search for "TODO_" to find all placeholders that need updating
 
 // Domain
-export const CLINIC_WEBSITE = "https://enormassoni.com.br";
+export const CLINIC_WEBSITE = "https://www.clinicamassoni.com.br/";
 
 // Doctor Information
 export const DOCTOR_NAME = "Dr. Enor Massoni";
@@ -27,7 +25,7 @@ export const DOCTOR_THIAGO_SPECIALTIES = [
 ];
 
 // Website
-export const WEBSITE_URL = "https://enormassoni.com.br";
+export const WEBSITE_URL = "https://www.clinicamassoni.com.br/";
 
 // Contact Information
 export const CONTACT_WHATSAPP_FORMATTED = "(45) 99149-2390";
