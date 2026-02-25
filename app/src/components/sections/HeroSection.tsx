@@ -35,10 +35,10 @@ export function HeroSection() {
             {/* Main Headline */}
             <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight">
               <span className="bg-linear-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-                Dentista em Cascavel
+                Seu Sorriso
               </span>
               <br />
-              <span className="text-primary">Implantes e Cirurgia Facial</span>
+              <span className="text-primary">Completo e Saudável</span>
             </h1>
 
             {/* Subheadline */}
@@ -46,9 +46,8 @@ export function HeroSection() {
               <span className="font-semibold text-secondary">
                 {DOCTOR_SPECIALTY}
               </span>
-              &nbsp; com mais de 34 anos de experiência em implantes dentários,
-              atendimento humanizado e tecnologia de ponta para pacientes de
-              Cascavel e região.
+              &nbsp; com 34 anos de experiência em implantes dentários,
+              tecnologia de ponta e atendimento humanizado
             </p>
 
             {/* CTA Buttons */}
@@ -116,7 +115,7 @@ export function HeroSection() {
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 42vw"
                 priority
-                quality={82}
+                quality={85}
               />
 
               {/* Decorative Elements with animation */}
