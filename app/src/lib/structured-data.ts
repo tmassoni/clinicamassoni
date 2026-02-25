@@ -9,9 +9,15 @@ export const structuredData = {
       '@id': `${CLINIC_INFO.website}/#dentist`,
       name: CLINIC_INFO.doctor,
       jobTitle: `Cirurgião Dentista - ${CLINIC_INFO.specialty}`,
-      description: `Especialista em ${CLINIC_INFO.specialty} em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}.`,
+      description: `Dentista em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}, especialista em ${CLINIC_INFO.specialty}.`,
       image: '/images/og.png',
       url: CLINIC_INFO.website,
+      sameAs: [CLINIC_INFO.social.instagram, CLINIC_INFO.social.linkedin].filter(Boolean),
+      knowsAbout: [
+        'Implantes dentários',
+        'Cirurgia buco-maxilo-facial',
+        'Cirurgia plástica periodontal',
+      ],
 
       hasCredential: [
         {
@@ -91,7 +97,7 @@ export const structuredData = {
       '@id': `${CLINIC_INFO.website}/#organization`,
       name: CLINIC_INFO.name,
       url: CLINIC_INFO.website,
-      description: `Clínica odontológica especializada em ${CLINIC_INFO.specialty.toLowerCase()} em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}.`,
+      description: `Clínica odontológica e dentista em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}, especializada em ${CLINIC_INFO.specialty.toLowerCase()}.`,
 
       address: {
         '@type': 'PostalAddress',
@@ -156,8 +162,8 @@ export const structuredData = {
       '@type': 'WebSite',
       '@id': `${CLINIC_INFO.website}/#website`,
       url: CLINIC_INFO.website,
-      name: `${CLINIC_INFO.doctor} - Dentista ${CLINIC_INFO.address.city}`,
-      description: `Site oficial do ${CLINIC_INFO.doctor}, especialista em ${CLINIC_INFO.specialty.toLowerCase()} em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}.`,
+      name: `${CLINIC_INFO.doctor} - Dentista em ${CLINIC_INFO.address.city}`,
+      description: `Site oficial do ${CLINIC_INFO.doctor}, dentista em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}, especialista em ${CLINIC_INFO.specialty.toLowerCase()}.`,
       publisher: {
         '@id': `${CLINIC_INFO.website}/#organization`,
       },
@@ -169,7 +175,7 @@ export const structuredData = {
       '@type': 'LocalBusiness',
       '@id': `${CLINIC_INFO.website}/#localbusiness`,
       name: CLINIC_INFO.name,
-      description: `Atendimento odontológico especializado em ambiente moderno em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}.`,
+      description: `Atendimento odontológico em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}, com foco em implantes dentários e cirurgia buco-maxilo-facial.`,
       image: '/images/og.png',
       url: CLINIC_INFO.website,
 
@@ -196,5 +202,5 @@ export const structuredData = {
 }
 
 export function getStructuredData(): string {
-  return JSON.stringify(structuredData)
+  return JSON.stringify(structuredData).replace(/</g, '\\u003c')
 }

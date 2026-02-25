@@ -101,7 +101,7 @@ export function HeroSection() {
 
           {/* Image - Right side on desktop, top on mobile */}
           <div className="relative order-1 lg:order-2">
-            <div className="relative aspect-4/5 sm:aspect-square lg:aspect-4/5 rounded-3xl overflow-hidden shadow-2xl group">
+            <div className="relative w-full max-w-[20rem] mx-auto sm:max-w-none aspect-4/5 sm:aspect-square lg:aspect-4/5 rounded-3xl overflow-hidden shadow-2xl group">
               {/* Multi-layer Gradient Overlays for depth */}
               <div className="absolute inset-0 bg-linear-to-t from-primary/30 via-primary/5 to-transparent rounded-3xl z-10" />
               <div className="absolute inset-0 bg-linear-to-br from-transparent via-transparent to-primary/10 rounded-3xl z-10" />
@@ -109,12 +109,13 @@ export function HeroSection() {
 
               {/* Professional Photo */}
               <Image
-                src="/images/gallery/gallery-01.webp"
-                alt={`Retrato profissional de ${DOCTOR_NAME}, especialista em ${DOCTOR_SPECIALTY}, em Cascavel, PR. CRO-PR ${DOCTOR_CRO}`}
+                src="/images/hero/hero-main.webp"
+                alt={`Retrato profissional de ${DOCTOR_NAME}, dentista em Cascavel e especialista em ${DOCTOR_SPECIALTY}. ${DOCTOR_CRO}`}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 50vw"
-                priority
+                sizes="(max-width: 640px) 85vw, (max-width: 768px) 92vw, (max-width: 1200px) 46vw, 42vw"
+                fetchPriority="high"
+                loading="eager"
                 quality={90}
               />
 

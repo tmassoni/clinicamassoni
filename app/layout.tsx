@@ -27,6 +27,7 @@ const playfair = Playfair_Display({
   variable: '--font-playfair',
   display: 'swap',
 })
+const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION
 
 // Metadata
 export const metadata: Metadata = {
@@ -112,9 +113,11 @@ export const metadata: Metadata = {
     images: ['/images/og.png'],
   },
 
-  verification: {
-    google: 'google-site-verification-code', // TODO: Add Google Search Console verification code
-  },
+  verification: googleSiteVerification
+    ? {
+        google: googleSiteVerification,
+      }
+    : undefined,
 
   alternates: {
     canonical: CLINIC_WEBSITE,

@@ -255,7 +255,7 @@ function GalleryImageCard({ image, isMobile = false }: GalleryImageCardProps) {
             fill
             className="object-contain"
             sizes={isMobile ? "95vw" : "90vw"}
-            quality={95}
+            quality={90}
           />
         </div>
       </DialogContent>

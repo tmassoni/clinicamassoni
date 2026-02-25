@@ -3,22 +3,11 @@ import { CLINIC_WEBSITE } from '@/app/src/lib/constants'
 
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: [
-      {
-        userAgent: '*',
-        allow: '/',
-        disallow: ['/api/', '/admin/', '/_next/'],
-      },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: ['/api/', '/admin/'],
-      },
-      {
-        userAgent: 'Googlebot-Image',
-        allow: '/',
-      },
-    ],
+    rules: {
+      userAgent: '*',
+      allow: '/',
+      disallow: ['/admin/'],
+    },
     sitemap: `${CLINIC_WEBSITE}/sitemap.xml`,
     host: CLINIC_WEBSITE,
   }
