@@ -95,7 +95,9 @@ export function AboutSection() {
                 alt={`${DOCTOR_NAME} - Especialista em ${DOCTOR_SPECIALTY}`}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 640px) 85vw, (max-width: 1024px) 92vw, 50vw"
+                fetchPriority="low"
+                loading="lazy"
                 quality={90}
               />
 
@@ -303,7 +305,9 @@ export function AboutSection() {
                 alt={`${DOCTOR_THIAGO_NAME} - ${DOCTOR_THIAGO_SPECIALTIES[0]}`}
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 1024px) 100vw, 50vw"
+                sizes="(max-width: 640px) 85vw, (max-width: 1024px) 92vw, 50vw"
+                fetchPriority="low"
+                loading="lazy"
                 quality={90}
               />
 
