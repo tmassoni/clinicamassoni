@@ -3,7 +3,7 @@
 // ==========================================
 
 // Domain
-export const CLINIC_WEBSITE = "https://www.clinicamassoni.com.br/";
+export const CLINIC_WEBSITE = "https://www.clinicamassoni.com.br";
 
 // Doctor Information
 export const DOCTOR_NAME = "Dr. Enor Massoni";
@@ -25,7 +25,7 @@ export const DOCTOR_THIAGO_SPECIALTIES = [
 ];
 
 // Website
-export const WEBSITE_URL = "https://www.clinicamassoni.com.br/";
+export const WEBSITE_URL = "https://www.clinicamassoni.com.br";
 
 // Contact Information
 export const CONTACT_WHATSAPP_FORMATTED = "(45) 99149-2390";
@@ -89,6 +89,10 @@ export const CTA_PHONE = "Ligue agora";
 
 // SEO Keywords (for reference)
 export const SEO_KEYWORDS = [
+  "dentista",
+  "cascavel",
+  "dentista cascavel",
+  "dentista em Cascavel",
   "implantes dentários Cascavel",
   "dentista Cascavel",
   "cirurgia bucomaxilofacial Cascavel",
@@ -140,6 +144,7 @@ export const CLINIC_INFO = {
   },
   social: {
     instagram: SOCIAL_INSTAGRAM_URL,
+    linkedin: SOCIAL_LINKEDIN_URL,
   },
   coordinates: CLINIC_COORDINATES,
   hours: CLINIC_HOURS,

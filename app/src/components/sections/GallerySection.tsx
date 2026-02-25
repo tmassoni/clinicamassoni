@@ -202,7 +202,7 @@ function GalleryImageCard({ image, isMobile = false }: GalleryImageCardProps) {
                 ? "85vw"
                 : "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             }
-            quality={85}
+            quality={80}
           />
 
           {/* Overlay */}
@@ -255,7 +255,7 @@ function GalleryImageCard({ image, isMobile = false }: GalleryImageCardProps) {
             fill
             className="object-contain"
             sizes={isMobile ? "95vw" : "90vw"}
-            quality={95}
+            quality={88}
           />
         </div>
       </DialogContent>

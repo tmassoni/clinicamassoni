@@ -13,6 +13,7 @@ import {
   CLINIC_ADDRESS_CITY,
   CLINIC_ADDRESS_STATE,
   CLINIC_WEBSITE,
+  SEO_KEYWORDS,
 } from '@/app/src/lib/constants'
 
 // Font configurations
@@ -27,43 +28,24 @@ const playfair = Playfair_Display({
   variable: '--font-playfair',
   display: 'swap',
 })
+const googleSiteVerification = process.env.GOOGLE_SITE_VERIFICATION
 
 // Metadata
 export const metadata: Metadata = {
   metadataBase: new URL(CLINIC_WEBSITE),
 
   title: {
-    default: `${DOCTOR_NAME} - ${DOCTOR_SPECIALTY} em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}`,
+    default: `${DOCTOR_NAME} | Dentista em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}`,
     template: `%s | ${DOCTOR_NAME}`,
   },
 
-  description: `${DOCTOR_NAME}, cirurgião dentista especialista em ${DOCTOR_SPECIALTY} com 40 anos de formado (desde 1984) em ${CLINIC_ADDRESS_CITY}. Implantes dentários, cirurgia plástica periodontal, recobrimento de recessões gengivais e cirurgias guiadas 3D. Atendimento humanizado e tecnologia de ponta. Agende sua consulta!`,
-
-  keywords: [
-    'implantes dentários',
-    'cirurgia bucomaxilofacial',
-    'cirurgia plástica periodontal',
-    'recobrimento recessão gengival',
-    'cirurgião dentista',
-    'dentista Cascavel',
-    'implante dentário Cascavel',
-    'cirurgia ortognática',
-    'extração de sisos',
-    'enxerto ósseo dental',
-    'protocolo all-on-4',
-    'implantes imediatos área estética',
-    'cirurgias guiadas 3D',
-    '40 anos de formado',
-    '40 anos experiência',
-    'academia brasileira osseointegração',
-    'dentista PR',
-    DOCTOR_NAME,
-    'CRO-PR 4982',
-  ],
+  description: `${DOCTOR_NAME}, dentista em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}, especialista em ${DOCTOR_SPECIALTY}. Tratamentos em implantes dentários, cirurgia plástica periodontal e cirurgias guiadas 3D com atendimento humanizado.`,
+  keywords: SEO_KEYWORDS,
 
   authors: [{ name: DOCTOR_NAME }],
   creator: DOCTOR_NAME,
   publisher: DOCTOR_NAME,
+  category: 'Saúde',
 
   robots: {
     index: true,
@@ -92,9 +74,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'pt_BR',
     url: CLINIC_WEBSITE,
-    siteName: `${DOCTOR_NAME} - Dentista`,
-    title: `${DOCTOR_NAME} - ${DOCTOR_SPECIALTY}`,
-    description: `Especialista em ${DOCTOR_SPECIALTY} com 40 anos de formado (desde 1984) em ${CLINIC_ADDRESS_CITY}. Implantes dentários, cirurgia plástica periodontal e cirurgias guiadas 3D. Atendimento humanizado.`,
+    siteName: `${DOCTOR_NAME} - Dentista em ${CLINIC_ADDRESS_CITY}`,
+    title: `${DOCTOR_NAME} | Dentista em ${CLINIC_ADDRESS_CITY}`,
+    description: `Dentista em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}, com foco em ${DOCTOR_SPECIALTY}, implantes dentários e cirurgias guiadas 3D.`,
     images: [
       {
         url: '/images/og.png',
@@ -107,17 +89,19 @@ export const metadata: Metadata = {
 
   twitter: {
     card: 'summary_large_image',
-    title: `${DOCTOR_NAME} - ${DOCTOR_SPECIALTY}`,
-    description: `Especialista em ${DOCTOR_SPECIALTY} com 40 anos de formado (desde 1984). Implantes dentários, cirurgia plástica periodontal e tecnologia 3D em ${CLINIC_ADDRESS_CITY}`,
+    title: `${DOCTOR_NAME} | Dentista em ${CLINIC_ADDRESS_CITY}`,
+    description: `Dentista em ${CLINIC_ADDRESS_CITY} especializado em ${DOCTOR_SPECIALTY}, implantes dentários e tecnologia 3D.`,
     images: ['/images/og.png'],
   },
 
-  verification: {
-    google: 'google-site-verification-code', // TODO: Add Google Search Console verification code
-  },
+  verification: googleSiteVerification
+    ? {
+        google: googleSiteVerification,
+      }
+    : undefined,
 
   alternates: {
-    canonical: CLINIC_WEBSITE,
+    canonical: '/',
   },
 
   other: {
