@@ -202,7 +202,7 @@ function GalleryImageCard({ image, isMobile = false }: GalleryImageCardProps) {
                 ? "85vw"
                 : "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             }
-            quality={75}
+            quality={85}
           />
 
           {/* Overlay */}

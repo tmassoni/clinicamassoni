@@ -115,7 +115,7 @@ export function HeroSection() {
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 92vw, (max-width: 1200px) 46vw, 42vw"
                 priority
-                quality={85}
+                quality={90}
               />
 
               {/* Decorative Elements with animation */}

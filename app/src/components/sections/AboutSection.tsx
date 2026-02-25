@@ -96,7 +96,7 @@ export function AboutSection() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                quality={85}
+                quality={90}
               />
 
               {/* Decorative Border */}
@@ -304,7 +304,7 @@ export function AboutSection() {
                 fill
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 1024px) 100vw, 50vw"
-                quality={85}
+                quality={90}
               />
 
               {/* Decorative Border */}
