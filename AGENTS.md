@@ -23,3 +23,9 @@ Follow the existing Conventional Commit style: `type(scope?): short imperative s
 ## Documentation & Asset Updates
 
 When modifying gallery imagery or content, keep metadata in `app/src/lib/gallery-data.ts` in sync and update any relevant briefs in `docs/`. Store new media under `public/` with descriptive kebab-case filenames to simplify updates.
+
+## Current Project State
+
+For a live handoff snapshot (SEO status, metadata/title checks, merge readiness, and prioritized next steps), see:
+
+- `docs/CURRENT_STATE.md`
