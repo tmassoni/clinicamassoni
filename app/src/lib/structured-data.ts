@@ -10,7 +10,7 @@ export const structuredData = {
       name: CLINIC_INFO.doctor,
       jobTitle: `Cirurgião Dentista - ${CLINIC_INFO.specialty}`,
       description: `Dentista em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}, especialista em ${CLINIC_INFO.specialty}.`,
-      image: '/images/og-v2.png',
+      image: `${CLINIC_INFO.website}/images/team/enor.webp`,
       url: CLINIC_INFO.website,
       sameAs: [CLINIC_INFO.social.instagram, CLINIC_INFO.social.linkedin].filter(Boolean),
       knowsAbout: [
