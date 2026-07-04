@@ -10,7 +10,7 @@ export const structuredData = {
       name: CLINIC_INFO.doctor,
       jobTitle: `Cirurgião Dentista - ${CLINIC_INFO.specialty}`,
       description: `Dentista em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}, especialista em ${CLINIC_INFO.specialty}.`,
-      image: '/images/og.png',
+      image: `${CLINIC_INFO.website}/images/team/enor.webp`,
       url: CLINIC_INFO.website,
       sameAs: [CLINIC_INFO.social.instagram, CLINIC_INFO.social.linkedin].filter(Boolean),
       knowsAbout: [
@@ -167,7 +167,7 @@ export const structuredData = {
       '@id': `${CLINIC_INFO.website}/#localbusiness`,
       name: CLINIC_INFO.name,
       description: `Atendimento odontológico em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}, com foco em implantes dentários e cirurgia buco-maxilo-facial.`,
-      image: '/images/og.png',
+      image: '/images/og-brand.png',
       url: CLINIC_INFO.website,
 
       address: {

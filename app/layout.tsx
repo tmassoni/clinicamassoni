@@ -99,7 +99,7 @@ export const metadata: Metadata = {
     description: `Especialista em ${DOCTOR_SPECIALTY} com 41 anos de formado (desde 1984) em ${CLINIC_ADDRESS_CITY}. Implantes dentários, cirurgia plástica periodontal e cirurgias guiadas 3D. Atendimento humanizado.`,
     images: [
       {
-        url: '/images/og.png',
+        url: '/images/og-brand.png',
         width: 1200,
         height: 630,
         alt: `${DOCTOR_NAME} - Clínica Odontológica em Cascavel, PR`,
@@ -111,7 +111,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${DOCTOR_NAME} - ${DOCTOR_SPECIALTY}`,
     description: `Especialista em ${DOCTOR_SPECIALTY} com 41 anos de formado (desde 1984). Implantes dentários, cirurgia plástica periodontal e tecnologia 3D em ${CLINIC_ADDRESS_CITY}`,
-    images: ['/images/og.png'],
+    images: ['/images/og-brand.png'],
   },
 
   verification: googleSiteVerification
