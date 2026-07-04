@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { LinkButton } from "@/app/src/components/custom/LinkButton";
+import { TrackedLinkButton } from "@/app/src/components/custom/TrackedLinkButton";
 import {
   CONTACT_WHATSAPP_URL,
   DOCTOR_NAME,
@@ -52,17 +52,21 @@ export function HeroSection() {
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center lg:justify-start pt-4">
-              <LinkButton
+              <TrackedLinkButton
                 href={CONTACT_WHATSAPP_URL}
                 external
                 newTab
+                channel="whatsapp"
+                section="hero"
+                label="agende_sua_consulta"
+                location="cascavel"
                 variant="primary"
                 size="xl"
                 className="group shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 text-nowrap"
               >
                 <Phone className="mr-2 h-5 w-5 group-hover:rotate-12 transition-transform " />
                 Agende sua consulta
-              </LinkButton>
+              </TrackedLinkButton>
             </div>
 
             {/* Trust Indicators */}

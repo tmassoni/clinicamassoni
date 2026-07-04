@@ -14,7 +14,7 @@ import {
 } from '@/app/src/components/sections'
 
 export const metadata: Metadata = {
-  title: `Dentista em ${CLINIC_ADDRESS_CITY}: Implantes e Cirurgia Buco-Maxilo-Facial`,
+  title: `Dentista em ${CLINIC_ADDRESS_CITY}: Implantes e Cirurgia Buco-Maxilo-Facial | ${DOCTOR_NAME}`,
   description: `${DOCTOR_NAME} é dentista em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}, especialista em ${DOCTOR_SPECIALTY}, implantes dentários e cirurgia plástica periodontal.`,
   keywords: [
     'dentista',
@@ -31,10 +31,20 @@ export const metadata: Metadata = {
     title: `${DOCTOR_NAME} | Dentista em ${CLINIC_ADDRESS_CITY}`,
     description: `Dentista em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}, com foco em ${DOCTOR_SPECIALTY} e implantes dentários.`,
     url: '/',
+    images: [
+      {
+        url: '/images/og.png',
+        width: 1200,
+        height: 630,
+        alt: `${DOCTOR_NAME} - Dentista em ${CLINIC_ADDRESS_CITY}`,
+      },
+    ],
   },
   twitter: {
+    card: 'summary_large_image',
     title: `${DOCTOR_NAME} | Dentista em ${CLINIC_ADDRESS_CITY}`,
     description: `Dentista em ${CLINIC_ADDRESS_CITY} especializado em ${DOCTOR_SPECIALTY} e implantes dentários.`,
+    images: ['/images/og.png'],
   },
 }
 

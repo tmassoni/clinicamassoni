@@ -1,5 +1,5 @@
 import { Badge } from "@/app/src/components/ui/badge";
-import { LinkButton } from "@/app/src/components/custom/LinkButton";
+import { TrackedLinkButton } from "@/app/src/components/custom/TrackedLinkButton";
 import { CONTACT_WHATSAPP_URL } from "@/app/src/lib/constants";
 import { Smile, Bone, Scissors, Check, ArrowRight } from "lucide-react";
 
@@ -161,10 +161,14 @@ export function ServicesSection() {
                 descubra a melhor solução para o seu caso
               </p>
 
-              <LinkButton
+              <TrackedLinkButton
                 href={CONTACT_WHATSAPP_URL}
                 external
                 newTab
+                channel="whatsapp"
+                section="services"
+                label="conversar_com_especialista"
+                location="cascavel"
                 variant="default"
                 size="xl"
                 className="bg-white text-primary hover:bg-white/90 active:bg-primary active:text-white focus:text-white shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 text-sm sm:text-base md:text-lg px-6 py-3 sm:px-8 sm:py-4"
@@ -172,7 +176,7 @@ export function ServicesSection() {
                 <span className="text-center">
                   Conversar com um especialista
                 </span>
-              </LinkButton>
+              </TrackedLinkButton>
             </div>
 
             {/* Decorative Elements */}

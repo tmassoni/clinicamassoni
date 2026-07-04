@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { TrackedLink } from '@/app/src/components/custom/TrackedLink'
 import { navigationItems } from '@/app/src/lib/navigation'
 import {
   DOCTOR_NAME,
@@ -37,6 +38,7 @@ export function Footer() {
                       alt={`${DOCTOR_NAME} - Logo`}
                       fill
                       className="object-contain"
+                      sizes="80px"
                     />
                   </div>
                   <div className="ps-1">
@@ -152,20 +154,28 @@ export function Footer() {
                 <li className="flex items-start gap-3">
                   <Phone className="w-5 h-5 shrink-0 mt-0.5 text-white/60" />
                   <div>
-                    <a
+                    <TrackedLink
                       href={CONTACT_WHATSAPP_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                      newTab
+                      external
+                      channel="whatsapp"
+                      section="footer"
+                      label="footer_whatsapp"
+                      location="cascavel"
                       className="text-white/80 hover:text-white transition-colors block"
                     >
                       {CONTACT_WHATSAPP_FORMATTED} (WhatsApp)
-                    </a>
-                    <a
+                    </TrackedLink>
+                    <TrackedLink
                       href={`tel:${CONTACT_PHONE_FORMATTED.replace(/\D/g, '')}`}
+                      channel="phone"
+                      section="footer"
+                      label="footer_telefone"
+                      location="cascavel"
                       className="text-white/80 hover:text-white transition-colors block"
                     >
                       {CONTACT_PHONE_FORMATTED}
-                    </a>
+                    </TrackedLink>
                   </div>
                 </li>
 
