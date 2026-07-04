@@ -1,16 +1,21 @@
 import Link from "next/link";
 import { forwardRef } from "react";
+import type { AnchorHTMLAttributes, ReactNode } from "react";
 import { VariantProps } from "class-variance-authority";
 import { cn } from "@/app/src/lib/utils";
 import { buttonVariants } from "../ui/button";
 
-interface LinkButtonProps extends VariantProps<typeof buttonVariants> {
+export interface LinkButtonProps
+  extends Omit<
+      AnchorHTMLAttributes<HTMLAnchorElement>,
+      "href" | "children" | "className"
+    >,
+    VariantProps<typeof buttonVariants> {
   href: string;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   external?: boolean;
   newTab?: boolean;
-  onClick?: React.MouseEventHandler<HTMLAnchorElement>;
 }
 
 const LinkButton = forwardRef<HTMLAnchorElement, LinkButtonProps>(

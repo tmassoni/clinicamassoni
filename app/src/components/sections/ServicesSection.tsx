@@ -1,5 +1,5 @@
 import { Badge } from "@/app/src/components/ui/badge";
-import { LinkButton } from "@/app/src/components/custom/LinkButton";
+import { TrackedLinkButton } from "@/app/src/components/custom/TrackedLinkButton";
 import { CONTACT_WHATSAPP_URL } from "@/app/src/lib/constants";
 import { Smile, Bone, Scissors, Check, ArrowRight } from "lucide-react";
 
@@ -8,13 +8,14 @@ const services = [
     icon: Smile,
     title: "Implantes Dentários",
     description:
-      "Especialidade com quase 40 anos de experiência desde 1991. Grandes reabilitações e reconstrução completa de arcadas com resultados imperceptíveis",
+      "Especialidade com mais de 35 anos de experiência, reabilitando desde dentes unitários até arcadas completas",
     procedures: [
       "Implantes unitários",
       "Implantes múltiplos",
       "Protocolo fixo (All-on-4/6)",
       "Implantes imediatos em área estética",
-      "Enxerto ósseo (materiais sintéticos e biológicos)",
+      "Enxerto ósseo",
+      "Reabilitações completas",
       "Cirurgias guiadas com tecnologia 3D",
     ],
     gradient: "from-primary to-[#3C576A]",
@@ -40,8 +41,8 @@ const services = [
     description:
       "Tratamento de cistos, tumores, traumas faciais e dentes retidos com técnicas modernas",
     procedures: [
-      "Cirurgias de cistos e tumores",
-      "Extração de sisos e dentes retidos",
+      "Cirurgias de cistos e tumores benignos",
+      "Extração de terceiros molares (sisos e demais dentes retidos)",
       "Traumatismo e fraturas faciais",
       "Cirurgia ortognática",
       "Frenectomias",
@@ -161,10 +162,14 @@ export function ServicesSection() {
                 descubra a melhor solução para o seu caso
               </p>
 
-              <LinkButton
+              <TrackedLinkButton
                 href={CONTACT_WHATSAPP_URL}
                 external
                 newTab
+                channel="whatsapp"
+                section="services"
+                label="conversar_com_especialista"
+                location="cascavel"
                 variant="default"
                 size="xl"
                 className="bg-white text-primary hover:bg-white/90 active:bg-primary active:text-white focus:text-white shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200 text-sm sm:text-base md:text-lg px-6 py-3 sm:px-8 sm:py-4"
@@ -172,7 +177,7 @@ export function ServicesSection() {
                 <span className="text-center">
                   Conversar com um especialista
                 </span>
-              </LinkButton>
+              </TrackedLinkButton>
             </div>
 
             {/* Decorative Elements */}

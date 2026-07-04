@@ -1,4 +1,5 @@
 import { Badge } from "@/app/src/components/ui/badge";
+import { TrackedLink } from "@/app/src/components/custom/TrackedLink";
 
 import {
   CONTACT_WHATSAPP_URL,
@@ -43,10 +44,14 @@ export function ContactSection() {
         {/* Featured Section: WhatsApp CTA + Hours */}
         <div className="grid lg:grid-cols-6 gap-6 lg:gap-8 mb-8 lg:mb-12">
           {/* WhatsApp CTA */}
-          <a
+          <TrackedLink
             href={CONTACT_WHATSAPP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
+            newTab
+            external
+            channel="whatsapp"
+            section="contact"
+            label="contato_whatsapp_card"
+            location="cascavel"
             className="lg:col-span-4 block group"
           >
             <div className="bg-linear-to-br from-primary via-primary to-secondary rounded-3xl p-6 md:p-7 lg:p-8 text-white transition-all duration-300 hover:shadow-2xl hover:scale-[1.02] relative overflow-hidden h-full">
@@ -77,7 +82,7 @@ export function ContactSection() {
                 </div>
               </div>
             </div>
-          </a>
+          </TrackedLink>
 
           {/* Hours Card */}
           <div className="lg:col-span-2">
@@ -140,12 +145,16 @@ export function ContactSection() {
                   <p className="text-sm font-medium text-tertiary mb-1">
                     Telefone
                   </p>
-                  <a
+                  <TrackedLink
                     href={`tel:${CONTACT_PHONE_FORMATTED.replace(/\D/g, "")}`}
+                    channel="phone"
+                    section="contact"
+                    label="contato_telefone_card"
+                    location="cascavel"
                     className="text-lg lg:text-xl font-bold text-primary hover:text-secondary transition-colors block"
                   >
                     {CONTACT_PHONE_FORMATTED}
-                  </a>
+                  </TrackedLink>
                 </div>
               </div>
             </div>
