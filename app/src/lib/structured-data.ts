@@ -51,19 +51,10 @@ export const structuredData = {
           recognizedBy: {
             '@type': 'Organization',
             name: 'Universidade de São Paulo',
-            alternateName: 'USP',
+            alternateName: 'FOB-USP',
             location: 'Bauru, SP',
           },
-          dateCreated: '1991',
-        },
-      ],
-
-      memberOf: [
-        {
-          '@type': 'Organization',
-          name: 'Academia Brasileira de Osseointegração',
-          description:
-            'Associação profissional focada no desenvolvimento e pesquisa em implantodontia',
+          dateCreated: '1993',
         },
       ],
 

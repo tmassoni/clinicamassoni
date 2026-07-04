@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import Script from "next/script";
 import { Inter, Playfair_Display } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     template: `%s | ${DOCTOR_NAME}`,
   },
 
-  description: `${DOCTOR_NAME}, cirurgião dentista especialista em ${DOCTOR_SPECIALTY} com 40 anos de formado (desde 1984) em ${CLINIC_ADDRESS_CITY}. Implantes dentários, cirurgia plástica periodontal, recobrimento de recessões gengivais e cirurgias guiadas 3D. Atendimento humanizado e tecnologia de ponta. Agende sua consulta!`,
+  description: `${DOCTOR_NAME}, cirurgião dentista especialista em ${DOCTOR_SPECIALTY} com 41 anos de formado (desde 1984) em ${CLINIC_ADDRESS_CITY}. Implantes dentários, cirurgia plástica periodontal, recobrimento de recessões gengivais e cirurgias guiadas 3D. Atendimento humanizado e tecnologia de ponta. Agende sua consulta!`,
 
   keywords: [
     'implantes dentários',
@@ -54,8 +55,8 @@ export const metadata: Metadata = {
     'protocolo all-on-4',
     'implantes imediatos área estética',
     'cirurgias guiadas 3D',
-    '40 anos de formado',
-    '40 anos experiência',
+    '41 anos de formado',
+    '41 anos experiência',
     'academia brasileira osseointegração',
     'dentista PR',
     DOCTOR_NAME,
@@ -95,7 +96,7 @@ export const metadata: Metadata = {
     url: CLINIC_WEBSITE,
     siteName: `${DOCTOR_NAME} - Dentista`,
     title: `${DOCTOR_NAME} - ${DOCTOR_SPECIALTY}`,
-    description: `Especialista em ${DOCTOR_SPECIALTY} com 40 anos de formado (desde 1984) em ${CLINIC_ADDRESS_CITY}. Implantes dentários, cirurgia plástica periodontal e cirurgias guiadas 3D. Atendimento humanizado.`,
+    description: `Especialista em ${DOCTOR_SPECIALTY} com 41 anos de formado (desde 1984) em ${CLINIC_ADDRESS_CITY}. Implantes dentários, cirurgia plástica periodontal e cirurgias guiadas 3D. Atendimento humanizado.`,
     images: [
       {
         url: '/images/og.png',
@@ -109,7 +110,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: `${DOCTOR_NAME} - ${DOCTOR_SPECIALTY}`,
-    description: `Especialista em ${DOCTOR_SPECIALTY} com 40 anos de formado (desde 1984). Implantes dentários, cirurgia plástica periodontal e tecnologia 3D em ${CLINIC_ADDRESS_CITY}`,
+    description: `Especialista em ${DOCTOR_SPECIALTY} com 41 anos de formado (desde 1984). Implantes dentários, cirurgia plástica periodontal e tecnologia 3D em ${CLINIC_ADDRESS_CITY}`,
     images: ['/images/og.png'],
   },
 
@@ -144,6 +145,13 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} ${playfair.variable}`}>
       <head>
+        {process.env.NODE_ENV === "development" && (
+          <Script
+            src="//unpkg.com/react-grab/dist/index.global.js"
+            crossOrigin="anonymous"
+            strategy="beforeInteractive"
+          />
+        )}
         {/* Structured Data */}
         <script
           type="application/ld+json"

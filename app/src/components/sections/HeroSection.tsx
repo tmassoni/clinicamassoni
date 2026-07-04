@@ -46,7 +46,7 @@ export function HeroSection() {
               <span className="font-semibold text-secondary">
                 {DOCTOR_SPECIALTY}
               </span>
-              &nbsp; com 34 anos de experiência em implantes dentários,
+              &nbsp; com 35 anos de experiência em implantes dentários,
               tecnologia de ponta e atendimento humanizado
             </p>
 
@@ -129,27 +129,6 @@ export function HeroSection() {
 
               {/* Inner glow border effect */}
               <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/20 z-10" />
-            </div>
-
-            {/* Floating Badge with enhanced styling - optimized for mobile */}
-            <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 lg:left-8 lg:translate-x-0 z-20 transition-transform hover:scale-105 duration-300 w-[85%] max-w-[320px] lg:w-auto lg:max-w-none">
-              <div className="bg-white/95 backdrop-blur-md rounded-xl sm:rounded-2xl shadow-2xl px-4 py-2.5 sm:px-6 sm:py-4 border border-[#5a6b91]/20 hover:border-[#28338d]/30 transition-all duration-300">
-                <div className="flex items-center gap-2 sm:gap-3">
-                  <div className="flex -space-x-2">
-                    <div className="font-serif w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-linear-to-br from-[#28338d] via-[#3a4d8f] to-[#5a6b91] flex items-center justify-center text-white font-bold text-sm sm:text-base border-2 border-white shadow-lg">
-                      EM
-                    </div>
-                  </div>
-                  <div className="text-left min-w-0">
-                    <div className="font-serif text-sm sm:text-md font-bold bg-linear-to-r from-[#28338d] to-[#5a6b91] bg-clip-text text-transparent truncate">
-                      {DOCTOR_NAME}
-                    </div>
-                    <div className="text-[10px] sm:text-xs text-[#9c9c9a] font-medium">
-                      Especialista {DOCTOR_CRO}
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </div>

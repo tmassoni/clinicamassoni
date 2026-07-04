@@ -8,13 +8,14 @@ const services = [
     icon: Smile,
     title: "Implantes Dentários",
     description:
-      "Especialidade com quase 40 anos de experiência desde 1991. Grandes reabilitações e reconstrução completa de arcadas com resultados imperceptíveis",
+      "Especialidade com mais de 35 anos de experiência, reabilitando desde dentes unitários até arcadas completas",
     procedures: [
       "Implantes unitários",
       "Implantes múltiplos",
       "Protocolo fixo (All-on-4/6)",
       "Implantes imediatos em área estética",
-      "Enxerto ósseo (materiais sintéticos e biológicos)",
+      "Enxerto ósseo",
+      "Reabilitações completas",
       "Cirurgias guiadas com tecnologia 3D",
     ],
     gradient: "from-primary to-[#3C576A]",
@@ -40,8 +41,8 @@ const services = [
     description:
       "Tratamento de cistos, tumores, traumas faciais e dentes retidos com técnicas modernas",
     procedures: [
-      "Cirurgias de cistos e tumores",
-      "Extração de sisos e dentes retidos",
+      "Cirurgias de cistos e tumores benignos",
+      "Extração de terceiros molares (sisos e demais dentes retidos)",
       "Traumatismo e fraturas faciais",
       "Cirurgia ortognática",
       "Frenectomias",

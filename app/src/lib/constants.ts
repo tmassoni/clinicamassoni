@@ -110,8 +110,8 @@ export const SEO_KEYWORDS = [
   "recessão gengival Cascavel",
   "recobrimento de raízes Cascavel",
   "enxerto ósseo Cascavel",
-  "40 anos de formado",
-  "40 anos experiência Cascavel",
+  "41 anos de formado",
+  "41 anos experiência Cascavel",
   "academia brasileira osseointegração",
   "dentista região oeste Paraná",
 ];

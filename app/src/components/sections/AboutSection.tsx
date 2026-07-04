@@ -125,35 +125,28 @@ export function AboutSection() {
                   Cirurgia Buco-Maxilo-Facial
                 </Badge>
                 <Badge variant="secondary" size="lg">
-                  40 Anos de Formado
+                  41 Anos de Formado
                 </Badge>
               </div>
             </div>
 
             <div className="prose prose-lg max-w-none">
               <p className="text-base sm:text-lg text-tertiary leading-relaxed">
-                Com&nbsp;
                 <strong className="text-secondary">
-                  40 anos de formado desde 1984 pela Universidade Federal de
-                  Pelotas
+                  Formado há 41 anos em 1984
                 </strong>
-                &nbsp;e especialista em&nbsp;
+                &nbsp;e especializado em&nbsp;
                 <strong className="text-secondary">
-                  Cirurgia e Traumatologia Buco-Maxilo-Facial pela USP (1991)
+                  cirurgia bucomaxilofacial pela FOB-USP em 1993
                 </strong>
-                , dedica toda sua carreira exclusivamente à saúde bucal em
-                Cascavel.
-              </p>
-
-              <p className="text-base sm:text-lg text-tertiary leading-relaxed">
-                Membro da&nbsp;
-                <strong className="text-secondary">
-                  Academia Brasileira de Osseointegração
-                </strong>
-                &nbsp;e ex-professor de Cirurgia na Unioeste, acompanhou o
-                desenvolvimento da implantodontia no Brasil desde o início dos
-                anos 1990, dominando todas as técnicas modernas, desde cirurgias
-                guiadas 3D até procedimentos minimamente invasivos.
+                , tem seu foco de atuação principal na cirurgia oral. Já atuou
+                como professor de cirurgia na faculdade de odontologia da
+                Unioeste e em cursos de especialização da ABO e está no universo
+                dos implantes dentários desde o início da implantodontia no
+                Brasil, início dos anos 90, acompanhando todas as evoluções
+                tecnológicas da especialidade desde então, sempre participando
+                dos maiores eventos científicos, congressos e cursos de
+                atualização.
               </p>
 
               <p className="text-base sm:text-lg text-tertiary leading-relaxed">
@@ -163,9 +156,9 @@ export function AboutSection() {
                 </strong>
                 &nbsp;é o pilar fundamental da clínica: ambiente acolhedor,
                 escuta atenta, acompanhamento completo no pré e pós-cirúrgico, e
-                rigor absoluto em biossegurança. Seus primeiros pacientes das
-                décadas de 1980 e 90 continuam confiando no tratamento e já
-                trouxeram filhos e netos.
+                rigor absoluto em biossegurança. Seus primeiros pacientes já
+                trouxeram filhos e netos por conta da confiança e qualidade dos
+                tratamentos realizados pelo Dr. Enor.
               </p>
             </div>
           </div>
@@ -174,7 +167,7 @@ export function AboutSection() {
         {/* Credentials Grid */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           <Card
-            title="40 Anos de Formado"
+            title="41 Anos de Formado"
             variant="service"
             className="group hover:border-primary/30 transition-all duration-300"
           >
@@ -182,8 +175,8 @@ export function AboutSection() {
               <BookOpen className="w-6 h-6 text-primary" />
             </div>
             <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-              Graduado pela UFPEL em 1984 e especialista pela USP (1991). Membro
-              da Academia Brasileira de Osseointegração
+              Graduado pela UFPEL em 1984 e especialista em cirurgia
+              bucomaxilofacial pela FOB-USP (1993)
             </p>
           </Card>
 
