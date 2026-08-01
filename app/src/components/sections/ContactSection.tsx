@@ -128,6 +128,7 @@ export function ContactSection() {
                   referrerPolicy="no-referrer-when-downgrade"
                   className="absolute inset-0"
                   title="Localização da Clínica Dr. Enor Massoni - Centro Empresarial Formato"
+                  suppressHydrationWarning
                 />
               </div>
             </div>
