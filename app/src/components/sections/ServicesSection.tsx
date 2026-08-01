@@ -1,11 +1,16 @@
 import { Badge } from "@/app/src/components/ui/badge";
 import { TrackedLinkButton } from "@/app/src/components/custom/TrackedLinkButton";
+import {
+  DentalImplantIcon,
+  FaceProfileIcon,
+  ToothShineIcon,
+} from "@/app/src/components/icons";
 import { CONTACT_WHATSAPP_URL } from "@/app/src/lib/constants";
-import { Smile, Bone, Scissors, Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 
 const services = [
   {
-    icon: Smile,
+    icon: DentalImplantIcon,
     title: "Implantes Dentários",
     description:
       "Especialidade com mais de 35 anos de experiência, reabilitando desde dentes unitários até arcadas completas",
@@ -21,7 +26,7 @@ const services = [
     gradient: "from-primary to-[#3C576A]",
   },
   {
-    icon: Scissors,
+    icon: ToothShineIcon,
     title: "Cirurgia Plástica Periodontal",
     description:
       "Tratamentos estéticos da gengiva para harmonia do sorriso e tratamento de sensibilidade",
@@ -36,7 +41,7 @@ const services = [
     gradient: "from-[#3C576A] to-[#6A7E8B]",
   },
   {
-    icon: Bone,
+    icon: FaceProfileIcon,
     title: "Cirurgia Buco-Maxilo-Facial",
     description:
       "Tratamento de cistos, tumores, traumas faciais e dentes retidos com técnicas modernas",
@@ -48,7 +53,7 @@ const services = [
       "Frenectomias",
       "Biópsias orais",
     ],
-    gradient: "from-[#6A7E8B] to-[#C8CFD3]",
+    gradient: "from-[#546E7E] to-[#8A9CA8]",
   },
 ];
 
