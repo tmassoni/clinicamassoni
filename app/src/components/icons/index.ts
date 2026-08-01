@@ -1,2 +1,3 @@
 export { WhatsappIcon } from './Whatsapp'
-export { ToothIcon } from './Tooth'
+export { DentalImplantIcon } from './DentalImplant'
+export { FaceProfileIcon } from './FaceProfile'
