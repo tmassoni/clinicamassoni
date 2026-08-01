@@ -106,14 +106,14 @@ export const galleryImages: GalleryImage[] = [
   {
     id: "enor",
     src: "/images/team/enor.webp",
-    alt: "Clínica Dr. Enor Massoni - Equipe Médica",
+    alt: "Dr. Enor Massoni - Cirurgião Dentista CRO-PR 4982",
     category: "team",
     description: "Nossa equipe especializada",
   },
   {
     id: "thiago",
     src: "/images/team/thiago.webp",
-    alt: "Clínica Dr. Enor Massoni - Especialistas",
+    alt: "Dr. Thiago Massoni - Cirurgião Dentista CRO-PR 35209",
     category: "team",
     description: "Atendimento humanizado",
   },

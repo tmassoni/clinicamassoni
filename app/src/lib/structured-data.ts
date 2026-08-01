@@ -167,7 +167,7 @@ export const structuredData = {
       '@id': `${CLINIC_INFO.website}/#localbusiness`,
       name: CLINIC_INFO.name,
       description: `Atendimento odontológico em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}, com foco em implantes dentários e cirurgia buco-maxilo-facial.`,
-      image: '/images/og-brand.png',
+      image: `${CLINIC_INFO.website}/images/team/enor.webp`,
       url: CLINIC_INFO.website,
 
       address: {
