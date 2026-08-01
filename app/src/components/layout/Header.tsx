@@ -84,7 +84,7 @@ export function Header() {
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
               {navigationItems.map((item) => (
-                <a
+                <Link
                   key={item.href}
                   href={item.href}
                   className="text-sm font-medium text-tertiary transition-colors hover:text-primary relative
@@ -93,7 +93,7 @@ export function Header() {
                     hover:after:w-full"
                 >
                   {item.label}
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -164,7 +164,7 @@ export function Header() {
           {/* Mobile Navigation Links */}
           <nav className="flex flex-col items-center gap-8 mb-12">
             {navigationItems.map((item, index) => (
-              <a
+              <Link
                 key={item.href}
                 href={item.href}
                 onClick={handleNavClick}
@@ -182,7 +182,7 @@ export function Header() {
                 }}
               >
                 {item.label}
-              </a>
+              </Link>
             ))}
           </nav>
 
