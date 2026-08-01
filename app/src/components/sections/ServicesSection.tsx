@@ -1,11 +1,12 @@
 import { Badge } from "@/app/src/components/ui/badge";
 import { TrackedLinkButton } from "@/app/src/components/custom/TrackedLinkButton";
+import { ToothIcon } from "@/app/src/components/icons";
 import { CONTACT_WHATSAPP_URL } from "@/app/src/lib/constants";
-import { Drill, ScanFace, Scissors, Check, ArrowRight } from "lucide-react";
+import { Bolt, Scissors, Check, ArrowRight } from "lucide-react";
 
 const services = [
   {
-    icon: Drill,
+    icon: Bolt,
     title: "Implantes Dentários",
     description:
       "Especialidade com mais de 35 anos de experiência, reabilitando desde dentes unitários até arcadas completas",
@@ -36,7 +37,7 @@ const services = [
     gradient: "from-[#3C576A] to-[#6A7E8B]",
   },
   {
-    icon: ScanFace,
+    icon: ToothIcon,
     title: "Cirurgia Buco-Maxilo-Facial",
     description:
       "Tratamento de cistos, tumores, traumas faciais e dentes retidos com técnicas modernas",
