@@ -14,7 +14,7 @@ export const FaceProfileIcon = React.forwardRef<
   FaceProfileIconProps
 >(
   (
-    { className, size = 24, strokeWidth = 1.9, color = "currentColor", ...props },
+    { className, size = 24, strokeWidth = 2, color = "currentColor", ...props },
     ref,
   ) => {
     return (
@@ -33,12 +33,10 @@ export const FaceProfileIcon = React.forwardRef<
         aria-hidden="true"
         {...props}
       >
-        {/* Skull and neck */}
-        <path d="M19.6 10.4C19.6 5.8 16 2.4 11.6 2.4S3.6 5.9 3.6 10.5c0 2 .6 3.5 1.6 4.7.4.5.6.9.6 1.5V22" />
-        {/* Nose, lips, chin and jaw */}
-        <path d="M18.6 13c.6.3.9.8.6 1.3l-.8 1.6c-.2.4-.6.7-1.1.7h-.6c-.6 0-1 .4-1 1v1.3c0 .9-.8 1.7-1.7 1.7h-3" />
+        {/* Neck, skull, nose, lips, chin and jaw as one continuous outline */}
+        <path d="M5 22v-4.1c0-.6-.2-1-.6-1.4-1.3-1.5-2-3.4-2-5.4C2.4 6.4 6.4 2.5 11.3 2.5c4.7 0 8.5 3.6 8.5 8 0 1.4-.5 2.3-1.2 3l1.3 1.7c.4.5.1 1.3-.5 1.5l-1.7.5v1.4c0 1.4-1.2 2.6-2.6 2.6h-3.3V22" />
         {/* Eye */}
-        <circle cx="8.6" cy="10.2" r="1.3" />
+        <circle cx="8.4" cy="10.8" r="1.15" />
       </svg>
     );
   },

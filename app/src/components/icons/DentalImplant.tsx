@@ -14,7 +14,7 @@ export const DentalImplantIcon = React.forwardRef<
   DentalImplantIconProps
 >(
   (
-    { className, size = 24, strokeWidth = 1.9, color = "currentColor", ...props },
+    { className, size = 24, strokeWidth = 2, color = "currentColor", ...props },
     ref,
   ) => {
     return (
@@ -34,15 +34,12 @@ export const DentalImplantIcon = React.forwardRef<
         {...props}
       >
         {/* Crown */}
-        <path d="M4.6 8.4V6.5C4.6 4 6.6 2 9.1 2h5.8c2.5 0 4.5 2 4.5 4.5v1.9z" />
-        {/* Abutment collar */}
-        <path d="M7.4 8.4v2.2h9.2V8.4" />
+        <path d="M5.5 9.2V6.4C5.5 3.9 8.4 2 12 2s6.5 1.9 6.5 4.4v2.8Z" />
         {/* Tapered screw body */}
-        <path d="M8.4 10.6 11 21.3a1 1 0 0 0 2 0l2.6-10.7" />
+        <path d="M7.6 10.8 10.9 21.6a1.15 1.15 0 0 0 2.2 0l3.3-10.8Z" />
         {/* Threads */}
-        <path d="M8.9 13.2h6.2" />
-        <path d="M9.5 16.2h5" />
-        <path d="M10.2 19.2h3.6" />
+        <path d="M8.9 14.6h6.2" />
+        <path d="M10.1 18.6h3.8" />
       </svg>
     );
   },
