@@ -34,14 +34,14 @@ export const DentalImplantIcon = React.forwardRef<
         {...props}
       >
         {/* Crown — flat occlusal surface, not a dome */}
-        <path d="M5.5 8.4V4.4A2.4 2.4 0 0 1 7.9 2h8.2a2.4 2.4 0 0 1 2.4 2.4v4Z" />
-        {/* Abutment collar, breaking crown and screw into distinct parts */}
-        <path d="M9 8.4v2.2h6V8.4" />
-        {/* Screw body — gently tapered to a blunt tip */}
-        <path d="M7.8 10.6 9.1 20.2c.1.9.8 1.6 1.7 1.6h2.4c.9 0 1.6-.7 1.7-1.6l1.3-9.6Z" />
+        <path d="M5.4 7.8V4.2A2.2 2.2 0 0 1 7.6 2h8.8a2.2 2.2 0 0 1 2.2 2.2v3.6Z" />
+        {/* Screw body. Drawn open at the top so the crown's lower edge serves
+            as the boundary — a closed shape would double that line. */}
+        <path d="M8.4 7.8 9.4 19.9c.1 1 .9 1.9 1.9 1.9h1.4c1 0 1.8-.9 1.9-1.9l1-12.1" />
         {/* Threads */}
-        <path d="M9 14.4h6" />
-        <path d="M9.5 18.2h5" />
+        <path d="M9.1 11.5h5.6" />
+        <path d="M9.4 15h5" />
+        <path d="M9.7 18.5h4.4" />
       </svg>
     );
   },
