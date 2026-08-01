@@ -3,9 +3,10 @@ import { TrackedLinkButton } from "@/app/src/components/custom/TrackedLinkButton
 import {
   DentalImplantIcon,
   FaceProfileIcon,
+  ToothGumIcon,
 } from "@/app/src/components/icons";
 import { CONTACT_WHATSAPP_URL } from "@/app/src/lib/constants";
-import { Scissors, Check, ArrowRight } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 
 const services = [
   {
@@ -25,7 +26,7 @@ const services = [
     gradient: "from-primary to-[#3C576A]",
   },
   {
-    icon: Scissors,
+    icon: ToothGumIcon,
     title: "Cirurgia Plástica Periodontal",
     description:
       "Tratamentos estéticos da gengiva para harmonia do sorriso e tratamento de sensibilidade",
