@@ -88,13 +88,13 @@ export function Footer() {
               <ul className="space-y-3">
                 {navigationItems.map((item) => (
                   <li key={item.href}>
-                    <a
+                    <Link
                       href={item.href}
                       className="text-white/80 hover:text-white transition-colors inline-flex items-center gap-2 group"
                     >
                       <span className="w-0 h-px bg-white group-hover:w-4 transition-all" />
                       {item.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -105,44 +105,44 @@ export function Footer() {
               <h4 className="text-lg font-bold mb-4 text-white">Serviços</h4>
               <ul className="space-y-3 text-sm">
                 <li>
-                  <a
+                  <Link
                     href="/#servicos"
                     className="text-white/80 hover:text-white transition-colors"
                   >
                     Implantes Dentários
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/#servicos"
                     className="text-white/80 hover:text-white transition-colors"
                   >
                     Cirurgia Buco-Maxilo-Facial
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/#servicos"
                     className="text-white/80 hover:text-white transition-colors"
                   >
                     Cirurgia Ortognática
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/#servicos"
                     className="text-white/80 hover:text-white transition-colors"
                   >
                     Enxerto Ósseo
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a
+                  <Link
                     href="/#servicos"
                     className="text-white/80 hover:text-white transition-colors"
                   >
                     Extração de Sisos
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
