@@ -13,6 +13,7 @@ import {
   CONTACT_EMAIL,
   CLINIC_ADDRESS_CITY,
   CLINIC_ADDRESS_STATE,
+  CLINIC_COORDINATES,
   CLINIC_WEBSITE,
 } from '@/app/src/lib/constants'
 
@@ -126,6 +127,11 @@ export const metadata: Metadata = {
 
   other: {
     'contact:email': CONTACT_EMAIL,
+    // Local-search signals, read off the single location constant.
+    'geo.region': `BR-${CLINIC_ADDRESS_STATE}`,
+    'geo.placename': CLINIC_ADDRESS_CITY,
+    'geo.position': `${CLINIC_COORDINATES.latitude};${CLINIC_COORDINATES.longitude}`,
+    ICBM: `${CLINIC_COORDINATES.latitude}, ${CLINIC_COORDINATES.longitude}`,
   },
 }
 
@@ -152,6 +158,8 @@ export default function RootLayout({
             strategy="beforeInteractive"
           />
         )}
+        {/* Curated inventory for answer engines */}
+        <link rel="llms" href="/llms.txt" />
         {/* Structured Data */}
         <script
           type="application/ld+json"

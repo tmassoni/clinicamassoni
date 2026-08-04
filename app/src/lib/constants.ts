@@ -116,6 +116,54 @@ export const SEO_KEYWORDS = [
   "dentista região oeste Paraná",
 ];
 
+// ==========================================
+// BLOG / EDITORIAL
+// ==========================================
+
+// Educational disclaimer appended to every article.
+// TODO_COMPLIANCE: confirm exact wording against the CFO advertising rules once
+// `/clinic-compliance-research` has produced docs/compliance-guidelines.md.
+export const MEDICAL_DISCLAIMER =
+  "Este conteúdo tem caráter exclusivamente educativo e não substitui uma consulta odontológica. O diagnóstico e a indicação de tratamento dependem de avaliação clínica individual.";
+
+export interface PostAuthor {
+  name: string;
+  cro: string;
+  title: string;
+  specialties: string[];
+  knowsAbout: string[];
+}
+
+// Authors a post can be attributed to via the `author` frontmatter key.
+export const POST_AUTHORS = {
+  enor: {
+    name: DOCTOR_NAME,
+    cro: DOCTOR_CRO,
+    title: `Cirurgião Dentista - ${DOCTOR_SPECIALTY}`,
+    specialties: DOCTOR_SPECIALTIES,
+    knowsAbout: [
+      "Implantes dentários",
+      "Cirurgia buco-maxilo-facial",
+      "Cirurgia plástica periodontal",
+    ],
+  },
+  thiago: {
+    name: DOCTOR_THIAGO_NAME,
+    cro: DOCTOR_THIAGO_CRO,
+    title: DOCTOR_THIAGO_TITLE,
+    specialties: DOCTOR_THIAGO_SPECIALTIES,
+    knowsAbout: [
+      "Dentística restauradora",
+      "Prótese dentária",
+      "Odontologia preventiva",
+    ],
+  },
+} as const satisfies Record<string, PostAuthor>;
+
+export type PostAuthorId = keyof typeof POST_AUTHORS;
+
+export const DEFAULT_POST_AUTHOR_ID: PostAuthorId = "enor";
+
 // Analytics IDs
 // TODO_ANALYTICS: Replace with actual Google Analytics and GTM IDs from client - this should actually be in .env
 export const ANALYTICS_GA_ID = ""; // Example: 'G-XXXXXXXXXX'

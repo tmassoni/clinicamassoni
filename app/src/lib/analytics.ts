@@ -3,7 +3,13 @@
 import { track } from '@vercel/analytics'
 
 export type CtaChannel = 'whatsapp' | 'phone'
-export type CtaSection = 'header' | 'hero' | 'services' | 'contact' | 'footer'
+export type CtaSection =
+  | 'header'
+  | 'hero'
+  | 'services'
+  | 'contact'
+  | 'footer'
+  | 'blog'
 export type CtaLocation = 'cascavel' | 'global'
 
 export interface CtaClickInput {

@@ -6,7 +6,9 @@
     "dev": "next dev --turbopack",
     "build": "next build --turbopack",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test": "bun test",
+    "test:watch": "bun test --watch"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -20,11 +22,14 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "embla-carousel-react": "^8.6.0",
+    "gray-matter": "^4.0.3",
     "lucide-react": "^0.546.0",
     "next": "16.1.6",
+    "next-mdx-remote": "^6.0.0",
     "react": "19.2.4",
     "react-dom": "19.2.4",
     "react-hook-form": "^7.65.0",
+    "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.3.1",
     "zod": "^4.1.12"
   },
@@ -36,6 +41,7 @@
     "@types/react-dom": "19.2.3",
     "eslint": "^9",
     "eslint-config-next": "16.1.6",
+    "image-size": "^2.0.2",
     "react-grab": "^0.1.48",
     "tailwindcss": "^4",
     "typescript": "^5"
