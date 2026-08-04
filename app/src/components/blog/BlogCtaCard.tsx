@@ -1,4 +1,3 @@
-import { Phone } from 'lucide-react'
 import { TrackedLinkButton } from '@/app/src/components/custom/TrackedLinkButton'
 import { cn } from '@/app/src/lib/utils'
 import {
@@ -53,16 +52,17 @@ export function BlogCtaCard({
           location="cascavel"
           variant="default"
           size="lg"
-          className="group bg-white text-primary shadow-xl transition-all duration-200 hover:scale-105 hover:bg-white/90 hover:shadow-2xl active:scale-95"
+          className="bg-white text-primary shadow-xl transition-all duration-200 hover:scale-105 hover:bg-white/90 hover:shadow-2xl active:scale-95"
         >
-          <Phone
-            className="mr-2 h-4 w-4 transition-transform group-hover:rotate-12"
-            aria-hidden="true"
-          />
-          Agendar consulta pelo WhatsApp
+          Agendar avaliação
         </TrackedLinkButton>
 
-        <p className="mt-5 text-sm text-white/70">
+        {/*
+          `max-w-none` because globals.css caps every `p` at 65ch. A capped
+          block inside a `text-center` parent centres its text but not itself,
+          so this line sat left of the button above it.
+        */}
+        <p className="mt-5 max-w-none text-sm text-white/70">
           Atendimento em {CLINIC_ADDRESS_CITY}, {CLINIC_ADDRESS_STATE}.
         </p>
       </div>

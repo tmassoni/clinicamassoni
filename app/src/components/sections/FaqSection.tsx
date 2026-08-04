@@ -67,7 +67,7 @@ export function FaqSection() {
                 Não encontrou sua dúvida?
               </p>
               <p className="mb-4 text-sm leading-relaxed text-tertiary">
-                Fale com a equipe pelo WhatsApp — é o canal mais rápido.
+                Fale com a nossa equipe diretamente.
               </p>
               <TrackedLinkButton
                 href={CONTACT_WHATSAPP_URL}
@@ -81,13 +81,13 @@ export function FaqSection() {
                 size="default"
                 className="w-full"
               >
-                Falar pelo WhatsApp
+                Entre em contato
               </TrackedLinkButton>
             </div>
           </div>
 
           {/* The section heading above already names this; suppress the inner one. */}
-          <PostFAQ faqs={HOME_FAQS} heading={null} defaultOpen={false} />
+          <PostFAQ faqs={HOME_FAQS} heading={null} />
         </div>
       </div>
     </section>

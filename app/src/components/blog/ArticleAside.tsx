@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { ArrowRight, Phone, ShieldCheck } from 'lucide-react'
+import { ArrowRight, ShieldCheck } from 'lucide-react'
 import { TrackedLinkButton } from '@/app/src/components/custom/TrackedLinkButton'
 import { TableOfContents } from '@/app/src/components/blog/TableOfContents'
 import { CONTACT_WHATSAPP_URL, type PostAuthor } from '@/app/src/lib/constants'
@@ -43,7 +43,7 @@ export function ArticleAside({
   return (
     <aside
       aria-label="Conteúdo complementar"
-      className="hidden lg:sticky lg:top-28 lg:block lg:max-h-[calc(100vh-8rem)] lg:self-start lg:overflow-y-auto lg:pb-4 [scrollbar-width:thin]">
+      className="hidden lg:sticky lg:top-36 lg:block lg:max-h-[calc(100vh-11rem)] lg:self-start lg:overflow-y-auto lg:pb-4 [scrollbar-width:thin]">
       <TableOfContents headings={headings} className="mb-8" />
 
       <div className="rounded-2xl border border-accent/50 bg-white/70 p-5 backdrop-blur-sm">
@@ -88,8 +88,7 @@ export function ArticleAside({
           size="default"
           className="w-full bg-white text-primary hover:bg-white/90"
         >
-          <Phone className="mr-2 h-4 w-4" aria-hidden="true" />
-          Agendar
+          Agendar avaliação
         </TrackedLinkButton>
       </div>
     </aside>

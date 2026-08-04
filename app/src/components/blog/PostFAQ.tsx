@@ -9,12 +9,6 @@ interface PostFAQProps {
    * otherwise the page shows "Perguntas frequentes" twice.
    */
   heading?: string | null
-  /**
-   * Open by default inside an article, where the FAQ is part of the reading
-   * flow. Closed on the landing page, where six expanded answers push the rest
-   * of the page far down. Either way the text is in the served HTML.
-   */
-  defaultOpen?: boolean
   className?: string
 }
 
@@ -22,11 +16,12 @@ interface PostFAQProps {
  * Native <details> rather than a JS accordion: the answers stay in the served
  * HTML, so crawlers and answer engines read the same text that FAQPage schema
  * declares. Schema-only FAQs are a manipulation signal.
+ *
+ * Only the first item starts open — see the note on `open` below.
  */
 export function PostFAQ({
   faqs,
   heading = 'Perguntas frequentes',
-  defaultOpen = true,
   className,
 }: PostFAQProps) {
   if (faqs.length === 0) return null
@@ -49,10 +44,17 @@ export function PostFAQ({
 
       {/* Matches the `speakable` cssSelector in generateFAQSchema. */}
       <div className="space-y-3" data-speakable="faq">
-        {faqs.map((faq) => (
+        {faqs.map((faq, index) => (
           <details
             key={faq.question}
-            open={defaultOpen}
+            /*
+              First one open, the rest closed. Six expanded answers buried the
+              rest of the page, and an all-collapsed block gives no hint that
+              the answers are substantial. `<details>` keeps every answer in the
+              served HTML either way, so the FAQPage schema and answer engines
+              are unaffected by the open state.
+            */
+            open={index === 0}
             className="group rounded-2xl border border-accent/50 bg-linear-to-br from-bg-subtle to-white px-5 py-4 transition-colors hover:border-primary/30 sm:px-6"
           >
             <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-semibold text-primary marker:content-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">
