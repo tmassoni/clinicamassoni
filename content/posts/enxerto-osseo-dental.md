@@ -16,6 +16,7 @@ intent: 'consideration'
 articleSection: 'Implantes dentários'
 author: 'enor'
 featured: false
+ownerTreatment: 'enxerto-osseo'
 order: 9
 relatedPosts:
   - 'implante-dentario-passo-a-passo'

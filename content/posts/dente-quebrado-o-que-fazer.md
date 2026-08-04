@@ -16,6 +16,7 @@ intent: 'awareness'
 articleSection: 'Dentística restauradora'
 author: 'thiago'
 featured: false
+ownerTreatment: 'dentistica-restauradora'
 order: 14
 relatedPosts:
   - 'dentistica-restauradora'

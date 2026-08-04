@@ -32,6 +32,12 @@ export interface BlogPostFrontmatter {
   featured?: boolean
   order?: number
   relatedPosts?: string[]
+  /**
+   * The service page this post supports. Informational posts link *up* to the
+   * page that owns the commercial intent — that funnelling is the whole reason
+   * the ownership table exists.
+   */
+  ownerTreatment?: string
   faqs?: FAQItem[]
 }
 

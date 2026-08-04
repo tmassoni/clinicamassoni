@@ -16,6 +16,7 @@ intent: 'consideration'
 articleSection: 'Cirurgia buco-maxilo-facial'
 author: 'enor'
 featured: false
+ownerTreatment: 'extracao-de-sisos'
 order: 5
 relatedPosts:
   - 'cirurgiao-bucomaxilofacial-quando-procurar'

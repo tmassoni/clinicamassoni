@@ -16,6 +16,7 @@ intent: 'consideration'
 articleSection: 'Reabilitação oral'
 author: 'thiago'
 featured: false
+ownerTreatment: 'dentistica-restauradora'
 order: 3
 relatedPosts:
   - 'recontorno-estetico-resina-composta'

@@ -16,6 +16,7 @@ intent: 'consideration'
 articleSection: 'Odontologia estética'
 author: 'thiago'
 featured: false
+ownerTreatment: 'dentistica-restauradora'
 order: 2
 relatedPosts:
   - 'reabilitacao-bucal-resina-composta'

@@ -16,6 +16,7 @@ intent: 'awareness'
 articleSection: 'Cirurgia buco-maxilo-facial'
 author: 'enor'
 featured: true
+ownerTreatment: 'cirurgia-bucomaxilofacial'
 order: 4
 relatedPosts:
   - 'extracao-de-siso'

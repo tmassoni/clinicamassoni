@@ -16,6 +16,7 @@ intent: 'consideration'
 articleSection: 'Cirurgia buco-maxilo-facial'
 author: 'enor'
 featured: false
+ownerTreatment: 'cirurgia-ortognatica'
 order: 6
 relatedPosts:
   - 'cirurgiao-bucomaxilofacial-quando-procurar'

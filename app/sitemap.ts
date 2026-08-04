@@ -1,6 +1,10 @@
 import type { MetadataRoute } from 'next'
 import { CLINIC_WEBSITE } from '@/app/src/lib/constants'
 import { getAllPosts, getBlogLastModified } from '@/app/src/lib/blog'
+import { TREATMENTS_BY_ORDER, getTreatmentUrl } from '@/app/src/lib/treatments'
+
+/** Service pages ship together; one date for the set is honest. */
+const TREATMENTS_LAST_MODIFIED = '2026-08-04'
 
 /**
  * Hand-maintained dates for static routes. `new Date()` everywhere would claim
@@ -9,6 +13,12 @@ import { getAllPosts, getBlogLastModified } from '@/app/src/lib/blog'
  */
 const STATIC_ROUTES = [
   { path: '/', lastModified: '2026-08-04', changeFrequency: 'weekly', priority: 1 },
+  {
+    path: '/tratamentos',
+    lastModified: TREATMENTS_LAST_MODIFIED,
+    changeFrequency: 'monthly',
+    priority: 0.95,
+  },
   { path: '/blog', lastModified: null, changeFrequency: 'weekly', priority: 0.85 },
   {
     path: '/politica-de-privacidade',
@@ -40,6 +50,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route.priority,
   }))
 
+  // Commercial intent lives here, so these outrank posts.
+  const treatmentEntries: MetadataRoute.Sitemap = TREATMENTS_BY_ORDER.map(
+    (treatment) => ({
+      url: getTreatmentUrl(treatment.slug),
+      lastModified: new Date(TREATMENTS_LAST_MODIFIED),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    })
+  )
+
   // Posts are auto-discovered from disk so publishing can never forget one.
   const postEntries: MetadataRoute.Sitemap = getAllPosts().map((post) => ({
     url: post.url,
@@ -48,5 +68,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }))
 
-  return [...staticEntries, ...postEntries]
+  return [...staticEntries, ...treatmentEntries, ...postEntries]
 }

@@ -16,6 +16,7 @@ intent: 'awareness'
 articleSection: 'Odontologia preventiva'
 author: 'thiago'
 featured: false
+ownerTreatment: 'cirurgia-plastica-periodontal'
 order: 15
 relatedPosts:
   - 'profilaxia-dental'

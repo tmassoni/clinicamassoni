@@ -23,9 +23,22 @@
 ## Main pages
 
 - [Início](https://www.clinicamassoni.com.br/): apresentação da clínica, especialidades, equipe e contato.
+- [Tratamentos](https://www.clinicamassoni.com.br/tratamentos): catálogo dos procedimentos realizados, com indicações e limites de cada um.
 - [Blog](https://www.clinicamassoni.com.br/blog): artigos educativos sobre saúde bucal, cirurgia e prevenção.
 - [Política de privacidade](https://www.clinicamassoni.com.br/politica-de-privacidade): tratamento de dados pessoais (LGPD).
 - [Termos de uso](https://www.clinicamassoni.com.br/termos-de-uso): condições de uso do site.
+
+## Tratamentos
+
+- [Implantes dentários](https://www.clinicamassoni.com.br/tratamentos/implantes-dentarios): implantes unitários, múltiplos e em área estética, com planejamento por tomografia.
+- [Enxerto ósseo](https://www.clinicamassoni.com.br/tratamentos/enxerto-osseo): reconstrução óssea, levantamento de seio maxilar e preservação alveolar.
+- [Protocolo sobre implantes (All-on-4)](https://www.clinicamassoni.com.br/tratamentos/protocolo-all-on-4): prótese fixa parafusada para reabilitar a arcada inteira.
+- [Cirurgia e traumatologia buco-maxilo-facial](https://www.clinicamassoni.com.br/tratamentos/cirurgia-bucomaxilofacial): dentes retidos, cistos e lesões, traumatismo facial e biópsias.
+- [Extração de sisos e dentes retidos](https://www.clinicamassoni.com.br/tratamentos/extracao-de-sisos): critérios de indicação, técnica e pós-operatório.
+- [Cirurgia ortognática](https://www.clinicamassoni.com.br/tratamentos/cirurgia-ortognatica): correção da posição dos maxilares em conjunto com a ortodontia.
+- [Cirurgia plástica periodontal](https://www.clinicamassoni.com.br/tratamentos/cirurgia-plastica-periodontal): recobrimento de recessões gengivais, aumento de coroa clínica e gengivoplastia.
+- [Dentística restauradora](https://www.clinicamassoni.com.br/tratamentos/dentistica-restauradora): restaurações diretas e indiretas, facetas e estética anterior.
+- [Prótese dentária](https://www.clinicamassoni.com.br/tratamentos/protese-dentaria): coroas, pontes, próteses removíveis e próteses sobre implantes.
 
 ## Blog — artigos educativos
 

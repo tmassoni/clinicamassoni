@@ -16,6 +16,7 @@ intent: 'consideration'
 articleSection: 'Prótese dentária'
 author: 'thiago'
 featured: false
+ownerTreatment: 'protese-dentaria'
 order: 13
 relatedPosts:
   - 'protese-fixa-sobre-implantes'

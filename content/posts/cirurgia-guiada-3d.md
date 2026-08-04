@@ -16,6 +16,7 @@ intent: 'consideration'
 articleSection: 'Implantes dentários'
 author: 'enor'
 featured: false
+ownerTreatment: 'implantes-dentarios'
 order: 11
 relatedPosts:
   - 'implante-dentario-passo-a-passo'

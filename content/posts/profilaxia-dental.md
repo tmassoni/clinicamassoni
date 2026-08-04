@@ -16,6 +16,7 @@ intent: 'awareness'
 articleSection: 'Odontologia preventiva'
 author: 'enor'
 featured: true
+ownerTreatment: 'cirurgia-plastica-periodontal'
 order: 1
 relatedPosts:
   - 'recontorno-estetico-resina-composta'

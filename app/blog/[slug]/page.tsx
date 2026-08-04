@@ -10,6 +10,7 @@ import { BlogBackdrop } from '@/app/src/components/blog/BlogBackdrop'
 import { BlogCtaCard } from '@/app/src/components/blog/BlogCtaCard'
 import { PostCard } from '@/app/src/components/blog/PostCard'
 import { PostFAQ } from '@/app/src/components/blog/PostFAQ'
+import { OwnerTreatmentCard } from '@/app/src/components/blog/OwnerTreatmentCard'
 import { mdxComponents } from '@/app/src/components/blog/mdx-components'
 import { formatPostDate } from '@/app/src/lib/blog-format'
 import {
@@ -173,6 +174,10 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
 
             {post.faqs && post.faqs.length > 0 && <PostFAQ faqs={post.faqs} />}
+
+            {post.ownerTreatment && (
+              <OwnerTreatmentCard slug={post.ownerTreatment} />
+            )}
 
             <AuthorByline author={post.authorProfile} />
           </article>

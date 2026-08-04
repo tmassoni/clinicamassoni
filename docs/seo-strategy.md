@@ -25,6 +25,28 @@ topical authority across the cluster and funnels internal links to whichever
 page owns the commercial intent. That mechanism only works if the ownership
 below is respected.
 
+### Built — service pages (9 + hub)
+
+**These own the commercial intent.** Built 2026-08-04; every post links up to
+one of them via its `ownerTreatment` frontmatter key.
+
+| Owner URL | Owns the query | Practitioner |
+|---|---|---|
+| `/tratamentos` | service discovery; never competes with its children | — |
+| `/tratamentos/implantes-dentarios` | implantes dentários Cascavel | Enor |
+| `/tratamentos/enxerto-osseo` | enxerto ósseo Cascavel | Enor |
+| `/tratamentos/protocolo-all-on-4` | all on 4 / protocolo dentário Cascavel | Enor |
+| `/tratamentos/cirurgia-bucomaxilofacial` | cirurgia buco-maxilo-facial Cascavel | Enor |
+| `/tratamentos/extracao-de-sisos` | extração siso Cascavel | Enor |
+| `/tratamentos/cirurgia-ortognatica` | cirurgia ortognática Cascavel | Enor |
+| `/tratamentos/cirurgia-plastica-periodontal` | recessão gengival / recobrimento de raízes Cascavel | Enor |
+| `/tratamentos/dentistica-restauradora` | dentística restauradora Cascavel | Thiago |
+| `/tratamentos/protese-dentaria` | prótese dentária Cascavel | Thiago |
+
+Deliberately still without a URL: cirurgias guiadas 3D (a differentiator, not a
+search term — lives inside the implants page), frenectomias and biópsias (low
+local volume, covered by the buco-maxilo page).
+
 ### Built — homepage and hub
 
 | Cluster | Owner URL | Intent | Supporting content role |
@@ -34,65 +56,49 @@ below is respected.
 
 ### Built — blog posts (17)
 
-Each owns one informational question and links **up**. The "future owner"
-column is the service page that should take the commercial intent once built;
-until it exists, that intent is unowned and the homepage absorbs it.
+Each owns one informational question and links **up** to the service page that
+owns its commercial intent, declared in the post's `ownerTreatment` frontmatter.
 
-| # | Post | Primary query | Intent | Future owner service page |
+| # | Post | Primary query | Intent | Owner service page |
 |---|---|---|---|---|
-| 1 | `profilaxia-dental` | profilaxia dental | awareness | `/tratamentos/periodontia` |
-| 2 | `recontorno-estetico-resina-composta` | recontorno estético | consideration | `/tratamentos/estetica-dental` |
-| 3 | `reabilitacao-bucal-resina-composta` | reabilitação bucal com resina composta | consideration | `/tratamentos/reabilitacao-oral` |
-| 4 | `cirurgiao-bucomaxilofacial-quando-procurar` | cirurgião bucomaxilofacial | awareness | `/tratamentos/cirurgia-bucomaxilofacial` |
-| 5 | `extracao-de-siso` | extração de siso | consideration | `/tratamentos/extracao-de-sisos` |
-| 6 | `cirurgia-ortognatica` | cirurgia ortognática | consideration | `/tratamentos/cirurgia-ortognatica` |
-| 7 | `lesoes-e-cistos-na-boca` | cisto na boca | awareness | `/tratamentos/cirurgia-bucomaxilofacial` |
-| 8 | `implante-dentario-passo-a-passo` | implante dentário | consideration | `/tratamentos/implantes-dentarios` |
-| 9 | `enxerto-osseo-dental` | enxerto ósseo dental | consideration | `/tratamentos/enxerto-osseo` |
-| 10 | `protese-fixa-sobre-implantes` | protocolo sobre implantes | consideration | `/tratamentos/protocolo-all-on-4` |
-| 11 | `cirurgia-guiada-3d` | cirurgia guiada | consideration | `/tratamentos/implantes-dentarios` |
-| 12 | `dentistica-restauradora` | dentística restauradora | awareness | `/tratamentos/dentistica-restauradora` |
-| 13 | `tipos-de-protese-dentaria` | prótese dentária | consideration | `/tratamentos/protese-dentaria` |
-| 14 | `dente-quebrado-o-que-fazer` | dente quebrado | awareness | `/tratamentos/dentistica-restauradora` |
-| 15 | `gengiva-sangrando` | gengiva sangrando | awareness | `/tratamentos/periodontia` |
-| 16 | `sensibilidade-nos-dentes` | sensibilidade nos dentes | awareness | `/tratamentos/dentistica-restauradora` |
-| 17 | `traumatismo-facial-fraturas` | traumatismo facial | awareness | `/tratamentos/cirurgia-bucomaxilofacial` |
+| 1 | `profilaxia-dental` | profilaxia dental | awareness | `cirurgia-plastica-periodontal` |
+| 2 | `recontorno-estetico-resina-composta` | recontorno estético | consideration | `dentistica-restauradora` |
+| 3 | `reabilitacao-bucal-resina-composta` | reabilitação bucal com resina composta | consideration | `dentistica-restauradora` |
+| 4 | `cirurgiao-bucomaxilofacial-quando-procurar` | cirurgião bucomaxilofacial | awareness | `cirurgia-bucomaxilofacial` |
+| 5 | `extracao-de-siso` | extração de siso | consideration | `extracao-de-sisos` |
+| 6 | `cirurgia-ortognatica` | cirurgia ortognática | consideration | `cirurgia-ortognatica` |
+| 7 | `lesoes-e-cistos-na-boca` | cisto na boca | awareness | `cirurgia-bucomaxilofacial` |
+| 8 | `implante-dentario-passo-a-passo` | implante dentário | consideration | `implantes-dentarios` |
+| 9 | `enxerto-osseo-dental` | enxerto ósseo dental | consideration | `enxerto-osseo` |
+| 10 | `protese-fixa-sobre-implantes` | protocolo sobre implantes | consideration | `protocolo-all-on-4` |
+| 11 | `cirurgia-guiada-3d` | cirurgia guiada | consideration | `implantes-dentarios` |
+| 12 | `dentistica-restauradora` | dentística restauradora | awareness | `dentistica-restauradora` |
+| 13 | `tipos-de-protese-dentaria` | prótese dentária | consideration | `protese-dentaria` |
+| 14 | `dente-quebrado-o-que-fazer` | dente quebrado | awareness | `dentistica-restauradora` |
+| 15 | `gengiva-sangrando` | gengiva sangrando | awareness | `cirurgia-plastica-periodontal` |
+| 16 | `sensibilidade-nos-dentes` | sensibilidade nos dentes | awareness | `dentistica-restauradora` |
+| 17 | `traumatismo-facial-fraturas` | traumatismo facial | awareness | `cirurgia-bucomaxilofacial` |
 
 Mix: 7 awareness, 10 consideration. Ten attributed to Dr. Enor (surgical and
 implant clusters), seven to Dr. Thiago (restorative, prosthetic, preventive) —
 each matching the practitioner's registered specialty, which is what makes the
 `Article.author` credential chain a real E-E-A-T signal rather than a formality.
 
-**The gap this exposes:** every "future owner" cell above is empty in
-production. The blog can support those commercial terms but cannot own them.
-Building `/tratamentos` and its children is now the highest-value SEO work
-remaining.
+**Gap closed 2026-08-04.** The owner pages now exist and every post declares
+its owner, validated by `tests/treatments.test.ts` — a post without a resolving
+`ownerTreatment` fails the build's test gate, and a treatment with no supporting
+post fails too. The funnel is enforced, not merely documented.
 
-### Planned — not yet built
+### Not built — deliberate, with the reason
 
-Seeded from `procedureType[]` in `structured-data.ts` and the keyword list in
-`constants.ts`. **Slugs are proposals, not decisions**; nothing here is a URL
-until it has confirmed patient demand and the practitioner has supplied FAQs.
-
-| Cluster | Proposed owner URL | Intent | Evidence it deserves a URL |
-|---|---|---|---|
-| Service discovery | `/tratamentos` | commercial, broad | Hub required before any child page ships |
-| Implantes dentários | `/tratamentos/implantes-dentarios` | commercial | Top keyword in `SEO_KEYWORDS`; the practice's headline service |
-| Protocolo All-on-4 | `/tratamentos/protocolo-all-on-4` | commercial | Named keyword "all on 4 Cascavel" |
-| Enxerto ósseo | `/tratamentos/enxerto-osseo` | commercial | Named keyword "enxerto ósseo Cascavel" |
-| Cirurgia plástica periodontal | `/tratamentos/cirurgia-plastica-periodontal` | commercial | Three named keywords (recessão gengival, recobrimento de raízes) |
-| Extração de sisos | `/tratamentos/extracao-de-sisos` | commercial | Named keyword "extração siso Cascavel" |
-| Cirurgia ortognática | `/tratamentos/cirurgia-ortognatica` | commercial | Named keyword "cirurgia ortognática Cascavel" |
-| Credentials / person entity | `/sobre` | brand + E-E-A-T | Strengthens the `Physician` node; currently only a landing section |
-| The physical address | `/` (single location) | local | **One staffed address only** — no location subpages, no per-neighbourhood pages |
-
-Deliberately **not** owning a URL, pending evidence:
-
-- *Cirurgias guiadas com tecnologia 3D* — a differentiator, not a search term.
-  Belongs in `/sobre` and inside service-page copy.
-- *Traumatismo e fraturas faciais* — emergency intent, not shopping intent.
-- *Cistos e tumores bucomaxilofaciais*, *biópsias orais*, *frenectomias* —
-  clinically sensitive and low local volume; needs the compliance answer first.
+| Cluster | Why there is no URL |
+|---|---|
+| `/sobre` | Would strengthen the person entity for E-E-A-T. Genuinely worth building; simply not done yet. |
+| Cirurgias guiadas 3D | A differentiator, not a search term. Lives inside the implants page. |
+| Frenectomias, biópsias orais | Low local volume; covered as procedures inside the buco-maxilo page. |
+| Cistos e tumores | Clinically sensitive; the blog post handles the informational side without a commercial page. |
+| Location subpages | One real staffed address. Per-neighbourhood pages are a doorway pattern. |
+| Clareamento dental | Not in `procedureType[]`. Confirm the clinic offers it before creating a page. |
 
 ## Rules this table enforces
 
@@ -152,7 +158,7 @@ Point-in-time measurement, not a promise. Re-measure monthly.
 | Top 3 | Unknown | — |
 | Top 10 | Unknown | — |
 | Published posts | 17 | 2026-08-04 |
-| Service pages | 0 | 2026-08-04 |
+| Service pages | 9 + hub | 2026-08-04 |
 
 **Data sources available: none yet.** Search Console is not verified
 (`GOOGLE_SITE_VERIFICATION` unset), GA4/GTM IDs are empty in `constants.ts`, and

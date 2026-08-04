@@ -16,6 +16,7 @@ intent: 'consideration'
 articleSection: 'Implantes dentários'
 author: 'enor'
 featured: true
+ownerTreatment: 'implantes-dentarios'
 order: 8
 relatedPosts:
   - 'enxerto-osseo-dental'

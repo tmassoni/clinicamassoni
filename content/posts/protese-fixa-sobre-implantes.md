@@ -16,6 +16,7 @@ intent: 'consideration'
 articleSection: 'Implantes dentários'
 author: 'enor'
 featured: false
+ownerTreatment: 'protocolo-all-on-4'
 order: 10
 relatedPosts:
   - 'implante-dentario-passo-a-passo'

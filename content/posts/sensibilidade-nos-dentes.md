@@ -16,6 +16,7 @@ intent: 'awareness'
 articleSection: 'Odontologia preventiva'
 author: 'thiago'
 featured: false
+ownerTreatment: 'dentistica-restauradora'
 order: 16
 relatedPosts:
   - 'gengiva-sangrando'

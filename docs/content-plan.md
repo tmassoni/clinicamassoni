@@ -12,16 +12,17 @@ different page types:
 | Query | Kind | Belongs to |
 |---|---|---|
 | dentista Cascavel, cirurgião dentista Cascavel | commercial + local | `/` — the homepage |
-| implante dentário Cascavel, prótese dentária Cascavel, cirurgia buco-maxilo-facial Cascavel | commercial + local | a **service page** under `/tratamentos` — *not yet built* |
+| implante dentário Cascavel, prótese dentária Cascavel, cirurgia buco-maxilo-facial Cascavel | commercial + local | a **service page** under `/tratamentos` — **9 built** |
 | extração de siso, gengiva sangrando, cisto na boca, dentística restauradora | informational | blog posts — **17 built** |
 
 The blog cannot win the commercial terms and should not try. What it does is
 build topical authority across each cluster and funnel internal links to
-whichever page owns the commercial intent. Right now those owner pages don't
-exist, so that link equity lands on the homepage.
+whichever page owns the commercial intent.
 
-**Consequence: `/tratamentos` and its children are the highest-value SEO work
-remaining.** Every post already names the service page it should link up to.
+Those owner pages now exist. Each post declares its owner in the
+`ownerTreatment` frontmatter key and renders a link-up card; each service page
+links back down to one or two supporting posts. Both directions are asserted by
+`tests/treatments.test.ts`.
 
 ## Sourcing mode
 
@@ -79,23 +80,23 @@ than general education:
 
 | Topic | Primary query | Type | Owner |
 |---|---|---|---|
-| `/tratamentos` hub + first 4 service pages | the commercial terms | **service page** | itself |
-| Bruxismo e placa de proteção | bruxismo | post | `/tratamentos/reabilitacao-oral` |
-| Mau hálito: causas e tratamento | mau hálito | post | `/tratamentos/periodontia` |
-| Recessão gengival e recobrimento de raízes | recessão gengival | post | `/tratamentos/cirurgia-plastica-periodontal` |
-| Perimplantite: como manter implantes | perimplantite | post | `/tratamentos/implantes-dentarios` |
-| Frenectomia em bebês e adultos | frenectomia | post | `/tratamentos/cirurgia-bucomaxilofacial` |
+| Bruxismo e placa de proteção | bruxismo | post | `dentistica-restauradora` |
+| Mau hálito: causas e tratamento | mau hálito | post | `cirurgia-plastica-periodontal` |
+| Recessão gengival e recobrimento de raízes | recessão gengival | post | `cirurgia-plastica-periodontal` |
+| Perimplantite: como manter implantes | perimplantite | post | `implantes-dentarios` |
+| Frenectomia em bebês e adultos | frenectomia | post | `cirurgia-bucomaxilofacial` |
 
-Build the service pages **before** the next posts — otherwise the queue keeps
-adding posts that link up to pages that don't exist.
+Each queued post already has its owner page built, so it can link up on day
+one. New posts must declare `ownerTreatment` — the test suite rejects orphans.
 
 ## Open items blocking publish
 
 1. **Medical accuracy sign-off.** No post has been reviewed by either
    practitioner. Who signs, and how fast, is still unanswered in
    `docs/client-brief.md` §8.
-2. **Patient photo consent** on posts 1–3, plus the CFO determination on
-   before/after imagery.
-3. **`docs/compliance-guidelines.md` does not exist.** Run
-   `/clinic-compliance-research` — every claim in 17 posts is currently checked
-   against general principles rather than the regulator's actual text.
+2. **Patient photo consent** on posts 1–3. `docs/compliance-guidelines.md` §10
+   records what is still needed: a TCLE per patient, and confirmation of which
+   dentist personally performed each documented case — art. 4º of
+   Resolução CFO-196/2019 forbids publishing a third party's clinical cases.
+3. **Compliance re-review** when the CFO's advertising chapter rewrite lands
+   (DECISÃO CFO-05-2025). The current doc is dated 2026-08-04.

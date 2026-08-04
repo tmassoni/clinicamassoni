@@ -16,6 +16,7 @@ intent: 'awareness'
 articleSection: 'Dentística restauradora'
 author: 'thiago'
 featured: true
+ownerTreatment: 'dentistica-restauradora'
 order: 12
 relatedPosts:
   - 'dente-quebrado-o-que-fazer'

@@ -16,6 +16,7 @@ intent: 'awareness'
 articleSection: 'Cirurgia buco-maxilo-facial'
 author: 'enor'
 featured: false
+ownerTreatment: 'cirurgia-bucomaxilofacial'
 order: 17
 relatedPosts:
   - 'cirurgiao-bucomaxilofacial-quando-procurar'
