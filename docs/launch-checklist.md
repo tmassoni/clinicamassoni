@@ -86,7 +86,8 @@ will flag anything missed.
 
 | Item | Why it's open |
 |---|---|
-| **Playwright smoke + axe pass** | The kit recommends both. Current guardrails are unit-level (`bun test`), which cover discovery, dimensions, schema and canonicals but not rendering. Lighthouse now covers a11y at the page level, but only for pages you point it at. |
+| **LGPD cookie consent** | Not a live exposure today (see §3), but a prerequisite for GA4. |
+| **Homepage `FAQPage`** | Built, but two questions patients demonstrably ask are missing because the answers aren't in the brief: accepted convênios, and payment terms. Note art. 44 I prohibits advertising prices and payment methods, so the second may not be publishable — confirm with counsel. |
 
 ### Lighthouse — run 2026-08-04 against a production build
 
@@ -110,10 +111,6 @@ npx lighthouse http://localhost:4399/tratamentos/implantes-dentarios \
   --only-categories=performance,accessibility,best-practices,seo \
   --chrome-flags="--headless=new" --preset=desktop --view
 ```
-| **Homepage `FAQPage` schema** | `PATTERNS.md` expects the landing page to emit one. The homepage has no FAQ section, so this needs 5–6 real patient questions from the practice before it can exist. |
-| **`/sobre` page** | Would strengthen the person entity for E-E-A-T. Currently only a landing-page section. |
-| **`/llms-full.txt`, `speakable` schema** | Optional AEO extras the playbook says to propose rather than assume. |
-| **LGPD cookie consent** | Not currently a live exposure (see §3), but a prerequisite for GA4. |
 
 ## 7. The loop, once live
 

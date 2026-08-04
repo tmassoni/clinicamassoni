@@ -338,6 +338,13 @@ bun run start
 # Linting
 bun run lint
 
+# Content + SEO contracts (fast, no browser)
+bun run test
+
+# Rendering, navigation and axe accessibility, desktop + mobile,
+# against a production build
+bun run test:e2e
+
 # Install dependencies (ALWAYS use bun)
 bun install
 bun add <package>        # Add dependency

@@ -126,39 +126,143 @@ export const SEO_KEYWORDS = [
 export const MEDICAL_DISCLAIMER =
   "Este conteúdo tem caráter exclusivamente educativo e não substitui uma consulta odontológica. O diagnóstico e a indicação de tratamento dependem de avaliação clínica individual.";
 
+export interface PractitionerCredential {
+  /** e.g. "Graduação", "Especialização" */
+  category: string;
+  name: string;
+  institution: string;
+  institutionShort?: string;
+  location?: string;
+  year: string;
+}
+
 export interface PostAuthor {
   name: string;
   cro: string;
   title: string;
   specialties: string[];
   knowsAbout: string[];
+  /** Slug for /sobre anchors and the Person node's @id. */
+  id: string;
+  photo: string;
+  /** Feeds the ProfilePage schema and the /sobre page. */
+  credentials: PractitionerCredential[];
+  /** Short, factual biography paragraphs. No superlatives. */
+  bio: string[];
+  procedures: string[];
 }
 
-// Authors a post can be attributed to via the `author` frontmatter key.
+// Authors a post can be attributed to via the `author` frontmatter key, and
+// the source for /sobre. Every fact here is sourced from the landing page copy
+// or structured-data.ts — none is inferred.
 export const POST_AUTHORS = {
   enor: {
+    id: "enor-massoni",
     name: DOCTOR_NAME,
     cro: DOCTOR_CRO,
     title: `Cirurgião Dentista - ${DOCTOR_SPECIALTY}`,
     specialties: DOCTOR_SPECIALTIES,
+    photo: "/images/team/enor.webp",
     knowsAbout: [
       "Implantes dentários",
       "Cirurgia buco-maxilo-facial",
       "Cirurgia plástica periodontal",
     ],
+    credentials: [
+      {
+        category: "Graduação",
+        name: "Odontologia",
+        institution: "Universidade Federal de Pelotas",
+        institutionShort: "UFPEL",
+        year: "1984",
+      },
+      {
+        category: "Especialização",
+        name: "Cirurgia e Traumatologia Bucomaxilofacial",
+        institution: "Faculdade de Odontologia de Bauru, Universidade de São Paulo",
+        institutionShort: "FOB-USP",
+        location: "Bauru, SP",
+        year: "1993",
+      },
+      {
+        category: "Docência",
+        name: "Professor de Cirurgia, curso de Odontologia",
+        institution: "Universidade Estadual do Oeste do Paraná",
+        institutionShort: "Unioeste",
+        year: "anterior",
+      },
+    ],
+    bio: [
+      "Formado em Odontologia pela UFPEL em 1984 e especializado em Cirurgia e Traumatologia Bucomaxilofacial pela FOB-USP em 1993, tem seu foco principal de atuação na cirurgia oral.",
+      "Atuou como professor de cirurgia na faculdade de Odontologia da Unioeste e em cursos de especialização da ABO. Está no universo dos implantes dentários desde o início da implantodontia no Brasil, no começo dos anos 90, acompanhando as evoluções tecnológicas da especialidade desde então.",
+      "A humanização do atendimento é o pilar da clínica: ambiente acolhedor, escuta atenta, acompanhamento no pré e no pós-cirúrgico, e rigor em biossegurança.",
+    ],
+    procedures: [
+      "Implantes dentários unitários e múltiplos",
+      "Protocolo sobre implantes (All-on-4)",
+      "Enxerto ósseo e levantamento de seio maxilar",
+      "Cirurgias guiadas com tecnologia 3D",
+      "Cirurgia plástica periodontal",
+      "Extração de sisos e dentes retidos",
+      "Cirurgia ortognática",
+      "Cirurgias de cistos e lesões bucomaxilofaciais",
+    ],
   },
   thiago: {
+    id: "thiago-massoni",
     name: DOCTOR_THIAGO_NAME,
     cro: DOCTOR_THIAGO_CRO,
     title: DOCTOR_THIAGO_TITLE,
     specialties: DOCTOR_THIAGO_SPECIALTIES,
+    photo: "/images/team/thiago.webp",
     knowsAbout: [
       "Dentística restauradora",
       "Prótese dentária",
       "Odontologia preventiva",
     ],
+    credentials: [
+      {
+        category: "Graduação",
+        name: "Odontologia",
+        institution: "Pontifícia Universidade Católica do Paraná",
+        institutionShort: "PUCPR",
+        year: "2018-2022",
+      },
+      {
+        category: "Especialização",
+        name: "Dentística Restauradora",
+        institution: "Zenith",
+        year: "2023-2025",
+      },
+      {
+        category: "Especialização em curso",
+        name: "Prótese Dentária",
+        institution: "Pontifícia Universidade Católica do Paraná",
+        institutionShort: "PUCPR",
+        year: "2025-2027",
+      },
+    ],
+    bio: [
+      "Graduado em Odontologia pela PUCPR entre 2018 e 2022, e especialista em Dentística Restauradora pela Zenith entre 2023 e 2025. Cursa atualmente especialização em Prótese Dentária pela PUCPR.",
+      "Atua em odontologia preventiva e restauradora, com foco em preservar estrutura dental — tratar removendo o mínimo necessário de tecido sadio.",
+    ],
+    procedures: [
+      "Restaurações diretas e indiretas em resina composta",
+      "Facetas em resina composta e porcelana",
+      "Restaurações em porcelana",
+      "Próteses unitárias e de múltiplos elementos",
+      "Recontorno estético e estética dental",
+      "Profilaxia e raspagens periodontais",
+    ],
   },
 } as const satisfies Record<string, PostAuthor>;
+
+/*
+ * Explicitly typed rather than inferred: `as const` above narrows each
+ * credential to a literal whose optional keys (institutionShort, location)
+ * don't exist on every member, which breaks property access at the consumer.
+ */
+export const PRACTITIONERS: PostAuthor[] = [POST_AUTHORS.enor, POST_AUTHORS.thiago];
 
 export type PostAuthorId = keyof typeof POST_AUTHORS;
 

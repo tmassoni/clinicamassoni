@@ -171,9 +171,14 @@ export default function RootLayout({
           Accessibility floor: visually hidden until focused, then the first
           thing a keyboard user reaches. Every page's <main> carries id="main".
         */}
+        {/*
+          Parked off-screen rather than `sr-only`: `not-sr-only` resets
+          `position` to static, which drops the link behind the fixed header and
+          makes it unclickable. Staying `fixed` and translating in avoids that.
+        */}
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[200] focus:rounded-lg focus:bg-primary focus:px-4 focus:py-2 focus:text-white focus:shadow-brand-lg"
+          className="fixed top-4 left-4 z-[200] -translate-y-24 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white shadow-brand-lg transition-transform duration-200 focus:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
         >
           Pular para o conteúdo
         </a>

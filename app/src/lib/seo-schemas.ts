@@ -44,10 +44,18 @@ export function generateBreadcrumbSchema(items: BreadcrumbItem[]) {
   }
 }
 
+/**
+ * FAQPage plus a `speakable` hint. Voice surfaces read the question/answer
+ * pair, which is the shape they want; the selectors match what PostFAQ renders.
+ */
 export function generateFAQSchema(faqs: FAQItem[]) {
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['#perguntas-frequentes', '[data-speakable="faq"]'],
+    },
     mainEntity: faqs.map((faq) => ({
       '@type': 'Question',
       name: faq.question,

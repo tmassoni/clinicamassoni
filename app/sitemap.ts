@@ -14,6 +14,12 @@ const TREATMENTS_LAST_MODIFIED = '2026-08-04'
 const STATIC_ROUTES = [
   { path: '/', lastModified: '2026-08-04', changeFrequency: 'weekly', priority: 1 },
   {
+    path: '/sobre',
+    lastModified: '2026-08-04',
+    changeFrequency: 'yearly',
+    priority: 0.7,
+  },
+  {
     path: '/tratamentos',
     lastModified: TREATMENTS_LAST_MODIFIED,
     changeFrequency: 'monthly',

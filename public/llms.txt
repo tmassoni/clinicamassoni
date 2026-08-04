@@ -20,9 +20,13 @@
 > que encaminham casos. O conteúdo é educativo e não substitui consulta
 > clínica.
 
+> Full text of every page and article in one file:
+> https://www.clinicamassoni.com.br/llms-full.txt
+
 ## Main pages
 
 - [Início](https://www.clinicamassoni.com.br/): apresentação da clínica, especialidades, equipe e contato.
+- [Sobre](https://www.clinicamassoni.com.br/sobre): formação, especializações e áreas de atuação dos dois cirurgiões-dentistas.
 - [Tratamentos](https://www.clinicamassoni.com.br/tratamentos): catálogo dos procedimentos realizados, com indicações e limites de cada um.
 - [Blog](https://www.clinicamassoni.com.br/blog): artigos educativos sobre saúde bucal, cirurgia e prevenção.
 - [Política de privacidade](https://www.clinicamassoni.com.br/politica-de-privacidade): tratamento de dados pessoais (LGPD).

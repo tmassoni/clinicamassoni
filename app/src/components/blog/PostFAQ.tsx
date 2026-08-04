@@ -23,7 +23,8 @@ export function PostFAQ({ faqs }: PostFAQProps) {
         Perguntas frequentes
       </h2>
 
-      <div className="space-y-3">
+      {/* Matches the `speakable` cssSelector in generateFAQSchema. */}
+      <div className="space-y-3" data-speakable="faq">
         {faqs.map((faq) => (
           <details
             key={faq.question}

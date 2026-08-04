@@ -7,8 +7,10 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
-    "test": "bun test",
-    "test:watch": "bun test --watch"
+    "test": "bun test tests/*.test.ts",
+    "test:watch": "bun test tests/*.test.ts --watch",
+    "test:e2e": "playwright test",
+    "test:e2e:a11y": "playwright test accessibility"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.2.2",
@@ -34,7 +36,9 @@
     "zod": "^4.1.12"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.12.1",
     "@next/bundle-analyzer": "16.1.6",
+    "@playwright/test": "^1.62.1",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "19.2.13",

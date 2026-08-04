@@ -10,8 +10,11 @@ import {
   AboutSection,
   ServicesSection,
   GallerySection,
+  FaqSection,
   ContactSection,
 } from '@/app/src/components/sections'
+import { HOME_FAQS } from '@/app/src/lib/home-faq'
+import { generateFAQSchema, serializeSchema } from '@/app/src/lib/seo-schemas'
 
 export const metadata: Metadata = {
   title: `Dentista em ${CLINIC_ADDRESS_CITY}: Implantes e Cirurgia Buco-Maxilo-Facial | ${DOCTOR_NAME}`,
@@ -51,10 +54,18 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <main id="main" tabIndex={-1} className="min-h-screen">
+      {/* Practice-level FAQ. Clinical questions live on the treatment pages. */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: serializeSchema(generateFAQSchema(HOME_FAQS)),
+        }}
+      />
       <HeroSection />
       <AboutSection />
       <ServicesSection />
       <GallerySection />
+      <FaqSection />
       <ContactSection />
     </main>
   )
