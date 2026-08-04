@@ -538,6 +538,27 @@ export const PHONE_NUMBER = '(45) 3223-3234'
 export const EMAIL = 'clinica_massoni@hotmail.com'
 ```
 
+### Add a blog post
+
+Full contract in `docs/blog-content-playbook.md`. Short version:
+
+1. Create `content/posts/<slug>.md` — **filename must equal the `slug`
+   frontmatter key**, or the build throws.
+2. Open with one italic hook line; it becomes the listing-card subtitle.
+3. `##` headings phrased as the question a patient types, answer in the first
+   sentence (answer engines retrieve sections, not pages).
+4. Images: WebP under `public/images/posts/<slug>/`. If not 1600×1067, add an
+   exact entry to `app/src/lib/mdx-image-dimensions.ts`.
+5. Register the post URL in `public/llms.txt` — the discovery test asserts **set
+   equality**, so both a missing and a stale entry fail.
+6. `bun test && bun run lint && bun run build`.
+
+The sitemap auto-discovers posts; nothing to update there.
+
+Key files: `app/src/lib/blog.ts` (parser + `MedicalWebPage`/`Article` schema),
+`app/src/lib/seo-schemas.ts` (breadcrumb/FAQ/OG generators),
+`app/src/components/blog/`.
+
 ### Add FAQ section
 
 1. Install shadcn accordion (if not already): `npx shadcn@latest add accordion`
@@ -620,7 +641,8 @@ Check path:
 - Cookie consent banner (port from analu-procto)
 - Analytics provider component
 - FAQ section with accordion
-- Blog system (MDX-based)
+- ~~Blog system (MDX-based)~~ — **built**, see "Add a blog post" above
+- Service pages under `/tratamentos` (ownership table in `docs/seo-strategy.md`)
 
 **Phase 3**:
 
