@@ -73,7 +73,10 @@ export default function TreatmentsHubPage() {
       />
 
       <div className="container relative z-10 px-6 pt-28 pb-20 sm:px-8 sm:pt-32 sm:pb-24 lg:px-12 lg:pt-40 lg:pb-28">
-        <div className="mx-auto max-w-6xl">
+        {/* Full container width — an inner max-w would push the content
+            right of the header's left edge. Individual blocks cap their own
+            measure instead. */}
+        <div>
           <Breadcrumb items={breadcrumbItems} className="mb-8" />
 
           <header className="mb-14 max-w-3xl sm:mb-16">

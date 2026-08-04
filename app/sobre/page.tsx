@@ -292,7 +292,8 @@ export default function AboutPage() {
       />
 
       <div className="container relative z-10 px-6 pt-28 pb-20 sm:px-8 sm:pt-32 sm:pb-24 lg:px-12 lg:pt-40 lg:pb-28">
-        <div className="mx-auto max-w-4xl">
+        {/* Full container width — see the note in app/tratamentos/page.tsx. */}
+        <div>
           <Breadcrumb items={breadcrumbItems} className="mb-8" />
 
           <header className="mb-14 max-w-3xl">

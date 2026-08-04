@@ -26,7 +26,7 @@ export function FaqSection() {
       />
 
       <div className="container relative z-10 px-6 sm:px-8 lg:px-12">
-        <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[minmax(0,22rem)_1fr] lg:gap-16">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,24rem)_minmax(0,1fr)] lg:gap-16">
           {/* Left rail — sticks while the answers scroll past it */}
           <div className="lg:sticky lg:top-32 lg:self-start">
             <Badge variant="primary" size="lg" className="mb-4">

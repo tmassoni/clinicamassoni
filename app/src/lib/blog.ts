@@ -59,6 +59,32 @@ export interface BlogPost extends BlogPostFrontmatter {
 const IMAGE_PATTERN = /!\[([^\]]*)\]\(([^)\s]+)\)/
 
 /**
+ * Heading id used by both the rendered `##` and the table of contents, so the
+ * two can never disagree. Accent-folded because the source is Portuguese.
+ */
+export function slugifyHeading(text: string): string {
+  return text
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+}
+
+export interface PostHeading {
+  id: string
+  text: string
+}
+
+/** Top-level (`##`) headings, for the in-page navigation. */
+export function getPostHeadings(content: string): PostHeading[] {
+  return Array.from(content.matchAll(/^##\s+(.+?)\s*$/gm), ([, text]) => ({
+    id: slugifyHeading(text),
+    text: text.replace(/[*_`]/g, ''),
+  }))
+}
+
+/**
  * The card subtitle is the first non-heading paragraph. Authors control it by
  * writing one fully-italic hook line right after the frontmatter; emphasis
  * markers are stripped either way.

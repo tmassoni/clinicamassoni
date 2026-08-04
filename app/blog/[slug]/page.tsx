@@ -11,12 +11,14 @@ import { BlogCtaCard } from '@/app/src/components/blog/BlogCtaCard'
 import { PostCard } from '@/app/src/components/blog/PostCard'
 import { PostFAQ } from '@/app/src/components/blog/PostFAQ'
 import { OwnerTreatmentCard } from '@/app/src/components/blog/OwnerTreatmentCard'
+import { ArticleAside } from '@/app/src/components/blog/ArticleAside'
 import { mdxComponents } from '@/app/src/components/blog/mdx-components'
 import { formatPostDate } from '@/app/src/lib/blog-format'
 import {
   generateBlogPostSchema,
   getAllPostSlugs,
   getPostBySlug,
+  getPostHeadings,
   getRelatedPosts,
 } from '@/app/src/lib/blog'
 import {
@@ -92,6 +94,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const breadcrumbItems = buildBreadcrumbs(post.title, post.slug)
   const relatedPosts = getRelatedPosts(post)
+  const headings = getPostHeadings(post.content)
 
   return (
     <main id="main" tabIndex={-1} className="relative min-h-screen overflow-hidden">
@@ -119,10 +122,16 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
       )}
 
       <div className="container relative z-10 px-6 pt-28 pb-20 sm:px-8 sm:pt-32 sm:pb-24 lg:px-12 lg:pt-40 lg:pb-28">
-        <div className="mx-auto max-w-3xl">
-          <Breadcrumb items={breadcrumbItems} className="mb-8" />
+        <Breadcrumb items={breadcrumbItems} className="mb-8" />
 
-          <header className="mb-10">
+        {/*
+          Left-aligned grid, not `mx-auto`: the article starts at the same edge
+          as the header logo. The reading column keeps a ~48rem measure and the
+          rail beside it uses the width that would otherwise be dead space.
+        */}
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,48rem)_minmax(0,19rem)] lg:gap-14">
+          <div className="min-w-0">
+            <header className="mb-10">
             {post.articleSection && (
               <span className="inline-flex items-center rounded-full border border-primary/10 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
                 {post.articleSection}
@@ -218,6 +227,13 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               Voltar para o blog
             </Link>
           </p>
+          </div>
+
+          <ArticleAside
+            headings={headings}
+            author={post.authorProfile}
+            trackingLabel={`blog_aside_cta_${post.slug}`}
+          />
         </div>
       </div>
     </main>

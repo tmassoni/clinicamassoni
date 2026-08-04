@@ -1,7 +1,18 @@
 import Link from 'next/link'
 import { isValidElement, type ComponentPropsWithoutRef, type ReactNode } from 'react'
 import { MdxImage } from '@/app/src/components/ui/MdxImage'
+import { slugifyHeading } from '@/app/src/lib/blog'
 import { CLINIC_WEBSITE } from '@/app/src/lib/constants'
+
+/** Flattens MDX children to text so a heading id can be derived from them. */
+function toPlainText(node: ReactNode): string {
+  if (typeof node === 'string' || typeof node === 'number') return String(node)
+  if (Array.isArray(node)) return node.map(toPlainText).join('')
+  if (isValidElement<{ children?: ReactNode }>(node)) {
+    return toPlainText(node.props.children)
+  }
+  return ''
+}
 
 const isInternalHref = (href: string) =>
   href.startsWith('/') || href.startsWith('#') || href.startsWith(CLINIC_WEBSITE)
@@ -17,11 +28,16 @@ const isImageOnlyParagraph = (children: ReactNode) =>
 // `text-*!` overrides are deliberate: globals.css sizes bare headings inside
 // unlayered media queries, which outrank Tailwind's layered utilities.
 export const mdxComponents = {
-  h2: (props: ComponentPropsWithoutRef<'h2'>) => (
+  // The id is derived from the heading text with the same function the table
+  // of contents uses, so the anchors always match without a rehype plugin.
+  h2: ({ children, ...props }: ComponentPropsWithoutRef<'h2'>) => (
     <h2
+      id={slugifyHeading(toPlainText(children))}
       className="mt-14 mb-4 scroll-mt-28 font-serif text-2xl! leading-tight font-bold text-primary sm:text-3xl!"
       {...props}
-    />
+    >
+      {children}
+    </h2>
   ),
 
   h3: (props: ComponentPropsWithoutRef<'h3'>) => (

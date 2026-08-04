@@ -7,7 +7,8 @@ import { BlogBackdrop } from '@/app/src/components/blog/BlogBackdrop'
 import { BlogCtaCard } from '@/app/src/components/blog/BlogCtaCard'
 import { PostFAQ } from '@/app/src/components/blog/PostFAQ'
 import { PostCard } from '@/app/src/components/blog/PostCard'
-import { getPostBySlug } from '@/app/src/lib/blog'
+import { ArticleAside } from '@/app/src/components/blog/ArticleAside'
+import { getPostBySlug, slugifyHeading } from '@/app/src/lib/blog'
 import {
   generateTreatmentSchema,
   getAllTreatmentSlugs,
@@ -132,10 +133,12 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
       />
 
       <div className="container relative z-10 px-6 pt-28 pb-20 sm:px-8 sm:pt-32 sm:pb-24 lg:px-12 lg:pt-40 lg:pb-28">
-        <div className="mx-auto max-w-3xl">
-          <Breadcrumb items={breadcrumbItems} className="mb-8" />
+        <Breadcrumb items={breadcrumbItems} className="mb-8" />
 
-          <header className="mb-10">
+        {/* Left-aligned grid — see the note in app/blog/[slug]/page.tsx. */}
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,48rem)_minmax(0,19rem)] lg:gap-14">
+          <div className="min-w-0">
+            <header className="mb-10">
             <div className="flex flex-wrap gap-2">
               {treatment.categories.map((category) => (
                 <span
@@ -170,7 +173,10 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
             {treatment.sections.map((section) => (
               <section key={section.heading}>
                 {/* `text-2xl!` — globals.css sizes bare h2 in unlayered media queries. */}
-                <h2 className="mt-12 mb-4 scroll-mt-28 font-serif text-2xl! leading-tight font-bold text-primary sm:text-3xl!">
+                <h2
+                  id={slugifyHeading(section.heading)}
+                  className="mt-12 mb-4 scroll-mt-28 font-serif text-2xl! leading-tight font-bold text-primary sm:text-3xl!"
+                >
                   {section.heading}
                 </h2>
                 {section.paragraphs.map((paragraph) => (
@@ -186,7 +192,10 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
             ))}
 
             <section>
-              <h2 className="mt-12 mb-4 scroll-mt-28 font-serif text-2xl! leading-tight font-bold text-primary sm:text-3xl!">
+              <h2
+                id="quando-nao-indicado"
+                className="mt-12 mb-4 scroll-mt-28 font-serif text-2xl! leading-tight font-bold text-primary sm:text-3xl!"
+              >
                 Quando este tratamento não é indicado
               </h2>
               <p className="mb-5 max-w-none leading-[1.8] text-text-body">
@@ -275,6 +284,44 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
               Ver todos os tratamentos
             </Link>
           </p>
+          </div>
+
+          <ArticleAside
+            headings={[
+              ...treatment.sections.map((section) => ({
+                id: slugifyHeading(section.heading),
+                text: section.heading,
+              })),
+              { id: 'quando-nao-indicado', text: 'Quando não é indicado' },
+              { id: 'perguntas-frequentes', text: 'Perguntas frequentes' },
+            ]}
+            author={practitioner}
+            trackingLabel={`tratamento_aside_cta_${treatment.slug}`}
+          >
+            {(previous || next) && (
+              <div className="mt-6 rounded-2xl border border-accent/50 bg-white/70 p-5 backdrop-blur-sm">
+                <p className="mb-3 text-xs font-semibold tracking-wide text-tertiary uppercase">
+                  Outros tratamentos
+                </p>
+                <ul className="space-y-2">
+                  {[previous, next].filter(Boolean).map((sibling) => (
+                    <li key={sibling!.slug}>
+                      <Link
+                        href={getTreatmentPath(sibling!.slug)}
+                        className="group inline-flex items-start gap-1.5 text-sm leading-snug text-tertiary transition-colors hover:text-primary"
+                      >
+                        {sibling!.name}
+                        <ArrowRight
+                          className="mt-0.5 h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-0.5"
+                          aria-hidden="true"
+                        />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </ArticleAside>
         </div>
       </div>
     </main>
