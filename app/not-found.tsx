@@ -3,7 +3,7 @@ import { LinkButton } from '@/app/src/components/custom/LinkButton'
 
 export default function NotFound() {
   return (
-    <main className="min-h-screen bg-linear-to-br from-white via-accent/10 to-primary/5">
+    <main id="main" tabIndex={-1} className="min-h-screen bg-linear-to-br from-white via-accent/10 to-primary/5">
       <section className="container px-6 sm:px-8 lg:px-12 py-10 sm:py-12">
         <div className="grid min-h-[calc(100dvh-var(--anchor-offset))] place-items-center">
           <div className="relative w-full max-w-2xl overflow-hidden rounded-3xl border border-primary/10 bg-white/95 p-8 shadow-brand sm:p-12">

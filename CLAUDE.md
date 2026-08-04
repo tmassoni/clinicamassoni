@@ -160,12 +160,17 @@ import type { Metadata } from 'next'
 
 Extracted from logo, WCAG AAA compliant:
 
+Contrast ratios below are measured on white. **The palette is WCAG AA for text,
+not AAA** — `--color-tertiary` was corrected from `#6A7E8B` (4.23:1, failing) to
+`#5B6C78` (5.44:1) after a Lighthouse audit. `--color-accent` is 1.58:1 and must
+never carry text; it is for borders and fills only.
+
 ```css
 /* Brand Colors (globals.css @theme) */
 --color-primary: #042B48;           /* Dark blue - primary brand */
---color-secondary: #3C576A;         /* Medium blue */
---color-tertiary: #6A7E8B;          /* Light blue-gray */
---color-accent: #C8CFD3;            /* Very light blue-gray */
+--color-secondary: #3C576A;         /* Medium blue - 7.60:1 */
+--color-tertiary: #5B6C78;          /* Blue-gray body text - 5.44:1 */
+--color-accent: #C8CFD3;            /* Borders/fills only - 1.58:1, NOT text */
 --color-brand-primary: #042B48;     /* CTA buttons */
 --color-background: #ffffff;        /* Page background */
 

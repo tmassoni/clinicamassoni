@@ -49,8 +49,10 @@ export function PostCard({ post, priority = false }: PostCardProps) {
                 src="/images/logo-white.png"
                 alt=""
                 aria-hidden="true"
-                width={160}
-                height={160}
+                // The asset is 347x202; declaring a square distorts the
+                // intrinsic aspect ratio and Lighthouse flags it.
+                width={347}
+                height={202}
                 className="absolute top-1/2 left-1/2 w-28 -translate-x-1/2 -translate-y-1/2 opacity-15 transition-transform duration-700 group-hover:scale-110"
               />
               <div className="absolute -right-12 -bottom-12 h-40 w-40 rounded-full bg-white/10 blur-3xl" />

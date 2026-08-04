@@ -94,7 +94,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const relatedPosts = getRelatedPosts(post)
 
   return (
-    <main className="relative min-h-screen overflow-hidden">
+    <main id="main" tabIndex={-1} className="relative min-h-screen overflow-hidden">
       <BlogBackdrop />
 
       <script

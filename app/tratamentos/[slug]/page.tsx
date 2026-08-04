@@ -109,7 +109,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
     .slice(0, 2)
 
   return (
-    <main className="relative min-h-screen overflow-hidden">
+    <main id="main" tabIndex={-1} className="relative min-h-screen overflow-hidden">
       <BlogBackdrop />
 
       <script

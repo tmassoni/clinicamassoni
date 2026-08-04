@@ -84,13 +84,13 @@ export function Footer() {
 
             {/* Column 2 - Quick Links */}
             <div>
-              <h4 className="text-lg font-bold mb-4 text-white">Navegação</h4>
+              <h2 className="text-lg! font-bold mb-4 text-white">Navegação</h2>
               <ul className="space-y-3">
                 {navigationItems.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-white/80 hover:text-white transition-colors inline-flex items-center gap-2 group"
+                      className="text-white/80 hover:text-white transition-colors inline-flex items-center gap-2 group py-1.5"
                     >
                       <span className="w-0 h-px bg-white group-hover:w-4 transition-all" />
                       {item.label}
@@ -102,12 +102,12 @@ export function Footer() {
 
             {/* Column 3 - Services */}
             <div>
-              <h4 className="text-lg font-bold mb-4 text-white">Serviços</h4>
+              <h2 className="text-lg! font-bold mb-4 text-white">Serviços</h2>
               <ul className="space-y-3 text-sm">
                 <li>
                   <Link
                     href="/#servicos"
-                    className="text-white/80 hover:text-white transition-colors"
+                    className="text-white/80 hover:text-white transition-colors inline-block py-1.5"
                   >
                     Implantes Dentários
                   </Link>
@@ -115,7 +115,7 @@ export function Footer() {
                 <li>
                   <Link
                     href="/#servicos"
-                    className="text-white/80 hover:text-white transition-colors"
+                    className="text-white/80 hover:text-white transition-colors inline-block py-1.5"
                   >
                     Cirurgia Buco-Maxilo-Facial
                   </Link>
@@ -123,7 +123,7 @@ export function Footer() {
                 <li>
                   <Link
                     href="/#servicos"
-                    className="text-white/80 hover:text-white transition-colors"
+                    className="text-white/80 hover:text-white transition-colors inline-block py-1.5"
                   >
                     Cirurgia Ortognática
                   </Link>
@@ -131,7 +131,7 @@ export function Footer() {
                 <li>
                   <Link
                     href="/#servicos"
-                    className="text-white/80 hover:text-white transition-colors"
+                    className="text-white/80 hover:text-white transition-colors inline-block py-1.5"
                   >
                     Enxerto Ósseo
                   </Link>
@@ -139,7 +139,7 @@ export function Footer() {
                 <li>
                   <Link
                     href="/#servicos"
-                    className="text-white/80 hover:text-white transition-colors"
+                    className="text-white/80 hover:text-white transition-colors inline-block py-1.5"
                   >
                     Extração de Sisos
                   </Link>
@@ -149,7 +149,7 @@ export function Footer() {
 
             {/* Column 4 - Contact */}
             <div>
-              <h4 className="text-lg font-bold mb-4 text-white">Contato</h4>
+              <h2 className="text-lg! font-bold mb-4 text-white">Contato</h2>
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-3">
                   <Phone className="w-5 h-5 shrink-0 mt-0.5 text-white/60" />
@@ -162,7 +162,7 @@ export function Footer() {
                       section="footer"
                       label="footer_whatsapp"
                       location="cascavel"
-                      className="text-white/80 hover:text-white transition-colors block"
+                      className="text-white/80 hover:text-white transition-colors block py-1.5"
                     >
                       {CONTACT_WHATSAPP_FORMATTED} (WhatsApp)
                     </TrackedLink>
@@ -172,7 +172,7 @@ export function Footer() {
                       section="footer"
                       label="footer_telefone"
                       location="cascavel"
-                      className="text-white/80 hover:text-white transition-colors block"
+                      className="text-white/80 hover:text-white transition-colors block py-1.5"
                     >
                       {CONTACT_PHONE_FORMATTED}
                     </TrackedLink>
