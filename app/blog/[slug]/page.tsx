@@ -126,10 +126,11 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
         {/*
           Left-aligned grid, not `mx-auto`: the article starts at the same edge
-          as the header logo. The reading column keeps a ~48rem measure and the
-          rail beside it uses the width that would otherwise be dead space.
+          as the header logo. Only the header and the article body sit in this
+          grid — everything after it spans the full container, so the right side
+          isn't dead space once the rail has ended.
         */}
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,48rem)_minmax(0,19rem)] lg:gap-14">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,54rem)_minmax(0,20rem)] lg:gap-14">
           <div className="min-w-0">
             <header className="mb-10">
             {post.articleSection && (
@@ -190,8 +191,17 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
             <AuthorByline author={post.authorProfile} />
           </article>
+          </div>
 
-          <BlogCtaCard
+          <ArticleAside
+            headings={headings}
+            author={post.authorProfile}
+            trackingLabel={`blog_aside_cta_${post.slug}`}
+          />
+        </div>
+
+        {/* Full container width from here — nothing below needs a reading measure. */}
+        <BlogCtaCard
             heading="Agende sua avaliação"
             body="A equipe avalia seu caso individualmente e indica o tratamento adequado para você."
             trackingLabel={`blog_post_cta_${post.slug}`}
@@ -207,7 +217,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               >
                 Artigos relacionados
               </h2>
-              <div className="grid gap-8 sm:grid-cols-2">
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {relatedPosts.map((related) => (
                   <PostCard key={related.slug} post={related} />
                 ))}
@@ -227,14 +237,6 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
               Voltar para o blog
             </Link>
           </p>
-          </div>
-
-          <ArticleAside
-            headings={headings}
-            author={post.authorProfile}
-            trackingLabel={`blog_aside_cta_${post.slug}`}
-          />
-        </div>
       </div>
     </main>
   )

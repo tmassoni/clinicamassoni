@@ -136,7 +136,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
         <Breadcrumb items={breadcrumbItems} className="mb-8" />
 
         {/* Left-aligned grid — see the note in app/blog/[slug]/page.tsx. */}
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,48rem)_minmax(0,19rem)] lg:gap-14">
+        <div className="grid gap-10 lg:grid-cols-[minmax(0,54rem)_minmax(0,20rem)] lg:gap-14">
           <div className="min-w-0">
             <header className="mb-10">
             <div className="flex flex-wrap gap-2">
@@ -208,8 +208,48 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
 
             <PostFAQ faqs={treatment.faqs} />
           </article>
+          </div>
 
-          <BlogCtaCard
+          <ArticleAside
+            headings={[
+              ...treatment.sections.map((section) => ({
+                id: slugifyHeading(section.heading),
+                text: section.heading,
+              })),
+              { id: 'quando-nao-indicado', text: 'Quando não é indicado' },
+              { id: 'perguntas-frequentes', text: 'Perguntas frequentes' },
+            ]}
+            author={practitioner}
+            trackingLabel={`tratamento_aside_cta_${treatment.slug}`}
+          >
+            {(previous || next) && (
+              <div className="mt-6 rounded-2xl border border-accent/50 bg-white/70 p-5 backdrop-blur-sm">
+                <p className="mb-3 text-xs font-semibold tracking-wide text-tertiary uppercase">
+                  Outros tratamentos
+                </p>
+                <ul className="space-y-2">
+                  {[previous, next].filter(Boolean).map((sibling) => (
+                    <li key={sibling!.slug}>
+                      <Link
+                        href={getTreatmentPath(sibling!.slug)}
+                        className="group inline-flex items-start gap-1.5 text-sm leading-snug text-tertiary transition-colors hover:text-primary"
+                      >
+                        {sibling!.name}
+                        <ArrowRight
+                          className="mt-0.5 h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-0.5"
+                          aria-hidden="true"
+                        />
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </ArticleAside>
+        </div>
+
+        {/* Full container width from here — nothing below needs a reading measure. */}
+        <BlogCtaCard
             heading="Agende uma avaliação"
             body="A indicação depende de exame clínico e, na maioria dos casos, de exame de imagem. A avaliação define qual tratamento se aplica ao seu caso."
             trackingLabel={`tratamento_cta_${treatment.slug}`}
@@ -224,7 +264,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
               >
                 Leia também
               </h2>
-              <div className="grid gap-8 sm:grid-cols-2">
+              <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
                 {relatedPosts.map((post) => (
                   <PostCard key={post.slug} post={post} />
                 ))}
@@ -284,45 +324,6 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
               Ver todos os tratamentos
             </Link>
           </p>
-          </div>
-
-          <ArticleAside
-            headings={[
-              ...treatment.sections.map((section) => ({
-                id: slugifyHeading(section.heading),
-                text: section.heading,
-              })),
-              { id: 'quando-nao-indicado', text: 'Quando não é indicado' },
-              { id: 'perguntas-frequentes', text: 'Perguntas frequentes' },
-            ]}
-            author={practitioner}
-            trackingLabel={`tratamento_aside_cta_${treatment.slug}`}
-          >
-            {(previous || next) && (
-              <div className="mt-6 rounded-2xl border border-accent/50 bg-white/70 p-5 backdrop-blur-sm">
-                <p className="mb-3 text-xs font-semibold tracking-wide text-tertiary uppercase">
-                  Outros tratamentos
-                </p>
-                <ul className="space-y-2">
-                  {[previous, next].filter(Boolean).map((sibling) => (
-                    <li key={sibling!.slug}>
-                      <Link
-                        href={getTreatmentPath(sibling!.slug)}
-                        className="group inline-flex items-start gap-1.5 text-sm leading-snug text-tertiary transition-colors hover:text-primary"
-                      >
-                        {sibling!.name}
-                        <ArrowRight
-                          className="mt-0.5 h-3.5 w-3.5 shrink-0 transition-transform group-hover:translate-x-0.5"
-                          aria-hidden="true"
-                        />
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </ArticleAside>
-        </div>
       </div>
     </main>
   )
