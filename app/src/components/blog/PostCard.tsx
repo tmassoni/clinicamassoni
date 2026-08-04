@@ -21,29 +21,50 @@ export function PostCard({ post, priority = false }: PostCardProps) {
         href={href}
         className="relative flex h-full flex-col overflow-hidden rounded-3xl border border-accent/50 bg-white transition-all duration-500 hover:-translate-y-2 hover:border-primary/30 hover:shadow-2xl focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
       >
-        {post.cardImage && dimensions && (
-          <div className="relative aspect-3/2 w-full overflow-hidden">
-            <Image
-              src={post.cardImage}
-              alt={post.cardImageAlt ?? post.title}
-              fill
-              sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
-              quality={85}
-              priority={priority}
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
+        <div className="relative aspect-3/2 w-full overflow-hidden">
+          {post.cardImage && dimensions ? (
+            <>
+              <Image
+                src={post.cardImage}
+                alt={post.cardImageAlt ?? post.title}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw"
+                quality={85}
+                priority={priority}
+                className="object-cover transition-transform duration-700 group-hover:scale-105"
+              />
 
-            {/* Depth overlays, matching the hero image treatment */}
-            <div className="absolute inset-0 bg-linear-to-t from-primary/45 via-primary/5 to-transparent" />
-            <div className="absolute inset-0 ring-1 ring-inset ring-white/20" />
+              {/* Depth overlays, matching the hero image treatment */}
+              <div className="absolute inset-0 bg-linear-to-t from-primary/45 via-primary/5 to-transparent" />
+            </>
+          ) : (
+            /*
+              Most posts are text-only. Without a fallback the grid mixes tall
+              image cards with short bare ones; a branded panel keeps the rhythm
+              and still reads as deliberate.
+            */
+            <div className="absolute inset-0 bg-linear-to-br from-primary via-secondary to-primary">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_20%,rgba(255,255,255,0.14),transparent_60%)]" />
+              <Image
+                src="/images/logo-white.png"
+                alt=""
+                aria-hidden="true"
+                width={160}
+                height={160}
+                className="absolute top-1/2 left-1/2 w-28 -translate-x-1/2 -translate-y-1/2 opacity-15 transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute -right-12 -bottom-12 h-40 w-40 rounded-full bg-white/10 blur-3xl" />
+            </div>
+          )}
 
-            {post.articleSection && (
-              <span className="absolute left-5 top-5 inline-flex items-center rounded-full border border-white/25 bg-primary/80 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
-                {post.articleSection}
-              </span>
-            )}
-          </div>
-        )}
+          <div className="absolute inset-0 ring-1 ring-inset ring-white/20" />
+
+          {post.articleSection && (
+            <span className="absolute top-5 left-5 inline-flex items-center rounded-full border border-white/25 bg-primary/80 px-3 py-1 text-xs font-medium text-white backdrop-blur-sm">
+              {post.articleSection}
+            </span>
+          )}
+        </div>
 
         <div className="flex flex-1 flex-col p-6 sm:p-7">
           <div className="mb-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-tertiary">

@@ -12,15 +12,61 @@ Exactly one owner URL per intent cluster. This table is architecture, not a
 suggestion — change ownership only after checking Search Console queries and
 which URLs actually rank.
 
-### Built
+### The rule that decides where a local keyword lives
+
+**Commercial + local head terms belong to `/` and to service pages — never to a
+post.** "dentista Cascavel", "cirurgião dentista Cascavel", "prótese dentária
+Cascavel", "implante dentário Cascavel" are shopping queries: the searcher wants
+a provider, not an explanation. A blog post targeting them competes with the
+homepage and loses, or wins and delivers the wrong page.
+
+What the blog does for those terms is different and still valuable: it builds
+topical authority across the cluster and funnels internal links to whichever
+page owns the commercial intent. That mechanism only works if the ownership
+below is respected.
+
+### Built — homepage and hub
 
 | Cluster | Owner URL | Intent | Supporting content role |
 |---|---|---|---|
-| Broad local specialty + brand | `/` | local + brand | Explain the practice, route to the right service |
-| Educational hub | `/blog` | informational | Organize articles; never competes with a service page |
-| "Preciso fazer limpeza?" | `/blog/profilaxia-dental` | informational | Answers the prevention question; will link **up** to a future prophylaxis/periodontia service page |
-| "Meus dentes são pequenos / tenho espaço entre eles" | `/blog/recontorno-estetico-resina-composta` | informational → consideration | Owns the *shape/proportion* question. Links up to a future aesthetic-dentistry service page |
-| "Meus dentes desgastaram / minha mordida baixou" | `/blog/reabilitacao-bucal-resina-composta` | informational → consideration | Owns the *function/wear* question. Links up to a future oral-rehabilitation service page |
+| Broad local specialty + brand ("dentista Cascavel", "cirurgião dentista Cascavel") | `/` | local + commercial | Explains the practice and routes to the right service. **No post may target these.** |
+| Educational hub | `/blog` | informational | Organizes articles; never competes with a service page |
+
+### Built — blog posts (17)
+
+Each owns one informational question and links **up**. The "future owner"
+column is the service page that should take the commercial intent once built;
+until it exists, that intent is unowned and the homepage absorbs it.
+
+| # | Post | Primary query | Intent | Future owner service page |
+|---|---|---|---|---|
+| 1 | `profilaxia-dental` | profilaxia dental | awareness | `/tratamentos/periodontia` |
+| 2 | `recontorno-estetico-resina-composta` | recontorno estético | consideration | `/tratamentos/estetica-dental` |
+| 3 | `reabilitacao-bucal-resina-composta` | reabilitação bucal com resina composta | consideration | `/tratamentos/reabilitacao-oral` |
+| 4 | `cirurgiao-bucomaxilofacial-quando-procurar` | cirurgião bucomaxilofacial | awareness | `/tratamentos/cirurgia-bucomaxilofacial` |
+| 5 | `extracao-de-siso` | extração de siso | consideration | `/tratamentos/extracao-de-sisos` |
+| 6 | `cirurgia-ortognatica` | cirurgia ortognática | consideration | `/tratamentos/cirurgia-ortognatica` |
+| 7 | `lesoes-e-cistos-na-boca` | cisto na boca | awareness | `/tratamentos/cirurgia-bucomaxilofacial` |
+| 8 | `implante-dentario-passo-a-passo` | implante dentário | consideration | `/tratamentos/implantes-dentarios` |
+| 9 | `enxerto-osseo-dental` | enxerto ósseo dental | consideration | `/tratamentos/enxerto-osseo` |
+| 10 | `protese-fixa-sobre-implantes` | protocolo sobre implantes | consideration | `/tratamentos/protocolo-all-on-4` |
+| 11 | `cirurgia-guiada-3d` | cirurgia guiada | consideration | `/tratamentos/implantes-dentarios` |
+| 12 | `dentistica-restauradora` | dentística restauradora | awareness | `/tratamentos/dentistica-restauradora` |
+| 13 | `tipos-de-protese-dentaria` | prótese dentária | consideration | `/tratamentos/protese-dentaria` |
+| 14 | `dente-quebrado-o-que-fazer` | dente quebrado | awareness | `/tratamentos/dentistica-restauradora` |
+| 15 | `gengiva-sangrando` | gengiva sangrando | awareness | `/tratamentos/periodontia` |
+| 16 | `sensibilidade-nos-dentes` | sensibilidade nos dentes | awareness | `/tratamentos/dentistica-restauradora` |
+| 17 | `traumatismo-facial-fraturas` | traumatismo facial | awareness | `/tratamentos/cirurgia-bucomaxilofacial` |
+
+Mix: 7 awareness, 10 consideration. Ten attributed to Dr. Enor (surgical and
+implant clusters), seven to Dr. Thiago (restorative, prosthetic, preventive) —
+each matching the practitioner's registered specialty, which is what makes the
+`Article.author` credential chain a real E-E-A-T signal rather than a formality.
+
+**The gap this exposes:** every "future owner" cell above is empty in
+production. The blog can support those commercial terms but cannot own them.
+Building `/tratamentos` and its children is now the highest-value SEO work
+remaining.
 
 ### Planned — not yet built
 
@@ -78,8 +124,21 @@ scrutiny:
 - **Facetas / lentes de contato** — currently a comparison section inside the
   recontorno post. If it ever earns its own URL, that section must be cut back
   to a link, not duplicated.
-- **Implantes vs. All-on-4 vs. protocolo** — patients use these terms
-  interchangeably. Decide the boundary before creating the second page.
+- **Implantes vs. enxerto vs. protocolo vs. cirurgia guiada** — four posts in
+  one cluster. The boundary enforced: `implante-dentario-passo-a-passo` owns the
+  *process*, `enxerto-osseo-dental` owns *insufficient bone*,
+  `protese-fixa-sobre-implantes` owns *full-arch*, `cirurgia-guiada-3d` owns
+  *the planning technique*. Each links to the others; none repeats another's
+  core explanation. A future service page must own the commercial term without
+  restating all four.
+- **Sensibilidade vs. gengiva sangrando** — both touch gingival recession.
+  Sensibilidade owns the *symptom*; gengiva sangrando owns the *periodontal
+  disease*. Keep recession as a cause in one and a consequence in the other.
+- **Dentística vs. recontorno vs. reabilitação** — three Thiago posts on
+  restorative work. Dentística is the specialty explainer and links down to the
+  other two; it must not absorb their procedure detail.
+- **Dente quebrado vs. traumatismo facial** — dental fracture vs. bone fracture.
+  The dividing line is the tissue involved, and each post states it explicitly.
 - **Enxerto ósseo** is often searched as part of the implant journey, not
   separately. Validate demand before splitting it out.
 
@@ -92,7 +151,7 @@ Point-in-time measurement, not a promise. Re-measure monthly.
 | Tracked queries | Not tracked | 2026-08-04 |
 | Top 3 | Unknown | — |
 | Top 10 | Unknown | — |
-| Published posts | 3 | 2026-08-04 |
+| Published posts | 17 | 2026-08-04 |
 | Service pages | 0 | 2026-08-04 |
 
 **Data sources available: none yet.** Search Console is not verified
