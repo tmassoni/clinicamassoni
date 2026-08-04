@@ -1,5 +1,7 @@
 import type { Metadata } from 'next'
 import { Breadcrumb } from '@/app/src/components/ui/Breadcrumb'
+import { BlogBackdrop, Eyebrow } from '@/app/src/components/blog/BlogBackdrop'
+import { BlogCtaCard } from '@/app/src/components/blog/BlogCtaCard'
 import { PostCard } from '@/app/src/components/blog/PostCard'
 import { getAllPosts } from '@/app/src/lib/blog'
 import {
@@ -46,7 +48,9 @@ export default function BlogIndexPage() {
   const posts = getAllPosts()
 
   return (
-    <main className="min-h-screen bg-bg-subtle">
+    <main className="relative min-h-screen overflow-hidden">
+      <BlogBackdrop />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -54,30 +58,42 @@ export default function BlogIndexPage() {
         }}
       />
 
-      <div className="container px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
-        <div className="mx-auto max-w-6xl pt-16">
-          <Breadcrumb items={breadcrumbItems} className="mb-6" />
+      <div className="container relative z-10 px-6 pt-28 pb-20 sm:px-8 sm:pt-32 sm:pb-24 lg:px-12 lg:pt-40 lg:pb-28">
+        <div className="mx-auto max-w-6xl">
+          <Breadcrumb items={breadcrumbItems} className="mb-8" />
 
-          <header className="mb-12 max-w-3xl">
-            <h1 className="mb-4 font-serif text-4xl font-bold text-text-heading">
-              {pageHeading}
+          <header className="mb-14 max-w-3xl sm:mb-16">
+            <Eyebrow>Conteúdo educativo</Eyebrow>
+
+            <h1 className="mt-6 mb-6 font-serif text-4xl leading-[1.1] font-bold tracking-tight sm:text-5xl lg:text-6xl">
+              <span className="bg-linear-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+                {pageHeading}
+              </span>
             </h1>
-            <p className="text-lg leading-relaxed text-text-body">
+
+            <p className="max-w-2xl text-lg leading-relaxed text-tertiary sm:text-xl">
               {pageDescription}
             </p>
           </header>
 
           {posts.length === 0 ? (
-            <p className="text-text-muted">
+            <p className="text-tertiary">
               Ainda não há artigos publicados. Volte em breve.
             </p>
           ) : (
-            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-8 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3">
               {posts.map((post, index) => (
                 <PostCard key={post.slug} post={post} priority={index === 0} />
               ))}
             </div>
           )}
+
+          <BlogCtaCard
+            heading="Ficou com alguma dúvida sobre o seu caso?"
+            body="Os artigos são educativos e gerais. O diagnóstico e a indicação de tratamento dependem de uma avaliação clínica individual."
+            trackingLabel="blog_index_cta"
+            className="mx-auto mt-16 max-w-4xl sm:mt-20"
+          />
         </div>
       </div>
     </main>

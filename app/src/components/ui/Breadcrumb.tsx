@@ -14,23 +14,26 @@ interface BreadcrumbProps {
 export function Breadcrumb({ items, className }: BreadcrumbProps) {
   return (
     <nav aria-label="Trilha de navegação" className={className}>
-      <ol className="flex flex-wrap items-center gap-x-1 gap-y-1 text-sm text-text-muted">
+      <ol className="flex flex-wrap items-center gap-x-1 gap-y-1 text-sm text-tertiary">
         {items.map((item, index) => {
           const isLast = index === items.length - 1
 
           return (
             <li key={item.path} className="flex items-center gap-x-1">
               {index > 0 && (
-                <ChevronRight className="w-3.5 h-3.5 shrink-0" aria-hidden="true" />
+                <ChevronRight
+                  className="h-3.5 w-3.5 shrink-0 text-accent"
+                  aria-hidden="true"
+                />
               )}
               {isLast ? (
-                <span aria-current="page" className="text-text-body">
+                <span aria-current="page" className="font-medium text-primary">
                   {item.name}
                 </span>
               ) : (
                 <Link
                   href={item.path}
-                  className="transition-colors hover:text-primary hover:underline"
+                  className="rounded-sm transition-colors hover:text-primary hover:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                 >
                   {item.name}
                 </Link>

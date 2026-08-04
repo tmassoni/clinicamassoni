@@ -14,17 +14,19 @@ const isInternalHref = (href: string) =>
 const isImageOnlyParagraph = (children: ReactNode) =>
   isValidElement(children) && children.type === MdxImage
 
+// `text-*!` overrides are deliberate: globals.css sizes bare headings inside
+// unlayered media queries, which outrank Tailwind's layered utilities.
 export const mdxComponents = {
   h2: (props: ComponentPropsWithoutRef<'h2'>) => (
     <h2
-      className="mt-12 mb-4 scroll-mt-28 font-serif text-2xl font-bold text-text-heading"
+      className="mt-14 mb-4 scroll-mt-28 font-serif text-2xl! leading-tight font-bold text-primary sm:text-3xl!"
       {...props}
     />
   ),
 
   h3: (props: ComponentPropsWithoutRef<'h3'>) => (
     <h3
-      className="mt-8 mb-3 scroll-mt-28 font-serif text-xl font-bold text-text-heading"
+      className="mt-10 mb-3 scroll-mt-28 font-serif text-xl! font-bold text-secondary sm:text-2xl!"
       {...props}
     />
   ),
@@ -33,40 +35,52 @@ export const mdxComponents = {
     if (isImageOnlyParagraph(children)) return <>{children}</>
 
     return (
-      <p className="mb-5 max-w-none leading-relaxed text-text-body" {...props}>
+      <p className="mb-5 max-w-none leading-[1.8] text-text-body" {...props}>
         {children}
       </p>
     )
   },
 
   ul: (props: ComponentPropsWithoutRef<'ul'>) => (
-    <ul className="mb-6 list-disc space-y-2 pl-6 text-text-body" {...props} />
-  ),
-
-  ol: (props: ComponentPropsWithoutRef<'ol'>) => (
-    <ol className="mb-6 list-decimal space-y-2 pl-6 text-text-body" {...props} />
-  ),
-
-  li: (props: ComponentPropsWithoutRef<'li'>) => (
-    <li className="leading-relaxed" {...props} />
-  ),
-
-  strong: (props: ComponentPropsWithoutRef<'strong'>) => (
-    <strong className="font-semibold text-text-heading" {...props} />
-  ),
-
-  blockquote: (props: ComponentPropsWithoutRef<'blockquote'>) => (
-    <blockquote
-      className="my-6 border-l-2 border-accent pl-4 italic text-text-muted"
+    <ul
+      className="mb-6 space-y-2.5 pl-1 text-text-body marker:text-primary [&>li]:relative [&>li]:pl-6 [&>li]:before:absolute [&>li]:before:top-[0.65em] [&>li]:before:left-1 [&>li]:before:h-1.5 [&>li]:before:w-1.5 [&>li]:before:rounded-full [&>li]:before:bg-primary/60"
       {...props}
     />
   ),
 
-  hr: () => <hr className="my-10 border-border-subtle" />,
+  ol: (props: ComponentPropsWithoutRef<'ol'>) => (
+    <ol
+      className="mb-6 list-decimal space-y-2.5 pl-6 text-text-body marker:font-semibold marker:text-primary"
+      {...props}
+    />
+  ),
+
+  li: (props: ComponentPropsWithoutRef<'li'>) => (
+    <li className="leading-[1.8]" {...props} />
+  ),
+
+  strong: (props: ComponentPropsWithoutRef<'strong'>) => (
+    <strong className="font-semibold text-primary" {...props} />
+  ),
+
+  em: (props: ComponentPropsWithoutRef<'em'>) => (
+    <em className="text-secondary" {...props} />
+  ),
+
+  blockquote: (props: ComponentPropsWithoutRef<'blockquote'>) => (
+    <blockquote
+      className="my-8 rounded-r-xl border-l-2 border-primary/40 bg-primary/5 px-5 py-4 text-secondary italic"
+      {...props}
+    />
+  ),
+
+  hr: () => (
+    <hr className="my-12 border-0 border-t border-accent/60" />
+  ),
 
   a: ({ href, children, ...props }: ComponentPropsWithoutRef<'a'>) => {
     const className =
-      'text-primary underline underline-offset-2 transition-colors hover:text-secondary'
+      'font-medium text-primary underline decoration-primary/30 underline-offset-4 transition-colors hover:text-secondary hover:decoration-secondary'
 
     if (!href) return <span className={className}>{children}</span>
 

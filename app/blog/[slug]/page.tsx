@@ -1,11 +1,12 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
-import { Clock } from 'lucide-react'
+import { ArrowLeft, CalendarDays, Clock, RefreshCw } from 'lucide-react'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import remarkGfm from 'remark-gfm'
 import { Breadcrumb } from '@/app/src/components/ui/Breadcrumb'
 import { AuthorByline } from '@/app/src/components/blog/AuthorByline'
+import { BlogBackdrop } from '@/app/src/components/blog/BlogBackdrop'
 import { BlogCtaCard } from '@/app/src/components/blog/BlogCtaCard'
 import { PostCard } from '@/app/src/components/blog/PostCard'
 import { PostFAQ } from '@/app/src/components/blog/PostFAQ'
@@ -92,7 +93,9 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const relatedPosts = getRelatedPosts(post)
 
   return (
-    <main className="min-h-screen bg-bg-subtle">
+    <main className="relative min-h-screen overflow-hidden">
+      <BlogBackdrop />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -114,63 +117,79 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         />
       )}
 
-      <div className="container px-6 py-16 sm:px-8 sm:py-20 lg:px-12 lg:py-24">
-        <article className="mx-auto max-w-3xl pt-16">
-          <Breadcrumb items={breadcrumbItems} className="mb-6" />
+      <div className="container relative z-10 px-6 pt-28 pb-20 sm:px-8 sm:pt-32 sm:pb-24 lg:px-12 lg:pt-40 lg:pb-28">
+        <div className="mx-auto max-w-3xl">
+          <Breadcrumb items={breadcrumbItems} className="mb-8" />
 
           <header className="mb-10">
-            <h1 className="mb-5 font-serif text-3xl font-bold leading-tight text-text-heading sm:text-4xl">
-              {post.title}
+            {post.articleSection && (
+              <span className="inline-flex items-center rounded-full border border-primary/10 bg-primary/5 px-4 py-1.5 text-sm font-medium text-primary">
+                {post.articleSection}
+              </span>
+            )}
+
+            <h1 className="mt-5 mb-6 font-serif text-3xl leading-[1.15] font-bold tracking-tight sm:text-4xl lg:text-5xl">
+              <span className="bg-linear-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+                {post.title}
+              </span>
             </h1>
 
-            <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-text-muted">
-              <span className="text-text-body">{post.authorProfile.name}</span>
-              <span aria-hidden="true">•</span>
-              <span>{post.authorProfile.cro}</span>
-              <span aria-hidden="true">•</span>
-              <time dateTime={post.publishDate}>
-                {formatPostDate(post.publishDate)}
-              </time>
-              <span aria-hidden="true">•</span>
-              <span className="inline-flex items-center gap-1">
-                <Clock className="h-3.5 w-3.5" aria-hidden="true" />
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 border-y border-accent/50 py-4 text-sm text-tertiary">
+              <span className="font-medium text-secondary">
+                {post.authorProfile.name}
+              </span>
+              <span className="rounded-full bg-primary/5 px-2.5 py-0.5 text-xs font-medium text-primary">
+                {post.authorProfile.cro}
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <CalendarDays className="h-4 w-4 text-primary/70" aria-hidden="true" />
+                <time dateTime={post.publishDate}>
+                  {formatPostDate(post.publishDate)}
+                </time>
+              </span>
+              <span className="inline-flex items-center gap-1.5">
+                <Clock className="h-4 w-4 text-primary/70" aria-hidden="true" />
                 {post.readingTime} min de leitura
               </span>
+              {post.lastModified !== post.publishDate && (
+                <span className="inline-flex items-center gap-1.5">
+                  <RefreshCw className="h-4 w-4 text-primary/70" aria-hidden="true" />
+                  Atualizado em{' '}
+                  <time dateTime={post.lastModified}>
+                    {formatPostDate(post.lastModified)}
+                  </time>
+                </span>
+              )}
             </div>
-
-            {post.lastModified !== post.publishDate && (
-              <p className="mt-2 text-xs text-text-muted">
-                Atualizado em{' '}
-                <time dateTime={post.lastModified}>
-                  {formatPostDate(post.lastModified)}
-                </time>
-              </p>
-            )}
           </header>
 
-          <div className="text-text-body">
-            <MDXRemote
-              source={post.content}
-              components={mdxComponents}
-              options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
-            />
-          </div>
+          <article className="rounded-3xl border border-accent/50 bg-white/80 p-6 shadow-brand backdrop-blur-sm sm:p-10 lg:p-12">
+            <div className="text-text-body [&>p:first-of-type]:text-lg [&>p:first-of-type]:text-secondary [&>p:first-of-type]:italic">
+              <MDXRemote
+                source={post.content}
+                components={mdxComponents}
+                options={{ mdxOptions: { remarkPlugins: [remarkGfm] } }}
+              />
+            </div>
 
-          {post.faqs && post.faqs.length > 0 && <PostFAQ faqs={post.faqs} />}
+            {post.faqs && post.faqs.length > 0 && <PostFAQ faqs={post.faqs} />}
+
+            <AuthorByline author={post.authorProfile} />
+          </article>
 
           <BlogCtaCard
             heading="Agende sua avaliação"
-            body="A equipe avalia seu caso individualmente e indica o intervalo de manutenção adequado para você."
+            body="A equipe avalia seu caso individualmente e indica o tratamento adequado para você."
             trackingLabel={`blog_post_cta_${post.slug}`}
+            className="mt-12 sm:mt-16"
           />
 
-          <AuthorByline author={post.authorProfile} />
-
           {relatedPosts.length > 0 && (
-            <section aria-labelledby="artigos-relacionados" className="mt-16">
+            <section aria-labelledby="artigos-relacionados" className="mt-16 sm:mt-20">
+              {/* `text-2xl!` — see the note in PostCard about globals.css h2 sizing. */}
               <h2
                 id="artigos-relacionados"
-                className="mb-6 font-serif text-2xl font-bold text-text-heading"
+                className="mb-8 font-serif text-2xl! font-bold text-primary sm:text-3xl!"
               >
                 Artigos relacionados
               </h2>
@@ -182,16 +201,19 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </section>
           )}
 
-          <p className="mt-12">
+          <p className="mt-14">
             <Link
               href="/blog"
-              className="text-sm font-medium text-primary transition-colors hover:underline"
+              className="group inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-5 py-2.5 text-sm font-semibold text-primary transition-all hover:border-primary/30 hover:shadow-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
             >
-              <span aria-hidden="true">← </span>
+              <ArrowLeft
+                className="h-4 w-4 transition-transform group-hover:-translate-x-1"
+                aria-hidden="true"
+              />
               Voltar para o blog
             </Link>
           </p>
-        </article>
+        </div>
       </div>
     </main>
   )
