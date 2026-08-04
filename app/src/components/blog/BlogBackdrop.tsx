@@ -1,7 +1,10 @@
 /**
  * The layered gradient wash used by the landing-page sections, so blog routes
  * sit on the same surface as the rest of the site instead of flat white.
- * Render inside a `relative overflow-hidden` parent.
+ * Render inside a `relative` parent. Deliberately NOT `overflow-hidden`:
+ * every layer here is `absolute inset-0` and cannot overflow, and an
+ * `overflow` ancestor silently disables `position: sticky` for everything
+ * inside it — which is what broke the article rails.
  */
 export function BlogBackdrop() {
   return (

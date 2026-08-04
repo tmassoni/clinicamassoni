@@ -97,6 +97,64 @@ test.describe('the ownership funnel resolves', () => {
   })
 })
 
+test.describe('the article rail travels with the reader', () => {
+  const ARTICLE_ROUTES = [
+    '/blog/profilaxia-dental',
+    '/tratamentos/implantes-dentarios',
+  ]
+
+  for (const route of ARTICLE_ROUTES) {
+    test(`${route} keeps the rail on screen while scrolling`, async ({ page }, testInfo) => {
+      test.skip(testInfo.project.name === 'mobile', 'The rail is desktop-only.')
+
+      await page.goto(route)
+      const rail = page.locator('aside[aria-label="Conteúdo complementar"]')
+
+      await expect(rail).toHaveCSS('position', 'sticky')
+
+      /*
+       * The trap this guards: any ancestor with a non-visible overflow silently
+       * disables `position: sticky`. `overflow-hidden` on <main> did exactly
+       * that, and nothing surfaced it — the computed style still said "sticky".
+       */
+      const offendingAncestor = await rail.evaluate((el) => {
+        let node = el.parentElement
+        while (node && node !== document.documentElement) {
+          const style = getComputedStyle(node)
+          const bad = (v: string) => ['hidden', 'auto', 'scroll', 'clip'].includes(v)
+          if (bad(style.overflowX) || bad(style.overflowY)) {
+            return `${node.tagName.toLowerCase()} (${style.overflowX}/${style.overflowY})`
+          }
+          node = node.parentElement
+        }
+        return null
+      })
+      expect({ route, offendingAncestor }).toEqual({ route, offendingAncestor: null })
+
+      await page.evaluate(() => window.scrollBy(0, 1800))
+      await page.waitForTimeout(300)
+
+      await expect(rail).toBeInViewport()
+    })
+  }
+
+  test('content starts at the header logo edge', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name === 'mobile', 'Alignment check is desktop-only.')
+
+    await page.goto('/blog/profilaxia-dental')
+
+    const logoLeft = await page
+      .locator('header a[href="/#hero"]')
+      .first()
+      .evaluate((el) => el.getBoundingClientRect().left)
+    const crumbLeft = await page
+      .locator('main nav[aria-label="Trilha de navegação"]')
+      .evaluate((el) => el.getBoundingClientRect().left)
+
+    expect(Math.abs(logoLeft - crumbLeft)).toBeLessThan(2)
+  })
+})
+
 test.describe('navigation', () => {
   test('skip link moves focus to main content', async ({ page }) => {
     await page.goto('/')

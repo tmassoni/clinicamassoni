@@ -97,7 +97,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const headings = getPostHeadings(post.content)
 
   return (
-    <main id="main" tabIndex={-1} className="relative min-h-screen overflow-hidden">
+    <main id="main" tabIndex={-1} className="relative min-h-screen">
       <BlogBackdrop />
 
       <script

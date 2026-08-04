@@ -56,7 +56,7 @@ export const metadata: Metadata = {
 
 export default function TreatmentsHubPage() {
   return (
-    <main id="main" tabIndex={-1} className="relative min-h-screen overflow-hidden">
+    <main id="main" tabIndex={-1} className="relative min-h-screen">
       <BlogBackdrop />
 
       <script

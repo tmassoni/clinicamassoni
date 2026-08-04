@@ -275,7 +275,7 @@ function PractitionerCard({ practitioner }: { practitioner: PostAuthor }) {
 
 export default function AboutPage() {
   return (
-    <main id="main" tabIndex={-1} className="relative min-h-screen overflow-hidden">
+    <main id="main" tabIndex={-1} className="relative min-h-screen">
       <BlogBackdrop />
 
       <script

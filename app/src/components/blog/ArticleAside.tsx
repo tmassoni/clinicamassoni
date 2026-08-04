@@ -19,8 +19,17 @@ interface ArticleAsideProps {
  * beside a capped reading measure useful, so the content can start at the
  * header's left edge instead of being centred in the viewport.
  *
- * Scrolls with the page rather than sticking. Pinned, it stayed put while the
- * article moved past it, which read as the two columns coming apart.
+ * It travels with the reader (`sticky`). Without that, it scrolls away after
+ * the first screen and the rest of the article sits in a narrow left column
+ * with an empty right half — which reads as the whole page being off-centre.
+ *
+ * Its parent grid now wraps only the header and article body, so the rail
+ * follows you through the article and releases naturally at the full-width
+ * sections below.
+ *
+ * `max-h` + `overflow-y-auto` matter: a rail taller than the viewport would
+ * otherwise pin its top and leave the CTA at the bottom permanently
+ * unreachable.
  *
  * Hidden below `lg` — the table of contents and a repeated CTA are noise on a
  * phone, where the article is already a single scroll.
@@ -32,7 +41,9 @@ export function ArticleAside({
   children,
 }: ArticleAsideProps) {
   return (
-    <aside className="hidden lg:block lg:self-start">
+    <aside
+      aria-label="Conteúdo complementar"
+      className="hidden lg:sticky lg:top-28 lg:block lg:max-h-[calc(100vh-8rem)] lg:self-start lg:overflow-y-auto lg:pb-4 [scrollbar-width:thin]">
       <TableOfContents headings={headings} className="mb-8" />
 
       <div className="rounded-2xl border border-accent/50 bg-white/70 p-5 backdrop-blur-sm">

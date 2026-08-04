@@ -17,7 +17,7 @@ import { CONTACT_WHATSAPP_URL } from '@/app/src/lib/constants'
 export function FaqSection() {
   return (
     <section
-      className="relative section overflow-hidden bg-linear-to-b from-white to-accent/5"
+      className="relative section bg-linear-to-b from-white to-accent/5"
       id="faq"
     >
       <div
