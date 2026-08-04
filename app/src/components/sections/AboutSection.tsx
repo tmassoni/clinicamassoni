@@ -1,6 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Badge } from "@/app/src/components/ui/badge";
-import { Card } from "@/app/src/components/ui/card";
 import { ProcedureCard } from "@/app/src/components/custom/ProcedureCard";
 import {
   DOCTOR_NAME,
@@ -20,38 +20,90 @@ import {
   Gem,
   Shield,
   Stethoscope,
+  ArrowRight,
+  ArrowUpRight,
   type LucideIcon,
 } from "lucide-react";
+
+interface Credential {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+  href: string;
+}
+
+// "41 anos" and "gerações" are about the practitioners, so they lead to /sobre.
+// The 3D workflow has a dedicated article. Humanização describes how treatment
+// is conducted, so it lands on the treatments hub.
+const credentials: Credential[] = [
+  {
+    icon: BookOpen,
+    title: "41 Anos de Formado",
+    description:
+      "Graduado pela UFPEL em 1984 e especialista em cirurgia bucomaxilofacial pela FOB-USP (1993)",
+    href: "/sobre",
+  },
+  {
+    icon: Award,
+    title: "Cirurgias Guiadas 3D",
+    description:
+      "Scanner intraoral, câmera e tecnologia 3D para cirurgias precisas e menos invasivas",
+    href: "/blog/cirurgia-guiada-3d",
+  },
+  {
+    icon: Heart,
+    title: "Humanização e Acolhimento",
+    description:
+      "Ambiente acolhedor, escuta atenta e acompanhamento no pré e pós-cirúrgico. Rigor em biossegurança",
+    href: "/tratamentos",
+  },
+  {
+    icon: Users,
+    title: "Gerações de Confiança",
+    description:
+      "Pacientes desde os anos 80 e 90 continuam retornando e trazem filhos e netos",
+    href: "/sobre",
+  },
+];
 
 interface Procedure {
   icon: LucideIcon;
   text: string;
+  href: string;
 }
 
+// Each links to the page that explains it. Where a specific article covers the
+// topic better than the service page, it points there instead.
 const procedures: Procedure[] = [
   {
     icon: PaintBucket,
     text: "Restaurações diretas e indiretas em resina composta",
+    href: "/tratamentos/dentistica-restauradora",
   },
   {
     icon: Sparkles,
     text: "Estética dental",
+    href: "/blog/recontorno-estetico-resina-composta",
   },
   {
     icon: Gem,
     text: "Facetas em resina composta e porcelana",
+    href: "/tratamentos/dentistica-restauradora",
   },
   {
     icon: Award,
     text: "Restaurações em porcelana",
+    href: "/tratamentos/dentistica-restauradora",
   },
   {
     icon: Shield,
     text: "Próteses unitárias e de múltiplos elementos",
+    href: "/tratamentos/protese-dentaria",
   },
   {
     icon: Stethoscope,
     text: "Profilaxia e raspagens periodontais",
+    href: "/blog/profilaxia-dental",
   },
 ];
 
@@ -164,63 +216,50 @@ export function AboutSection() {
           </div>
         </div>
 
-        {/* Credentials Grid */}
+        {/* Credentials Grid — each card reaches the page that expands on it */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-          <Card
-            title="41 Anos de Formado"
-            variant="service"
-            className="group hover:border-primary/30 transition-all duration-300"
-          >
-            <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/5 group-hover:bg-primary/10 transition-colors mb-4">
-              <BookOpen className="w-6 h-6 text-primary" />
-            </div>
-            <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-              Graduado pela UFPEL em 1984 e especialista em cirurgia
-              bucomaxilofacial pela FOB-USP (1993)
-            </p>
-          </Card>
+          {credentials.map((credential) => {
+            const Icon = credential.icon;
+            return (
+              <Link
+                key={credential.title}
+                href={credential.href}
+                className="group relative flex flex-col rounded-3xl border border-accent/50 bg-white p-6 transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:shadow-brand-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              >
+                <div className="mb-4 flex items-center justify-between">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-primary/5 transition-colors group-hover:bg-primary/10">
+                    <Icon className="h-6 w-6 text-primary" />
+                  </span>
+                  <ArrowUpRight
+                    aria-hidden="true"
+                    className="h-4 w-4 text-primary/40 transition-all group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:text-primary"
+                  />
+                </div>
 
-          <Card
-            title="Cirurgias Guiadas 3D"
-            variant="service"
-            className="group hover:border-primary/30 transition-all duration-300"
-          >
-            <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/5 group-hover:bg-primary/10 transition-colors mb-4">
-              <Award className="w-6 h-6 text-primary" />
-            </div>
-            <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-              Scanner intraoral Sirios, câmera Skycam e tecnologia 3D para
-              cirurgias precisas e menos invasivas
-            </p>
-          </Card>
+                <h3 className="mb-2 font-serif text-lg! font-bold text-primary transition-colors group-hover:text-secondary">
+                  {credential.title}
+                </h3>
 
-          <Card
-            title="Humanização e Acolhimento"
-            variant="service"
-            className="group hover:border-primary/30 transition-all duration-300"
-          >
-            <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/5 group-hover:bg-primary/10 transition-colors mb-4">
-              <Heart className="w-6 h-6 text-primary" />
-            </div>
-            <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-              Ambiente acolhedor, escuta atenta e acompanhamento completo no pré
-              e pós-cirúrgico. Rigor em biossegurança
-            </p>
-          </Card>
+                <p className="text-sm leading-relaxed text-tertiary">
+                  {credential.description}
+                </p>
+              </Link>
+            );
+          })}
+        </div>
 
-          <Card
-            title="Gerações de Confiança"
-            variant="service"
-            className="group hover:border-primary/30 transition-all duration-300"
+        {/* Full bios, formação and procedures live on /sobre */}
+        <div className="mt-10 text-center">
+          <Link
+            href="/sobre"
+            className="group inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-6 py-3 text-sm font-semibold text-primary transition-all hover:border-primary/30 hover:shadow-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           >
-            <div className="flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/5 group-hover:bg-primary/10 transition-colors mb-4">
-              <Users className="w-6 h-6 text-primary" />
-            </div>
-            <p className="text-sm sm:text-base text-tertiary leading-relaxed">
-              Pacientes desde os anos 80 e 90 continuam retornando e trazem
-              filhos e netos. Confiança que resiste ao tempo
-            </p>
-          </Card>
+            Formação completa e áreas de atuação
+            <ArrowRight
+              aria-hidden="true"
+              className="h-4 w-4 transition-transform group-hover:translate-x-1"
+            />
+          </Link>
         </div>
 
         {/* Dr. Thiago Massoni Section */}
@@ -279,6 +318,7 @@ export function AboutSection() {
                       key={index}
                       icon={procedure.icon}
                       text={procedure.text}
+                      href={procedure.href}
                     />
                   ))}
                 </div>

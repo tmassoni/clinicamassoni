@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Badge } from "@/app/src/components/ui/badge";
 import { TrackedLinkButton } from "@/app/src/components/custom/TrackedLinkButton";
 import {
@@ -24,6 +25,7 @@ const services = [
       "Cirurgias guiadas com tecnologia 3D",
     ],
     gradient: "from-primary to-[#3C576A]",
+    href: "/tratamentos/implantes-dentarios",
   },
   {
     icon: ToothShineIcon,
@@ -39,6 +41,7 @@ const services = [
       "Procedimentos minimamente invasivos",
     ],
     gradient: "from-[#3C576A] to-[#6A7E8B]",
+    href: "/tratamentos/cirurgia-plastica-periodontal",
   },
   {
     icon: FaceProfileIcon,
@@ -54,6 +57,7 @@ const services = [
       "Biópsias orais",
     ],
     gradient: "from-[#546E7E] to-[#8A9CA8]",
+    href: "/tratamentos/cirurgia-bucomaxilofacial",
   },
 ];
 
@@ -131,13 +135,13 @@ export function ServicesSection() {
 
                   {/* Learn More Link - Pushed to bottom */}
                   <div className="mt-auto">
-                    <a
-                      href="#contato"
-                      className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all group/link"
+                    <Link
+                      href={service.href}
+                      className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all group/link focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary rounded-sm"
                     >
-                      <span>Saiba mais</span>
-                      <ArrowRight className="w-5 h-5 group-hover/link:animate-pulse transition-transform" />
-                    </a>
+                      <span>Saiba mais sobre {service.title.toLowerCase()}</span>
+                      <ArrowRight className="w-5 h-5 shrink-0 transition-transform group-hover/link:translate-x-1" />
+                    </Link>
                   </div>
 
                   {/* Hover Gradient Border Effect */}

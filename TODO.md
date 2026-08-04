@@ -73,9 +73,20 @@ Applies to `profilaxia-dental`, `recontorno-estetico-resina-composta` and
 
 ### Ask Dr. Enor
 
-- [ ] **How many years — 34, 38, or 41?** The repo currently says all three in
-      different places. Schema says graduated 1984, which makes 41 most likely.
-      This is already live on the homepage.
+- [ ] **How many years — 34, 35, 38, or 41?** ⚠️ Four different figures are live,
+      **three of them on the homepage alone**, where a visitor can see them
+      contradict each other. Graduated 1984, so 41 is almost certainly right.
+      This needs one answer and then a single source of truth.
+
+      | Figure | Where |
+      |---|---|
+      | 41 anos | `layout.tsx` (meta description, OG, Twitter, keywords), `AboutSection.tsx:188` |
+      | 35 anos | `HeroSection.tsx:49`, `ServicesSection.tsx:17` |
+      | 34 anos | `constants.ts:15` — `DOCTOR_SPECIALTIES` |
+      | 38 anos | `docs/PROJECT_OVERVIEW.md` |
+
+      Until it's confirmed, `/sobre` strips the parenthetical from the specialty
+      chip so it doesn't display "34 anos" directly under "1984".
 - [ ] **Is the "Academia Brasileira de Osseointegração" membership real?** It
       appears only as an SEO keyword, never as a verified credential. If it's
       genuine it belongs in the schema `memberOf`; if not, it should stop

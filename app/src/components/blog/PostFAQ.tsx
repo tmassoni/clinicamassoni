@@ -1,8 +1,21 @@
 import { Plus } from 'lucide-react'
+import { cn } from '@/app/src/lib/utils'
 import type { FAQItem } from '@/app/src/lib/seo-schemas'
 
 interface PostFAQProps {
   faqs: FAQItem[]
+  /**
+   * Pass `null` when the surrounding section already renders its own heading —
+   * otherwise the page shows "Perguntas frequentes" twice.
+   */
+  heading?: string | null
+  /**
+   * Open by default inside an article, where the FAQ is part of the reading
+   * flow. Closed on the landing page, where six expanded answers push the rest
+   * of the page far down. Either way the text is in the served HTML.
+   */
+  defaultOpen?: boolean
+  className?: string
 }
 
 /**
@@ -10,25 +23,36 @@ interface PostFAQProps {
  * HTML, so crawlers and answer engines read the same text that FAQPage schema
  * declares. Schema-only FAQs are a manipulation signal.
  */
-export function PostFAQ({ faqs }: PostFAQProps) {
+export function PostFAQ({
+  faqs,
+  heading = 'Perguntas frequentes',
+  defaultOpen = true,
+  className,
+}: PostFAQProps) {
   if (faqs.length === 0) return null
 
   return (
-    <section aria-labelledby="perguntas-frequentes" className="mt-16">
-      {/* `text-2xl!` — see the note in PostCard about globals.css h2 sizing. */}
-      <h2
-        id="perguntas-frequentes"
-        className="mb-6 font-serif text-2xl! font-bold text-primary sm:text-3xl!"
-      >
-        Perguntas frequentes
-      </h2>
+    <section
+      aria-labelledby={heading ? 'perguntas-frequentes' : undefined}
+      aria-label={heading ? undefined : 'Perguntas frequentes'}
+      className={cn(heading && 'mt-16', className)}
+    >
+      {heading && (
+        /* `text-2xl!` — see the note in PostCard about globals.css h2 sizing. */
+        <h2
+          id="perguntas-frequentes"
+          className="mb-6 font-serif text-2xl! font-bold text-primary sm:text-3xl!"
+        >
+          {heading}
+        </h2>
+      )}
 
       {/* Matches the `speakable` cssSelector in generateFAQSchema. */}
       <div className="space-y-3" data-speakable="faq">
         {faqs.map((faq) => (
           <details
             key={faq.question}
-            open
+            open={defaultOpen}
             className="group rounded-2xl border border-accent/50 bg-linear-to-br from-bg-subtle to-white px-5 py-4 transition-colors hover:border-primary/30 sm:px-6"
           >
             <summary className="flex cursor-pointer list-none items-start justify-between gap-4 font-semibold text-primary marker:content-none focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary">

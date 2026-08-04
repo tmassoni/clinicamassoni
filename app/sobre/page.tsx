@@ -118,25 +118,81 @@ function generateProfilePageSchema() {
   }
 }
 
+const HIGHLIGHTS = [
+  { value: '1984', label: 'Formado em Odontologia', detail: 'UFPEL' },
+  { value: '1993', label: 'Especialização em CTBMF', detail: 'FOB-USP' },
+  { value: '2', label: 'Cirurgiões-dentistas', detail: 'Especialistas registrados' },
+  { value: '9', label: 'Tratamentos', detail: 'Descritos em detalhe' },
+] as const
+
+function Highlights() {
+  return (
+    <dl className="mb-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+      {HIGHLIGHTS.map((item) => (
+        <div
+          key={item.label}
+          className="rounded-2xl border border-accent/50 bg-white/70 p-5 backdrop-blur-sm"
+        >
+          <dt className="sr-only">{item.label}</dt>
+          <dd>
+            <span className="block font-serif text-3xl font-bold text-primary">
+              {item.value}
+            </span>
+            <span className="mt-1 block text-sm font-medium text-secondary">
+              {item.label}
+            </span>
+            <span className="mt-0.5 block text-xs text-tertiary">{item.detail}</span>
+          </dd>
+        </div>
+      ))}
+    </dl>
+  )
+}
+
 function PractitionerCard({ practitioner }: { practitioner: PostAuthor }) {
   return (
     <section
       id={practitioner.id}
       aria-labelledby={`${practitioner.id}-nome`}
-      className="scroll-mt-28 rounded-3xl border border-accent/50 bg-white/80 p-6 shadow-brand backdrop-blur-sm sm:p-10"
+      className="relative scroll-mt-28 overflow-hidden rounded-3xl border border-accent/50 bg-white/80 p-6 shadow-brand backdrop-blur-sm sm:p-10"
     >
-      <div className="grid gap-8 lg:grid-cols-[280px_1fr] lg:gap-12">
-        <div className="relative mx-auto aspect-4/5 w-full max-w-[280px] overflow-hidden rounded-3xl shadow-brand-lg">
-          <Image
-            src={practitioner.photo}
-            alt={`${practitioner.name} — ${practitioner.title}`}
-            fill
-            sizes="(max-width: 1024px) 280px, 280px"
-            quality={90}
-            className="object-cover"
-          />
-          <div className="absolute inset-0 bg-linear-to-t from-primary/25 to-transparent" />
-          <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/20" />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-linear-to-br from-primary/10 to-transparent blur-3xl"
+      />
+
+      <div className="relative grid gap-8 lg:grid-cols-[300px_1fr] lg:gap-12">
+        <div className="lg:sticky lg:top-32 lg:self-start">
+          <div className="relative mx-auto aspect-4/5 w-full max-w-[300px] overflow-hidden rounded-3xl shadow-brand-lg">
+            <Image
+              src={practitioner.photo}
+              alt={`${practitioner.name} — ${practitioner.title}`}
+              fill
+              sizes="(max-width: 1024px) 300px, 300px"
+              quality={90}
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-linear-to-t from-primary/30 via-transparent to-transparent" />
+            <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/20" />
+          </div>
+
+          <ul className="mt-5 flex flex-wrap justify-center gap-2 lg:justify-start">
+            {practitioner.specialties.map((specialty) => (
+              <li
+                key={specialty}
+                className="rounded-full bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary"
+              >
+                {/*
+                  Parentheticals stripped: DOCTOR_SPECIALTIES carries
+                  "(34 anos de experiência)", which contradicts the 1984
+                  graduation date shown directly above. Rendering the bare
+                  specialty avoids asserting either figure while the client
+                  confirms which is right (see TODO.md).
+                */}
+                {specialty.replace(/\s*\([^)]*\)\s*$/, '')}
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="min-w-0">
@@ -161,42 +217,56 @@ function PractitionerCard({ practitioner }: { practitioner: PostAuthor }) {
             </p>
           ))}
 
-          <h3 className="mt-8 mb-3 font-serif text-lg! font-bold text-primary">
+          <h3 className="mt-8 mb-4 font-serif text-lg! font-bold text-primary">
             Formação
           </h3>
-          <ul className="space-y-3">
+          {/* Vertical timeline — reads as a career, not a bullet list */}
+          <ol className="relative space-y-5 border-l border-accent pl-6">
             {practitioner.credentials.map((credential) => (
-              <li key={`${credential.category}-${credential.name}`} className="flex gap-3">
-                <GraduationCap
-                  className="mt-1 h-4 w-4 shrink-0 text-primary/70"
+              <li key={`${credential.category}-${credential.name}`} className="relative">
+                <span
                   aria-hidden="true"
-                />
-                <span className="text-sm leading-relaxed text-text-body">
-                  <strong className="font-semibold text-primary">
-                    {credential.name}
-                  </strong>
-                  {' — '}
-                  {credential.institutionShort ?? credential.institution}
-                  {credential.location ? `, ${credential.location}` : ''}
-                  {credential.year !== 'anterior' ? ` (${credential.year})` : ''}
+                  className="absolute top-1 -left-[1.9rem] flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 ring-4 ring-white"
+                >
+                  <GraduationCap className="h-3.5 w-3.5 text-primary" />
                 </span>
+                <p className="text-xs font-medium tracking-wide text-tertiary uppercase">
+                  {credential.category}
+                  {credential.year !== 'anterior' ? ` · ${credential.year}` : ''}
+                </p>
+                <p className="font-semibold text-primary">{credential.name}</p>
+                <p className="text-sm text-tertiary">
+                  {credential.institution}
+                  {credential.institutionShort
+                    ? ` (${credential.institutionShort})`
+                    : ''}
+                  {credential.location ? ` — ${credential.location}` : ''}
+                </p>
               </li>
             ))}
-          </ul>
+          </ol>
 
-          <h3 className="mt-8 mb-3 font-serif text-lg! font-bold text-primary">
+          <h3 className="mt-8 mb-4 font-serif text-lg! font-bold text-primary">
             Procedimentos realizados
           </h3>
-          <ul className="grid gap-2 sm:grid-cols-2">
+          <ul className="flex flex-wrap gap-2">
             {practitioner.procedures.map((procedure) => (
               <li
                 key={procedure}
-                className="relative pl-5 text-sm leading-relaxed text-tertiary before:absolute before:top-[0.6em] before:left-0 before:h-1.5 before:w-1.5 before:rounded-full before:bg-primary/60"
+                className="rounded-full border border-accent/60 bg-bg-subtle px-3 py-1.5 text-sm text-text-body"
               >
                 {procedure}
               </li>
             ))}
           </ul>
+
+          <Link
+            href="/tratamentos"
+            className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all hover:gap-3"
+          >
+            Ver estes tratamentos em detalhe
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
         </div>
       </div>
     </section>
@@ -239,13 +309,28 @@ export default function AboutPage() {
             </p>
           </header>
 
+          <Highlights />
+
+          {/* Jump links — the page is long and there are two practitioners */}
+          <nav aria-label="Ir para" className="mb-10 flex flex-wrap gap-2">
+            {PRACTITIONERS.map((practitioner) => (
+              <a
+                key={practitioner.id}
+                href={`#${practitioner.id}`}
+                className="rounded-full border border-primary/15 bg-white px-4 py-2 text-sm font-medium text-primary transition-all hover:border-primary/30 hover:shadow-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              >
+                {practitioner.name}
+              </a>
+            ))}
+          </nav>
+
           <div className="space-y-10">
             {PRACTITIONERS.map((practitioner) => (
               <PractitionerCard key={practitioner.id} practitioner={practitioner} />
             ))}
           </div>
 
-          <p className="mt-12">
+          <div className="mt-12 flex flex-wrap gap-3">
             <Link
               href="/tratamentos"
               className="group inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-5 py-2.5 text-sm font-semibold text-primary transition-all hover:border-primary/30 hover:shadow-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
@@ -256,7 +341,17 @@ export default function AboutPage() {
                 aria-hidden="true"
               />
             </Link>
-          </p>
+            <Link
+              href="/blog"
+              className="group inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-5 py-2.5 text-sm font-semibold text-primary transition-all hover:border-primary/30 hover:shadow-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+            >
+              Ler os artigos
+              <ArrowRight
+                className="h-4 w-4 transition-transform group-hover:translate-x-1"
+                aria-hidden="true"
+              />
+            </Link>
+          </div>
 
           <BlogCtaCard
             heading="Agende uma avaliação"
