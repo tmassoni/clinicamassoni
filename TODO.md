@@ -97,9 +97,12 @@ Applies to `profilaxia-dental`, `recontorno-estetico-resina-composta` and
 
 ### Technical — you can do these
 
-- [ ] **Set `GOOGLE_SITE_VERIFICATION` in Vercel.** Until this exists, Search
-      Console can't be verified and *none* of the measurement in
-      `docs/seo-strategy.md` can run. Highest-value single action on this list.
+- [x] ~~Verify Search Console~~ — **already synced.** If it was verified by DNS
+      or file upload rather than the meta tag, `GOOGLE_SITE_VERIFICATION` can
+      stay unset; the tag is conditional and simply omits itself.
+- [ ] **Resubmit the sitemap and request indexing on the new URLs.** 30 routes
+      appear at once; GSC won't find them promptly on its own. Priority order is
+      in `docs/launch-checklist.md` §4 — commercial pages before posts.
 - [ ] **Verify the apex → www 301 at the Vercel domain level**, not just in
       `next.config.ts`.
 - [ ] **Build the LGPD cookie consent gate before adding GA4/GTM.** Not a

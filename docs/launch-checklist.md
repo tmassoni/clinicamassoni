@@ -36,9 +36,10 @@ will flag anything missed.
       Referrer-Policy, HSTS, Permissions-Policy), `compress`,
       `poweredByHeader: false`
 - [x] `images.formats: ['image/avif', 'image/webp']`
-- [ ] **`GOOGLE_SITE_VERIFICATION` environment variable set in Vercel.** Until
-      this exists, the verification meta tag is omitted and Search Console
-      cannot be verified.
+- [x] **Search Console already synced** for this property. The
+      `GOOGLE_SITE_VERIFICATION` env var is only needed if verification is done
+      by meta tag; DNS or file verification makes it unnecessary, and the tag
+      omits itself when unset.
 - [ ] Confirm the production domain serves `https://www.clinicamassoni.com.br`
       and that `clinicamassoni.com.br` 301s to it.
 
@@ -56,9 +57,10 @@ will flag anything missed.
 
 ## 4. Search Console — after deploy
 
-- [ ] Verify the property for `https://www.clinicamassoni.com.br` (needs §2's
-      env var)
-- [ ] Submit `https://www.clinicamassoni.com.br/sitemap.xml`
+- [x] Property verified — already synced
+- [ ] **Resubmit `https://www.clinicamassoni.com.br/sitemap.xml`.** It grows
+      from 4 URLs to 32 in this release; a resubmit prompts a recrawl rather
+      than waiting for the scheduled one.
 - [ ] Request indexing, in this order — commercial intent first:
       1. `/tratamentos`
       2. `/tratamentos/implantes-dentarios`
