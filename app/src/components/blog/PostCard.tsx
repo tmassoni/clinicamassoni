@@ -45,7 +45,12 @@ export function PostCard({ post, priority = false }: PostCardProps) {
             </span>
           </div>
 
-          <h2 className="mb-3 font-serif text-xl font-bold leading-snug text-text-heading transition-colors group-hover:text-primary">
+          {/*
+            `text-xl!` is deliberate: globals.css sizes bare `h2` inside
+            unlayered media queries, which outrank Tailwind's layered
+            utilities. Without the override this renders at 2.25rem.
+          */}
+          <h2 className="mb-3 font-serif text-xl! font-bold leading-snug text-text-heading transition-colors group-hover:text-primary">
             {post.title}
           </h2>
 

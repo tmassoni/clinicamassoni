@@ -19,6 +19,8 @@ which URLs actually rank.
 | Broad local specialty + brand | `/` | local + brand | Explain the practice, route to the right service |
 | Educational hub | `/blog` | informational | Organize articles; never competes with a service page |
 | "Preciso fazer limpeza?" | `/blog/profilaxia-dental` | informational | Answers the prevention question; will link **up** to a future prophylaxis/periodontia service page |
+| "Meus dentes são pequenos / tenho espaço entre eles" | `/blog/recontorno-estetico-resina-composta` | informational → consideration | Owns the *shape/proportion* question. Links up to a future aesthetic-dentistry service page |
+| "Meus dentes desgastaram / minha mordida baixou" | `/blog/reabilitacao-bucal-resina-composta` | informational → consideration | Owns the *function/wear* question. Links up to a future oral-rehabilitation service page |
 
 ### Planned — not yet built
 
@@ -66,6 +68,16 @@ scrutiny:
 - **Periodontite vs. profilaxia** — the existing post deliberately covers the
   boundary ("quando a profilaxia não é o tratamento indicado"). A periodontia
   service page must own *treatment* intent and link back, not restate it.
+- **Recontorno estético vs. reabilitação bucal** — both are composite resin, and
+  the query "resina composta" alone sits between them. The boundary being
+  enforced is **intent, not material**: recontorno owns *shape and proportion on
+  healthy teeth*; reabilitação owns *lost structure and lost vertical
+  dimension*. Each article states the boundary explicitly and links to the
+  other. A third "tudo sobre resina composta" post would collapse both and must
+  not be written — extend one of the two instead.
+- **Facetas / lentes de contato** — currently a comparison section inside the
+  recontorno post. If it ever earns its own URL, that section must be cut back
+  to a link, not duplicated.
 - **Implantes vs. All-on-4 vs. protocolo** — patients use these terms
   interchangeably. Decide the boundary before creating the second page.
 - **Enxerto ósseo** is often searched as part of the implant journey, not
@@ -80,7 +92,7 @@ Point-in-time measurement, not a promise. Re-measure monthly.
 | Tracked queries | Not tracked | 2026-08-04 |
 | Top 3 | Unknown | — |
 | Top 10 | Unknown | — |
-| Published posts | 1 | 2026-08-04 |
+| Published posts | 3 | 2026-08-04 |
 | Service pages | 0 | 2026-08-04 |
 
 **Data sources available: none yet.** Search Console is not verified
@@ -113,12 +125,17 @@ exist yet.** Run `/clinic-compliance-research` before the next post ships.
 
 Two open items block content that is already written:
 
-1. **Patient clinical photography.** `/blog/profilaxia-dental` publishes four
-   intraoral photos of a real patient, including a before/after pair. Requires
-   documented patient consent *and* a CFO determination on whether before/after
-   imagery is permitted in dental advertising at all.
+1. **Patient clinical photography — all three posts.** Eleven photographs of at
+   least three different patients are published across the blog, including two
+   before/after pairs (profilaxia and recontorno). Requires documented patient
+   consent per patient *and* a CFO determination on whether before/after imagery
+   is permitted in dental advertising at all. Identifying features (nose,
+   mustache, beard) were cropped out where possible, but a crop is not consent.
 2. **Educational disclaimer wording.** `MEDICAL_DISCLAIMER` in `constants.ts` is
    a reasonable draft, not the regulator's text.
+3. **Byline attribution.** The two resin articles are attributed to
+   Dr. Thiago Massoni (Dentística Restauradora), which matches the clinical
+   subject. Needs confirmation that he authored or approves them.
 
 No page promises outcomes, implies superiority, or uses fear to earn clicks —
 which is also what the ranking and answer-engine systems reward.

@@ -17,6 +17,9 @@ articleSection: 'Odontologia preventiva'
 author: 'enor'
 featured: true
 order: 1
+relatedPosts:
+  - 'recontorno-estetico-resina-composta'
+  - 'reabilitacao-bucal-resina-composta'
 faqs:
   - question: 'De quanto em quanto tempo devo fazer a profilaxia dental?'
     answer: 'O intervalo mais comum é de seis meses, mas ele é individual. Pacientes com histórico de doença gengival, uso de aparelho ortodôntico, implantes, próteses, tabagismo ou diabetes costumam precisar de intervalos mais curtos. Quem tem baixo acúmulo de placa pode manter intervalos maiores. Quem define isso é a avaliação clínica, não uma regra fixa.'
