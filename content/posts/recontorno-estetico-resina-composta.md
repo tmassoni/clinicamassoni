@@ -38,7 +38,7 @@ _O formato dos dentes pesa tanto quanto a cor na aparência de um sorriso — e 
 
 O recontorno estético com resina composta é o procedimento que corrige forma, tamanho, proporção e simetria dos dentes aplicando resina diretamente sobre eles, em consultório e sem moldagem de laboratório. É um tratamento aditivo: na maior parte dos casos, adiciona material em vez de remover estrutura dental.
 
-![Dentes anteriores superiores antes do recontorno, com bordas irregulares, pequenas assimetrias e espaço entre os incisivos centrais](/images/posts/recontorno-estetico-resina-composta/dentes-antes-do-recontorno.webp)
+![Dentes anteriores superiores com bordas irregulares, pequenas assimetrias e espaço entre os incisivos centrais](/images/posts/recontorno-estetico-resina-composta/dentes-anteriores-com-desgaste-e-diastema.webp)
 
 ## Quem é candidato ao recontorno estético?
 
@@ -62,13 +62,9 @@ O procedimento é direto e normalmente ocorre em duas sessões.
 
 ![Fotografia do paciente com o planejamento do recontorno desenhado sobre os dentes, indicando as áreas onde a resina será adicionada](/images/posts/recontorno-estetico-resina-composta/planejamento-do-recontorno.webp)
 
-**Segunda sessão — execução.** A resina é aplicada, esculpida e polida diretamente na boca. O trabalho é feito sob isolamento absoluto, que mantém o campo seco e afastado da saliva — condição necessária para a resina aderir bem ao esmalte.
+**Segunda sessão — execução.** A resina é aplicada, esculpida e polida diretamente na boca. O trabalho é feito sob isolamento absoluto, que mantém o campo seco e afastado da saliva — condição necessária para a resina aderir bem ao esmalte. O resultado é avaliado ainda na cadeira, com ajustes de forma e de mordida antes do polimento final.
 
-![Dentes anteriores isolados com lençol de borracha durante a aplicação da resina composta](/images/posts/recontorno-estetico-resina-composta/isolamento-absoluto-resina.webp)
-
-O resultado é avaliado ainda na cadeira, com ajustes de forma e de mordida antes do polimento final.
-
-![Dentes anteriores superiores após o recontorno, com bordas regularizadas e proporção mais harmônica entre os elementos](/images/posts/recontorno-estetico-resina-composta/dentes-apos-o-recontorno.webp)
+![Dentes anteriores superiores com bordas regularizadas e proporção harmônica entre os elementos](/images/posts/recontorno-estetico-resina-composta/dentes-anteriores-com-contorno-harmonizado.webp)
 
 ## Recontorno, faceta de resina ou lente de contato: qual é a diferença?
 

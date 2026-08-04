@@ -39,7 +39,7 @@ _Você escova os dentes todos os dias e usa fio dental — e mesmo assim existem
 
 A profilaxia dental é o procedimento preventivo em que o cirurgião-dentista remove a placa bacteriana e o tártaro aderidos aos dentes e à margem da gengiva, incluindo as áreas que a escovação doméstica não alcança. Mais do que uma "limpeza", é o procedimento que preserva a saúde dos dentes, da gengiva e dos tecidos que sustentam a dentição.
 
-![Arcadas superior e inferior logo após a sessão de profilaxia, com gengiva rosada e superfícies dentais livres de placa e tártaro](/images/posts/profilaxia-dental/sorriso-apos-profilaxia.webp)
+![Arcadas superior e inferior com gengiva rosada e superfícies dentais livres de placa e tártaro](/images/posts/profilaxia-dental/arcadas-com-gengiva-saudavel.webp)
 
 ## Por que a escovação em casa não é suficiente?
 
@@ -69,11 +69,11 @@ O protocolo é individualizado, mas segue uma sequência definida:
 6. **Polimento** das superfícies, que dificulta a nova aderência de placa.
 7. **Orientação individualizada**, apontando as regiões específicas que precisam de ajuste na sua rotina.
 
-![Face interna dos dentes inferiores antes da limpeza, com acúmulo de tártaro e placa corada pelo evidenciador na margem da gengiva](/images/posts/profilaxia-dental/tartaro-arcada-inferior.webp)
+![Face interna dos dentes inferiores com acúmulo de tártaro e placa corada pelo evidenciador na margem da gengiva](/images/posts/profilaxia-dental/tartaro-arcada-inferior.webp)
 
 A face interna dos dentes inferiores da frente é a região onde o tártaro mais se acumula, porque fica próxima às glândulas salivares e é difícil de alcançar com a escova.
 
-![Mesma face interna dos dentes inferiores após a remoção do tártaro e o polimento das superfícies](/images/posts/profilaxia-dental/arcada-inferior-apos-limpeza.webp)
+![Face interna dos dentes inferiores com as superfícies livres de tártaro e polidas](/images/posts/profilaxia-dental/arcada-inferior-superficies-polidas.webp)
 
 ## Quais são os benefícios da profilaxia dental?
 

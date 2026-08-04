@@ -59,7 +59,7 @@ Continua sendo uma solução legítima e, em muitos contextos, a mais viável. M
 
 **Sobredentadura.** Uma prótese removível que se prende a dois ou mais implantes por encaixes. Ganha muita estabilidade em relação à dentadura convencional, e mantém a vantagem de ser removida para higiene — o que a torna uma boa indicação para quem tem limitação de destreza manual. É uma opção frequentemente pouco mencionada e que merece estar na comparação.
 
-**Protocolo — prótese fixa sobre implantes.** A arcada inteira parafusada sobre implantes, removível apenas pelo dentista. Máxima estabilidade e melhor desempenho mastigatório do grupo, com a contrapartida de exigir higiene sob a estrutura com técnica específica. Detalhado em [prótese fixa sobre implantes](/blog/protese-fixa-sobre-implantes).
+**Protocolo — prótese fixa sobre implantes.** A arcada inteira parafusada sobre implantes, removível apenas pelo dentista. Oferece estabilidade elevada, com a contrapartida de exigir higiene sob a estrutura com técnica específica. Detalhado em [prótese fixa sobre implantes](/blog/protese-fixa-sobre-implantes).
 
 ## Como a escolha é feita na prática
 

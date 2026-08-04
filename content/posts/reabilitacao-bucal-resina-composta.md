@@ -38,7 +38,7 @@ _Quase ninguém procura o dentista dizendo "perdi altura de mordida" — mas é 
 
 A reabilitação bucal com resina composta é o tratamento que devolve anatomia, função mastigatória e, como consequência, estética a dentes que perderam estrutura por desgaste. Com os materiais atuais, ela pode ser feita de forma **completamente aditiva**: adicionando material sobre o que restou, sem desgastar ainda mais o que já foi perdido.
 
-![Sorriso natural após a reabilitação, com os dentes anteriores superiores recompostos em resina composta](/images/posts/reabilitacao-bucal-resina-composta/sorriso-apos-reabilitacao.webp)
+![Sorriso natural com os dentes anteriores superiores recompostos em resina composta](/images/posts/reabilitacao-bucal-resina-composta/sorriso-com-dentes-recompostos.webp)
 
 ## Por que os dentes se desgastam ao longo da vida?
 
@@ -56,7 +56,7 @@ O sinal de alerta não é a dor, e sim a mudança de forma: dentes que ficaram m
 
 As consequências vão além da aparência dos dentes: mudança no perfil do terço inferior do rosto, sobrecarga muscular e articular, e dificuldade progressiva para mastigar. É por isso que reabilitação é um tratamento **funcional** que produz um resultado estético — e não o contrário.
 
-![Dentes anteriores superiores após a reabilitação, com anatomia e comprimento restabelecidos](/images/posts/reabilitacao-bucal-resina-composta/dentes-anteriores-reabilitados.webp)
+![Dentes anteriores superiores com anatomia e comprimento restabelecidos](/images/posts/reabilitacao-bucal-resina-composta/dentes-anteriores-reabilitados.webp)
 
 ## Quem precisa de reabilitação bucal com resina composta?
 
@@ -82,7 +82,7 @@ A resina composta aplicada de forma aditiva:
 
 Em contrapartida, exige manutenção periódica, mancha mais ao longo do tempo e desgasta mais que a cerâmica. É uma troca, não uma superioridade.
 
-![Arcadas em oclusão após a reabilitação, mostrando o contato entre os dentes superiores e inferiores restabelecido](/images/posts/reabilitacao-bucal-resina-composta/arcadas-apos-reabilitacao.webp)
+![Arcadas em oclusão, com o contato entre os dentes superiores e inferiores restabelecido](/images/posts/reabilitacao-bucal-resina-composta/arcadas-em-oclusao.webp)
 
 ## Como é o planejamento?
 

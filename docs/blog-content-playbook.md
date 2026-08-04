@@ -2,8 +2,17 @@
 
 Operational contract for creating and maintaining posts in this project.
 Strategy lives in `docs/seo-strategy.md`; compliance in
-`docs/compliance-guidelines.md` (**not created yet — run
-`/clinic-compliance-research`**).
+`docs/compliance-guidelines.md` — **read §8 of that file before every publish.**
+
+The two rules that most often catch a dental post, both from
+Resolução CFO-196/2019:
+
+- **No procedure-in-progress imagery** (art. 3º) — only diagnosis and
+  conclusion images may be published, and only by the dentist who performed
+  the procedure, with a signed TCLE on file.
+- **No "antes / durante / depois" framing** (Código de Ética art. 44 I and XII).
+  Caption images as clinical description of what is visible, never as a
+  before/after pair.
 
 ## Where content lives
 
