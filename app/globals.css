@@ -64,10 +64,16 @@
     background-color: var(--color-background);
   }
 
+  /*
+    `main` is full-bleed on purpose. It used to be capped at 1760px with auto
+    margins, which duplicated what `.container` already does — and because page
+    backgrounds are painted inside `main`, the cap left a strip of bare body
+    colour down each side on viewports wider than 1760px.
+
+    Width is the container's job; `main` only carries the background.
+  */
   main {
-    max-width: 1760px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {
