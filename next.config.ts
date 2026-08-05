@@ -8,9 +8,16 @@ const securityHeaders = [
   { key: 'X-Content-Type-Options', value: 'nosniff' },
   { key: 'X-Frame-Options', value: 'SAMEORIGIN' },
   { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+  /*
+    Two years, subdomains included. Deliberately *not* `preload`: submission to
+    the browser preload list is effectively irreversible on a useful timescale,
+    and it would break the day the clinic points any subdomain at a host
+    without valid HTTPS. Add it only as a considered decision, once every
+    subdomain is known to be HTTPS-only.
+  */
   {
     key: 'Strict-Transport-Security',
-    value: 'max-age=63072000; includeSubDomains; preload',
+    value: 'max-age=63072000; includeSubDomains',
   },
   {
     key: 'Permissions-Policy',

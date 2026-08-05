@@ -7,8 +7,8 @@
     "build": "next build --turbopack",
     "start": "next start",
     "lint": "eslint",
-    "test": "bun test tests/*.test.ts",
-    "test:watch": "bun test tests/*.test.ts --watch",
+    "test": "bun test tests/",
+    "test:watch": "bun test tests/ --watch",
     "test:e2e": "playwright test",
     "test:e2e:a11y": "playwright test accessibility"
   },

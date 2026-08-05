@@ -142,6 +142,12 @@ Applies to `profilaxia-dental`, `recontorno-estetico-resina-composta` and
       would beat my draft.
 - [ ] **An OG image** — none exists, and no dimensions are documented. Social
       shares currently fall back to the brand logo card.
+- [ ] **"Cirurgião Dentista" vs "Cirurgião-Dentista".** The site renders the
+      unhyphenated form; `docs/compliance-guidelines.md` §5 quotes the CFO's
+      hyphenated spelling for the mandatory identification block. Trivial as
+      typography, but it is their registered professional title, so it is
+      theirs to settle rather than ours to silently rewrite.
+      `tests/compliance.test.ts` accepts either form until then.
 
 ---
 

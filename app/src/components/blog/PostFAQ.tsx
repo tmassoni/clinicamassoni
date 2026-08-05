@@ -46,7 +46,7 @@ export function PostFAQ({
       <div className="space-y-3" data-speakable="faq">
         {faqs.map((faq, index) => (
           <details
-            key={faq.question}
+            key={`${index}-${faq.question}`}
             /*
               First one open, the rest closed. Six expanded answers buried the
               rest of the page, and an all-collapsed block gives no hint that

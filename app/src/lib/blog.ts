@@ -76,12 +76,27 @@ export interface PostHeading {
   text: string
 }
 
-/** Top-level (`##`) headings, for the in-page navigation. */
+/**
+ * Top-level (`##`) headings, for the in-page navigation.
+ *
+ * Fenced code blocks are stripped first — a `## comment` inside one is not a
+ * heading. Ids are de-duplicated so two headings with the same text still get
+ * distinct anchors.
+ */
 export function getPostHeadings(content: string): PostHeading[] {
-  return Array.from(content.matchAll(/^##\s+(.+?)\s*$/gm), ([, text]) => ({
-    id: slugifyHeading(text),
-    text: text.replace(/[*_`]/g, ''),
-  }))
+  const withoutCodeFences = content.replace(/^```[\s\S]*?^```/gm, '')
+  const seen = new Map<string, number>()
+
+  return Array.from(withoutCodeFences.matchAll(/^##\s+(.+?)\s*$/gm), ([, text]) => {
+    const base = slugifyHeading(text)
+    const count = seen.get(base) ?? 0
+    seen.set(base, count + 1)
+
+    return {
+      id: count === 0 ? base : `${base}-${count + 1}`,
+      text: text.replace(/[*_`]/g, ''),
+    }
+  })
 }
 
 /**
@@ -166,7 +181,20 @@ function parsePost(fileName: string): BlogPost {
   }
 }
 
-export function getAllPosts(): BlogPost[] {
+/*
+ * Posts are read once per process and reused. Without this, every
+ * `getPostBySlug` re-read and re-parsed the whole directory: 17 posts cost
+ * ~935 file reads per build, and the work is quadratic in post count.
+ *
+ * Only cached in production builds. `next dev` re-reads each time so editing
+ * a markdown file shows up without restarting the server.
+ */
+let postsCache: BlogPost[] | null = null
+let postsBySlugCache: Map<string, BlogPost> | null = null
+
+const shouldCache = process.env.NODE_ENV === 'production'
+
+function readAllPosts(): BlogPost[] {
   if (!fs.existsSync(POSTS_DIRECTORY)) return []
 
   return fs
@@ -180,8 +208,20 @@ export function getAllPosts(): BlogPost[] {
     })
 }
 
+export function getAllPosts(): BlogPost[] {
+  if (!shouldCache) return readAllPosts()
+  postsCache ??= readAllPosts()
+  return postsCache
+}
+
+function getPostsBySlug(): Map<string, BlogPost> {
+  if (!shouldCache) return new Map(readAllPosts().map((post) => [post.slug, post]))
+  postsBySlugCache ??= new Map(getAllPosts().map((post) => [post.slug, post]))
+  return postsBySlugCache
+}
+
 export function getPostBySlug(slug: string): BlogPost | null {
-  return getAllPosts().find((post) => post.slug === slug) ?? null
+  return getPostsBySlug().get(slug) ?? null
 }
 
 export function getAllPostSlugs(): string[] {
@@ -190,7 +230,7 @@ export function getAllPostSlugs(): string[] {
 
 export function getRelatedPosts(post: BlogPost): BlogPost[] {
   if (!post.relatedPosts?.length) return []
-  const bySlug = new Map(getAllPosts().map((candidate) => [candidate.slug, candidate]))
+  const bySlug = getPostsBySlug()
 
   return post.relatedPosts.flatMap((slug) => {
     const related = bySlug.get(slug)
