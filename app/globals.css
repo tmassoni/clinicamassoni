@@ -54,6 +54,11 @@
   }
 
   html {
+    /*
+      Drives in-page anchor jumps (table of contents, #faq). Route changes are
+      handled by RouteScrollToTop instead — relying on this alone left Next's
+      scroll-to-top landing partway down the incoming page.
+    */
     scroll-behavior: smooth;
     background-color: var(--color-background);
   }

@@ -6,6 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import { Header } from '@/app/src/components/layout/Header'
 import { Footer } from '@/app/src/components/layout/Footer'
+import { RouteScrollToTop } from '@/app/src/components/layout/RouteScrollToTop'
 import { getStructuredData } from '@/app/src/lib/structured-data'
 import {
   DOCTOR_NAME,
@@ -182,6 +183,7 @@ export default function RootLayout({
         >
           Pular para o conteúdo
         </a>
+        <RouteScrollToTop />
         <Header />
         {children}
         <Footer />

@@ -155,6 +155,53 @@ test.describe('the article rail travels with the reader', () => {
   })
 })
 
+test.describe('scroll behaviour on route change', () => {
+  /*
+   * The regression: `html { scroll-behavior: smooth }` made Next's own
+   * scroll-to-top animate against the outgoing document's height, so
+   * navigating from partway down an article landed you *further* down the new
+   * page — measured at 2801px from a 1645px start.
+   */
+  test('navigating from mid-article lands at the top', async ({ page }) => {
+    await page.goto('/blog/profilaxia-dental')
+    await page.evaluate(() => window.scrollTo(0, 2500))
+    await page.waitForTimeout(300)
+
+    await page.getByRole('link', { name: /ver o tratamento/i }).click()
+    await page.waitForURL('**/tratamentos/**')
+    await page.waitForTimeout(600)
+
+    expect(await page.evaluate(() => window.scrollY)).toBeLessThan(20)
+  })
+
+  test('reloading keeps your place', async ({ page }) => {
+    await page.goto('/blog/profilaxia-dental')
+    await page.evaluate(() => window.scrollTo(0, 1800))
+    await page.waitForTimeout(400)
+
+    await page.reload({ waitUntil: 'networkidle' })
+    await page.waitForTimeout(600)
+
+    // Browser scrollRestoration owns this; we must not clobber it.
+    expect(await page.evaluate(() => window.scrollY)).toBeGreaterThan(100)
+  })
+
+  test('in-page anchors still animate', async ({ page }, testInfo) => {
+    test.skip(testInfo.project.name === 'mobile', 'The table of contents is desktop-only.')
+
+    await page.goto('/blog/profilaxia-dental')
+    await page.locator('nav[aria-labelledby="nesta-pagina"] a').first().click()
+
+    const immediate = await page.evaluate(() => window.scrollY)
+    await page.waitForTimeout(800)
+    const settled = await page.evaluate(() => window.scrollY)
+
+    expect(settled).toBeGreaterThan(0)
+    // Mid-flight below the destination is what proves it animated.
+    expect(immediate).toBeLessThan(settled)
+  })
+})
+
 test.describe('navigation', () => {
   test('skip link moves focus to main content', async ({ page }) => {
     await page.goto('/')
