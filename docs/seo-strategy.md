@@ -1,10 +1,11 @@
 # SEO Strategy — Dr. Enor Massoni
 
-**Site:** `https://www.clinicamassoni.com.br` — **www decided**, apex 301s to www
-(`next.config.ts` `redirects()`). Every canonical, sitemap URL and schema `@id`
-uses this host.
+**Site:** `https://www.clinicamassoni.com.br` — **www decided**; repository
+redirect is permanent in `next.config.ts`, while the Vercel domain-level
+redirect still needs to be changed from 307 to 308. Every canonical, sitemap
+URL and schema `@id` uses this host.
 **Primary market:** Cascavel, PR (western Paraná)
-**Last updated:** 2026-08-04
+**Last updated:** 2026-08-10
 
 ## Page ownership model
 
@@ -160,14 +161,16 @@ Point-in-time measurement, not a promise. Re-measure monthly.
 | Published posts | 17 | 2026-08-04 |
 | Service pages | 9 + hub | 2026-08-04 |
 
-**Data sources available: none yet.** Search Console is not verified
-(`GOOGLE_SITE_VERIFICATION` unset), GA4/GTM IDs are empty in `constants.ts`, and
-there is no ranking tool. Only Vercel Analytics + Speed Insights are live, plus
-the `cta_click` custom event in `lib/analytics.ts`.
+**Data sources available:** Vercel Analytics + Speed Insights are active, and
+CTA events include page path, channel and section. Search Console status is not
+independently confirmed because repository notes conflict; the property owner
+must verify access in the dashboard. GA4/GTM are intentionally absent. Vercel
+measures contact intent, while reception confirmation is still required to know
+whether a consultation was booked.
 
-Consequence: **any ranking or attribution claim right now is a guess.** Verifying
-Search Console is the highest-value next action in this document — without it the
-monthly loop below cannot run at all.
+Confirming Search Console ownership is the highest-value next action in this
+document. Then connect its query/landing-page data to CTA events and the
+privacy-minimal reception log described in `docs/POST_LAUNCH_OPERATIONS.md`.
 
 ## Measurement loop — monthly
 

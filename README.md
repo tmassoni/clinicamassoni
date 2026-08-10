@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Clínica Massoni
 
-## Getting Started
+Production website for Clínica Massoni in Cascavel, Paraná. The application is
+built with the Next.js App Router, React, strict TypeScript, Tailwind CSS and
+Bun. It includes treatment pages, an educational blog, structured data and
+attributed phone/WhatsApp calls to action.
 
-First, run the development server:
+## Local development
+
+Requirements: Bun and a current Chromium installation for Playwright/Lighthouse.
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+bun install
+bun run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Quality checks
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+bun run lint
+bun run test
+bun run build
+bun run test:e2e
+bun audit --production
+```
 
-## Learn More
+There is no contact-form backend or patient database in this repository. Do not
+commit secrets, patient data, consent records or account-recovery information.
 
-To learn more about Next.js, take a look at the following resources:
+## Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/`: routes, metadata, sitemap, robots and global styles
+- `app/src/components/`: shared UI, layout and page sections
+- `app/src/lib/`: clinic constants, analytics, content and schema helpers
+- `content/posts/`: blog source content
+- `public/`: static images and public machine-readable files
+- `tests/` and `e2e/`: unit/compliance and browser checks
+- `docs/`: strategy, compliance and operating handoff
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+When changing public copy or images, update the relevant documentation and
+metadata registry together. Clinical claims, professional credentials and
+patient media require the approvals recorded in `TODO.md`.
 
-## Deploy on Vercel
+## Deployment and ownership
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Production is hosted on Vercel with `www.clinicamassoni.com.br` as the canonical
+host. Deployment does not prove ownership of the registrar, Vercel, GitHub or
+Search Console accounts. Keep those assets in clinic-controlled accounts and
+store recovery details outside the repository.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Start with:
+
+- `docs/CURRENT_STATE.md` for the current handoff snapshot
+- `docs/POST_LAUNCH_OPERATIONS.md` for Search Console, conversion measurement,
+  redirect verification and maintenance
+- `docs/launch-checklist.md` for release validation
+- `docs/compliance-guidelines.md` before publishing clinical content
