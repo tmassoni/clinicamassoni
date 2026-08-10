@@ -6,13 +6,14 @@ what it blocks, so you can decide what's worth chasing first.
 Sources: `docs/client-brief.md`, `docs/compliance-guidelines.md` §10,
 `docs/content-plan.md`, `docs/launch-checklist.md`.
 
-**Last updated:** 2026-08-04
+**Last updated:** 2026-08-10
 
 ---
 
-## 🔴 Blocking publication
+## 🔴 Approval and compliance follow-up
 
-Nothing goes live until these clear.
+The content is already live. These client-owned approvals remain unresolved; do
+not add, reuse or actively promote clinical imagery until they are documented.
 
 ### Mensagem pronta para enviar ao cliente
 
@@ -36,6 +37,36 @@ Nothing goes live until these clear.
 > estão aprovados e quais imagens estão autorizadas. Antes de publicar
 > comparações entre diagnóstico e resultado, precisamos também confirmar se esse
 > uso já foi validado pelo advogado da clínica ou pelo CRO-PR.
+>
+> Para fechar também a parte administrativa e de divulgação, consegue nos
+> confirmar estes pontos?
+>
+> 1. O advogado da clínica pode revisar e aprovar a Política de Privacidade e os
+>    Termos de Uso atualizados? Precisamos confirmar também o nome jurídico de
+>    quem responde pelo tratamento de dados (profissional ou clínica/CNPJ) e se
+>    o e-mail `clinica_massoni@hotmail.com` deve ser o contato oficial para
+>    privacidade.
+> 2. Vocês preferem manter esse Hotmail no site ou criar
+>    `contato@clinicamassoni.com.br`? Só faremos a troca depois que o novo
+>    endereço estiver criado, testado e sob controle da clínica.
+> 3. O domínio `clinicamassoni.com.br`, o repositório no GitHub, o projeto na
+>    Vercel e a propriedade no Google Search Console estão em contas controladas
+>    pela clínica? Se o Search Console já estiver ativo, podem confirmar quem é
+>    o proprietário e liberar o acesso necessário para enviarmos novamente o
+>    sitemap e pedirmos a indexação das páginas principais?
+> 4. Podem confirmar os dados profissionais e as datas de formação e
+>    especialização dos dois dentistas? Encontramos fontes públicas divergentes
+>    sobre o ano da especialização do Dr. Enor, e o site também usa contagens de
+>    anos que ficam desatualizadas com o tempo.
+> 5. O nome oficial da clínica, endereço completo com sala/andar e CEP, telefone
+>    e horário estão corretos? Há cadastros antigos na internet com endereço e
+>    telefone diferentes. Se vocês tiverem acesso ao Perfil da Empresa no Google
+>    e a esses diretórios, podemos preparar uma lista para correção.
+> 6. A recepção consegue anotar, por 30 dias, quais contatos vieram do site e se
+>    cada pessoa efetivamente agendou? Não precisamos registrar informação
+>    clínica: basta data, canal (WhatsApp/telefone), assunto geral e
+>    agendou/não agendou. Isso permitirá medir consultas marcadas, e não apenas
+>    cliques.
 
 ### Ask Dr. Enor and Dr. Thiago
 
@@ -131,19 +162,42 @@ Applies to `profilaxia-dental`, `recontorno-estetico-resina-composta` and
 
 ### Technical — you can do these
 
-- [x] ~~Verify Search Console~~ — **already synced.** If it was verified by DNS
-      or file upload rather than the meta tag, `GOOGLE_SITE_VERIFICATION` can
-      stay unset; the tag is conditional and simply omits itself.
+- [ ] **Confirm Search Console ownership and access.** Repository notes conflict:
+      some say the property is synced and others say it is pending. The live
+      site cannot prove dashboard access. Once confirmed, record the owner and
+      resubmit the sitemap.
 - [ ] **Resubmit the sitemap and request indexing on the new URLs.** 30 routes
       appear at once; GSC won't find them promptly on its own. Priority order is
       in `docs/launch-checklist.md` §4 — commercial pages before posts.
-- [ ] **Verify the apex → www 301 at the Vercel domain level**, not just in
-      `next.config.ts`.
+- [ ] **Change the apex → www redirect from temporary 307 to permanent 308 in
+      Vercel Domains.** The repository rule is already permanent, but Vercel's
+      current domain-level rule intercepts it first. The authenticated developer
+      account does not currently have access to the clinic project.
 - [ ] **Build the LGPD cookie consent gate before adding GA4/GTM.** Not a
       problem today — Vercel Analytics is cookieless — but adding GA4 without it
       creates one. Port the pattern from `analu-procto`.
 
 ### Ask the client
+
+- [ ] **Approve the legal-page owner and privacy contact.** Ask counsel to
+      review the final wording and confirm whether the controller is an
+      individual professional or a clinic legal entity.
+- [ ] **Confirm account ownership.** Domain registrar, GitHub, Vercel and Search
+      Console should remain recoverable by an account controlled by the clinic,
+      with at least two trusted administrators where the platform supports it.
+- [ ] **Choose the official email.** Keep the working Hotmail address until
+      `contato@clinicamassoni.com.br` exists, has recovery configured and has
+      been tested for sending and receiving.
+- [ ] **Confirm professional credentials and dates.** Do not reconcile public
+      disagreements by guesswork; use diplomas/CRO records as the source of
+      truth, then replace dynamic “years of experience” claims with stable dates
+      or “mais de 40 anos”.
+- [ ] **Confirm the canonical NAP data** (legal/business name, address including
+      room/floor and CEP, phone and hours), then correct old directory listings
+      and the Google Business Profile.
+- [ ] **Run a 30-day reception attribution check.** Record website-originated
+      WhatsApp/phone leads and whether each booked, without putting health data
+      in analytics or the tracking sheet.
 
 - [ ] **Do they want indexing without AI training?** `robots.ts` currently
       allows GPTBot, ClaudeBot, Google-Extended and Applebot-Extended, which are

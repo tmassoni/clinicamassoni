@@ -1,5 +1,12 @@
 import type { Metadata } from "next";
-import { DOCTOR_NAME, CLINIC_WEBSITE } from "@/app/src/lib/constants";
+import {
+  DOCTOR_NAME,
+  CLINIC_WEBSITE,
+  CONTACT_EMAIL,
+} from "@/app/src/lib/constants";
+
+const LAST_UPDATED_ISO = "2026-08-10";
+const LAST_UPDATED_LABEL = "10 de agosto de 2026";
 
 export const metadata: Metadata = {
   title: "Termos de Uso",
@@ -24,16 +31,16 @@ export default function TermsOfUsePage() {
               Termos de Uso
             </h1>
             <p className="text-text-muted">
-              Última atualização: {new Date().toLocaleDateString("pt-BR")}
+              Última atualização:{" "}
+              <time dateTime={LAST_UPDATED_ISO}>{LAST_UPDATED_LABEL}</time>
             </p>
           </header>
 
           {/* Introduction */}
           <section className="mb-8">
             <p className="text-text-body leading-relaxed mb-4">
-              Bem-vindo ao site de {DOCTOR_NAME}. Ao acessar e usar este site,
-              você concorda em cumprir e estar vinculado aos seguintes termos e
-              condições de uso.
+              Estes termos regulam o uso do site de {DOCTOR_NAME}. Ao continuar
+              a navegação, você declara estar ciente destas condições.
             </p>
           </section>
 
@@ -44,7 +51,7 @@ export default function TermsOfUsePage() {
             </h2>
             <p className="text-text-body leading-relaxed">
               Ao acessar e usar este site, você aceita e concorda em ficar
-              vinculado aos termos e condições desta política. Se você não
+              vinculado a estes termos e condições. Se você não
               concordar com alguma parte destes termos, não deverá usar nosso
               site.
             </p>
@@ -93,6 +100,13 @@ export default function TermsOfUsePage() {
               não substituem uma consulta médica ou odontológica profissional.
               Sempre consulte um profissional qualificado para diagnóstico e
               tratamento adequado.
+            </p>
+            <p className="text-text-body leading-relaxed mt-4">
+              O site não realiza diagnóstico, atendimento de urgência ou
+              agendamento automático. O envio de uma mensagem pelo WhatsApp ou
+              uma ligação não cria, por si só, uma relação profissional-paciente
+              nem confirma horário; o agendamento depende da confirmação da
+              equipe da clínica.
             </p>
           </section>
 
@@ -152,8 +166,14 @@ export default function TermsOfUsePage() {
               Contato
             </h2>
             <p className="text-text-body leading-relaxed">
-              Se você tiver dúvidas sobre estes termos de uso, entre em contato
-              conosco através dos canais disponíveis no site.
+              Se você tiver dúvidas sobre estes termos de uso, escreva para{" "}
+              <a
+                href={`mailto:${CONTACT_EMAIL}`}
+                className="font-medium text-primary underline underline-offset-4 hover:text-secondary"
+              >
+                {CONTACT_EMAIL}
+              </a>
+              .
             </p>
           </section>
         </article>

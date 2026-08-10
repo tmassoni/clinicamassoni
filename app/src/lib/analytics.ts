@@ -27,5 +27,6 @@ export function trackCtaClick(input: CtaClickInput) {
     label: input.label,
     href: input.href,
     location: input.location ?? 'global',
+    path: window.location.pathname,
   })
 }

@@ -43,7 +43,7 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
-      // Canonical host. Permanent (301) — a 302 here wastes link equity.
+      // Canonical host. Next.js emits a permanent 308 so the method is kept.
       {
         source: '/:path*',
         has: [

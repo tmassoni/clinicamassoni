@@ -3,7 +3,7 @@
 What has to happen around the deploy for the SEO work to actually take effect.
 Ordered: blockers first, then platform, then submission, then the loop.
 
-**Last updated:** 2026-08-04
+**Last updated:** 2026-08-10
 
 ## 1. Blockers — nothing publishes until these clear
 
@@ -28,20 +28,18 @@ will flag anything missed.
 
 ## 2. Platform configuration
 
-- [x] **Canonical host redirect** — apex → `www`, **301**, in
-      `next.config.ts` `redirects()`. Note this handles the app-level case; a
-      cross-domain redirect is more reliably done at the Vercel domain level
-      too. **Verify both are in place.**
+- [x] **Canonical host redirect in code** — apex → `www`, permanent **308**, in
+      `next.config.ts` `redirects()`.
 - [x] Security headers (X-Frame-Options, X-Content-Type-Options,
       Referrer-Policy, HSTS, Permissions-Policy), `compress`,
       `poweredByHeader: false`
 - [x] `images.formats: ['image/avif', 'image/webp']`
-- [x] **Search Console already synced** for this property. The
-      `GOOGLE_SITE_VERIFICATION` env var is only needed if verification is done
-      by meta tag; DNS or file verification makes it unnecessary, and the tag
-      omits itself when unset.
-- [ ] Confirm the production domain serves `https://www.clinicamassoni.com.br`
-      and that `clinicamassoni.com.br` 301s to it.
+- [ ] **Confirm Search Console ownership in the dashboard.** Repository notes
+      conflict, and an unset meta-verification env var neither proves nor
+      disproves DNS/file verification.
+- [x] Production serves `https://www.clinicamassoni.com.br`.
+- [ ] Change Vercel's domain-level apex redirect from temporary 307 to permanent
+      308, then verify the root and one nested path.
 
 ## 3. Analytics — order matters
 
@@ -51,13 +49,14 @@ will flag anything missed.
       consent problem the site does not currently have. Port the
       `CookieConsent` + consent-gated analytics provider pattern from
       `analu-procto` first.
-- [x] `cta_click` custom event fires on every CTA, tagged with
-      `section: 'blog'` / `'services'` etc., so conversions are attributable per
-      page.
+- [x] `cta_click` custom event fires on every CTA with page path, channel and
+      section. Confirm it appears on the clinic's current Vercel plan.
+- [ ] Reception records which website leads actually book for 30 days; clicks
+      alone are not appointments. See `docs/POST_LAUNCH_OPERATIONS.md`.
 
 ## 4. Search Console — after deploy
 
-- [x] Property verified — already synced
+- [ ] Property owner and access confirmed in the dashboard
 - [ ] **Resubmit `https://www.clinicamassoni.com.br/sitemap.xml`.** It grows
       from 4 URLs to 32 in this release; a resubmit prompts a recrawl rather
       than waiting for the scheduled one.
@@ -70,7 +69,7 @@ will flag anything missed.
       6. `/blog`
       7. The remaining service pages, then posts (the sitemap will pick these up
          on its own; manual requests are for the pages you care about first)
-- [ ] Check the Coverage report a week later for anything excluded, and the
+- [ ] Check indexing and queries after 7–14 days, including exclusions and the
       "alternate page with proper canonical tag" bucket specifically — it should
       be empty.
 
@@ -91,27 +90,29 @@ will flag anything missed.
 | **LGPD cookie consent** | Not a live exposure today (see §3), but a prerequisite for GA4. |
 | **Homepage `FAQPage`** | Built, but two questions patients demonstrably ask are missing because the answers aren't in the brief: accepted convênios, and payment terms. Note art. 44 I prohibits advertising prices and payment methods, so the second may not be publishable — confirm with counsel. |
 
-### Lighthouse — run 2026-08-04 against a production build
+### Lighthouse baseline — isolated mobile run on production, 2026-08-10
 
-| Route | Performance | Accessibility | Best Practices | SEO |
-|---|---|---|---|---|
-| `/` | 100 | 100 | 96 | 100 |
-| `/tratamentos/implantes-dentarios` | 100 | 100 | 96 | 100 |
-| `/blog/profilaxia-dental` | 100 | 100 | 96 | 100 |
-| `/blog` | 100 | 100 | 96 | 100 |
+| Route | Performance | Accessibility | Best Practices | SEO | LCP | CLS |
+|---|---|---|---|---|---|---|
+| `/` | 86 | 100 | 100 | 100 | 3.6 s | 0 |
 
-Best Practices caps at 96 **only on localhost**: `@vercel/analytics` and
-`@vercel/speed-insights` inject script tags that 404 outside Vercel's edge,
-which trips `errors-in-console`. Re-measure against a preview deployment to
-confirm it clears to 100 — no code change should be needed.
+The hero's element render delay—not its transfer—was the main LCP contributor.
+The follow-up removes mobile blur layers, reduces image quality from 90 to 85
+and replaces roughly 119 KB of high-priority icon requests with purpose-sized
+favicons under 4 KB combined. Re-run against the preview and then production.
+
+First local production-build result after the change: 93 Performance, 100
+Accessibility, 96 Best Practices, 100 SEO, LCP 3.3 s, CLS 0 and 461 KiB. The
+Best Practices difference is the expected local-only Vercel script 404; use a
+preview deployment for the comparable result.
 
 Reproduce:
 
 ```bash
 bun run build && bun run start --port 4399
-npx lighthouse http://localhost:4399/tratamentos/implantes-dentarios \
+npx lighthouse http://localhost:4399/ \
   --only-categories=performance,accessibility,best-practices,seo \
-  --chrome-flags="--headless=new" --preset=desktop --view
+  --chrome-flags="--headless=new" --view
 ```
 
 ## 7. The loop, once live

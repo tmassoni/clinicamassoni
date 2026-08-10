@@ -25,7 +25,7 @@ export function HeroSection() {
             <div className="inline-flex items-center justify-center lg:justify-start">
               <div className="inline-flex items-center gap-2 rounded-full bg-primary/5 px-4 py-2 text-sm font-medium text-primary border border-primary/10">
                 <span className="relative flex h-2 w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
+                  <span className="motion-safe:animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                 </span>
                 Atendimento em Cascavel, PR
@@ -106,10 +106,8 @@ export function HeroSection() {
           {/* Image - Right side on desktop, top on mobile */}
           <div className="relative order-1 lg:order-2">
             <div className="relative w-full max-w-[20rem] mx-auto sm:max-w-none aspect-4/5 sm:aspect-square lg:aspect-4/5 rounded-3xl overflow-hidden shadow-2xl group">
-              {/* Multi-layer Gradient Overlays for depth */}
+              {/* A single overlay keeps textural depth without extra mobile paint work. */}
               <div className="absolute inset-0 bg-linear-to-t from-primary/30 via-primary/5 to-transparent rounded-3xl z-10" />
-              <div className="absolute inset-0 bg-linear-to-br from-transparent via-transparent to-primary/10 rounded-3xl z-10" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(4,43,72,0.15)_100%)] rounded-3xl z-10" />
 
               {/* Professional Photo */}
               <Image
@@ -120,12 +118,13 @@ export function HeroSection() {
                 sizes="(max-width: 640px) 85vw, (max-width: 768px) 92vw, (max-width: 1200px) 46vw, 42vw"
                 fetchPriority="high"
                 loading="eager"
-                quality={90}
+                decoding="sync"
+                quality={85}
               />
 
-              {/* Decorative Elements with animation */}
-              <div className="absolute -bottom-8 -right-8 w-40 h-40 bg-linear-to-br from-primary/30 to-transparent rounded-full blur-3xl animate-pulse" />
-              <div className="absolute -top-8 -left-8 w-40 h-40 bg-linear-to-br from-secondary/30 to-transparent rounded-full blur-3xl" />
+              {/* Decorative blurs are deferred to larger screens. */}
+              <div className="hidden sm:block absolute -bottom-8 -right-8 w-40 h-40 bg-linear-to-br from-primary/30 to-transparent rounded-full blur-3xl motion-safe:animate-pulse" />
+              <div className="hidden sm:block absolute -top-8 -left-8 w-40 h-40 bg-linear-to-br from-secondary/30 to-transparent rounded-full blur-3xl" />
 
               {/* Inner glow border effect */}
               <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/20 z-10" />

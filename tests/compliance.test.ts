@@ -233,3 +233,27 @@ describe('mandatory identification', () => {
     expect(MEDICAL_DISCLAIMER).toMatch(/n[ãa]o substitui/i)
   })
 })
+
+describe('legal pages reflect the services that actually run', () => {
+  const privacySource = fs.readFileSync(
+    path.join(process.cwd(), 'app', 'politica-de-privacidade', 'page.tsx'),
+    'utf8'
+  )
+  const termsSource = fs.readFileSync(
+    path.join(process.cwd(), 'app', 'termos-de-uso', 'page.tsx'),
+    'utf8'
+  )
+
+  test('revision dates are fixed and do not change on deploy', () => {
+    expect(privacySource).toContain('const LAST_UPDATED_ISO = "2026-08-10"')
+    expect(termsSource).toContain('const LAST_UPDATED_ISO = "2026-08-10"')
+    expect(privacySource).not.toContain('new Date(')
+    expect(termsSource).not.toContain('new Date(')
+  })
+
+  test('privacy copy discloses the current analytics and lack of a form', () => {
+    expect(privacySource).toContain('não possui cadastro nem formulário de contato')
+    expect(privacySource).toContain('Vercel Analytics e Speed Insights')
+    expect(privacySource).toContain('CONTACT_EMAIL')
+  })
+})
