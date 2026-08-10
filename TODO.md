@@ -14,6 +14,29 @@ Sources: `docs/client-brief.md`, `docs/compliance-guidelines.md` §10,
 
 Nothing goes live until these clear.
 
+### Mensagem pronta para enviar ao cliente
+
+> Oi! Fizemos uma atualização geral no site da clínica, incluindo as páginas de
+> tratamentos e 17 novos textos para o blog. Quando você tiver um tempo,
+> consegue revisar o conteúdo e confirmar se as informações clínicas, os
+> tratamentos descritos e a autoria de cada texto estão corretos?
+>
+> Também usamos fotos de pacientes nos artigos sobre profilaxia dental,
+> recontorno estético com resina composta e reabilitação bucal com resina
+> composta. Você consegue confirmar se esses pacientes autorizaram a publicação
+> das imagens e se existe um TCLE ou outra autorização assinada para cada caso?
+> Precisamos confirmar também qual dentista realizou cada procedimento, para que
+> a autoria do artigo fique correta.
+>
+> No artigo de recontorno estético, pode confirmar se a sequência das fotos está
+> correta como **inicial → planejamento → resultado**?
+>
+> Se alguma imagem ainda não tiver autorização confirmada, sem problema: podemos
+> publicar o texto sem as fotos. Se puder, responda indicando quais conteúdos
+> estão aprovados e quais imagens estão autorizadas. Antes de publicar
+> comparações entre diagnóstico e resultado, precisamos também confirmar se esse
+> uso já foi validado pelo advogado da clínica ou pelo CRO-PR.
+
 ### Ask Dr. Enor and Dr. Thiago
 
 - [ ] **Clinical sign-off on all 17 posts and 9 treatment pages.** Nothing has

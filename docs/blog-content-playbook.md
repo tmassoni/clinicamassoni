@@ -99,7 +99,7 @@ first word and proper nouns. Never Title Case.
 3. Check the file's **real** dimensions; if they differ from the registry
    default (1600×1067), add an exact entry to
    `app/src/lib/mdx-image-dimensions.ts`
-4. Run the dimension test — it verifies against the real file with `image-size`
+4. Run the dimension test — it verifies against the real file with `sharp`
 
 Conversion used for the existing post (source JPEGs are outside this repo, in
 `../blog-posts/<topic>/`):

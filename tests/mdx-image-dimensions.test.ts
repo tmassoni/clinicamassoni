@@ -1,7 +1,7 @@
 import { describe, expect, test } from 'bun:test'
 import fs from 'node:fs'
 import path from 'node:path'
-import { imageSize } from 'image-size'
+import sharp from 'sharp'
 import {
   MDX_IMAGE_DIMENSIONS,
   getMdxImageDimensions,
@@ -34,9 +34,9 @@ describe('mdx image dimensions', () => {
 
   // Wrong or forgotten entries ship layout shift; catching them here is the
   // difference between a 90 and a 99 on Performance for a content site.
-  test('resolved dimensions match the real files', () => {
+  test('resolved dimensions match the real files', async () => {
     for (const src of referencedImages) {
-      const actual = imageSize(fs.readFileSync(resolvePublicPath(src)))
+      const actual = await sharp(resolvePublicPath(src)).metadata()
       const resolved = getMdxImageDimensions(src)
 
       expect({ src, ...resolved }).toEqual({

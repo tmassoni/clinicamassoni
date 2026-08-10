@@ -1,6 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
-import matter from 'gray-matter'
+import { parse as parseYaml } from 'yaml'
 import {
   CLINIC_WEBSITE,
   DEFAULT_POST_AUTHOR_ID,
@@ -57,6 +57,7 @@ export interface BlogPost extends BlogPostFrontmatter {
 }
 
 const IMAGE_PATTERN = /!\[([^\]]*)\]\(([^)\s]+)\)/
+const FRONTMATTER_PATTERN = /^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n|$)/
 
 /**
  * Heading id used by both the rendered `##` and the table of contents, so the
@@ -143,11 +144,32 @@ function countWords(content: string): number {
     .filter(Boolean).length
 }
 
+function parseFrontmatter(raw: string, fileName: string): {
+  data: BlogPostFrontmatter
+  content: string
+} {
+  const match = raw.match(FRONTMATTER_PATTERN)
+
+  if (!match) {
+    throw new Error(`Blog post "${fileName}" must start with valid YAML frontmatter.`)
+  }
+
+  const data = parseYaml(match[1])
+
+  if (!data || typeof data !== 'object' || Array.isArray(data)) {
+    throw new Error(`Blog post "${fileName}" frontmatter must be a YAML object.`)
+  }
+
+  return {
+    data: data as BlogPostFrontmatter,
+    content: raw.slice(match[0].length),
+  }
+}
+
 function parsePost(fileName: string): BlogPost {
   const slugFromFile = fileName.replace(/\.md$/, '')
   const raw = fs.readFileSync(path.join(POSTS_DIRECTORY, fileName), 'utf8')
-  const { data, content } = matter(raw)
-  const frontmatter = data as BlogPostFrontmatter
+  const { data: frontmatter, content } = parseFrontmatter(raw, fileName)
 
   if (frontmatter.slug !== slugFromFile) {
     throw new Error(
