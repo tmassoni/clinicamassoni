@@ -160,12 +160,17 @@ import type { Metadata } from 'next'
 
 Extracted from logo, WCAG AAA compliant:
 
+Contrast ratios below are measured on white. **The palette is WCAG AA for text,
+not AAA** — `--color-tertiary` was corrected from `#6A7E8B` (4.23:1, failing) to
+`#5B6C78` (5.44:1) after a Lighthouse audit. `--color-accent` is 1.58:1 and must
+never carry text; it is for borders and fills only.
+
 ```css
 /* Brand Colors (globals.css @theme) */
 --color-primary: #042B48;           /* Dark blue - primary brand */
---color-secondary: #3C576A;         /* Medium blue */
---color-tertiary: #6A7E8B;          /* Light blue-gray */
---color-accent: #C8CFD3;            /* Very light blue-gray */
+--color-secondary: #3C576A;         /* Medium blue - 7.60:1 */
+--color-tertiary: #5B6C78;          /* Blue-gray body text - 5.44:1 */
+--color-accent: #C8CFD3;            /* Borders/fills only - 1.58:1, NOT text */
 --color-brand-primary: #042B48;     /* CTA buttons */
 --color-background: #ffffff;        /* Page background */
 
@@ -332,6 +337,13 @@ bun run start
 
 # Linting
 bun run lint
+
+# Content + SEO contracts (fast, no browser)
+bun run test
+
+# Rendering, navigation and axe accessibility, desktop + mobile,
+# against a production build
+bun run test:e2e
 
 # Install dependencies (ALWAYS use bun)
 bun install
@@ -538,6 +550,27 @@ export const PHONE_NUMBER = '(45) 3223-3234'
 export const EMAIL = 'clinica_massoni@hotmail.com'
 ```
 
+### Add a blog post
+
+Full contract in `docs/blog-content-playbook.md`. Short version:
+
+1. Create `content/posts/<slug>.md` — **filename must equal the `slug`
+   frontmatter key**, or the build throws.
+2. Open with one italic hook line; it becomes the listing-card subtitle.
+3. `##` headings phrased as the question a patient types, answer in the first
+   sentence (answer engines retrieve sections, not pages).
+4. Images: WebP under `public/images/posts/<slug>/`. If not 1600×1067, add an
+   exact entry to `app/src/lib/mdx-image-dimensions.ts`.
+5. Register the post URL in `public/llms.txt` — the discovery test asserts **set
+   equality**, so both a missing and a stale entry fail.
+6. `bun test && bun run lint && bun run build`.
+
+The sitemap auto-discovers posts; nothing to update there.
+
+Key files: `app/src/lib/blog.ts` (parser + `MedicalWebPage`/`Article` schema),
+`app/src/lib/seo-schemas.ts` (breadcrumb/FAQ/OG generators),
+`app/src/components/blog/`.
+
 ### Add FAQ section
 
 1. Install shadcn accordion (if not already): `npx shadcn@latest add accordion`
@@ -620,7 +653,8 @@ Check path:
 - Cookie consent banner (port from analu-procto)
 - Analytics provider component
 - FAQ section with accordion
-- Blog system (MDX-based)
+- ~~Blog system (MDX-based)~~ — **built**, see "Add a blog post" above
+- Service pages under `/tratamentos` (ownership table in `docs/seo-strategy.md`)
 
 **Phase 3**:
 

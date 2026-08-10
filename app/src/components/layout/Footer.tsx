@@ -3,6 +3,10 @@ import Link from 'next/link'
 import { TrackedLink } from '@/app/src/components/custom/TrackedLink'
 import { navigationItems } from '@/app/src/lib/navigation'
 import {
+  TREATMENTS_BY_ORDER,
+  getTreatmentPath,
+} from '@/app/src/lib/treatments'
+import {
   DOCTOR_NAME,
   DOCTOR_CRO,
   DOCTOR_SPECIALTY,
@@ -84,13 +88,13 @@ export function Footer() {
 
             {/* Column 2 - Quick Links */}
             <div>
-              <h4 className="text-lg font-bold mb-4 text-white">Navegação</h4>
+              <h2 className="text-lg! font-bold mb-4 text-white">Navegação</h2>
               <ul className="space-y-3">
                 {navigationItems.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-white/80 hover:text-white transition-colors inline-flex items-center gap-2 group"
+                      className="text-white/80 hover:text-white transition-colors inline-flex items-center gap-2 group py-1.5"
                     >
                       <span className="w-0 h-px bg-white group-hover:w-4 transition-all" />
                       {item.label}
@@ -102,46 +106,30 @@ export function Footer() {
 
             {/* Column 3 - Services */}
             <div>
-              <h4 className="text-lg font-bold mb-4 text-white">Serviços</h4>
+              <h2 className="text-lg! font-bold mb-4 text-white">Tratamentos</h2>
+              {/*
+                Driven off TREATMENTS so the footer can't drift from the pages
+                that exist. These used to all point at the /#servicos anchor,
+                which sent every service link to the same homepage section
+                instead of the page that owns that commercial intent.
+              */}
               <ul className="space-y-3 text-sm">
+                {TREATMENTS_BY_ORDER.slice(0, 5).map((treatment) => (
+                  <li key={treatment.slug}>
+                    <Link
+                      href={getTreatmentPath(treatment.slug)}
+                      className="text-white/80 hover:text-white transition-colors inline-block py-1.5"
+                    >
+                      {treatment.name}
+                    </Link>
+                  </li>
+                ))}
                 <li>
                   <Link
-                    href="/#servicos"
-                    className="text-white/80 hover:text-white transition-colors"
+                    href="/tratamentos"
+                    className="text-white hover:text-accent transition-colors inline-block py-1.5 font-medium"
                   >
-                    Implantes Dentários
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#servicos"
-                    className="text-white/80 hover:text-white transition-colors"
-                  >
-                    Cirurgia Buco-Maxilo-Facial
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#servicos"
-                    className="text-white/80 hover:text-white transition-colors"
-                  >
-                    Cirurgia Ortognática
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#servicos"
-                    className="text-white/80 hover:text-white transition-colors"
-                  >
-                    Enxerto Ósseo
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="/#servicos"
-                    className="text-white/80 hover:text-white transition-colors"
-                  >
-                    Extração de Sisos
+                    Ver todos os tratamentos
                   </Link>
                 </li>
               </ul>
@@ -149,7 +137,7 @@ export function Footer() {
 
             {/* Column 4 - Contact */}
             <div>
-              <h4 className="text-lg font-bold mb-4 text-white">Contato</h4>
+              <h2 className="text-lg! font-bold mb-4 text-white">Contato</h2>
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-3">
                   <Phone className="w-5 h-5 shrink-0 mt-0.5 text-white/60" />
@@ -162,7 +150,7 @@ export function Footer() {
                       section="footer"
                       label="footer_whatsapp"
                       location="cascavel"
-                      className="text-white/80 hover:text-white transition-colors block"
+                      className="text-white/80 hover:text-white transition-colors block py-1.5"
                     >
                       {CONTACT_WHATSAPP_FORMATTED} (WhatsApp)
                     </TrackedLink>
@@ -172,7 +160,7 @@ export function Footer() {
                       section="footer"
                       label="footer_telefone"
                       location="cascavel"
-                      className="text-white/80 hover:text-white transition-colors block"
+                      className="text-white/80 hover:text-white transition-colors block py-1.5"
                     >
                       {CONTACT_PHONE_FORMATTED}
                     </TrackedLink>

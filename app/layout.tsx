@@ -6,6 +6,7 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import './globals.css'
 import { Header } from '@/app/src/components/layout/Header'
 import { Footer } from '@/app/src/components/layout/Footer'
+import { RouteScrollToTop } from '@/app/src/components/layout/RouteScrollToTop'
 import { getStructuredData } from '@/app/src/lib/structured-data'
 import {
   DOCTOR_NAME,
@@ -13,6 +14,7 @@ import {
   CONTACT_EMAIL,
   CLINIC_ADDRESS_CITY,
   CLINIC_ADDRESS_STATE,
+  CLINIC_COORDINATES,
   CLINIC_WEBSITE,
 } from '@/app/src/lib/constants'
 
@@ -126,6 +128,11 @@ export const metadata: Metadata = {
 
   other: {
     'contact:email': CONTACT_EMAIL,
+    // Local-search signals, read off the single location constant.
+    'geo.region': `BR-${CLINIC_ADDRESS_STATE}`,
+    'geo.placename': CLINIC_ADDRESS_CITY,
+    'geo.position': `${CLINIC_COORDINATES.latitude};${CLINIC_COORDINATES.longitude}`,
+    ICBM: `${CLINIC_COORDINATES.latitude}, ${CLINIC_COORDINATES.longitude}`,
   },
 }
 
@@ -152,6 +159,8 @@ export default function RootLayout({
             strategy="beforeInteractive"
           />
         )}
+        {/* Curated inventory for answer engines */}
+        <link rel="llms" href="/llms.txt" />
         {/* Structured Data */}
         <script
           type="application/ld+json"
@@ -159,6 +168,22 @@ export default function RootLayout({
         />
       </head>
       <body className="font-sans antialiased">
+        {/*
+          Accessibility floor: visually hidden until focused, then the first
+          thing a keyboard user reaches. Every page's <main> carries id="main".
+        */}
+        {/*
+          Parked off-screen rather than `sr-only`: `not-sr-only` resets
+          `position` to static, which drops the link behind the fixed header and
+          makes it unclickable. Staying `fixed` and translating in avoids that.
+        */}
+        <a
+          href="#main"
+          className="fixed top-4 left-4 z-[200] -translate-y-24 rounded-lg bg-primary px-4 py-2 text-sm font-semibold text-white shadow-brand-lg transition-transform duration-200 focus:translate-y-0 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+        >
+          Pular para o conteúdo
+        </a>
+        <RouteScrollToTop />
         <Header />
         {children}
         <Footer />

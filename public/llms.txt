@@ -1,0 +1,76 @@
+# Dr. Enor Massoni — Oral and Maxillofacial Surgery and Dental Implants in Cascavel, Paraná, Brazil
+
+> Official website of Dr. Enor Massoni (CRO-PR 4982), a dental surgeon
+> specialized in Oral and Maxillofacial Surgery and Traumatology, practicing in
+> Cascavel, Paraná, Brazil since graduating in 1984. The clinic covers dental
+> implants, All-on-4 implant-supported protocols, bone grafting, 3D-guided
+> surgery, periodontal plastic surgery, orthognathic surgery, third-molar
+> extraction and preventive dentistry. All content is written in Brazilian
+> Portuguese (pt-BR) for a patient audience in western Paraná; the secondary
+> audience is referring dentists. Content is educational and does not replace a
+> clinical consultation.
+
+> Site oficial do Dr. Enor Massoni (CRO-PR 4982), cirurgião-dentista
+> especialista em Cirurgia e Traumatologia Buco-Maxilo-Facial, atuando em
+> Cascavel, Paraná, desde 1984. A clínica realiza implantes dentários,
+> protocolo All-on-4, enxerto ósseo, cirurgias guiadas com tecnologia 3D,
+> cirurgia plástica periodontal, cirurgia ortognática, extração de sisos e
+> odontologia preventiva. Todo o conteúdo é escrito em português brasileiro
+> para pacientes da região oeste do Paraná; o público secundário são dentistas
+> que encaminham casos. O conteúdo é educativo e não substitui consulta
+> clínica.
+
+> Full text of every page and article in one file:
+> https://www.clinicamassoni.com.br/llms-full.txt
+
+## Main pages
+
+- [Início](https://www.clinicamassoni.com.br/): apresentação da clínica, especialidades, equipe e contato.
+- [Sobre](https://www.clinicamassoni.com.br/sobre): formação, especializações e áreas de atuação dos dois cirurgiões-dentistas.
+- [Tratamentos](https://www.clinicamassoni.com.br/tratamentos): catálogo dos procedimentos realizados, com indicações e limites de cada um.
+- [Blog](https://www.clinicamassoni.com.br/blog): artigos educativos sobre saúde bucal, cirurgia e prevenção.
+- [Política de privacidade](https://www.clinicamassoni.com.br/politica-de-privacidade): tratamento de dados pessoais (LGPD).
+- [Termos de uso](https://www.clinicamassoni.com.br/termos-de-uso): condições de uso do site.
+
+## Tratamentos
+
+- [Implantes dentários](https://www.clinicamassoni.com.br/tratamentos/implantes-dentarios): implantes unitários, múltiplos e em área estética, com planejamento por tomografia.
+- [Enxerto ósseo](https://www.clinicamassoni.com.br/tratamentos/enxerto-osseo): reconstrução óssea, levantamento de seio maxilar e preservação alveolar.
+- [Protocolo sobre implantes (All-on-4)](https://www.clinicamassoni.com.br/tratamentos/protocolo-all-on-4): prótese fixa parafusada para reabilitar a arcada inteira.
+- [Cirurgia e traumatologia buco-maxilo-facial](https://www.clinicamassoni.com.br/tratamentos/cirurgia-bucomaxilofacial): dentes retidos, cistos e lesões, traumatismo facial e biópsias.
+- [Extração de sisos e dentes retidos](https://www.clinicamassoni.com.br/tratamentos/extracao-de-sisos): critérios de indicação, técnica e pós-operatório.
+- [Cirurgia ortognática](https://www.clinicamassoni.com.br/tratamentos/cirurgia-ortognatica): correção da posição dos maxilares em conjunto com a ortodontia.
+- [Cirurgia plástica periodontal](https://www.clinicamassoni.com.br/tratamentos/cirurgia-plastica-periodontal): recobrimento de recessões gengivais, aumento de coroa clínica e gengivoplastia.
+- [Dentística restauradora](https://www.clinicamassoni.com.br/tratamentos/dentistica-restauradora): restaurações diretas e indiretas, facetas e estética anterior.
+- [Prótese dentária](https://www.clinicamassoni.com.br/tratamentos/protese-dentaria): coroas, pontes, próteses removíveis e próteses sobre implantes.
+
+## Blog — artigos educativos
+
+### Cirurgia e traumatologia buco-maxilo-facial
+
+- [Cirurgião bucomaxilofacial: o que faz e quando procurar](https://www.clinicamassoni.com.br/blog/cirurgiao-bucomaxilofacial-quando-procurar)
+- [Extração de siso: quando é necessária e quando não é](https://www.clinicamassoni.com.br/blog/extracao-de-siso)
+- [Cirurgia ortognática: quando o aparelho sozinho não resolve](https://www.clinicamassoni.com.br/blog/cirurgia-ortognatica)
+- [Caroço, ferida ou cisto na boca: quando investigar](https://www.clinicamassoni.com.br/blog/lesoes-e-cistos-na-boca)
+- [Traumatismo facial: quando a batida no rosto vira fratura](https://www.clinicamassoni.com.br/blog/traumatismo-facial-fraturas)
+
+### Implantes dentários e reabilitação sobre implantes
+
+- [Implante dentário: como funciona, etapa por etapa](https://www.clinicamassoni.com.br/blog/implante-dentario-passo-a-passo)
+- [Enxerto ósseo dental: por que o osso some e como recuperá-lo](https://www.clinicamassoni.com.br/blog/enxerto-osseo-dental)
+- [Prótese fixa sobre implantes: o protocolo All-on-4 explicado](https://www.clinicamassoni.com.br/blog/protese-fixa-sobre-implantes)
+- [Cirurgia guiada por tomografia: o que muda no implante](https://www.clinicamassoni.com.br/blog/cirurgia-guiada-3d)
+
+### Dentística restauradora e prótese
+
+- [Dentística restauradora: tratar o dente preservando o dente](https://www.clinicamassoni.com.br/blog/dentistica-restauradora)
+- [Tipos de prótese dentária: qual resolve o seu caso](https://www.clinicamassoni.com.br/blog/tipos-de-protese-dentaria)
+- [Dente quebrado: o que fazer nas primeiras horas](https://www.clinicamassoni.com.br/blog/dente-quebrado-o-que-fazer)
+- [Recontorno estético com resina composta: como funciona](https://www.clinicamassoni.com.br/blog/recontorno-estetico-resina-composta)
+- [Reabilitação bucal com resina composta: função antes da estética](https://www.clinicamassoni.com.br/blog/reabilitacao-bucal-resina-composta)
+
+### Odontologia preventiva
+
+- [Profilaxia dental: por que a limpeza profissional é essencial](https://www.clinicamassoni.com.br/blog/profilaxia-dental)
+- [Gengiva sangrando ao escovar: o que isso significa](https://www.clinicamassoni.com.br/blog/gengiva-sangrando)
+- [Sensibilidade nos dentes: causas e o que realmente resolve](https://www.clinicamassoni.com.br/blog/sensibilidade-nos-dentes)

@@ -8,7 +8,14 @@
   /* Brand Colors - Extracted from logo */
   --color-primary: #042B48;
   --color-secondary: #3C576A;
-  --color-tertiary: #6A7E8B;
+  /*
+    Darkened from #6A7E8B, which measured 4.23:1 on white — below the 4.5:1
+    WCAG AA floor for normal text, and flagged by Lighthouse. This value is
+    5.44:1. It carries most body copy on the site, so the fix is at the token
+    rather than per component.
+  */
+  --color-tertiary: #5B6C78;
+  /* Borders and fills only — never text. 1.58:1 on white. */
   --color-accent: #C8CFD3;
   --color-brand-primary: #042B48;
   --color-background: #ffffff;
@@ -47,6 +54,11 @@
   }
 
   html {
+    /*
+      Drives in-page anchor jumps (table of contents, #faq). Route changes are
+      handled by RouteScrollToTop instead — relying on this alone left Next's
+      scroll-to-top landing partway down the incoming page.
+    */
     scroll-behavior: smooth;
     background-color: var(--color-background);
   }
@@ -57,10 +69,16 @@
     background-color: var(--color-background);
   }
 
+  /*
+    `main` is full-bleed on purpose. It used to be capped at 1760px with auto
+    margins, which duplicated what `.container` already does — and because page
+    backgrounds are painted inside `main`, the cap left a strip of bare body
+    colour down each side on viewports wider than 1760px.
+
+    Width is the container's job; `main` only carries the background.
+  */
   main {
-    max-width: 1760px;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100%;
   }
 
   h1, h2, h3, h4, h5, h6 {

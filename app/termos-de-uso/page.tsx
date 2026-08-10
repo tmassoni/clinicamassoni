@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 export default function TermsOfUsePage() {
   return (
-    <main className="min-h-screen bg-bg-subtle">
+    <main id="main" tabIndex={-1} className="min-h-screen bg-bg-subtle">
       <div className="container px-6 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24">
         <article className="max-w-4xl mx-auto bg-white rounded-lg shadow-brand p-8 sm:p-12 mt-16">
           {/* Header */}
