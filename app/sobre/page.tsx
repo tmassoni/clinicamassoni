@@ -280,22 +280,7 @@ export default function AboutPage() {
           </p>
         </header>
 
-        <nav
-          aria-label="Ir para"
-          className="mt-9 grid grid-cols-2 overflow-hidden rounded-2xl border border-accent/50 bg-white/80 shadow-brand backdrop-blur-sm lg:hidden"
-        >
-          {PRACTITIONERS.map((practitioner) => (
-            <a
-              key={practitioner.id}
-              href={`#${practitioner.id}`}
-              className="flex min-h-[46px] items-center justify-center px-2 text-center text-sm font-semibold text-secondary transition-colors hover:bg-primary/5 hover:text-primary focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary [&+&]:border-l [&+&]:border-accent/50"
-            >
-              {practitioner.name}
-            </a>
-          ))}
-        </nav>
-
-        <div className="mt-16 space-y-10">
+        <div className="mt-12 space-y-10 sm:mt-16">
           {PRACTITIONERS.map((practitioner) => (
             <PractitionerProfile
               key={practitioner.id}
