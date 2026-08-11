@@ -22,6 +22,11 @@ jobs:
     timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          # The sitemap `lastModified` guard asks git when each page last
+          # changed. The default shallow clone has no such history, which
+          # would silently downgrade that check to a no-op.
+          fetch-depth: 0
 
       - uses: oven-sh/setup-bun@v2
         with:
