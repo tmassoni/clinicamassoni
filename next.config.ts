@@ -43,7 +43,16 @@ const nextConfig: NextConfig = {
 
   async redirects() {
     return [
-      // Canonical host. Next.js emits a permanent 308 so the method is kept.
+      /*
+        Canonical host, as a fallback only. In production this rule never runs:
+        the apex is configured as a redirecting domain in the Vercel dashboard,
+        so Vercel answers at the edge before the app is reached — currently
+        with a *307*, which tells Google the move is temporary and leaves the
+        apex eligible to stay indexed. Fixing that means switching the domain's
+        redirect status code to 308 in Project → Settings → Domains; it cannot
+        be fixed from here. This rule still covers any environment where the
+        apex reaches the app directly, and `permanent: true` emits a 308.
+      */
       {
         source: '/:path*',
         has: [
