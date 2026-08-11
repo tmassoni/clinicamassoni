@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, GraduationCap, ShieldCheck } from 'lucide-react'
+import { ArrowRight, ShieldCheck } from 'lucide-react'
 import { Breadcrumb } from '@/app/src/components/ui/Breadcrumb'
 import { BlogBackdrop, Eyebrow } from '@/app/src/components/blog/BlogBackdrop'
 import { BlogCtaCard } from '@/app/src/components/blog/BlogCtaCard'
@@ -118,69 +118,51 @@ function generateProfilePageSchema() {
   }
 }
 
-const HIGHLIGHTS = [
-  { value: '1984', label: 'Formado em Odontologia', detail: 'UFPEL' },
-  { value: '1993', label: 'Especialização em CTBMF', detail: 'FOB-USP' },
-  { value: '2', label: 'Cirurgiões-dentistas', detail: 'Especialistas registrados' },
-  { value: '9', label: 'Tratamentos', detail: 'Descritos em detalhe' },
-] as const
-
-function Highlights() {
-  return (
-    <dl className="mb-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {HIGHLIGHTS.map((item) => (
-        <div
-          key={item.label}
-          className="rounded-2xl border border-accent/50 bg-white/70 p-5 backdrop-blur-sm"
-        >
-          <dt className="sr-only">{item.label}</dt>
-          <dd>
-            <span className="block font-serif text-3xl font-bold text-primary">
-              {item.value}
-            </span>
-            <span className="mt-1 block text-sm font-medium text-secondary">
-              {item.label}
-            </span>
-            <span className="mt-0.5 block text-xs text-tertiary">{item.detail}</span>
-          </dd>
-        </div>
-      ))}
-    </dl>
-  )
-}
-
-function PractitionerCard({ practitioner }: { practitioner: PostAuthor }) {
+function PractitionerProfile({ practitioner }: { practitioner: PostAuthor }) {
   return (
     <section
       id={practitioner.id}
       aria-labelledby={`${practitioner.id}-nome`}
-      className="relative scroll-mt-28 overflow-hidden rounded-3xl border border-accent/50 bg-white/80 p-6 shadow-brand backdrop-blur-sm sm:p-10"
+      className="scroll-mt-28 rounded-3xl border border-accent/50 bg-white/80 p-7 shadow-brand backdrop-blur-sm sm:p-10 lg:p-12"
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-linear-to-br from-primary/10 to-transparent blur-3xl"
-      />
+      <div className="grid gap-7 lg:grid-cols-[360px_minmax(0,1fr)] lg:grid-rows-[auto_1fr] lg:gap-x-12 lg:gap-y-0 xl:gap-x-16">
+        <div className="lg:col-start-2 lg:row-start-1">
+          <h2
+            id={`${practitioner.id}-nome`}
+            className="mb-0 font-serif text-[clamp(1.75rem,3.2vw,2.25rem)]! leading-[1.15] font-semibold tracking-[-0.01em] text-primary"
+          >
+            {practitioner.name}
+          </h2>
 
-      <div className="relative grid gap-8 lg:grid-cols-[300px_1fr] lg:gap-12">
-        <div className="lg:sticky lg:top-32 lg:self-start">
-          <div className="relative mx-auto aspect-4/5 w-full max-w-[300px] overflow-hidden rounded-3xl shadow-brand-lg">
+          <p className="mt-1.5 mb-0 text-base text-secondary">
+            {practitioner.title}
+          </p>
+        </div>
+
+        <div className="mx-auto w-full max-w-[360px] lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:mx-0">
+          <div className="relative mx-auto aspect-4/5 w-full max-w-[360px] overflow-hidden rounded-3xl bg-bg-subtle shadow-brand-lg">
             <Image
               src={practitioner.photo}
               alt={`${practitioner.name} — ${practitioner.title}`}
               fill
-              sizes="(max-width: 1024px) 300px, 300px"
+              sizes="(max-width: 1024px) 360px, 360px"
               quality={90}
               className="object-cover"
             />
-            <div className="absolute inset-0 bg-linear-to-t from-primary/30 via-transparent to-transparent" />
-            <div className="absolute inset-0 rounded-3xl ring-1 ring-inset ring-white/20" />
           </div>
 
-          <ul className="mt-5 flex flex-wrap justify-center gap-2 lg:justify-start">
+          <div className="mt-4 flex justify-center lg:justify-start">
+            <p className="mb-0 inline-flex min-h-10 items-center gap-2 rounded-full border border-primary/15 bg-white px-3.5 py-2 text-xs font-semibold tracking-wide text-primary shadow-sm uppercase">
+              <ShieldCheck className="h-4 w-4 shrink-0" aria-hidden="true" />
+              {practitioner.cro}
+            </p>
+          </div>
+
+          <ul className="mt-3 flex flex-wrap justify-center gap-2 lg:justify-start">
             {practitioner.specialties.map((specialty) => (
               <li
                 key={specialty}
-                className="rounded-full bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary"
+                className="inline-flex items-center rounded-full border border-primary/10 bg-primary/[0.045] px-3.5 py-2 text-sm font-medium leading-snug text-secondary shadow-sm"
               >
                 {/*
                   Parentheticals stripped: DOCTOR_SPECIALTIES carries
@@ -195,47 +177,34 @@ function PractitionerCard({ practitioner }: { practitioner: PostAuthor }) {
           </ul>
         </div>
 
-        <div className="min-w-0">
-          {/* `text-2xl!` — globals.css sizes bare h2 in unlayered media queries. */}
-          <h2
-            id={`${practitioner.id}-nome`}
-            className="font-serif text-2xl! font-bold text-primary sm:text-3xl!"
-          >
-            {practitioner.name}
-          </h2>
+        <div className="min-w-0 lg:col-start-2 lg:row-start-2 lg:pt-6">
+          <div className="max-w-[68ch] space-y-4">
+            {practitioner.bio.map((paragraph) => (
+              <p
+                key={paragraph}
+                className="mb-0 max-w-none text-[17px] leading-[1.78] text-text-body"
+              >
+                {paragraph}
+              </p>
+            ))}
+          </div>
 
-          <p className="mt-1 text-secondary">{practitioner.title}</p>
-
-          <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-primary/5 px-3 py-1 text-sm font-medium text-primary">
-            <ShieldCheck className="h-4 w-4" aria-hidden="true" />
-            {practitioner.cro}
-          </p>
-
-          {practitioner.bio.map((paragraph) => (
-            <p key={paragraph} className="mt-4 max-w-none leading-[1.8] text-text-body">
-              {paragraph}
-            </p>
-          ))}
-
-          <h3 className="mt-8 mb-4 font-serif text-lg! font-bold text-primary">
+          <h3 className="mt-[38px] mb-1.5 font-serif text-[clamp(1.1875rem,2vw,1.4375rem)]! leading-tight font-semibold text-primary">
             Formação
           </h3>
-          {/* Vertical timeline — reads as a career, not a bullet list */}
-          <ol className="relative space-y-5 border-l border-accent pl-6">
+
+          <ol className="relative mt-2 border-l border-accent">
             {practitioner.credentials.map((credential) => (
-              <li key={`${credential.category}-${credential.name}`} className="relative">
-                <span
-                  aria-hidden="true"
-                  className="absolute top-1 -left-[1.9rem] flex h-6 w-6 items-center justify-center rounded-full bg-primary/10 ring-4 ring-white"
-                >
-                  <GraduationCap className="h-3.5 w-3.5 text-primary" />
-                </span>
-                <p className="text-xs font-medium tracking-wide text-tertiary uppercase">
+              <li
+                key={`${credential.category}-${credential.name}`}
+                className="relative border-b border-accent/50 py-4 pl-[22px] last:border-b-0 before:absolute before:top-6 before:-left-[3px] before:h-[5px] before:w-[5px] before:rounded-full before:bg-primary before:content-['']"
+              >
+                <p className="metadata-label mb-0 text-[10.5px] tracking-[0.13em] text-tertiary">
                   {credential.category}
                   {credential.year !== 'anterior' ? ` · ${credential.year}` : ''}
                 </p>
-                <p className="font-semibold text-primary">{credential.name}</p>
-                <p className="text-sm text-tertiary">
+                <p className="mb-0 font-semibold text-primary">{credential.name}</p>
+                <p className="mb-0 text-sm text-tertiary">
                   {credential.institution}
                   {credential.institutionShort
                     ? ` (${credential.institutionShort})`
@@ -246,14 +215,15 @@ function PractitionerCard({ practitioner }: { practitioner: PostAuthor }) {
             ))}
           </ol>
 
-          <h3 className="mt-8 mb-4 font-serif text-lg! font-bold text-primary">
+          <h3 className="mt-[38px] mb-1.5 font-serif text-[clamp(1.1875rem,2vw,1.4375rem)]! leading-tight font-semibold text-primary">
             Procedimentos realizados
           </h3>
-          <ul className="flex flex-wrap gap-2">
+
+          <ul className="mt-2 grid overflow-hidden rounded-2xl border border-accent/50 bg-primary/[0.025] sm:grid-cols-2">
             {practitioner.procedures.map((procedure) => (
               <li
                 key={procedure}
-                className="rounded-full border border-accent/60 bg-bg-subtle px-3 py-1.5 text-sm text-text-body"
+                className="flex min-h-12 items-center border-b border-accent/50 px-4 py-3 text-[15px] text-text-body last:border-b-0 sm:odd:border-r sm:[&:nth-last-child(-n+2)]:border-b-0"
               >
                 {procedure}
               </li>
@@ -262,10 +232,13 @@ function PractitionerCard({ practitioner }: { practitioner: PostAuthor }) {
 
           <Link
             href="/tratamentos"
-            className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary transition-all hover:gap-3"
+            className="group mt-5 inline-flex min-h-11 items-center gap-2 rounded-sm text-[15px] font-semibold text-primary transition-all hover:gap-3 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
           >
             Ver estes tratamentos em detalhe
-            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            <ArrowRight
+              className="h-4 w-4 transition-transform group-hover:translate-x-1"
+              aria-hidden="true"
+            />
           </Link>
         </div>
       </div>
@@ -277,7 +250,6 @@ export default function AboutPage() {
   return (
     <main id="main" tabIndex={-1} className="relative min-h-screen">
       <BlogBackdrop />
-
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -292,49 +264,49 @@ export default function AboutPage() {
       />
 
       <div className="container relative z-10 px-6 pt-28 pb-20 sm:px-8 sm:pt-32 sm:pb-24 lg:px-12 lg:pt-40 lg:pb-28">
-        {/* Full container width — see the note in app/tratamentos/page.tsx. */}
-        <div>
-          <Breadcrumb items={breadcrumbItems} className="mb-8" />
+        <Breadcrumb items={breadcrumbItems} className="mb-8" />
 
-          <header className="mb-14 max-w-3xl">
-            <Eyebrow>Quem atende você</Eyebrow>
+        <header className="max-w-3xl">
+          <Eyebrow>Quem atende você</Eyebrow>
 
-            <h1 className="mt-6 mb-6 font-serif text-4xl leading-[1.1] font-bold tracking-tight sm:text-5xl lg:text-6xl">
-              <span className="bg-linear-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
-                {pageHeading}
-              </span>
-            </h1>
+          <h1 className="mt-6 mb-5 font-serif text-[clamp(38px,6.4vw,66px)]! leading-[1.05] font-bold tracking-[-0.02em]">
+            <span className="bg-linear-to-r from-primary via-secondary to-primary bg-clip-text text-transparent">
+              {pageHeading}
+            </span>
+          </h1>
 
-            <p className="max-w-2xl text-lg leading-relaxed text-tertiary sm:text-xl">
-              {pageDescription}
-            </p>
-          </header>
+          <p className="mb-0 max-w-[36em] text-lg leading-[1.58] text-text-body sm:text-[21px]">
+            {pageDescription}
+          </p>
+        </header>
 
-          <Highlights />
+        <nav
+          aria-label="Ir para"
+          className="mt-9 grid grid-cols-2 overflow-hidden rounded-2xl border border-accent/50 bg-white/80 shadow-brand backdrop-blur-sm lg:hidden"
+        >
+          {PRACTITIONERS.map((practitioner) => (
+            <a
+              key={practitioner.id}
+              href={`#${practitioner.id}`}
+              className="flex min-h-[46px] items-center justify-center px-2 text-center text-sm font-semibold text-secondary transition-colors hover:bg-primary/5 hover:text-primary focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-primary [&+&]:border-l [&+&]:border-accent/50"
+            >
+              {practitioner.name}
+            </a>
+          ))}
+        </nav>
 
-          {/* Jump links — the page is long and there are two practitioners */}
-          <nav aria-label="Ir para" className="mb-10 flex flex-wrap gap-2">
-            {PRACTITIONERS.map((practitioner) => (
-              <a
-                key={practitioner.id}
-                href={`#${practitioner.id}`}
-                className="rounded-full border border-primary/15 bg-white px-4 py-2 text-sm font-medium text-primary transition-all hover:border-primary/30 hover:shadow-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-              >
-                {practitioner.name}
-              </a>
-            ))}
-          </nav>
+        <div className="mt-16 space-y-10">
+          {PRACTITIONERS.map((practitioner) => (
+            <PractitionerProfile
+              key={practitioner.id}
+              practitioner={practitioner}
+            />
+          ))}
 
-          <div className="space-y-10">
-            {PRACTITIONERS.map((practitioner) => (
-              <PractitionerCard key={practitioner.id} practitioner={practitioner} />
-            ))}
-          </div>
-
-          <div className="mt-12 flex flex-wrap gap-3">
+          <div className="flex flex-wrap gap-3 pt-2">
             <Link
               href="/tratamentos"
-              className="group inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-5 py-2.5 text-sm font-semibold text-primary transition-all hover:border-primary/30 hover:shadow-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              className="group inline-flex min-h-[46px] items-center gap-2 rounded-full border border-primary/15 bg-white px-5 text-sm font-semibold text-primary transition-all hover:border-primary/30 hover:shadow-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
             >
               Ver os tratamentos realizados
               <ArrowRight
@@ -344,7 +316,7 @@ export default function AboutPage() {
             </Link>
             <Link
               href="/blog"
-              className="group inline-flex items-center gap-2 rounded-full border border-primary/15 bg-white px-5 py-2.5 text-sm font-semibold text-primary transition-all hover:border-primary/30 hover:shadow-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+              className="group inline-flex min-h-[46px] items-center gap-2 rounded-full border border-primary/15 bg-white px-5 text-sm font-semibold text-primary transition-all hover:border-primary/30 hover:shadow-brand focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
             >
               Ler os artigos
               <ArrowRight
@@ -353,14 +325,13 @@ export default function AboutPage() {
               />
             </Link>
           </div>
-
-          <BlogCtaCard
-            heading="Agende uma avaliação"
-            body="A primeira consulta inclui exame clínico e, quando necessário, exames de imagem. É nela que se define o que o seu caso pede."
-            trackingLabel="sobre_cta"
-            className="mt-16"
-          />
         </div>
+        <BlogCtaCard
+          heading="Agende uma avaliação"
+          body="A primeira consulta inclui exame clínico e, quando necessário, exames de imagem. É nela que se define o que o seu caso pede."
+          trackingLabel="sobre_cta"
+          className="mx-auto mt-16 max-w-4xl sm:mt-20"
+        />
       </div>
     </main>
   )
