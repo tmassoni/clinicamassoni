@@ -95,8 +95,19 @@ describe('sitemap entry shape', () => {
         url: entry.url,
         valid: true,
       })
-      // A future date makes a crawler distrust every date in the file.
-      expect({ url: entry.url, inFuture: lastModified.getTime() > Date.now() }).toEqual({
+      /*
+        A future date makes a crawler distrust every date in the file. The
+        day of slack is not sloppiness: a `YYYY-MM-DD` string parses as UTC
+        midnight, so an author east of UTC writing their own local "today"
+        produces a timestamp legitimately ahead of `Date.now()`. Comparing
+        strictly would fail that author for being in the wrong timezone,
+        while still catching the mistake this guards — a date months out.
+      */
+      const oneDay = 24 * 60 * 60 * 1000
+      expect({
+        url: entry.url,
+        inFuture: lastModified.getTime() > Date.now() + oneDay,
+      }).toEqual({
         url: entry.url,
         inFuture: false,
       })
