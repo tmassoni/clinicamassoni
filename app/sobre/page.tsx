@@ -12,13 +12,12 @@ import {
   serializeSchema,
   type BreadcrumbItem,
 } from '@/app/src/lib/seo-schemas'
+import { generateProfilePageSchema } from '@/app/src/lib/profile-schema'
 import {
   CLINIC_ADDRESS_CITY,
   CLINIC_ADDRESS_STATE,
   CLINIC_WEBSITE,
   PRACTITIONERS,
-  SOCIAL_INSTAGRAM_URL,
-  SOCIAL_LINKEDIN_URL,
   type PostAuthor,
 } from '@/app/src/lib/constants'
 
@@ -52,70 +51,6 @@ export const metadata: Metadata = {
     description: pageDescription,
     url: pageUrl,
   }),
-}
-
-/**
- * ProfilePage carrying both Person nodes. This is the page that consolidates
- * the practitioner entity for a YMYL site — each Person cross-references the
- * sitewide organization by @id, and carries the full credential chain.
- */
-function generateProfilePageSchema() {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'ProfilePage',
-    '@id': `${pageUrl}#profilepage`,
-    url: pageUrl,
-    name: pageHeading,
-    description: pageDescription,
-    inLanguage: 'pt-BR',
-    isPartOf: { '@id': `${CLINIC_WEBSITE}/#website` },
-    about: PRACTITIONERS.map((practitioner) => ({
-      '@type': 'Person',
-      '@id': `${pageUrl}#${practitioner.id}`,
-      name: practitioner.name,
-      jobTitle: practitioner.title,
-      image: `${CLINIC_WEBSITE}${practitioner.photo}`,
-      description: practitioner.bio[0],
-      knowsAbout: practitioner.knowsAbout,
-      worksFor: { '@id': `${CLINIC_WEBSITE}/#organization` },
-      sameAs: [SOCIAL_INSTAGRAM_URL, SOCIAL_LINKEDIN_URL],
-      alumniOf: practitioner.credentials
-        .filter((credential) => credential.category !== 'Docência')
-        .map((credential) => ({
-          '@type': 'EducationalOrganization',
-          name: credential.institution,
-          ...(credential.institutionShort
-            ? { alternateName: credential.institutionShort }
-            : {}),
-        })),
-      hasCredential: [
-        {
-          '@type': 'EducationalOccupationalCredential',
-          credentialCategory: 'Registro Profissional',
-          identifier: practitioner.cro,
-          recognizedBy: {
-            '@type': 'Organization',
-            name: 'Conselho Regional de Odontologia do Paraná',
-            alternateName: 'CRO-PR',
-            url: 'https://www.cropr.org.br',
-          },
-        },
-        ...practitioner.credentials.map((credential) => ({
-          '@type': 'EducationalOccupationalCredential',
-          credentialCategory: credential.category,
-          name: credential.name,
-          dateCreated: credential.year,
-          recognizedBy: {
-            '@type': 'Organization',
-            name: credential.institution,
-            ...(credential.institutionShort
-              ? { alternateName: credential.institutionShort }
-              : {}),
-          },
-        })),
-      ],
-    })),
-  }
 }
 
 function PractitionerProfile({ practitioner }: { practitioner: PostAuthor }) {
@@ -253,7 +188,13 @@ export default function AboutPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: serializeSchema(generateProfilePageSchema()),
+          __html: serializeSchema(
+            generateProfilePageSchema({
+              url: pageUrl,
+              name: pageHeading,
+              description: pageDescription,
+            })
+          ),
         }}
       />
       <script

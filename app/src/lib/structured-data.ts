@@ -1,8 +1,39 @@
 import { CLINIC_INFO } from './constants'
 
+/**
+ * The photo Google should reach for when it needs one image for this site.
+ * Declared once as a node so every business node points at the same @id: the
+ * homepage also carries Dr. Thiago's portrait, and without an explicit primary
+ * image Google picked that one for the search result thumbnail.
+ */
+const PRIMARY_IMAGE_ID = `${CLINIC_INFO.website}/#primaryimage`
+
 export const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
+    // Primary image
+    {
+      '@type': 'ImageObject',
+      '@id': PRIMARY_IMAGE_ID,
+      contentUrl: `${CLINIC_INFO.website}/images/team/enor.webp`,
+      url: `${CLINIC_INFO.website}/images/team/enor.webp`,
+      width: 1650,
+      height: 2200,
+      caption: `${CLINIC_INFO.doctor} - ${CLINIC_INFO.specialty}, ${CLINIC_INFO.cro}`,
+    },
+
+    // Homepage
+    {
+      '@type': 'WebPage',
+      '@id': `${CLINIC_INFO.website}/#webpage`,
+      url: `${CLINIC_INFO.website}/`,
+      name: `${CLINIC_INFO.doctor} - Dentista em ${CLINIC_INFO.address.city}`,
+      isPartOf: { '@id': `${CLINIC_INFO.website}/#website` },
+      about: { '@id': `${CLINIC_INFO.website}/#organization` },
+      primaryImageOfPage: { '@id': PRIMARY_IMAGE_ID },
+      inLanguage: 'pt-BR',
+    },
+
     // Dentist
     {
       '@type': 'Dentist',
@@ -10,9 +41,11 @@ export const structuredData = {
       name: CLINIC_INFO.doctor,
       jobTitle: `Cirurgião Dentista - ${CLINIC_INFO.specialty}`,
       description: `Dentista em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}, especialista em ${CLINIC_INFO.specialty}.`,
-      image: `${CLINIC_INFO.website}/images/team/enor.webp`,
+      image: { '@id': PRIMARY_IMAGE_ID },
       url: CLINIC_INFO.website,
-      sameAs: [CLINIC_INFO.social.instagram, CLINIC_INFO.social.linkedin].filter(Boolean),
+      // No sameAs here: both profiles are Dr. Enor's personal accounts and are
+      // claimed by his Person node at /sobre#enor-massoni. Two entities
+      // asserting the same profile is what makes Google merge or distrust them.
       knowsAbout: [
         'Implantes dentários',
         'Cirurgia buco-maxilo-facial',
@@ -88,6 +121,7 @@ export const structuredData = {
       '@id': `${CLINIC_INFO.website}/#organization`,
       name: CLINIC_INFO.name,
       url: CLINIC_INFO.website,
+      image: { '@id': PRIMARY_IMAGE_ID },
       description: `Clínica odontológica e dentista em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}, especializada em ${CLINIC_INFO.specialty.toLowerCase()}.`,
 
       address: {
@@ -167,7 +201,7 @@ export const structuredData = {
       '@id': `${CLINIC_INFO.website}/#localbusiness`,
       name: CLINIC_INFO.name,
       description: `Atendimento odontológico em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}, com foco em implantes dentários e cirurgia buco-maxilo-facial.`,
-      image: `${CLINIC_INFO.website}/images/team/enor.webp`,
+      image: { '@id': PRIMARY_IMAGE_ID },
       url: CLINIC_INFO.website,
 
       address: {

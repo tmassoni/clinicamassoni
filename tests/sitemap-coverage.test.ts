@@ -181,7 +181,13 @@ describe('lastModified honesty', () => {
   /** Files whose content ends up rendered on each route. */
   const ROUTE_SOURCES: Record<string, string[]> = {
     '/': ['app/page.tsx', 'app/src/components/sections', 'app/src/lib/home-faq.ts'],
-    '/sobre': ['app/sobre/page.tsx'],
+    // The practitioner facts and the ProfilePage schema live outside the
+    // route file, so a change there is still a change to what /sobre says.
+    '/sobre': [
+      'app/sobre/page.tsx',
+      'app/src/lib/profile-schema.ts',
+      'app/src/lib/constants.ts',
+    ],
     '/tratamentos': ['app/tratamentos/page.tsx', 'app/src/lib/treatments.ts'],
     '/politica-de-privacidade': ['app/politica-de-privacidade/page.tsx'],
     '/termos-de-uso': ['app/termos-de-uso/page.tsx'],

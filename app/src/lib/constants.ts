@@ -147,6 +147,12 @@ export interface PostAuthor {
   photo: string;
   /** Feeds the ProfilePage schema and the /sobre page. */
   credentials: PractitionerCredential[];
+  /**
+   * Profiles that verifiably belong to THIS practitioner, for the Person
+   * node's `sameAs`. Never share one across practitioners: claiming another
+   * person's profile invites Google to merge or distrust both entities.
+   */
+  sameAs?: string[];
   /** Short, factual biography paragraphs. No superlatives. */
   bio: string[];
   procedures: string[];
@@ -163,6 +169,7 @@ export const POST_AUTHORS = {
     title: `Cirurgião Dentista - ${DOCTOR_SPECIALTY}`,
     specialties: DOCTOR_SPECIALTIES,
     photo: "/images/team/enor.webp",
+    sameAs: [SOCIAL_INSTAGRAM_URL, SOCIAL_LINKEDIN_URL],
     knowsAbout: [
       "Implantes dentários",
       "Cirurgia buco-maxilo-facial",
@@ -263,6 +270,13 @@ export const POST_AUTHORS = {
  * don't exist on every member, which breaks property access at the consumer.
  */
 export const PRACTITIONERS: PostAuthor[] = [POST_AUTHORS.enor, POST_AUTHORS.thiago];
+
+/**
+ * Subject of the /sobre ProfilePage, which Schema.org allows only one of.
+ * Deliberately independent of PRACTITIONERS order: reordering the page's
+ * display should never silently hand the profile to a different person.
+ */
+export const PRIMARY_PRACTITIONER: PostAuthor = POST_AUTHORS.enor;
 
 export type PostAuthorId = keyof typeof POST_AUTHORS;
 
