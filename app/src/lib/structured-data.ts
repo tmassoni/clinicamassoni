@@ -12,7 +12,9 @@ export const structuredData = {
       description: `Dentista em ${CLINIC_INFO.address.city}, ${CLINIC_INFO.address.state}, especialista em ${CLINIC_INFO.specialty}.`,
       image: `${CLINIC_INFO.website}/images/team/enor.webp`,
       url: CLINIC_INFO.website,
-      sameAs: [CLINIC_INFO.social.instagram, CLINIC_INFO.social.linkedin].filter(Boolean),
+      // No sameAs here: both profiles are Dr. Enor's personal accounts and are
+      // claimed by his Person node at /sobre#enor-massoni. Two entities
+      // asserting the same profile is what makes Google merge or distrust them.
       knowsAbout: [
         'Implantes dentários',
         'Cirurgia buco-maxilo-facial',

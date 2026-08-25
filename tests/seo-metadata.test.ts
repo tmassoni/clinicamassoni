@@ -8,6 +8,7 @@ import {
 } from '@/app/src/lib/seo-schemas'
 import { generateProfilePageSchema } from '@/app/src/lib/profile-schema'
 import { generateBlogPostSchema, getAllPosts } from '@/app/src/lib/blog'
+import { structuredData } from '@/app/src/lib/structured-data'
 import {
   CLINIC_WEBSITE,
   DOCTOR_CRO,
@@ -147,6 +148,17 @@ describe('profile page schema', () => {
   test('no practitioner claims another practitioner\'s profile', () => {
     const claimed = PRACTITIONERS.flatMap((p) => p.sameAs ?? [])
     expect(claimed.length).toBe(new Set(claimed).size)
+  })
+
+  // Same hazard one level up: the sitewide graph's business nodes must not
+  // re-claim a practitioner's personal profile.
+  test('no sitewide node re-claims a practitioner profile', () => {
+    const personal = new Set(PRACTITIONERS.flatMap((p) => p.sameAs ?? []))
+    const claimedByGraph = structuredData['@graph'].flatMap((node) =>
+      'sameAs' in node && Array.isArray(node.sameAs) ? node.sameAs : []
+    )
+
+    expect(claimedByGraph.filter((url) => personal.has(url as string))).toEqual([])
   })
 
   test('every practitioner cross-references the sitewide organization', () => {
