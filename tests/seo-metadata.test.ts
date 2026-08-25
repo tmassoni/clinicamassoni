@@ -168,3 +168,33 @@ describe('profile page schema', () => {
     }
   })
 })
+
+// Google was showing Dr. Thiago's portrait as the homepage thumbnail because
+// both practitioners appear on the page and nothing named a primary image.
+describe('sitewide primary image', () => {
+  const graph = structuredData['@graph'] as Record<string, unknown>[]
+  const primaryImageId = `${CLINIC_WEBSITE}/#primaryimage`
+
+  test('the declared primary image is the namesake practitioner', () => {
+    const image = graph.find((node) => node['@id'] === primaryImageId)
+
+    expect(image?.['@type']).toBe('ImageObject')
+    expect(image?.contentUrl).toBe(`${CLINIC_WEBSITE}${PRIMARY_PRACTITIONER.photo}`)
+  })
+
+  test('the homepage names it as primaryImageOfPage', () => {
+    const webPage = graph.find((node) => node['@type'] === 'WebPage')
+
+    expect(webPage?.primaryImageOfPage).toEqual({ '@id': primaryImageId })
+  })
+
+  // A second portrait in the graph re-opens the choice we just made for Google.
+  test('no node offers a competing image', () => {
+    const images = graph
+      .filter((node) => node['@id'] !== primaryImageId)
+      .map((node) => node.image)
+      .filter(Boolean)
+
+    expect(images).toEqual(images.map(() => ({ '@id': primaryImageId })))
+  })
+})
