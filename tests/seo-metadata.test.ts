@@ -4,11 +4,17 @@ import {
   generateBreadcrumbSchema,
   generateFAQSchema,
   generateOpenGraphMetadata,
-  generateProfilePageSchema,
   serializeSchema,
 } from '@/app/src/lib/seo-schemas'
+import { generateProfilePageSchema } from '@/app/src/lib/profile-schema'
 import { generateBlogPostSchema, getAllPosts } from '@/app/src/lib/blog'
-import { CLINIC_WEBSITE, PRACTITIONERS } from '@/app/src/lib/constants'
+import {
+  CLINIC_WEBSITE,
+  DOCTOR_CRO,
+  DOCTOR_NAME,
+  PRACTITIONERS,
+  PRIMARY_PRACTITIONER,
+} from '@/app/src/lib/constants'
 
 describe('social metadata generators', () => {
   test('falls back to the default card with its real dimensions', () => {
@@ -103,22 +109,36 @@ describe('blog post schema', () => {
 // ProfilePage requires exactly one subject, not a list of `about` entities.
 describe('profile page schema', () => {
   const pageUrl = `${CLINIC_WEBSITE}/sobre`
+
+  /** The CRO number off a Person node's registration credential. */
+  const registrationOf = (person: { hasCredential: { credentialCategory: string }[] }) => {
+    const credential = person.hasCredential.find(
+      (entry) => entry.credentialCategory === 'Registro Profissional'
+    )
+    return credential && 'identifier' in credential ? credential.identifier : undefined
+  }
   const schema = generateProfilePageSchema({
     url: pageUrl,
     name: 'Sobre a clínica',
     description: 'D',
   })
 
-  test('names a single practitioner as mainEntity', () => {
+  // Named outright rather than by array position: asserting against
+  // PRACTITIONERS[0] would pass for any ordering, including one that hands
+  // the profile to the wrong person.
+  test('names the clinic namesake as the single mainEntity', () => {
     expect(Array.isArray(schema.mainEntity)).toBe(false)
     expect(schema.mainEntity['@type']).toBe('Person')
-    expect(schema.mainEntity['@id']).toBe(`${pageUrl}#${PRACTITIONERS[0].id}`)
-    expect(schema.mainEntity.name).toBe(PRACTITIONERS[0].name)
+    expect(schema.mainEntity.name).toBe(DOCTOR_NAME)
+    expect(registrationOf(schema.mainEntity)).toBe(DOCTOR_CRO)
+    expect(schema.mainEntity['@id']).toBe(`${pageUrl}#enor-massoni`)
   })
 
-  test('keeps the remaining practitioners as distinct Person nodes', () => {
+  test('keeps every other practitioner as a distinct Person node', () => {
     expect(schema.about?.map((person) => person['@id'])).toEqual(
-      PRACTITIONERS.slice(1).map((p) => `${pageUrl}#${p.id}`)
+      PRACTITIONERS.filter((p) => p !== PRIMARY_PRACTITIONER).map(
+        (p) => `${pageUrl}#${p.id}`
+      )
     )
   })
 
@@ -132,11 +152,7 @@ describe('profile page schema', () => {
   test('every practitioner cross-references the sitewide organization', () => {
     for (const person of [schema.mainEntity, ...(schema.about ?? [])]) {
       expect(person.worksFor).toEqual({ '@id': `${CLINIC_WEBSITE}/#organization` })
-      const registration = person.hasCredential.find(
-        (credential) => credential.credentialCategory === 'Registro Profissional'
-      )
-      expect(registration && 'identifier' in registration && registration.identifier)
-        .toMatch(/^CRO-PR /)
+      expect(registrationOf(person)).toMatch(/^CRO-PR /)
     }
   })
 })

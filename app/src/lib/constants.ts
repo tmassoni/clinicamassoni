@@ -271,6 +271,13 @@ export const POST_AUTHORS = {
  */
 export const PRACTITIONERS: PostAuthor[] = [POST_AUTHORS.enor, POST_AUTHORS.thiago];
 
+/**
+ * Subject of the /sobre ProfilePage, which Schema.org allows only one of.
+ * Deliberately independent of PRACTITIONERS order: reordering the page's
+ * display should never silently hand the profile to a different person.
+ */
+export const PRIMARY_PRACTITIONER: PostAuthor = POST_AUTHORS.enor;
+
 export type PostAuthorId = keyof typeof POST_AUTHORS;
 
 export const DEFAULT_POST_AUTHOR_ID: PostAuthorId = "enor";

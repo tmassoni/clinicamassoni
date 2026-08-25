@@ -8,11 +8,11 @@ import { BlogCtaCard } from '@/app/src/components/blog/BlogCtaCard'
 import {
   generateBreadcrumbSchema,
   generateOpenGraphMetadata,
-  generateProfilePageSchema,
   generateTwitterMetadata,
   serializeSchema,
   type BreadcrumbItem,
 } from '@/app/src/lib/seo-schemas'
+import { generateProfilePageSchema } from '@/app/src/lib/profile-schema'
 import {
   CLINIC_ADDRESS_CITY,
   CLINIC_ADDRESS_STATE,
