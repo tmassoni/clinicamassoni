@@ -122,6 +122,13 @@ describe('profile page schema', () => {
     )
   })
 
+  // A shared sameAs would claim one practitioner is another person's profile,
+  // which invites Google to merge or distrust both entities.
+  test('no practitioner claims another practitioner\'s profile', () => {
+    const claimed = PRACTITIONERS.flatMap((p) => p.sameAs ?? [])
+    expect(claimed.length).toBe(new Set(claimed).size)
+  })
+
   test('every practitioner cross-references the sitewide organization', () => {
     for (const person of [schema.mainEntity, ...(schema.about ?? [])]) {
       expect(person.worksFor).toEqual({ '@id': `${CLINIC_WEBSITE}/#organization` })

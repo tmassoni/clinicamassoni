@@ -147,6 +147,12 @@ export interface PostAuthor {
   photo: string;
   /** Feeds the ProfilePage schema and the /sobre page. */
   credentials: PractitionerCredential[];
+  /**
+   * Profiles that verifiably belong to THIS practitioner, for the Person
+   * node's `sameAs`. Never share one across practitioners: claiming another
+   * person's profile invites Google to merge or distrust both entities.
+   */
+  sameAs?: string[];
   /** Short, factual biography paragraphs. No superlatives. */
   bio: string[];
   procedures: string[];
@@ -163,6 +169,7 @@ export const POST_AUTHORS = {
     title: `Cirurgião Dentista - ${DOCTOR_SPECIALTY}`,
     specialties: DOCTOR_SPECIALTIES,
     photo: "/images/team/enor.webp",
+    sameAs: [SOCIAL_INSTAGRAM_URL, SOCIAL_LINKEDIN_URL],
     knowsAbout: [
       "Implantes dentários",
       "Cirurgia buco-maxilo-facial",

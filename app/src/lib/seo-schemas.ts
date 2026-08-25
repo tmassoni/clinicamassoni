@@ -3,8 +3,6 @@ import {
   CLINIC_WEBSITE,
   DOCTOR_NAME,
   PRACTITIONERS,
-  SOCIAL_INSTAGRAM_URL,
-  SOCIAL_LINKEDIN_URL,
   type PostAuthor,
 } from './constants'
 
@@ -155,7 +153,7 @@ function generatePersonSchema(practitioner: PostAuthor, pageUrl: string) {
     description: practitioner.bio[0],
     knowsAbout: practitioner.knowsAbout,
     worksFor: { '@id': `${CLINIC_WEBSITE}/#organization` },
-    sameAs: [SOCIAL_INSTAGRAM_URL, SOCIAL_LINKEDIN_URL],
+    ...(practitioner.sameAs?.length ? { sameAs: practitioner.sameAs } : {}),
     alumniOf: practitioner.credentials
       .filter((credential) => credential.category !== 'Docência')
       .map((credential) => ({

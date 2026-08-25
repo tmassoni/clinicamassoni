@@ -20,7 +20,7 @@ export const STATIC_ROUTES = [
   { path: '/', lastModified: '2026-08-10', changeFrequency: 'weekly', priority: 1 },
   {
     path: '/sobre',
-    lastModified: '2026-08-10',
+    lastModified: '2026-08-24',
     // E-E-A-T page for a medical practice: credentials and team change, and it
     // is the page Google leans on to establish who is behind the treatments.
     changeFrequency: 'monthly',
