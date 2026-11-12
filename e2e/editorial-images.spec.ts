@@ -9,8 +9,9 @@ for (const route of ['/blog/dentistica-restauradora', '/tratamentos/implantes-de
     await expect(illustration).toBeVisible()
     await expect(illustration).toHaveAttribute('width', '1536')
     await expect(illustration).toHaveAttribute('height', '1024')
-    expect(await illustration.evaluate(img => img instanceof HTMLImageElement && img.complete && img.naturalWidth > 0))
-      .toBe(true)
+    await expect.poll(() => illustration.evaluate(img =>
+      img instanceof HTMLImageElement ? img.naturalWidth : 0
+    )).toBeGreaterThan(0)
     for (const selector of ['meta[property="og:image"]', 'meta[name="twitter:image"]']) {
       const content = await page.locator(selector).getAttribute('content')
       expect(content).toBeTruthy()
