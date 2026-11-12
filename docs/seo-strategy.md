@@ -217,8 +217,9 @@ bun run lint && bun run build
 
 ## Revisão de títulos — 2026-11-11
 
-A home usa título absoluto `Dentista em Cascavel | Dr. Enor Massoni` para
-evitar que o template do layout repita o nome. A especialidade e os tratamentos
+A home usa título absoluto e mais conciso
+`Dentista em Cascavel | Dr. Enor Massoni`. O HTML público anterior não repetia
+o nome; a hipótese inicial de duplicação foi descartada. A especialidade e os tratamentos
 continuam descritos no conteúdo e nos metadados sociais. As páginas de
 tratamento mantêm suas buscas específicas com cidade, conforme a tabela de
 propriedade. Não existe página de local separada para disputar o termo amplo.
