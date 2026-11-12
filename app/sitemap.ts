@@ -4,7 +4,7 @@ import { getAllPosts, getBlogLastModified } from '@/app/src/lib/blog'
 import { TREATMENTS_BY_ORDER, getTreatmentUrl } from '@/app/src/lib/treatments'
 
 /** Service pages ship together; one date for the set is honest. */
-export const TREATMENTS_LAST_MODIFIED = '2026-08-10'
+export const TREATMENTS_LAST_MODIFIED = '2026-11-12'
 
 /**
  * Hand-maintained dates for static routes. `new Date()` everywhere would claim
