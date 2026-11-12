@@ -1,3 +1,31 @@
+# Rodada SEO — 2026-11-11
+
+Esta seção atualiza o handoff; o snapshot de agosto abaixo é histórico.
+
+- Leitura inicial: árvore limpa, sem PRs abertos. Novos PRs de rascunho:
+  [#13 — título da home e contrato de intenção local](https://github.com/tmassoni/clinicamassoni/pull/13)
+  e [#14 — cartão com retratos reais](https://github.com/tmassoni/clinicamassoni/pull/14).
+  Não foram mesclados; código em PR não significa mudança publicada.
+- O repositório já associa os 17 posts aos 9 tratamentos e contém `/sobre`.
+  Alguns briefs e textos abaixo ainda descrevem fases anteriores.
+- Search Console **não foi consultado**: host do navegador indisponível e
+  tentativas no Chrome expiraram. Curva mensal, CTR, consultas locais, lacunas
+  e 404 com impressões continuam desconhecidos. Não há estimativa de ganho.
+- HTTP público verificado: domínio sem www ainda retorna **307**; sitemap
+  com www retorna **200**. Nenhuma configuração externa foi alterada.
+- Diagnóstico com fatos, hipóteses, lacunas e medição:
+  [seo-diagnostico-2026-11.md](seo-diagnostico-2026-11.md).
+- Pesquisa futura: [brief](pesquisa/brief.md) e
+  [pauta provisória](pesquisa/pauta-posts-2026-11.md). Nenhum texto clínico
+  publicado foi alterado; pesquisa e revisão dos dentistas precedem a redação.
+- Ambiente desta rodada: Bun 1.3.1, Node 24.18.0. Para build/E2E, definir
+  `NODE_ENV=production`; a sessão herdava `development`, que quebrou o prerender.
+- Ordem sugerida: #13, depois #14; são independentes. Revisar CI e preview
+  de cada um antes da decisão humana de merge. Após publicação aprovada,
+  medir 28 dias completos antes × depois por página e consulta.
+
+---
+
 # Current state (2026-08-10)
 
 ## Production snapshot
