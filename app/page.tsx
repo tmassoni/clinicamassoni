@@ -17,7 +17,8 @@ import { HOME_FAQS } from '@/app/src/lib/home-faq'
 import { generateFAQSchema, serializeSchema } from '@/app/src/lib/seo-schemas'
 
 export const metadata: Metadata = {
-  title: `Dentista em ${CLINIC_ADDRESS_CITY}: Implantes e Cirurgia Buco-Maxilo-Facial | ${DOCTOR_NAME}`,
+  // The root template appends the name; an absolute title avoids repeating it.
+  title: { absolute: `Dentista em ${CLINIC_ADDRESS_CITY} | ${DOCTOR_NAME}` },
   description: `${DOCTOR_NAME} é dentista em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}, especialista em ${DOCTOR_SPECIALTY}, implantes dentários e cirurgia plástica periodontal.`,
   keywords: [
     'dentista',
