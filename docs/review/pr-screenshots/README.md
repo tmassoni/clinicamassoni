@@ -1,0 +1,1 @@
+Capturas locais dos heads dos PRs #16, #17 e #19 em desktop (1440 px) e celular (390 px), em 12/11/2026. O PNG social corresponde ao #14. A branch guarda somente evidencias visuais para incorporar nas descricoes, sem mudar o codigo dos PRs. Nas novas capturas de desenvolvimento, os controles de desenvolvimento foram ocultados; o conteudo e o layout da pagina foram preservados.
