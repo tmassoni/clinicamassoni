@@ -28,7 +28,7 @@ describe('editorial illustrations', () => {
         expect(post.cardImage, post.slug).not.toContain('/editorial/')
       } else {
         expect(post.editorialImage, post.slug).not.toBeNull()
-        expect(post.cardImage, post.slug).toBe(post.editorialImage?.src)
+        expect(post.cardImage, post.slug).toBe(post.editorialImage?.src ?? null)
       }
     }
   })

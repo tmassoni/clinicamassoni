@@ -1,7 +1,8 @@
 # Ilustrações editoriais — 2026-11-12
 
 13 imagens originais geradas pela ferramenta integrada `image_gen`, com prompts
-exatos em `editorial-image-prompts.json` e metadados de origem embutidos nos WebP.
+exatos em `editorial-image-prompts.json` e origem registrada nos arquivos
+`.webp.json` que acompanham os WebP.
 São ilustrações conceituais, sem alegação de precisão anatômica, sem pacientes,
 sem procedimento em andamento, comparação de resultados, texto ou logotipo.
 
