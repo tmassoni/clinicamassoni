@@ -1,12 +1,12 @@
 import type { Metadata } from 'next'
 import { CLINIC_WEBSITE, DOCTOR_NAME } from './constants'
 
-// Default social card shipped with the site, with its real intrinsic size.
+// Generated PNG with existing practitioner portraits and its real intrinsic size.
 export const DEFAULT_OG_IMAGE = {
-  url: '/images/og-brand.png',
+  url: '/opengraph-image',
   width: 1200,
   height: 630,
-  alt: `${DOCTOR_NAME} - Clínica Odontológica em Cascavel, PR`,
+  alt: 'Clínica Massoni em Cascavel, PR — Dr. Enor e Dr. Thiago Massoni',
 } as const
 
 export interface BreadcrumbItem {

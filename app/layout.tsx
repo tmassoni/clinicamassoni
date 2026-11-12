@@ -101,10 +101,10 @@ export const metadata: Metadata = {
     description: `Especialista em ${DOCTOR_SPECIALTY} com 41 anos de formado (desde 1984) em ${CLINIC_ADDRESS_CITY}. Implantes dentários, cirurgia plástica periodontal e cirurgias guiadas 3D. Atendimento humanizado.`,
     images: [
       {
-        url: '/images/og-brand.png',
+        url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: `${DOCTOR_NAME} - Clínica Odontológica em Cascavel, PR`,
+        alt: 'Clínica Massoni em Cascavel, PR — Dr. Enor e Dr. Thiago Massoni',
       },
     ],
   },
@@ -113,7 +113,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${DOCTOR_NAME} - ${DOCTOR_SPECIALTY}`,
     description: `Especialista em ${DOCTOR_SPECIALTY} com 41 anos de formado (desde 1984). Implantes dentários, cirurgia plástica periodontal e tecnologia 3D em ${CLINIC_ADDRESS_CITY}`,
-    images: ['/images/og-brand.png'],
+    images: ['/opengraph-image'],
   },
 
   verification: googleSiteVerification

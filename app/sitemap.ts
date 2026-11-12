@@ -17,7 +17,7 @@ export const TREATMENTS_LAST_MODIFIED = '2026-08-10'
  * table matches the routes on disk, so a new page cannot ship unlisted.
  */
 export const STATIC_ROUTES = [
-  { path: '/', lastModified: '2026-08-10', changeFrequency: 'weekly', priority: 1 },
+  { path: '/', lastModified: '2026-11-11', changeFrequency: 'weekly', priority: 1 },
   {
     path: '/sobre',
     lastModified: '2026-08-24',

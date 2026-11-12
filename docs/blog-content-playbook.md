@@ -155,3 +155,22 @@ rg -n "<topic>" content/posts        # duplicate check
 bun test                             # discovery, image dimensions, SEO metadata
 bun run lint && bun run build
 ```
+
+## Imagem institucional de compartilhamento — 2026-11-11
+
+`app/opengraph-image.tsx` entrega PNG de 1200×630, composto por
+`app/src/lib/social-card.ts` com os retratos existentes de Enor e Thiago em
+`public/images/team/`. O Sharp converte WebP em PNG; a versão 0.35.3 já estava
+no lockfile e passou de desenvolvimento para dependência de produção.
+Não há mudança de galeria nem novo retrato. O recorte preserva as fotografias.
+
+O fallback dos geradores OG e Twitter aponta para `/opengraph-image`.
+Posts ilustrados continuam usando a sua primeira imagem já publicada; este
+PR não autoriza nem amplia o uso das fotos clínicas. `TODO.md` continua sendo
+o registro das pendências de TCLE e autoria. Posts sem figura usam o cartão
+institucional. Não adicionar capas de IA como imagem de compartilhamento.
+
+Verificar o HTML final e o PNG: arquivos `opengraph-image` têm prioridade
+sobre metadados configurados, e Twitter deve apontar para a mesma rota.
+Referência técnica: https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image
+O E2E cobre home, sobre, tratamento, índice do blog e post ilustrado.
