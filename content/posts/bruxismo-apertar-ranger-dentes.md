@@ -18,7 +18,7 @@ featured: false
 order: 18
 relatedPosts:
   - 'sensibilidade-nos-dentes'
-  - 'reabilitacao-bucal-resina-composta'
+  - 'dentistica-restauradora'
 faqs:
   - question: 'Apertar os dentes sem fazer barulho também pode ser bruxismo?'
     answer: 'Sim. O hábito pode envolver apertamento e acontecer durante o dia ou o sono, sem que a pessoa perceba. A avaliação considera o relato e o exame, não apenas o barulho.'
