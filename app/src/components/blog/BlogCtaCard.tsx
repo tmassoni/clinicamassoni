@@ -1,7 +1,10 @@
+import { Phone } from 'lucide-react'
 import { TrackedLinkButton } from '@/app/src/components/custom/TrackedLinkButton'
+import { WhatsappIcon } from '@/app/src/components/icons/Whatsapp'
 import { cn } from '@/app/src/lib/utils'
 import {
   CONTACT_WHATSAPP_URL,
+  CONTACT_PHONE_FORMATTED,
   CLINIC_ADDRESS_CITY,
   CLINIC_ADDRESS_STATE,
 } from '@/app/src/lib/constants'
@@ -23,58 +26,53 @@ export function BlogCtaCard({
   return (
     <aside
       className={cn(
-        'relative overflow-hidden rounded-3xl bg-linear-to-br from-primary via-secondary to-primary p-8 text-center shadow-2xl sm:p-12',
+        'rounded-2xl bg-primary px-6 py-8 text-white sm:p-10 lg:px-12 lg:py-11',
         className
       )}
     >
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.12),transparent_70%)]"
-      />
+      <div className="grid items-center gap-7 lg:grid-cols-[minmax(0,1fr)_auto] lg:gap-12">
+        <div>
+          <h2 className="mb-3 font-serif text-2xl! leading-tight font-bold text-white sm:text-3xl!">
+            {heading}
+          </h2>
+          <p className="mb-4 max-w-2xl leading-relaxed text-white/90">{body}</p>
+          <p className="mb-0 text-sm text-white/80">
+            Atendimento em {CLINIC_ADDRESS_CITY}, {CLINIC_ADDRESS_STATE}.
+          </p>
+        </div>
 
-      <div className="relative z-10">
-        {/* `text-2xl!` — see the note in PostCard about globals.css h2 sizing. */}
-        <h2 className="mb-4 font-serif text-2xl! leading-tight font-bold text-white sm:text-3xl!">
-          {heading}
-        </h2>
-
-        <p className="mx-auto mb-8 max-w-2xl leading-relaxed text-white/90">
-          {body}
-        </p>
-
-        <TrackedLinkButton
-          href={CONTACT_WHATSAPP_URL}
-          external
-          newTab
-          channel="whatsapp"
-          section="blog"
-          label={trackingLabel}
-          location="cascavel"
-          variant="default"
-          size="lg"
-          className="bg-white text-primary shadow-xl transition-all duration-200 hover:scale-105 hover:bg-white/90 hover:shadow-2xl active:scale-95"
-        >
-          Agendar avaliação
-        </TrackedLinkButton>
-
-        {/*
-          `max-w-none` because globals.css caps every `p` at 65ch. A capped
-          block inside a `text-center` parent centres its text but not itself,
-          so this line sat left of the button above it.
-        */}
-        <p className="mt-5 max-w-none text-sm text-white/70">
-          Atendimento em {CLINIC_ADDRESS_CITY}, {CLINIC_ADDRESS_STATE}.
-        </p>
+        <div className="flex min-w-0 flex-col gap-2 lg:min-w-64">
+          <TrackedLinkButton
+            href={CONTACT_WHATSAPP_URL}
+            external
+            newTab
+            channel="whatsapp"
+            section="blog"
+            label={trackingLabel}
+            location="cascavel"
+            variant="default"
+            size="lg"
+            className="min-h-12 w-full gap-2 bg-white px-4 text-base text-primary sm:text-lg hover:bg-white/90 focus:bg-white focus:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+          >
+            <WhatsappIcon className="h-5 w-5 shrink-0" aria-hidden="true" />
+            Agendar pelo WhatsApp
+          </TrackedLinkButton>
+          <TrackedLinkButton
+            href={`tel:${CONTACT_PHONE_FORMATTED.replace(/\D/g, '')}`}
+            external
+            channel="phone"
+            section="blog"
+            label={`${trackingLabel}_phone`}
+            location="cascavel"
+            variant="ghost"
+            size="lg"
+            className="min-h-12 w-full gap-2 px-3 text-base text-white sm:text-lg hover:bg-white/10 hover:text-white focus:bg-white/10 focus:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+          >
+            <Phone className="h-4 w-4 shrink-0" aria-hidden="true" />
+            Ligar {CONTACT_PHONE_FORMATTED}
+          </TrackedLinkButton>
+        </div>
       </div>
-
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-24 -right-24 h-64 w-64 rounded-full bg-white/10 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-white/10 blur-3xl"
-      />
     </aside>
   )
 }
