@@ -215,3 +215,17 @@ which is also what the ranking and answer-engine systems reward.
 bun test          # content discovery, image dimensions, SEO metadata
 bun run lint && bun run build
 ```
+
+## Revisão de títulos — 2026-11-11
+
+A home usa título absoluto e mais conciso
+`Dentista em Cascavel | Dr. Enor Massoni`. O HTML público anterior não repetia
+o nome; a hipótese inicial de duplicação foi descartada. A especialidade e os tratamentos
+continuam descritos no conteúdo e nos metadados sociais. As páginas de
+tratamento mantêm suas buscas específicas com cidade, conforme a tabela de
+propriedade. Não existe página de local separada para disputar o termo amplo.
+
+O E2E verifica títulos únicos em todas as URLs do sitemap e reserva
+`dentista em Cascavel` / `dentista Cascavel` no título para a home. Isso evita
+regressões de intenção; canibalização de buscas reais só pode ser confirmada
+no Search Console. Ainda não há dados para afirmar impacto em CTR.

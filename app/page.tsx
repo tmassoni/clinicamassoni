@@ -17,7 +17,8 @@ import { HOME_FAQS } from '@/app/src/lib/home-faq'
 import { generateFAQSchema, serializeSchema } from '@/app/src/lib/seo-schemas'
 
 export const metadata: Metadata = {
-  title: `Dentista em ${CLINIC_ADDRESS_CITY}: Implantes e Cirurgia Buco-Maxilo-Facial | ${DOCTOR_NAME}`,
+  // Keep the concise search title explicit, independent of inherited templates.
+  title: { absolute: `Dentista em ${CLINIC_ADDRESS_CITY} | ${DOCTOR_NAME}` },
   description: `${DOCTOR_NAME} é dentista em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}, especialista em ${DOCTOR_SPECIALTY}, implantes dentários e cirurgia plástica periodontal.`,
   keywords: [
     'dentista',
@@ -36,10 +37,10 @@ export const metadata: Metadata = {
     url: '/',
     images: [
       {
-        url: '/images/og-brand.png',
+        url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: `${DOCTOR_NAME} - Dentista em ${CLINIC_ADDRESS_CITY}`,
+        alt: 'Clínica Massoni em Cascavel, PR — Dr. Enor e Dr. Thiago Massoni',
       },
     ],
   },
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${DOCTOR_NAME} | Dentista em ${CLINIC_ADDRESS_CITY}`,
     description: `Dentista em ${CLINIC_ADDRESS_CITY} especializado em ${DOCTOR_SPECIALTY} e implantes dentários.`,
-    images: ['/images/og-brand.png'],
+    images: ['/opengraph-image'],
   },
 }
 
