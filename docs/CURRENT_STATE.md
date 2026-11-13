@@ -1,3 +1,28 @@
+# Revisão do handoff — 13/11/2026
+
+O snapshot de agosto abaixo é histórico. Esta seção o atualiza no que foi
+verificado na revisão do PR #15.
+
+- `origin/main` em `4128901`: #13 (título), #14 (cartão), #16 (bruxismo) e #17
+  (perimplantite) já mesclados. Implantação e aprovação clínica não verificadas.
+- Inventário no código: 19 posts, 9 tratamentos e 6 páginas estáticas, 34 URLs.
+- Search Console lido pelo navegador em 13/11 (11/08–10/11, Web, sem outros
+  filtros): 52 cliques, 6,04 mil impressões, CTR 0,9%, posição 11,9. Dados desde
+  18/03/2026. Tabelas de páginas, consultas e série mensal versionadas em
+  `docs/evidencias/`.
+- Achados: home e recontorno somam 33 dos 52 cliques; recontorno tem 40% das
+  impressões com CTR 0,5% na posição 8,4; consultas locais ("dentista
+  cascavel") quase não aparecem; ~75% das impressões vêm de consultas
+  anonimizadas. Depois do blog (10/08) as impressões cresceram ~5×, os cliques não.
+- [Diagnóstico e propostas](seo-diagnostico-2026-11.md),
+  [brief de pesquisa](pesquisa/brief.md) e
+  [estado da pauta](pesquisa/pauta-posts-2026-11.md).
+- Próxima etapa: aprovar (ou não) a revisão de título/descrição do post de
+  recontorno e verificar o Perfil da Empresa. Nenhum redirect ou conteúdo
+  clínico foi alterado.
+
+---
+
 # Current state (2026-08-10)
 
 ## Production snapshot
@@ -27,9 +52,8 @@
 - **Vercel domain:** the live apex currently returns a temporary 307. Change the
   project-domain redirect to permanent 308. The developer account authenticated
   during this pass did not have access to the clinic project.
-- **Search Console:** repository history conflicts about whether the property is
-  configured. Confirm the owner in the dashboard, resubmit the sitemap, request
-  indexing for priority treatment pages and check results after 7–14 days.
+- **Search Console:** desempenho lido em 13/11 (ver diagnóstico). Ainda não
+  conferidos: proprietários, estado do sitemap e cobertura de indexação.
 - **Legal approval:** the clinic's lawyer should approve the privacy policy and
   terms and confirm the legal controller/contact details.
 - **Ownership:** confirm that domain/DNS, GitHub, Vercel, Search Console and the

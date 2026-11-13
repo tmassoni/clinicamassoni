@@ -94,7 +94,7 @@ post fails too. The funnel is enforced, not merely documented.
 
 | Cluster | Why there is no URL |
 |---|---|
-| `/sobre` | Would strengthen the person entity for E-E-A-T. Genuinely worth building; simply not done yet. |
+| `/sobre` (já construída) | Página de credenciais e equipe; existe no código e no sitemap. Não criar uma segunda URL para esta intenção. |
 | Cirurgias guiadas 3D | A differentiator, not a search term. Lives inside the implants page. |
 | Frenectomias, biópsias orais | Low local volume; covered as procedures inside the buco-maxilo page. |
 | Cistos e tumores | Clinically sensitive; the blog post handles the informational side without a commercial page. |
@@ -188,8 +188,9 @@ keyword count.
 
 ## Compliance constraint
 
-All content is subject to `docs/compliance-guidelines.md` — **which does not
-exist yet.** Run `/clinic-compliance-research` before the next post ships.
+All content is subject to `docs/compliance-guidelines.md`, researched on
+2026-08-04. Recheck current CFO/CRO-PR sources before making new regulatory
+claims; the document records unresolved approvals and image restrictions.
 
 Two open items block content that is already written:
 
