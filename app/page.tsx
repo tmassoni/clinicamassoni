@@ -37,10 +37,10 @@ export const metadata: Metadata = {
     url: '/',
     images: [
       {
-        url: '/images/og-brand.png',
+        url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: `${DOCTOR_NAME} - Dentista em ${CLINIC_ADDRESS_CITY}`,
+        alt: 'Clínica Massoni em Cascavel, PR — Dr. Enor e Dr. Thiago Massoni',
       },
     ],
   },
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: `${DOCTOR_NAME} | Dentista em ${CLINIC_ADDRESS_CITY}`,
     description: `Dentista em ${CLINIC_ADDRESS_CITY} especializado em ${DOCTOR_SPECIALTY} e implantes dentários.`,
-    images: ['/images/og-brand.png'],
+    images: ['/opengraph-image'],
   },
 }
 
