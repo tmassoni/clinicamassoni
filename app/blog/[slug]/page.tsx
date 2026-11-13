@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { ArrowLeft, CalendarDays, Clock, RefreshCw } from 'lucide-react'
 import { MDXRemote } from 'next-mdx-remote/rsc'
 import remarkGfm from 'remark-gfm'
+import { EditorialIllustration } from '@/app/src/components/ui/EditorialIllustration'
 import { Breadcrumb } from '@/app/src/components/ui/Breadcrumb'
 import { AuthorByline } from '@/app/src/components/blog/AuthorByline'
 import { BlogBackdrop } from '@/app/src/components/blog/BlogBackdrop'
@@ -53,7 +54,7 @@ export async function generateMetadata({
 
   if (!post) return {}
 
-  const socialImage = post.cardImage
+  const socialImage = post.cardImage && !post.editorialImage
     ? {
         url: post.cardImage,
         ...getMdxImageDimensions(post.cardImage),
@@ -175,6 +176,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
           </header>
 
           <article className="rounded-3xl border border-accent/50 bg-white/80 p-6 shadow-brand backdrop-blur-sm sm:p-10 lg:p-12">
+            {post.editorialImage && <EditorialIllustration image={post.editorialImage} />}
             <div className="text-text-body [&>p:first-of-type]:text-lg [&>p:first-of-type]:text-secondary [&>p:first-of-type]:italic">
               <MDXRemote
                 source={post.content}

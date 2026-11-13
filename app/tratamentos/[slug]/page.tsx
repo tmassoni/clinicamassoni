@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { ArrowLeft, ArrowRight, LayoutGrid } from 'lucide-react'
+import { EditorialIllustration } from '@/app/src/components/ui/EditorialIllustration'
+import { getTreatmentEditorialImage } from '@/app/src/lib/editorial-images'
 import { Breadcrumb } from '@/app/src/components/ui/Breadcrumb'
 import { BlogBackdrop } from '@/app/src/components/blog/BlogBackdrop'
 import { BlogCtaCard } from '@/app/src/components/blog/BlogCtaCard'
@@ -96,6 +98,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
 
   const breadcrumbItems = buildBreadcrumbs(treatment.name, treatment.slug)
   const practitioner = getTreatmentPractitioner(treatment)
+  const illustration = getTreatmentEditorialImage(treatment.slug)
   const { previous, next } = getTreatmentSiblings(treatment.slug)
   const relatedPosts = treatment.relatedPosts
     .map((postSlug) => {
@@ -166,6 +169,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
           </header>
 
           <article className="rounded-3xl border border-accent/50 bg-white/80 p-6 shadow-brand backdrop-blur-sm sm:p-10 lg:p-12">
+            {illustration && <EditorialIllustration image={illustration} />}
             <p className="mb-8 text-lg leading-relaxed text-secondary">
               {treatment.definition}
             </p>
