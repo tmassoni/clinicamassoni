@@ -3,7 +3,7 @@ title: 'Cirurgião bucomaxilofacial: o que faz e quando procurar'
 metaDescription: 'O cirurgião bucomaxilofacial trata dentes retidos, cistos, traumas de face e deformidades dos maxilares. Veja quando o dentista encaminha para a especialidade.'
 slug: 'cirurgiao-bucomaxilofacial-quando-procurar'
 publishDate: '2026-08-04'
-lastModified: '2026-08-04'
+lastModified: '2026-11-13'
 primaryKeyword: 'cirurgião bucomaxilofacial'
 secondaryKeywords:
   - 'cirurgia buco-maxilo-facial'
@@ -36,7 +36,7 @@ faqs:
 
 _Muita gente descobre que existe essa especialidade no momento em que o próprio dentista diz: "esse caso eu vou encaminhar."_
 
-O cirurgião bucomaxilofacial é o cirurgião-dentista especializado no diagnóstico e no tratamento cirúrgico das doenças, lesões e alterações da boca, dos maxilares e da face. É a especialidade que assume o que está além do escopo da clínica odontológica de rotina — de um siso incluso em posição difícil a uma fratura de mandíbula.
+O [cirurgião bucomaxilofacial](/tratamentos/cirurgia-bucomaxilofacial) é o cirurgião-dentista especializado no diagnóstico e no tratamento cirúrgico das doenças, lesões e alterações da boca, dos maxilares e da face. É a especialidade que assume o que está além do escopo da clínica odontológica de rotina — de um siso incluso em posição difícil a uma fratura de mandíbula.
 
 ## O que essa especialidade trata?
 
