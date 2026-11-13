@@ -25,6 +25,7 @@
 
 ## Main pages
 
+- [Atendimento em Cascavel](https://www.clinicamassoni.com.br/locais-de-atendimento/cascavel): endereço, horários, recepção, mapa e canais de agendamento.
 - [Início](https://www.clinicamassoni.com.br/): apresentação da clínica, especialidades, equipe e contato.
 - [Sobre](https://www.clinicamassoni.com.br/sobre): formação, especializações e áreas de atuação dos dois cirurgiões-dentistas.
 - [Tratamentos](https://www.clinicamassoni.com.br/tratamentos): catálogo dos procedimentos realizados, com indicações e limites de cada um.

@@ -75,14 +75,14 @@ export function Header() {
                 <div className="font-serif font-bold text-lg lg:text-xl bg-linear-to-r from-[#28338d] to-[#5a6b91] bg-clip-text text-transparent tracking-tight">
                   {DOCTOR_NAME}
                 </div>
-                <div className="text-xs lg:text-sm text-[#9c9c9a] font-medium tracking-wide">
+                <div className="text-xs lg:text-sm text-tertiary font-medium tracking-wide">
                   {DOCTOR_CRO}
                 </div>
               </div>
             </Link>
 
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center gap-8">
+            <nav className="hidden lg:flex items-center gap-5 xl:gap-8">
               {navigationItems.map((item) => (
                 <Link
                   key={item.href}

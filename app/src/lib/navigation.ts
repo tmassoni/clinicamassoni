@@ -16,6 +16,7 @@ export const navigationItems: NavItem[] = [
   { href: '/sobre', label: 'Sobre' },
   { href: '/tratamentos', label: 'Tratamentos' },
   { href: '/blog', label: 'Blog' },
+  { href: '/locais-de-atendimento/cascavel', label: 'Atendimento' },
   // Anchors on the landing page.
   { href: '/#galeria', label: 'Galeria' },
   { href: '/#contato', label: 'Contato' },

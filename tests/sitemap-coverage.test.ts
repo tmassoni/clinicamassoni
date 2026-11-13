@@ -183,6 +183,7 @@ describe('lastModified honesty', () => {
     '/': ['app/page.tsx', 'app/src/components/sections', 'app/src/lib/home-faq.ts'],
     // The practitioner facts and the ProfilePage schema live outside the
     // route file, so a change there is still a change to what /sobre says.
+    '/locais-de-atendimento/cascavel': ['app/locais-de-atendimento/cascavel/page.tsx', 'app/src/lib/constants.ts'],
     '/sobre': [
       'app/sobre/page.tsx',
       'app/src/lib/profile-schema.ts',

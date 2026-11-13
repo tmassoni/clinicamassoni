@@ -53,6 +53,7 @@ local volume, covered by the buco-maxilo page).
 | Cluster | Owner URL | Intent | Supporting content role |
 |---|---|---|---|
 | Broad local specialty + brand ("dentista Cascavel", "cirurgião dentista Cascavel") | `/` | local + commercial | Explains the practice and routes to the right service. **No post may target these.** |
+| Endereço e atendimento da clínica em Cascavel | `/locais-de-atendimento/cascavel` | marca + localização + agendamento | Endereço, horários, recepção e mapa; não replica as buscas de tratamento |
 | Educational hub | `/blog` | informational | Organizes articles; never competes with a service page |
 
 ### Built — blog posts (17)
@@ -98,7 +99,7 @@ post fails too. The funnel is enforced, not merely documented.
 | Cirurgias guiadas 3D | A differentiator, not a search term. Lives inside the implants page. |
 | Frenectomias, biópsias orais | Low local volume; covered as procedures inside the buco-maxilo page. |
 | Cistos e tumores | Clinically sensitive; the blog post handles the informational side without a commercial page. |
-| Location subpages | One real staffed address. Per-neighbourhood pages are a doorway pattern. |
+| Per-neighbourhood pages | A página de Cascavel representa o único endereço documentado. Não criar variações por bairro. |
 | Clareamento dental | Not in `procedureType[]`. Confirm the clinic offers it before creating a page. |
 
 ## Rules this table enforces
