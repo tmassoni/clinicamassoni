@@ -9,6 +9,7 @@ import {
   type PostAuthorId,
 } from './constants'
 import type { FAQItem } from './seo-schemas'
+import { getPostEditorialImage, type EditorialImage } from '@/app/src/lib/editorial-images'
 
 const POSTS_DIRECTORY = path.join(process.cwd(), 'content', 'posts')
 
@@ -50,6 +51,7 @@ export interface BlogPost extends BlogPostFrontmatter {
   /** Computed: first markdown image in the body, reused as the card image. */
   cardImage: string | null
   cardImageAlt: string | null
+  editorialImage: EditorialImage | null
   wordCount: number
   author: PostAuthorId
   authorProfile: PostAuthor
@@ -188,6 +190,7 @@ function parsePost(fileName: string): BlogPost {
 
   const wordCount = countWords(content)
   const { src, alt } = deriveCardImage(content)
+  const editorialImage = src ? null : getPostEditorialImage(slugFromFile)
 
   return {
     ...frontmatter,
@@ -195,8 +198,9 @@ function parsePost(fileName: string): BlogPost {
     wordCount,
     readingTime: Math.max(1, Math.ceil(wordCount / WORDS_PER_MINUTE)),
     excerpt: deriveExcerpt(content),
-    cardImage: src,
-    cardImageAlt: alt,
+    cardImage: src ?? editorialImage?.src ?? null,
+    cardImageAlt: alt ?? editorialImage?.alt ?? null,
+    editorialImage,
     author: authorId,
     authorProfile,
     url: `${CLINIC_WEBSITE}/blog/${frontmatter.slug}`,
@@ -279,6 +283,7 @@ export function getBlogLastModified(): Date {
  * graph by @id so the practice and practitioner stay a single entity.
  */
 export function generateBlogPostSchema(post: BlogPost) {
+  const clinicalImage = post.editorialImage ? null : post.cardImage
   return {
     '@context': 'https://schema.org',
     '@type': 'MedicalWebPage',
@@ -298,7 +303,7 @@ export function generateBlogPostSchema(post: BlogPost) {
       audienceType: post.targetAudience ?? 'patients',
     },
     lastReviewed: post.lastModified,
-    ...(post.cardImage ? { primaryImageOfPage: `${CLINIC_WEBSITE}${post.cardImage}` } : {}),
+    ...(clinicalImage ? { primaryImageOfPage: `${CLINIC_WEBSITE}${clinicalImage}` } : {}),
     mainEntity: {
       '@type': 'Article',
       '@id': `${post.url}#article`,
@@ -311,7 +316,7 @@ export function generateBlogPostSchema(post: BlogPost) {
       keywords: [post.primaryKeyword, ...(post.secondaryKeywords ?? [])],
       articleSection: post.articleSection ?? 'Odontologia preventiva',
       inLanguage: 'pt-BR',
-      ...(post.cardImage ? { image: `${CLINIC_WEBSITE}${post.cardImage}` } : {}),
+      ...(clinicalImage ? { image: `${CLINIC_WEBSITE}${clinicalImage}` } : {}),
       author: {
         '@type': 'Person',
         name: post.authorProfile.name,
