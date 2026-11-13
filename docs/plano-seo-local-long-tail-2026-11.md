@@ -63,9 +63,10 @@ a amostra para atingir aquele total.
 
 ## Entregas sob nosso controle
 
-Os três PRs desta rodada partem da branch do #15 para usar sua evidência e a
-correção do sitemap. São independentes entre si; revisar o diff contra essa base.
-Após mesclar o #15, retargetear para `main` e repetir os checks do head resultante.
+Os três PRs desta rodada usam `main` como base e são independentes entre si.
+O #15 e o #19 foram mesclados durante a execução; a integração local inclui
+`main` em `cd47bbc`, com a evidência, a correção do sitemap e as ilustrações.
+Revisar o diff de cada PR contra `main` e os checks do respectivo head.
 
 | Entrega | Escopo | Aceite técnico e editorial | Medição |
 |---|---|---|---|
