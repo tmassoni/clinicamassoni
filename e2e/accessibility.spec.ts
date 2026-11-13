@@ -36,3 +36,31 @@ test.describe('accessibility — WCAG 2.1 A and AA', () => {
     })
   }
 })
+
+// The blog/treatment CTA is a white button on a primary-coloured card, but the
+// Button variant's focus colours are primary, which hid its label on focus
+// (including after a tap, when the link stays focused on return from
+// WhatsApp). Axe can't help here: it can't measure contrast over the card's
+// gradient and reports it as incomplete. Assert the focused colours directly.
+test.describe('focused CTA card', () => {
+  for (const route of ['/blog/profilaxia-dental', '/tratamentos/implantes-dentarios']) {
+    test(`${route} CTA keeps its colours when focused`, async ({ page }) => {
+      await page.goto(route)
+
+      // `.last()`: on desktop the sticky ArticleAside has a link with the same
+      // name; the CTA card is always the last one on the page.
+      const cta = page.getByRole('link', { name: 'Agendar avaliação' }).last()
+      const colours = () =>
+        cta.evaluate((el) => {
+          const style = getComputedStyle(el)
+          return { background: style.backgroundColor, text: style.color }
+        })
+
+      const resting = await colours()
+      await cta.focus()
+      await expect(cta).toBeFocused()
+
+      await expect.poll(colours).toEqual(resting)
+    })
+  }
+})
