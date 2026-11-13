@@ -42,6 +42,12 @@ export function BlogCtaCard({
           {body}
         </p>
 
+        {/*
+          The `default` variant sets `focus:bg-primary/80` and a primary focus
+          ring, which on this primary card made the label vanish on focus —
+          including after a tap, when the link stays focused on return from
+          WhatsApp. Pin the focus colours to match the resting state.
+        */}
         <TrackedLinkButton
           href={CONTACT_WHATSAPP_URL}
           external
@@ -52,7 +58,7 @@ export function BlogCtaCard({
           location="cascavel"
           variant="default"
           size="lg"
-          className="bg-white text-primary shadow-xl transition-all duration-200 hover:scale-105 hover:bg-white/90 hover:shadow-2xl active:scale-95"
+          className="bg-white text-primary shadow-xl transition-all duration-200 hover:scale-105 hover:bg-white/90 hover:shadow-2xl focus:bg-white focus:text-primary focus-visible:ring-white focus-visible:ring-offset-primary active:scale-95"
         >
           Agendar avaliação
         </TrackedLinkButton>
