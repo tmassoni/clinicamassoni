@@ -5,7 +5,12 @@ redirect is permanent in `next.config.ts`, while the Vercel domain-level
 redirect still needs to be changed from 307 to 308. Every canonical, sitemap
 URL and schema `@id` uses this host.
 **Primary market:** Cascavel, PR (western Paraná)
-**Last updated:** 2026-08-10
+**Last updated:** 2026-11-13
+
+Plano operacional vigente: [SEO local e long-tail](plano-seo-local-long-tail-2026-11.md).
+Base de desempenho: [coleta do Search Console](seo-diagnostico-2026-11.md).
+O plano distingue fatos, hipóteses, trabalho em PR e dependências da clínica.
+Blog e Perfil da Empresa avançam em paralelo; não há prazo de ranking prometido.
 
 ## Page ownership model
 
@@ -55,7 +60,7 @@ local volume, covered by the buco-maxilo page).
 | Broad local specialty + brand ("dentista Cascavel", "cirurgião dentista Cascavel") | `/` | local + commercial | Explains the practice and routes to the right service. **No post may target these.** |
 | Educational hub | `/blog` | informational | Organizes articles; never competes with a service page |
 
-### Built — blog posts (17)
+### Built — blog posts (19)
 
 Each owns one informational question and links **up** to the service page that
 owns its commercial intent, declared in the post's `ownerTreatment` frontmatter.
@@ -79,9 +84,11 @@ owns its commercial intent, declared in the post's `ownerTreatment` frontmatter.
 | 15 | `gengiva-sangrando` | gengiva sangrando | awareness | `cirurgia-plastica-periodontal` |
 | 16 | `sensibilidade-nos-dentes` | sensibilidade nos dentes | awareness | `dentistica-restauradora` |
 | 17 | `traumatismo-facial-fraturas` | traumatismo facial | awareness | `cirurgia-bucomaxilofacial` |
+| 18 | `bruxismo-apertar-ranger-dentes` | bruxismo / apertar os dentes | awareness | `dentistica-restauradora` |
+| 19 | `perimplantite-manutencao-implantes` | perimplantite / acompanhamento de implantes | awareness | `implantes-dentarios` |
 
-Mix: 7 awareness, 10 consideration. Ten attributed to Dr. Enor (surgical and
-implant clusters), seven to Dr. Thiago (restorative, prosthetic, preventive) —
+Mix: 9 awareness, 10 consideration. Eleven attributed to Dr. Enor (surgical and
+implant clusters), eight to Dr. Thiago (restorative, prosthetic, preventive) —
 each matching the practitioner's registered specialty, which is what makes the
 `Article.author` credential chain a real E-E-A-T signal rather than a formality.
 
@@ -149,42 +156,24 @@ scrutiny:
 - **Enxerto ósseo** is often searched as part of the implant journey, not
   separately. Validate demand before splitting it out.
 
-## Baseline
+## Baseline e acompanhamento
 
-Point-in-time measurement, not a promise. Re-measure monthly.
+Coleta de 13/11/2026, intervalo 11/08–10/11, Web (text), sem outros filtros:
+52 cliques, aproximadamente 6,04 mil impressões, CTR 0,9%, posição média 11,9.
+Recontorno: 11 cliques, 2.424 impressões, CTR 0,5%, posição 8,4. Consultas
+visíveis são parciais; não representam todo o tráfego nem identificam a cidade
+da maioria dos visitantes. Ver o [diagnóstico](seo-diagnostico-2026-11.md).
 
-| Metric | Value | Date |
-|---|---|---|
-| Tracked queries | Not tracked | 2026-08-04 |
-| Top 3 | Unknown | — |
-| Top 10 | Unknown | — |
-| Published posts | 17 | 2026-08-04 |
-| Service pages | 9 + hub | 2026-08-04 |
+O [plano vigente](plano-seo-local-long-tail-2026-11.md) define recortes locais,
+por intenção/URL, contatos e registro de experimentos. Não usar impressões como
+meta isolada, mas mantê-las como sinal de descoberta. Priorizar uma melhoria
+observável por vez. Coincidência de consultas em URLs diferentes não prova
+canibalização; posição 4–10 não garante retorno de uma alteração.
 
-**Data sources available:** Vercel Analytics + Speed Insights are active, and
-CTA events include page path, channel and section. Search Console status is not
-independently confirmed because repository notes conflict; the property owner
-must verify access in the dashboard. GA4/GTM are intentionally absent. Vercel
-measures contact intent, while reception confirmation is still required to know
-whether a consultation was booked.
-
-Confirming Search Console ownership is the highest-value next action in this
-document. Then connect its query/landing-page data to CTA events and the
-privacy-minimal reception log described in `docs/POST_LAUNCH_OPERATIONS.md`.
-
-## Measurement loop — monthly
-
-| Signal | Action |
-|---|---|
-| High impressions, low CTR | Test title/description, preserving accuracy |
-| Position 4–10 | Improve intent match, depth, internal links — **highest ROI** |
-| Wrong URL ranking | Fix ownership / cannibalization |
-| Ranking but no bookings | Fix the journey and CTA relevance, not the ranking |
-| No real demand | Don't publish just because a tracker has the keyword |
-
-Protect page-one positions before chasing new ones. The success metric is booked
-consultations (`cta_click` with `section: 'blog'` attributes them per post), not
-keyword count.
+Vercel Analytics e Speed Insights estão ativos. `cta_click` inclui `path`,
+`channel`, `section` e `label`; mede clique de contato, não agendamento nem o
+primeiro conteúdo da jornada. Agendamentos dependem da confirmação agregada pela
+recepção. Não há GA4/GTM e este plano não os acrescenta.
 
 ## Compliance constraint
 
@@ -192,7 +181,7 @@ All content is subject to `docs/compliance-guidelines.md`, researched on
 2026-08-04. Recheck current CFO/CRO-PR sources before making new regulatory
 claims; the document records unresolved approvals and image restrictions.
 
-Two open items block content that is already written:
+Open items requiring confirmation before publication:
 
 1. **Patient clinical photography — all three posts.** Eleven photographs of at
    least three different patients are published across the blog, including two
