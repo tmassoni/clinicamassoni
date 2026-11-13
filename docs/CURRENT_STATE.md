@@ -1,3 +1,21 @@
+# Plano de continuidade — 13/11/2026
+
+- [Plano de SEO local e long-tail](plano-seo-local-long-tail-2026-11.md): execução
+  do site em paralelo ao Perfil da Empresa; separa entregas, hipóteses e medição.
+- #15 e #19 mesclados durante a rodada; novas branches integradas com `main`
+  em `cd47bbc`. Documentação, título/descrição do recontorno e links contextuais
+  em quatro artigos seguem em PRs independentes, com base `main`. PR preparado
+  não significa publicado.
+- #20 já entrega a página prática de Cascavel; não recriar. Integrar a base atual,
+  revisar fatos e preview antes de decidir merge. Seus checks conhecidos são do
+  head `bbe7147`, não uma validação da integração futura.
+- O responsável informou que preparou PDF para o cliente trabalhar o Perfil da
+  Empresa. Conteúdo do PDF e execução do cliente não verificados nesta rodada.
+- Registrar data real de publicação e comparar períodos completos por URL e
+  intenção; `cascavel` é um recorte parcial, não a medida de toda demanda local.
+
+---
+
 # Revisão do handoff — 13/11/2026
 
 O snapshot de agosto abaixo é histórico. Esta seção o atualiza no que foi

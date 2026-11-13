@@ -134,6 +134,21 @@ body. To change who a post is attributed to, change `author:` in the frontmatter
 Run the checklist in `docs/compliance-guidelines.md` §8. Nothing ships that
 depends on an open question from §10.
 
+## Priorização editorial — 13/11/2026
+
+Seguir o [plano de SEO local e long-tail](plano-seo-local-long-tail-2026-11.md).
+Antes de uma URL nova, cruzar pergunta real com artigos e tratamentos existentes.
+Dúvidas de decisão podem sustentar conteúdos úteis sem disputar a busca comercial
+local da home ou do tratamento. Uma consulta com uma impressão é um indício,
+não validação de volume. Não priorizar pela contagem de posts ou pelo alcance
+nacional isolado, e não descartar um texto útil apenas porque seu termo é amplo.
+
+Usar âncoras descritivas para leituras complementares e tratamentos no ponto em
+que ajudam o leitor, preservando o cartão de tratamento já existente. Não inserir
+cidade em toda âncora ou inventar oferta local. Mudanças de texto clínico exigem
+pesquisa e revisão; um PR de links não equivale a uma atualização clínica.
+Metadados devem resumir a página sem transformar possibilidades em promessas.
+
 ## Authoring workflow
 
 1. Scan existing posts for overlapping intent
