@@ -3,7 +3,7 @@ title: 'Recontorno estético com resina composta: como funciona'
 metaDescription: 'O recontorno estético corrige forma, tamanho e proporção dos dentes com resina, em duas sessões e com pouco ou nenhum desgaste. Veja quando é indicado.'
 slug: 'recontorno-estetico-resina-composta'
 publishDate: '2026-08-04'
-lastModified: '2026-08-04'
+lastModified: '2026-11-13'
 primaryKeyword: 'recontorno estético'
 secondaryKeywords:
   - 'recontorno estético com resina composta'
@@ -37,7 +37,7 @@ faqs:
 
 _O formato dos dentes pesa tanto quanto a cor na aparência de um sorriso — e é a parte que quase ninguém pensa em tratar._
 
-O recontorno estético com resina composta é o procedimento que corrige forma, tamanho, proporção e simetria dos dentes aplicando resina diretamente sobre eles, em consultório e sem moldagem de laboratório. É um tratamento aditivo: na maior parte dos casos, adiciona material em vez de remover estrutura dental.
+O [recontorno estético com resina composta](/tratamentos/dentistica-restauradora) é o procedimento que corrige forma, tamanho, proporção e simetria dos dentes aplicando resina diretamente sobre eles, em consultório e sem moldagem de laboratório. É um tratamento aditivo: na maior parte dos casos, adiciona material em vez de remover estrutura dental.
 
 ![Dentes anteriores superiores com bordas irregulares, pequenas assimetrias e espaço entre os incisivos centrais](/images/posts/recontorno-estetico-resina-composta/dentes-anteriores-com-desgaste-e-diastema.webp)
 
@@ -85,7 +85,7 @@ Quando o problema não é de forma. O recontorno não resolve — e não deve se
 - **Dentes muito destruídos ou com grande perda de estrutura**, que pedem restaurações mais extensas, coroas ou prótese.
 - **Desalinhamento importante.** Espaços grandes e giroversões são um problema de posição; a resposta é ortodontia, e o recontorno entra depois, se ainda for necessário.
 - **Insatisfação com a cor.** Recontorno muda a forma, não clareia. Se a queixa é cor, o tratamento indicado é outro — e clareamento, quando indicado, vem antes do recontorno, para que a resina seja escolhida na cor final.
-- **Bruxismo não controlado.** A resina pode ser feita, mas sem controlar o hábito e sem placa de proteção o resultado tende a fraturar. Trata-se a causa primeiro.
+- **[Bruxismo](/blog/bruxismo-apertar-ranger-dentes) não controlado.** A resina pode ser feita, mas sem controlar o hábito e sem placa de proteção o resultado tende a fraturar. Trata-se a causa primeiro.
 
 ## Quanto tempo dura o resultado?
 

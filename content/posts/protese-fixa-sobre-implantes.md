@@ -3,7 +3,7 @@ title: 'Prótese fixa sobre implantes: o protocolo All-on-4 explicado'
 metaDescription: 'Protocolo sobre implantes devolve uma arcada inteira com prótese fixa. Entenda como funciona o All-on-4, quem é candidato e o que ele exige de manutenção.'
 slug: 'protese-fixa-sobre-implantes'
 publishDate: '2026-08-04'
-lastModified: '2026-08-04'
+lastModified: '2026-11-13'
 primaryKeyword: 'protocolo sobre implantes'
 secondaryKeywords:
   - 'All-on-4'
@@ -38,7 +38,7 @@ faqs:
 
 _A queixa que traz a maioria dos pacientes não é a falta dos dentes. É a prótese que solta na hora de comer._
 
-Protocolo sobre implantes é a reabilitação de uma arcada inteira com uma prótese fixa, parafusada sobre implantes instalados no osso. O termo All-on-4 se refere a uma técnica específica dessa família, na qual quatro implantes — dois retos na frente e dois inclinados atrás — sustentam a arcada completa.
+[Protocolo sobre implantes](/tratamentos/protocolo-all-on-4) é a reabilitação de uma arcada inteira com uma prótese fixa, parafusada sobre implantes instalados no osso. O termo All-on-4 se refere a uma técnica específica dessa família, na qual quatro implantes — dois retos na frente e dois inclinados atrás — sustentam a arcada completa.
 
 ## O problema que o protocolo resolve
 

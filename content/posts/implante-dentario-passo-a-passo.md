@@ -3,7 +3,7 @@ title: 'Implante dentário: como funciona, etapa por etapa'
 metaDescription: 'Do planejamento à coroa definitiva: entenda as etapas do implante dentário, o que é osseointegração e quanto tempo cada fase realmente leva.'
 slug: 'implante-dentario-passo-a-passo'
 publishDate: '2026-08-04'
-lastModified: '2026-08-04'
+lastModified: '2026-11-13'
 primaryKeyword: 'implante dentário'
 secondaryKeywords:
   - 'implante dentário Cascavel'
@@ -38,7 +38,7 @@ faqs:
 
 _O implante não é o parafuso. O implante é o processo que faz o osso aceitar aquele parafuso como parte dele._
 
-Implante dentário é a substituição da raiz de um dente perdido por um pino de titânio instalado no osso maxilar, sobre o qual se instala depois uma coroa, uma ponte ou uma prótese. O que torna o tratamento previsível é um fenômeno biológico chamado osseointegração — e é ele que define os prazos.
+[Implante dentário](/tratamentos/implantes-dentarios) é a substituição da raiz de um dente perdido por um pino de titânio instalado no osso maxilar, sobre o qual se instala depois uma coroa, uma ponte ou uma prótese. O que torna o tratamento previsível é um fenômeno biológico chamado osseointegração — e é ele que define os prazos.
 
 ## O que é osseointegração?
 
@@ -58,7 +58,7 @@ Esse processo leva tempo — de modo geral, de três a seis meses, variando com 
 
 **5. Prótese definitiva.** Instalação do pilar e da coroa, com moldagem ou escaneamento intraoral, provas e ajustes de mordida.
 
-**6. Manutenção.** Consultas periódicas com avaliação dos tecidos ao redor do implante. Essa etapa não termina.
+**6. Manutenção.** Consultas periódicas com [avaliação dos tecidos ao redor do implante](/blog/perimplantite-manutencao-implantes). Essa etapa não termina.
 
 ## Quando o implante não é a melhor opção agora
 
