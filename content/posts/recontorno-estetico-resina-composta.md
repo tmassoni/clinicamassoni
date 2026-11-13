@@ -1,9 +1,9 @@
 ---
-title: 'Recontorno estético com resina composta: como funciona'
-metaDescription: 'O recontorno estético corrige forma, tamanho e proporção dos dentes com resina, em duas sessões e com pouco ou nenhum desgaste. Veja quando é indicado.'
+title: 'Recontorno estético em resina: indicações e cuidados'
+metaDescription: 'Entenda o recontorno estético em resina: quando é indicado, diferenças para facetas, limites do tratamento e cuidados de manutenção.'
 slug: 'recontorno-estetico-resina-composta'
 publishDate: '2026-08-04'
-lastModified: '2026-08-04'
+lastModified: '2026-11-13'
 primaryKeyword: 'recontorno estético'
 secondaryKeywords:
   - 'recontorno estético com resina composta'
