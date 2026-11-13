@@ -1,7 +1,8 @@
 # Pauta provisória — novembro de 2026
 
-**Não priorizada por demanda:** o Search Console não foi acessível nesta sessão.
-Nenhum tópico abaixo é uma lacuna comprovada com ≥10 impressões. Primeiro cruzar
+**Revisão de 13/11: não priorizada por demanda.** O print recebido contém
+métricas agregadas, sem consultas ou páginas; não valida nenhum tema abaixo.
+Ver [diagnóstico e evidência](../seo-diagnostico-2026-11.md). Primeiro cruzar
 consultas reais com o inventário e a tabela de intenções; depois decidir o tema.
 
 ## Candidatos para pesquisa
@@ -10,12 +11,16 @@ consultas reais com o inventário e a tabela de intenções; depois decidir o te
 |---|---|---|---|
 | Dente sensível ao frio: quais perguntas levar à avaliação? | Revisar `sensibilidade-nos-dentes`, preservando limite com gengiva sangrando | `dentistica-restauradora` | Pesquisa por tema e autorização antes de alterar o texto |
 | Depois da extração de siso: o que merece ser esclarecido antes da cirurgia? | Avaliar uma seção no atual `extracao-de-siso`; só abrir outra URL se a intenção justificar | `extracao-de-sisos` | Confirmar consultas, cobertura atual e orientações do cirurgião |
-| Como acompanhar a saúde dos tecidos em volta de implantes? | Investigar a pauta já listada de perimplantite; separar de passo a passo do implante | `implantes-dentarios` | Confirmar demanda e escopo; não declarar oferta de tratamento sem validação |
+| Como acompanhar a saúde dos tecidos em volta de implantes? | Artigo `perimplantite-manutencao-implantes` já mesclado no #17; não criar outra URL | `implantes-dentarios` | Qualquer revisão futura depende de consultas por URL e revisão clínica |
 
 As perguntas são propostas editoriais, não títulos aprovados nem recomendações
 clínicas. Não publicar novos artigos apenas porque há fonte internacional.
 
 ## Fontes iniciais abertas em 11/11/2026
+
+Registro da rodada original; fontes não foram reabertas nesta revisão documental.
+A pesquisa específica de perimplantite já está em
+[perimplantite-manutencao-implantes.research.md](perimplantite-manutencao-implantes.research.md).
 
 - [ADA — Sensitive Teeth](https://www.mouthhealthy.org/all-topics-a-z/sensitive-teeth):
   página educativa integral acessível; permite pesquisar causas e perguntas sobre

@@ -1,28 +1,21 @@
-# Rodada SEO — 2026-11-11
+# Revisão do handoff — 13/11/2026
 
-Esta seção atualiza o handoff; o snapshot de agosto abaixo é histórico.
+O snapshot de agosto abaixo é histórico. Esta seção o atualiza somente no que
+foi possível verificar nesta revisão do PR #15.
 
-- Leitura inicial: árvore limpa, sem PRs abertos. Novos PRs de rascunho:
-  [#13 — título da home e contrato de intenção local](https://github.com/tmassoni/clinicamassoni/pull/13)
-  e [#14 — cartão com retratos reais](https://github.com/tmassoni/clinicamassoni/pull/14).
-  Não foram mesclados; código em PR não significa mudança publicada.
-- O repositório já associa os 17 posts aos 9 tratamentos e contém `/sobre`.
-  Alguns briefs e textos abaixo ainda descrevem fases anteriores.
-- Search Console **não foi consultado**: host do navegador indisponível e
-  tentativas no Chrome expiraram. Curva mensal, CTR, consultas locais, lacunas
-  e 404 com impressões continuam desconhecidos. Não há estimativa de ganho.
-- HTTP público verificado: domínio sem www ainda retorna **307**; sitemap
-  com www retorna **200**. Nenhuma configuração externa foi alterada.
-- Diagnóstico com fatos, hipóteses, lacunas e medição:
-  [seo-diagnostico-2026-11.md](seo-diagnostico-2026-11.md).
-- Pesquisa futura: [brief](pesquisa/brief.md) e
-  [pauta provisória](pesquisa/pauta-posts-2026-11.md). Nenhum texto clínico
-  publicado foi alterado; pesquisa e revisão dos dentistas precedem a redação.
-- Ambiente desta rodada: Bun 1.3.1, Node 24.18.0. Para build/E2E, definir
-  `NODE_ENV=production`; a sessão herdava `development`, que quebrou o prerender.
-- Ordem sugerida: #13, depois #14; são independentes. Revisar CI e preview
-  de cada um antes da decisão humana de merge. Após publicação aprovada,
-  medir 28 dias completos antes × depois por página e consulta.
+- `origin/main` em `4128901`: #13 (título), #14 (cartão), #16 (bruxismo) e #17
+  (perimplantite) já mesclados. Implantação e aprovação clínica não verificadas.
+- Inventário no código: 19 posts, 9 tratamentos e 6 páginas estáticas, 34 URLs.
+- Search Console: print fornecido pelo usuário mostra três meses, Web (text),
+  52 cliques, aproximadamente 6,04 mil impressões, CTR 0,9% e posição média 11,9.
+  Datas exatas, todos os filtros, consultas e páginas não foram confirmados.
+- Browser tool indisponível nesta sessão; tentativas no Chrome expiraram.
+  O print não substitui a coleta por consulta/URL nem valida a pauta editorial.
+- [Diagnóstico revisado e evidência](seo-diagnostico-2026-11.md),
+  [brief de pesquisa](pesquisa/brief.md) e
+  [estado da pauta](pesquisa/pauta-posts-2026-11.md).
+- Próxima etapa: restabelecer acesso, obter tabelas e série histórica; só então
+  propor mudanças por página. Nenhum redirect ou conteúdo clínico foi alterado.
 
 ---
 
@@ -55,9 +48,10 @@ Esta seção atualiza o handoff; o snapshot de agosto abaixo é histórico.
 - **Vercel domain:** the live apex currently returns a temporary 307. Change the
   project-domain redirect to permanent 308. The developer account authenticated
   during this pass did not have access to the clinic project.
-- **Search Console:** repository history conflicts about whether the property is
-  configured. Confirm the owner in the dashboard, resubmit the sitemap, request
-  indexing for priority treatment pages and check results after 7–14 days.
+- **Search Console:** o print recebido em 13/11 comprova métricas no recorte fornecido,
+  mas a propriedade e suas tabelas não foram verificadas pela ferramenta. Confirmar
+  proprietário, estado do sitemap e cobertura no painel antes de repetir envios
+  ou pedir indexação; seguir o diagnóstico revisado acima.
 - **Legal approval:** the clinic's lawyer should approve the privacy policy and
   terms and confirm the legal controller/contact details.
 - **Ownership:** confirm that domain/DNS, GitHub, Vercel, Search Console and the
