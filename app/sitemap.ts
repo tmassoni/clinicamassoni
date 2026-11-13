@@ -32,6 +32,7 @@ export const STATIC_ROUTES = [
     changeFrequency: 'monthly',
     priority: 0.95,
   },
+  { path: '/locais-de-atendimento/cascavel', lastModified: '2026-11-13', changeFrequency: 'monthly', priority: 0.8 },
   { path: '/blog', lastModified: null, changeFrequency: 'weekly', priority: 0.85 },
   {
     path: '/politica-de-privacidade',
