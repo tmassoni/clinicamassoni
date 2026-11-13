@@ -1,9 +1,16 @@
 # Pauta provisória — novembro de 2026
 
-**Revisão de 13/11: não priorizada por demanda.** O print recebido contém
-métricas agregadas, sem consultas ou páginas; não valida nenhum tema abaixo.
-Ver [diagnóstico e evidência](../seo-diagnostico-2026-11.md). Primeiro cruzar
-consultas reais com o inventário e a tabela de intenções; depois decidir o tema.
+**Revisão de 13/11, com Search Console lido (11/08–10/11).** Nenhum dos três
+candidatos abaixo tem demanda observada que justifique priorizá-lo agora. Ver
+[diagnóstico](../seo-diagnostico-2026-11.md). A maior oportunidade medida não é
+um post novo: é o resultado de pesquisa do post de recontorno (2.424
+impressões, posição 8,4, CTR 0,5%), proposto lá para aprovação.
+
+| Candidato | O que o Search Console mostra | Decisão |
+|---|---|---|
+| Sensibilidade | `sensibilidade-nos-dentes`: 5 impressões, posição 15; `dente sensivel` 1 impressão | Sem demanda observada; manter como hipótese |
+| Siso | Tratamento `extracao-de-sisos`: 136 impr., pos. 6,9, 2 cliques, consultas "dentista que tira siso"; post `extracao-de-siso`: 22 impr., pos. 8,5 | A intenção visível é achar quem faz a cirurgia, e a página de tratamento já atende; não abrir nova URL |
+| Perimplantite | Publicado em 12–13/11, depois do intervalo | Sem dados ainda; reavaliar após 28 dias completos |
 
 ## Candidatos para pesquisa
 
@@ -41,7 +48,7 @@ limitação no arquivo de pesquisa.
 Contagem aproximada do corpo Markdown, separando tokens por espaço após o
 frontmatter: os menores textos atuais têm 547–564 tokens (`dente-quebrado-o-que-fazer`,
 `lesoes-e-cistos-na-boca`, `sensibilidade-nos-dentes`). Isso inclui marcação e
-não mede qualidade. Nenhum dos 17 corpos tem menos de 450 tokens por esse método.
+não mede qualidade. Nenhum dos 17 corpos medidos em 11/11 tinha menos de 450 tokens por esse método.
 Não há base para importar um diagnóstico de posts de 300 palavras de outro site.
 
 Expandir só quando uma pergunta real estiver mal respondida e houver pesquisa
