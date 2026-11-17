@@ -28,7 +28,7 @@ export const STATIC_ROUTES = [
   },
   {
     path: '/tratamentos',
-    lastModified: TREATMENTS_LAST_MODIFIED,
+    lastModified: '2026-11-17',
     changeFrequency: 'monthly',
     priority: 0.95,
   },

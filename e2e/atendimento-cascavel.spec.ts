@@ -20,7 +20,8 @@ test('the clinic page resolves with its own intent and existing contact destinat
 test('navigation and page fit desktop, tablet and small mobile', async ({ page }) => {
   for (const width of [320, 1024, 1440]) {
     await page.setViewportSize({ width, height: 900 })
-    await page.goto(route)
+    // The layout checks only need the DOM. The embedded map loads independently.
+    await page.goto(route, { waitUntil: 'domcontentloaded' })
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth), `width ${width}`).toBe(true)
     const nav = page.locator('header nav').getByRole('link', { name: 'Atendimento', exact: true })
     if (width >= 1024) await expect(nav).toBeVisible()
