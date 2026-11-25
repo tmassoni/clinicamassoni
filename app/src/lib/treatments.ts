@@ -32,6 +32,8 @@ export interface Treatment {
   /** Patient-facing name. Becomes the h1. */
   name: string
   pageTitle: string
+  /** Complete HTML title when the inherited site suffix would misidentify the provider. */
+  seoTitle?: string
   metaDescription: string
   categories: string[]
   /** Plain-language definition, directly under the h1. */
@@ -807,6 +809,7 @@ export const TREATMENTS: Treatment[] = [
     slug: 'facetas-de-resina',
     name: 'Facetas de resina',
     pageTitle: 'Facetas de resina em Cascavel, PR',
+    seoTitle: 'Facetas de resina em Cascavel, PR | Clínica Massoni',
     metaDescription:
       'Facetas de resina em Cascavel com o Dr. Thiago Massoni. Entenda o que é avaliado, as diferenças para o recontorno e os cuidados de manutenção.',
     categories: ['Dentística', 'Estética'],

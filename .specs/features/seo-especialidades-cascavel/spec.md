@@ -10,7 +10,7 @@ Atrair buscas específicas por atendimento odontológico em Cascavel e dar ao pa
 | --- | --- |
 | SEO-01 | Ao abrir `/tratamentos/facetas-de-resina`, o paciente recebe HTTP 200, vê o H1 “Facetas de resina”, Dr. Thiago Massoni e CRO-PR 35209, encontra indicações, limites, avaliação, manutenção e o link “Agendar avaliação” para o WhatsApp da clínica. |
 | SEO-02 | Ao abrir `/blog/faceta-de-resina-cuidados`, o leitor recebe HTTP 200, vê o H1 “Faceta de resina: cuidados e manutenção”, o crédito de Thiago e uma orientação sobre polimento ou reparo. O artigo leva ao tratamento de facetas e aparece em “Leia também” nesse tratamento. A página de Dentística e o artigo de recontorno levam diretamente ao serviço de facetas. |
-| SEO-03 | As duas rotas novas declaram canonical próprio em `www.clinicamassoni.com.br` e constam uma vez no sitemap. `llms.txt` acompanha o inventário e `llms-full.txt` inclui as duas páginas. As datas do sitemap refletem as datas editoriais do lote. |
+| SEO-03 | As duas rotas novas declaram canonical próprio em `www.clinicamassoni.com.br`, título HTML com o sufixo “Clínica Massoni” e autoria de Thiago. Cada rota consta uma vez no sitemap com data editorial de 25/11/2026. `llms.txt` acompanha o inventário e `llms-full.txt` inclui as duas páginas. |
 | SEO-04 | O guia existente sobre quando procurar um bucomaxilo apresenta “O que levar à primeira consulta?”, incluindo encaminhamento e exames já realizados quando disponíveis, além de informações sobre medicamentos. O cartão de agendamento em artigos e serviços leva à página de atendimento em Cascavel. |
 | SEO-05 | A descrição de busca da home apresenta os dois profissionais e suas áreas em até 160 caracteres. O título de busca, o H1 e a composição aprovada continuam iguais. |
 
@@ -26,6 +26,7 @@ Atrair buscas específicas por atendimento odontológico em Cascavel e dar ao pa
 1. Facetas e manutenção · registro de tratamentos, blog, links existentes, catálogo de ilustrações, sitemap, `llms.txt` e Playwright · verificar SEO-01 a SEO-03 · `feat(seo): adicionar facetas de resina e guia de manutenção`.
 2. Preparação e chegada · guia atual de bucomaxilofacial, cartão de agendamento, CTA dos tratamentos, sitemap e Playwright · verificar SEO-04 · `feat(seo): orientar a primeira consulta em Cascavel`.
 3. Descrição da home e plano de lançamento · metadados, sitemap, estratégia, Playwright e capturas de revisão · verificar SEO-05 · `fix(seo): incluir as duas áreas na descrição da home`.
+4. Atribuição nos resultados de busca · metadados das duas páginas de facetas e Playwright · verificar título e autoria em SEO-03 · `fix(seo): atribuir as páginas de facetas à clínica e ao profissional`.
 
 Cada etapa roda os contratos de conteúdo. A rodada termina com lint, build e Playwright desktop e mobile. A revisão independente registra o resultado em `validation.md`.
 

@@ -1,5 +1,6 @@
 ---
 title: 'Faceta de resina: cuidados e manutenção'
+seoTitle: 'Faceta de resina: cuidados e manutenção | Clínica Massoni'
 metaDescription: 'Saiba como cuidar das facetas de resina, quando pedir uma revisão e como o dentista avalia manchas, lascas e a possibilidade de reparo.'
 slug: 'faceta-de-resina-cuidados'
 publishDate: '2026-11-25'

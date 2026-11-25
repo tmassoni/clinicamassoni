@@ -55,8 +55,9 @@ export async function generateMetadata({
   const pageUrl = getTreatmentUrl(treatment.slug)
 
   return {
-    title: treatment.pageTitle,
+    title: treatment.seoTitle ? { absolute: treatment.seoTitle } : treatment.pageTitle,
     description: treatment.metaDescription,
+    authors: [{ name: getTreatmentPractitioner(treatment).name }],
     keywords: treatment.keywords,
     alternates: { canonical: pageUrl },
     openGraph: generateOpenGraphMetadata({

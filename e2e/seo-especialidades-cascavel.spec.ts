@@ -8,6 +8,8 @@ const ATENDIMENTO = '/locais-de-atendimento/cascavel'
 
 test('apresenta facetas de resina como serviço em Cascavel', async ({ page }) => {
   expect((await page.goto(FACETAS))?.status()).toBe(200)
+  await expect(page).toHaveTitle('Facetas de resina em Cascavel, PR | Clínica Massoni')
+  await expect(page.locator('meta[name="author"]')).toHaveAttribute('content', 'Dr. Thiago Massoni')
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Facetas de resina')
   await expect(page.locator('main header').getByText('Dr. Thiago Massoni', { exact: true }))
     .toBeVisible()
@@ -28,6 +30,8 @@ test('apresenta facetas de resina como serviço em Cascavel', async ({ page }) =
 
 test('leva da manutenção, da dentística e do recontorno ao serviço de facetas', async ({ page }) => {
   expect((await page.goto(MANUTENCAO))?.status()).toBe(200)
+  await expect(page).toHaveTitle('Faceta de resina: cuidados e manutenção | Clínica Massoni')
+  await expect(page.locator('meta[name="author"]')).toHaveAttribute('content', 'Dr. Thiago Massoni')
   await expect(page.getByRole('heading', { level: 1 }))
     .toHaveText('Faceta de resina: cuidados e manutenção')
   await expect(page.getByText('CRO-PR 35209', { exact: true }).first()).toBeVisible()
