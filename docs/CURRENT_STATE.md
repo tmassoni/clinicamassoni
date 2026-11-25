@@ -1,3 +1,20 @@
+# Prontidão para agentes — 25/11/2026
+
+- A home oferece HTML e Markdown conforme `Accept`. A cópia em `/index.md`
+  está anunciada nos cabeçalhos e no HTML. URLs ausentes entregam 404 em
+  Markdown quando solicitado e mantêm a página de erro existente no navegador.
+- `/llms.txt` orienta a consulta de conteúdo público. `/contact` reúne os
+  canais oficiais, o endereço e os horários. `/about` e `/privacy` expõem o
+  conteúdo das páginas canônicas em português.
+- O patch Bun do Next.js 16.3.0 preserva `Vary: Accept` junto aos cabeçalhos
+  de cache do App Router. Remova o patch quando a correção upstream estiver
+  disponível e o teste HTTP continuar passando.
+  [Issue do Next.js](https://github.com/vercel/next.js/issues/85999)
+- Após a publicação, repita os testes HTTP pelo domínio público e execute uma
+  nova auditoria no [Is Agentic](https://is-agentic.com/scan/www.clinicamassoni.com.br).
+
+---
+
 # Plano de continuidade — 13/11/2026
 
 - [Plano de SEO local e long-tail](plano-seo-local-long-tail-2026-11.md): execução

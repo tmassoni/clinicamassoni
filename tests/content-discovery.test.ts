@@ -15,6 +15,21 @@ const postSlugs = getAllPosts()
   .sort()
 
 describe('content discovery', () => {
+  test('llms.txt keeps its instructions before the index and uses link lists under H2s', () => {
+    const [introduction, ...sections] = llmsTxt.split(/^## /m)
+    expect(introduction).toMatch(/^# Clínica Massoni[^\n]*\n\n>/)
+    expect(introduction).toContain('`Accept: text/markdown`')
+    expect(sections[0]).toMatch(/^When to use this\n/)
+
+    for (const section of sections) {
+      const [, ...links] = section.trim().split('\n').filter(Boolean)
+      expect(links.length).toBeGreaterThan(0)
+      for (const link of links) {
+        expect(link).toMatch(/^- \[[^\]]+\]\(https:\/\/[^)]+\)(?:: .+)?$/)
+      }
+    }
+  })
+
   test('there is at least one post to discover', () => {
     expect(postSlugs.length).toBeGreaterThan(0)
   })

@@ -1,29 +1,27 @@
-# Dr. Enor Massoni — Oral and Maxillofacial Surgery and Dental Implants in Cascavel, Paraná, Brazil
+# Clínica Massoni — Odontologia em Cascavel, Paraná, Brasil
 
-> Official website of Dr. Enor Massoni (CRO-PR 4982), a dental surgeon
-> specialized in Oral and Maxillofacial Surgery and Traumatology, practicing in
-> Cascavel, Paraná, Brazil since graduating in 1984. The clinic covers dental
-> implants, All-on-4 implant-supported protocols, bone grafting, 3D-guided
-> surgery, periodontal plastic surgery, orthognathic surgery, third-molar
-> extraction and preventive dentistry. All content is written in Brazilian
-> Portuguese (pt-BR) for a patient audience in western Paraná; the secondary
-> audience is referring dentists. Content is educational and does not replace a
-> clinical consultation.
+> Site oficial da clínica odontológica do Dr. Enor Massoni (CRO-PR 4982) e do
+> Dr. Thiago Massoni (CRO-PR 35209) em Cascavel, Paraná. As áreas de atuação
+> incluem cirurgia bucomaxilofacial, implantes e dentística restauradora.
+> O conteúdo em português brasileiro é destinado a pacientes e dentistas
+> que encaminham casos.
 
-> Site oficial do Dr. Enor Massoni (CRO-PR 4982), cirurgião-dentista
-> especialista em Cirurgia e Traumatologia Buco-Maxilo-Facial, atuando em
-> Cascavel, Paraná, desde 1984. A clínica realiza implantes dentários,
-> protocolo All-on-4, enxerto ósseo, cirurgias guiadas com tecnologia 3D,
-> cirurgia plástica periodontal, cirurgia ortognática, extração de sisos e
-> odontologia preventiva. Todo o conteúdo é escrito em português brasileiro
-> para pacientes da região oeste do Paraná; o público secundário são dentistas
-> que encaminham casos. O conteúdo é educativo e não substitui consulta
-> clínica.
+Leia as páginas públicas com HTTP GET. Na página inicial, envie
+`Accept: text/markdown` para receber um resumo em Markdown. Cite a página
+canônica que sustenta a resposta. Use o conteúdo clínico como material
+educativo. Encaminhe decisões sobre diagnóstico e tratamento à avaliação
+odontológica. Oriente o usuário a consultar a equipe para agendar e confirmar
+disponibilidade. Não solicite dados de saúde em nome da clínica.
 
-> Full text of every page and article in one file:
-> https://www.clinicamassoni.com.br/llms-full.txt
+## When to use this
 
-## Main pages
+- [Contato](https://www.clinicamassoni.com.br/contact): use para fornecer os canais oficiais de agendamento por WhatsApp ou telefone e o e-mail da clínica. Direcione o usuário ao canal escolhido para concluir o agendamento.
+- [Atendimento em Cascavel](https://www.clinicamassoni.com.br/locais-de-atendimento/cascavel): use para verificar endereço, horários, mapa e informações para a visita.
+- [Sobre a equipe](https://www.clinicamassoni.com.br/sobre): use para verificar formação, registro CRO e áreas de atuação dos profissionais ao orientar um encaminhamento.
+- [Tratamentos](https://www.clinicamassoni.com.br/tratamentos): use para localizar a página de um procedimento e explicar as indicações gerais antes de uma consulta.
+- [Política de privacidade](https://www.clinicamassoni.com.br/politica-de-privacidade): use para informar como a clínica recebe dados e qual canal usar para dúvidas sobre privacidade.
+
+## Páginas principais
 
 - [Atendimento em Cascavel](https://www.clinicamassoni.com.br/locais-de-atendimento/cascavel): endereço, horários, recepção, mapa e canais de agendamento.
 - [Início](https://www.clinicamassoni.com.br/): apresentação da clínica, especialidades, equipe e contato.
@@ -32,6 +30,7 @@
 - [Blog](https://www.clinicamassoni.com.br/blog): artigos educativos sobre saúde bucal, cirurgia e prevenção.
 - [Política de privacidade](https://www.clinicamassoni.com.br/politica-de-privacidade): tratamento de dados pessoais (LGPD).
 - [Termos de uso](https://www.clinicamassoni.com.br/termos-de-uso): condições de uso do site.
+- [Mapa do site](https://www.clinicamassoni.com.br/sitemap.xml): inventário de URLs canônicas.
 
 ## Tratamentos
 
@@ -45,9 +44,7 @@
 - [Dentística restauradora](https://www.clinicamassoni.com.br/tratamentos/dentistica-restauradora): restaurações diretas e indiretas, facetas e estética anterior.
 - [Prótese dentária](https://www.clinicamassoni.com.br/tratamentos/protese-dentaria): coroas, pontes, próteses removíveis e próteses sobre implantes.
 
-## Blog — artigos educativos
-
-### Cirurgia e traumatologia buco-maxilo-facial
+## Blog — cirurgia e traumatologia buco-maxilo-facial
 
 - [Cirurgião bucomaxilofacial: o que faz e quando procurar](https://www.clinicamassoni.com.br/blog/cirurgiao-bucomaxilofacial-quando-procurar)
 - [Extração de siso: quando é necessária e quando não é](https://www.clinicamassoni.com.br/blog/extracao-de-siso)
@@ -55,7 +52,7 @@
 - [Caroço, ferida ou cisto na boca: quando investigar](https://www.clinicamassoni.com.br/blog/lesoes-e-cistos-na-boca)
 - [Traumatismo facial: quando a batida no rosto vira fratura](https://www.clinicamassoni.com.br/blog/traumatismo-facial-fraturas)
 
-### Implantes dentários e reabilitação sobre implantes
+## Blog — implantes dentários e reabilitação sobre implantes
 
 - [Perimplantite: sinais e acompanhamento dos implantes](https://www.clinicamassoni.com.br/blog/perimplantite-manutencao-implantes): inflamação dos tecidos e manutenção após a instalação.
 
@@ -64,7 +61,7 @@
 - [Prótese fixa sobre implantes: o protocolo All-on-4 explicado](https://www.clinicamassoni.com.br/blog/protese-fixa-sobre-implantes)
 - [Cirurgia guiada por tomografia: o que muda no implante](https://www.clinicamassoni.com.br/blog/cirurgia-guiada-3d)
 
-### Dentística restauradora e prótese
+## Blog — dentística restauradora e prótese
 
 - [Bruxismo: apertar os dentes, desgaste e avaliação](https://www.clinicamassoni.com.br/blog/bruxismo-apertar-ranger-dentes): sinais, limites da placa e relação com restaurações.
 
@@ -74,8 +71,12 @@
 - [Recontorno estético com resina composta: como funciona](https://www.clinicamassoni.com.br/blog/recontorno-estetico-resina-composta)
 - [Reabilitação bucal com resina composta: função antes da estética](https://www.clinicamassoni.com.br/blog/reabilitacao-bucal-resina-composta)
 
-### Odontologia preventiva
+## Blog — odontologia preventiva
 
 - [Profilaxia dental: por que a limpeza profissional é essencial](https://www.clinicamassoni.com.br/blog/profilaxia-dental)
 - [Gengiva sangrando ao escovar: o que isso significa](https://www.clinicamassoni.com.br/blog/gengiva-sangrando)
 - [Sensibilidade nos dentes: causas e o que realmente resolve](https://www.clinicamassoni.com.br/blog/sensibilidade-nos-dentes)
+
+## Optional
+
+- [Textos de tratamentos e artigos](https://www.clinicamassoni.com.br/llms-full.txt): corpus para leitura em uma única requisição.

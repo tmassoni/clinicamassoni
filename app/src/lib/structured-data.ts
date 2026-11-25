@@ -117,7 +117,7 @@ export const structuredData = {
 
     // Medical Business
     {
-      '@type': 'MedicalBusiness',
+      '@type': ['MedicalBusiness', 'Organization'],
       '@id': `${CLINIC_INFO.website}/#organization`,
       name: CLINIC_INFO.name,
       url: CLINIC_INFO.website,
@@ -141,6 +141,13 @@ export const structuredData = {
 
       telephone: CLINIC_INFO.contact.phone,
       email: CLINIC_INFO.contact.email,
+      contactPoint: {
+        '@type': 'ContactPoint',
+        contactType: 'agendamento e informações',
+        telephone: `+55${CLINIC_INFO.contact.phone.replace(/\D/g, '')}`,
+        email: CLINIC_INFO.contact.email,
+        availableLanguage: 'pt-BR',
+      },
       priceRange: '$$',
       openingHours: CLINIC_INFO.hours,
 

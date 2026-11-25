@@ -16,7 +16,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/app/src/components/ui/dialog";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import {
   categories,
   galleryImages,
@@ -102,43 +101,32 @@ export function GallerySection() {
           })}
         </div>
 
-        {/* Desktop Grid */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6 mb-8 transition-all duration-300">
-          {filteredImages.map((image) => (
-            <GalleryImageCard key={image.id} image={image} />
-          ))}
-        </div>
-
-        {/* Mobile Carousel */}
-        <div className="md:hidden transition-all duration-300">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
+        {/* The same slides become the desktop grid at Tailwind's md breakpoint. */}
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+            breakpoints: { "(min-width: 48rem)": { active: false } },
+          }}
+          aria-label="Galeria da Clínica Massoni"
+          className="w-full transition-all duration-300 md:mb-8"
+        >
+          <CarouselContent
+            viewportClassName="md:overflow-visible"
+            className="md:ml-0 md:grid md:grid-cols-2 md:gap-4 lg:grid-cols-3 lg:gap-6 xl:grid-cols-4"
           >
-            <CarouselContent className="-ml-4">
-              {filteredImages.map((image) => (
-                <CarouselItem
-                  key={image.id}
-                  className="pl-4 basis-[85%] sm:basis-[70%]"
-                >
-                  <GalleryImageCard image={image} isMobile />
-                </CarouselItem>
-              ))}
-            </CarouselContent>
+            {filteredImages.map((image) => (
+              <CarouselItem key={image.id} className="basis-[85%] sm:basis-[70%] md:pl-0">
+                <GalleryImageCard image={image} />
+              </CarouselItem>
+            ))}
+          </CarouselContent>
 
-            <div className="flex justify-center gap-4 mt-8">
-              <CarouselPrevious className="static translate-y-0 bg-white border-2 border-primary/20 hover:bg-primary hover:text-white hover:border-primary">
-                <ChevronLeft className="w-4 h-4" />
-              </CarouselPrevious>
-              <CarouselNext className="static translate-y-0 bg-white border-2 border-primary/20 hover:bg-primary hover:text-white hover:border-primary">
-                <ChevronRight className="w-4 h-4" />
-              </CarouselNext>
-            </div>
-          </Carousel>
-        </div>
+          <div className="mt-8 flex justify-center gap-4 md:hidden">
+            <CarouselPrevious className="static translate-y-0 bg-white border-2 border-primary/20 hover:bg-primary hover:text-white hover:border-primary" />
+            <CarouselNext className="static translate-y-0 bg-white border-2 border-primary/20 hover:bg-primary hover:text-white hover:border-primary" />
+          </div>
+        </Carousel>
 
         {/* Image Counter */}
         <div className="flex justify-center items-center mt-8">
@@ -170,91 +158,64 @@ interface GalleryImageCardProps {
     alt: string;
     description?: string;
   };
-  isMobile?: boolean;
 }
 
-function GalleryImageCard({ image, isMobile = false }: GalleryImageCardProps) {
-  const aspectRatio = isMobile ? "aspect-4/5" : "aspect-square";
-  const hoverScale = isMobile
-    ? "group-active:scale-95"
-    : "group-hover:scale-110";
-  const overlayOpacity = isMobile
-    ? "bg-linear-to-t from-primary/40 via-transparent to-transparent"
-    : "bg-linear-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300";
-
+function GalleryImageCard({ image }: GalleryImageCardProps) {
   return (
     <Dialog>
       <DialogTrigger asChild>
         <button
-          className={`group relative ${aspectRatio} w-full rounded-2xl overflow-hidden bg-accent/10 cursor-pointer transition-transform duration-300 ${
-            !isMobile ? "hover:scale-105 hover:z-10" : ""
-          }`}
+          className="group relative aspect-4/5 w-full overflow-hidden rounded-2xl bg-accent/10 cursor-pointer transition-transform duration-300 md:block md:aspect-square md:hover:z-10 md:hover:scale-105"
         >
           <Image
             src={image.src}
             alt={image.alt}
             fill
-            className={`object-cover ${hoverScale} transition-transform duration-${
-              isMobile ? "300" : "500"
-            }`}
-            sizes={
-              isMobile
-                ? "85vw"
-                : "(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
-            }
+            className="object-cover transition-transform duration-300 max-md:group-active:scale-95 md:duration-500 md:group-hover:scale-110"
+            sizes="(max-width: 767px) 85vw, (max-width: 1200px) 50vw, 25vw"
             quality={85}
           />
 
           {/* Overlay */}
-          <div className={`absolute inset-0 ${overlayOpacity}`} />
+          <div className="absolute inset-0 bg-linear-to-t from-primary/40 via-transparent to-transparent md:from-primary/60 md:opacity-0 md:transition-opacity md:duration-300 md:group-hover:opacity-100" />
 
           {/* Zoom Icon (Desktop only) */}
-          {!isMobile && (
-            <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <div className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center">
-                <svg
-                  className="w-6 h-6 text-primary"
-                  fill="none"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
-                </svg>
-              </div>
+          <div className="absolute inset-0 hidden items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100 md:flex">
+            <div className="w-12 h-12 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center">
+              <svg
+                className="w-6 h-6 text-primary"
+                fill="none"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7" />
+              </svg>
             </div>
-          )}
+          </div>
 
           {/* Decorative Border */}
           <div
-            className={`absolute inset-0 ring-1 ring-inset ring-primary/10 ${
-              !isMobile ? "group-hover:ring-primary/30 transition-all" : ""
-            } rounded-2xl pointer-events-none`}
+            className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-inset ring-primary/10 md:transition-all md:group-hover:ring-primary/30"
           />
         </button>
       </DialogTrigger>
 
       <DialogContent
-        className={`${
-          isMobile ? "max-w-[95vw] p-2" : "max-w-4xl p-0"
-        } bg-transparent border-none [&>button]:absolute [&>button]:-top-12 ${
-          isMobile ? "[&>button]:right-2" : "[&>button]:right-0"
-        } [&>button]:bg-white [&>button]:text-primary [&>button]:hover:bg-primary [&>button]:hover:text-white [&>button]:w-10 [&>button]:h-10 [&>button]:rounded-full [&>button]:shadow-lg [&>button]:opacity-100`}
+        className="max-w-[95vw] border-none bg-transparent p-2 md:max-w-4xl md:p-0 [&>button]:absolute [&>button]:-top-12 [&>button]:right-2 [&>button]:h-10 [&>button]:w-10 [&>button]:rounded-full [&>button]:bg-white [&>button]:text-primary [&>button]:shadow-lg [&>button]:opacity-100 [&>button]:hover:bg-primary [&>button]:hover:text-white md:[&>button]:right-0"
       >
         <DialogTitle className="sr-only">{image.alt}</DialogTitle>
         <div
-          className={`relative ${
-            isMobile ? "aspect-4/5" : "aspect-4/3"
-          } w-full rounded-2xl overflow-hidden`}
+          className="relative aspect-4/5 w-full overflow-hidden rounded-2xl md:aspect-4/3"
         >
           <Image
             src={image.src}
             alt={image.alt}
             fill
             className="object-contain"
-            sizes={isMobile ? "95vw" : "90vw"}
+            sizes="(max-width: 767px) 95vw, 90vw"
             quality={90}
           />
         </div>

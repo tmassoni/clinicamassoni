@@ -4,7 +4,7 @@ import { getAllPosts, getBlogLastModified } from '@/app/src/lib/blog'
 import { TREATMENTS_BY_ORDER, getTreatmentUrl } from '@/app/src/lib/treatments'
 
 /** Service pages ship together; one date for the set is honest. */
-export const TREATMENTS_LAST_MODIFIED = '2026-11-12'
+export const TREATMENTS_LAST_MODIFIED = '2026-11-25'
 
 /**
  * Hand-maintained dates for static routes. `new Date()` everywhere would claim
@@ -17,7 +17,7 @@ export const TREATMENTS_LAST_MODIFIED = '2026-11-12'
  * table matches the routes on disk, so a new page cannot ship unlisted.
  */
 export const STATIC_ROUTES = [
-  { path: '/', lastModified: '2026-11-13', changeFrequency: 'weekly', priority: 1 },
+  { path: '/', lastModified: '2026-11-25', changeFrequency: 'weekly', priority: 1 },
   {
     path: '/sobre',
     lastModified: '2026-08-24',
@@ -33,6 +33,7 @@ export const STATIC_ROUTES = [
     priority: 0.95,
   },
   { path: '/locais-de-atendimento/cascavel', lastModified: '2026-11-13', changeFrequency: 'monthly', priority: 0.8 },
+  { path: '/contact', lastModified: '2026-11-25', changeFrequency: 'monthly', priority: 0.7 },
   { path: '/blog', lastModified: null, changeFrequency: 'weekly', priority: 0.85 },
   {
     path: '/politica-de-privacidade',

@@ -161,6 +161,7 @@ export default function RootLayout({
         )}
         {/* Curated inventory for answer engines */}
         <link rel="llms" href="/llms.txt" />
+        <link rel="describedby" href="/llms.txt" />
         {/* Structured Data */}
         <script
           type="application/ld+json"

@@ -34,6 +34,8 @@ interface TreatmentPageProps {
   params: Promise<{ slug: string }>
 }
 
+export const dynamicParams = false
+
 export function generateStaticParams() {
   return getAllTreatmentSlugs().map((slug) => ({ slug }))
 }

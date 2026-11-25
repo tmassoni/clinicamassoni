@@ -1,0 +1,38 @@
+diff --git a/dist/build/templates/app-page-runtime.js b/dist/build/templates/app-page-runtime.js
+index f1ab03f292340fe08b563990110ac0835d3415fb..73595463ea1efb97e08348164039383fc0f53317 100644
+--- a/dist/build/templates/app-page-runtime.js
++++ b/dist/build/templates/app-page-runtime.js
+@@ -456,7 +456,13 @@ function createAppPageEntrypoint({ tree, page, pathname, require: __next_app_req
+         };
+         try {
+             const varyHeader = routeModule.getVaryHeader(resolvedPathname, interceptionRoutePatterns);
+-            res.setHeader('Vary', varyHeader);
++            const configuredVary = res.getHeader('Vary');
++            if (configuredVary) {
++                const fields = new Set(`${configuredVary},${varyHeader}`.toLowerCase().split(',').map((field)=>field.trim()).filter(Boolean));
++                res.setHeader('Vary', fields.has('*') ? '*' : Array.from(fields).join(', '));
++            } else {
++                res.setHeader('Vary', varyHeader);
++            }
+             let parentSpan;
+             const invokeRouteModule = async (span, context)=>{
+                 const nextReq = new _node.NodeNextRequest(req);
+diff --git a/dist/esm/build/templates/app-page-runtime.js b/dist/esm/build/templates/app-page-runtime.js
+index 1970588724b6e4880f27a8be60ca32ae6437bc28..bb18b080c1090c3691ef9ffd2e3138bacba0cdbf 100644
+--- a/dist/esm/build/templates/app-page-runtime.js
++++ b/dist/esm/build/templates/app-page-runtime.js
+@@ -471,7 +471,13 @@ export function createAppPageEntrypoint({ tree, page, pathname, require: __next_
+         };
+         try {
+             const varyHeader = routeModule.getVaryHeader(resolvedPathname, interceptionRoutePatterns);
+-            res.setHeader('Vary', varyHeader);
++            const configuredVary = res.getHeader('Vary');
++            if (configuredVary) {
++                const fields = new Set(`${configuredVary},${varyHeader}`.toLowerCase().split(',').map((field)=>field.trim()).filter(Boolean));
++                res.setHeader('Vary', fields.has('*') ? '*' : Array.from(fields).join(', '));
++            } else {
++                res.setHeader('Vary', varyHeader);
++            }
+             let parentSpan;
+             const invokeRouteModule = async (span, context)=>{
+                 const nextReq = new NodeNextRequest(req);
