@@ -61,6 +61,7 @@ test('publica as duas URLs canônicas nas superfícies de descoberta', async ({ 
     await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', canonical)
     await expect(page.locator('meta[name="robots"]')).toHaveAttribute('content', /^index, follow/)
     expect(xml.split(`<loc>${canonical}</loc>`)).toHaveLength(2)
+    expect(xml).toContain(`<loc>${canonical}</loc>\n<lastmod>2026-11-25T00:00:00.000Z</lastmod>`)
     expect(indexText).toContain(`(${canonical})`)
     expect(fullText).toContain(`URL: ${canonical}`)
   }
@@ -84,4 +85,16 @@ test('orienta o preparo para a consulta com o bucomaxilo e abre a página de che
 
   await page.goto('/tratamentos/cirurgia-bucomaxilofacial')
   await expect(locationLink).toHaveAttribute('href', ATENDIMENTO)
+})
+
+test('apresenta as duas áreas na descrição da home e conserva a abertura', async ({ page }) => {
+  expect((await page.goto('/'))?.status()).toBe(200)
+  await expect(page).toHaveTitle('Dentista em Cascavel | Dr. Enor Massoni')
+  await expect(page.getByRole('heading', { level: 1 }))
+    .toHaveText(/Seu Sorriso\s*Completo e Saudável/)
+  const description = await page.locator('meta[name="description"]').getAttribute('content')
+  expect(description).toBe(
+    'Clínica Massoni em Cascavel, PR. Dr. Enor Massoni atende em cirurgia bucomaxilofacial e implantes. Dr. Thiago Massoni atua em dentística e estética dental.',
+  )
+  expect(description?.length).toBeLessThanOrEqual(160)
 })

@@ -25,6 +25,13 @@ Atrair buscas específicas por atendimento odontológico em Cascavel e dar ao pa
 
 1. Facetas e manutenção · registro de tratamentos, blog, links existentes, catálogo de ilustrações, sitemap, `llms.txt` e Playwright · verificar SEO-01 a SEO-03 · `feat(seo): adicionar facetas de resina e guia de manutenção`.
 2. Preparação e chegada · guia atual de bucomaxilofacial, cartão de agendamento, CTA dos tratamentos, sitemap e Playwright · verificar SEO-04 · `feat(seo): orientar a primeira consulta em Cascavel`.
-3. Descrição da home · metadados, sitemap e Playwright · verificar SEO-05 · `fix(seo): incluir as duas áreas na descrição da home`.
+3. Descrição da home e plano de lançamento · metadados, sitemap, estratégia, Playwright e capturas de revisão · verificar SEO-05 · `fix(seo): incluir as duas áreas na descrição da home`.
 
 Cada etapa roda os contratos de conteúdo. A rodada termina com lint, build e Playwright desktop e mobile. A revisão independente registra o resultado em `validation.md`.
+
+## Publicação e acompanhamento
+
+1. Aprovar os textos de facetas com o Dr. Thiago e o checklist com o Dr. Enor. Registrar a data real do deploy ao publicar a revisão.
+2. Conferir HTTP 200, canonical próprio e as duas entradas na versão pública do [sitemap.xml](https://www.clinicamassoni.com.br/sitemap.xml). No Search Console, solicitar a indexação de `/tratamentos/facetas-de-resina` e `/blog/faceta-de-resina-cuidados` e acompanhar a página de [atendimento em Cascavel](https://www.clinicamassoni.com.br/locais-de-atendimento/cascavel).
+3. Passados 28 dias completos, comparar as páginas existentes com a janela anterior. Para as URLs novas, registrar data de indexação, consultas visíveis, impressões e cliques como primeira linha de base. Acompanhar `cta_click` por URL no Vercel Analytics e contabilizar avaliações marcadas quando a recepção tiver o dado.
+4. Usar as consultas por página e as dúvidas da recepção para decidir a próxima pauta. Candidatos são preparo para avaliação de ortognática ou dúvidas de decisão sobre implantes, depois de verificar o que os textos existentes já cobrem.
