@@ -18,7 +18,7 @@ featured: false
 ownerTreatment: 'facetas-de-resina'
 order: 20
 relatedPosts:
-  - 'recontorno-estetico-resina-composta'
+  - 'dentistica-restauradora'
   - 'bruxismo-apertar-ranger-dentes'
 faqs:
   - question: 'De quanto em quanto tempo devo revisar a faceta?'

@@ -31,3 +31,9 @@
 
 As três cópias temporárias foram descartadas.
 - O primeiro CI do relatório atingiu o limite de 30 segundos no teste geral de links. O ajuste faz a leitura após o DOM carregar e usa a lista de links já extraída, mantendo as asserções de resposta HTTP e de existência de âncora. A execução isolada com `CI=1 bun run test:e2e --workers=2` passou com 78 testes e os mesmos 4 skips.
+
+## Revisão das imagens e do aviso educativo
+
+`SEO-06` foi conferido em desktop e celular. O teste em `e2e/seo-especialidades-cascavel.spec.ts:94` verifica o aviso visível, a capa editorial, o card ilustrado de Dentística e a ausência de fotos clínicas no conteúdo das duas rotas. A inspeção do HTML do build confirmou o aviso, o card e o canonical de cada página.
+
+Lint e typecheck passaram. A suíte de contratos passou com 97 testes, a de navegador com 80 testes e 4 skips previstos, e a execução final do arquivo de SEO passou com 12 testes.

@@ -11,6 +11,7 @@ import { PostFAQ } from '@/app/src/components/blog/PostFAQ'
 import { PostCard } from '@/app/src/components/blog/PostCard'
 import { ArticleAside } from '@/app/src/components/blog/ArticleAside'
 import { getPostBySlug, slugifyHeading } from '@/app/src/lib/blog'
+import { MEDICAL_DISCLAIMER } from '@/app/src/lib/constants'
 import {
   generateTreatmentSchema,
   getAllTreatmentSlugs,
@@ -212,6 +213,9 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
             </section>
 
             <PostFAQ faqs={treatment.faqs} />
+            <p className="mt-8 border-t border-accent/50 pt-5 text-sm leading-relaxed text-tertiary">
+              {MEDICAL_DISCLAIMER}
+            </p>
           </article>
           </div>
 

@@ -91,6 +91,22 @@ test('orienta o preparo para a consulta com o bucomaxilo e abre a página de che
   await expect(locationLink).toHaveAttribute('href', ATENDIMENTO)
 })
 
+test('exibe o aviso educativo e mantém imagens clínicas fora das páginas de facetas', async ({ page }) => {
+  for (const route of [FACETAS, MANUTENCAO]) {
+    await page.goto(route, { waitUntil: 'domcontentloaded' })
+    const main = page.getByRole('main')
+    await expect(main.getByText(/Este conteúdo tem caráter exclusivamente educativo/)).toBeVisible()
+    await expect(main.locator('figure img[alt^="Ilustração conceitual:"]')).toHaveCount(1)
+
+    const related = main.locator('section[aria-labelledby="artigos-relacionados"]')
+    const dentistry = related.locator('a[href="/blog/dentistica-restauradora"]')
+    await expect(dentistry).toBeVisible()
+    await expect(dentistry.getByRole('img')).toHaveAttribute('alt', /^Ilustração conceitual:/)
+    await expect(main.locator('img[src*="/images/posts/"], img[src*="%2Fimages%2Fposts%2F"]'))
+      .toHaveCount(0)
+  }
+})
+
 test('apresenta as duas áreas na descrição da home e conserva a abertura', async ({ page }) => {
   expect((await page.goto('/'))?.status()).toBe(200)
   await expect(page).toHaveTitle('Dentista em Cascavel | Dr. Enor Massoni')

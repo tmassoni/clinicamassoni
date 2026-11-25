@@ -854,7 +854,7 @@ export const TREATMENTS: Treatment[] = [
       { term: 'Perda extensa de estrutura do dente', text: 'pode exigir uma restauração com outra cobertura ou outro tipo de suporte.' },
       { term: 'Desgaste associado a apertamento ou ranger dos dentes', text: 'a mordida e o risco de novas fraturas precisam ser avaliados antes da indicação.' },
     ],
-    relatedPosts: ['faceta-de-resina-cuidados', 'recontorno-estetico-resina-composta'],
+    relatedPosts: ['faceta-de-resina-cuidados', 'dentistica-restauradora'],
     faqs: [
       {
         question: 'Faceta de resina sempre precisa de desgaste?',
