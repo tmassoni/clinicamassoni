@@ -4,7 +4,7 @@ import { getAllPosts, getBlogLastModified } from '@/app/src/lib/blog'
 import { TREATMENTS_BY_ORDER, getTreatmentUrl } from '@/app/src/lib/treatments'
 
 /** Service pages ship together; one date for the set is honest. */
-export const TREATMENTS_LAST_MODIFIED = '2026-11-12'
+export const TREATMENTS_LAST_MODIFIED = '2026-11-25'
 
 /**
  * Hand-maintained dates for static routes. `new Date()` everywhere would claim
@@ -28,7 +28,7 @@ export const STATIC_ROUTES = [
   },
   {
     path: '/tratamentos',
-    lastModified: '2026-11-17',
+    lastModified: '2026-11-25',
     changeFrequency: 'monthly',
     priority: 0.95,
   },

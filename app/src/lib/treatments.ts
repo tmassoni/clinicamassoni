@@ -9,8 +9,8 @@ import {
 import type { FAQItem } from './seo-schemas'
 
 /**
- * Service pages are data, not nine near-identical route files. Adding
- * treatment #10 is an edit here — the `[slug]` route stays thin. Same shape
+ * Service pages are data. Adding a treatment is an edit here so the
+ * `[slug]` route stays thin. Same shape
  * PATTERNS.md uses for location pages, for the same reason.
  */
 
@@ -804,6 +804,80 @@ export const TREATMENTS: Treatment[] = [
   },
 
   {
+    slug: 'facetas-de-resina',
+    name: 'Facetas de resina',
+    pageTitle: 'Facetas de resina em Cascavel, PR',
+    metaDescription:
+      'Facetas de resina em Cascavel com o Dr. Thiago Massoni. Entenda o que é avaliado, as diferenças para o recontorno e os cuidados de manutenção.',
+    categories: ['Dentística', 'Estética'],
+    definition:
+      'A faceta de resina composta recobre a superfície da frente do dente para ajustar sua forma, proporção ou cor. Na Clínica Massoni, em Cascavel, o Dr. Thiago Massoni avalia quanto da superfície precisa mudar e quais opções preservam a estrutura do dente.',
+    keywords: [
+      'facetas de resina em Cascavel',
+      'facetas de resina composta',
+      'faceta direta em resina',
+    ],
+    procedureType: ['Faceta direta em resina composta'],
+    bodyLocation: 'Superfície frontal dos dentes',
+    preparation:
+      'Avaliação dos dentes, da gengiva, da mordida e das restaurações existentes, com discussão do objetivo estético e das alternativas.',
+    followup:
+      'Revisão da mordida, das bordas da faceta e da gengiva, com polimento ou reparo quando indicado.',
+    practitioner: 'thiago',
+    sections: [
+      {
+        heading: 'Quando uma faceta de resina pode ajudar?',
+        paragraphs: [
+          'A faceta pode ser considerada quando a alteração de forma ou cor envolve boa parte da face visível do dente. Uma pequena lasca ou uma mudança discreta no contorno pode pedir uma restauração localizada ou um recontorno. A extensão da alteração e a condição do dente orientam essa escolha.',
+        ],
+      },
+      {
+        heading: 'O que é avaliado na primeira consulta?',
+        paragraphs: [
+          'A avaliação começa pela mudança que a pessoa quer fazer. O dentista examina os dentes, a gengiva, as restaurações e o contato entre os dentes ao morder. Isso ajuda a decidir se uma faceta faz sentido e se há algum problema de saúde bucal que precisa ser tratado primeiro.',
+          'Quando a faceta direta é indicada, a resina é moldada sobre a frente do dente e polida. A quantidade de preparo depende da forma inicial, da posição do dente e do espaço disponível para acrescentar material. O profissional explica o preparo previsto antes da decisão.',
+        ],
+      },
+      {
+        heading: 'Como funciona a manutenção?',
+        paragraphs: [
+          'Nas revisões, o dentista observa as bordas da faceta, a gengiva e o contato da mordida. Manchas superficiais podem melhorar com polimento. Uma pequena lasca pode admitir reparo, conforme a extensão do dano e a condição do dente.',
+          'A frequência das revisões depende da saúde bucal, do desgaste e dos hábitos de cada pessoa. Mudança na mordida, sensibilidade persistente ou uma borda que passou a prender o fio dental são motivos para pedir uma avaliação.',
+        ],
+      },
+    ],
+    notIndicated: [
+      { term: 'Cárie ou inflamação gengival ativa', text: 'a prioridade é tratar a condição de base antes de planejar a estética.' },
+      { term: 'Perda extensa de estrutura do dente', text: 'pode exigir uma restauração com outra cobertura ou outro tipo de suporte.' },
+      { term: 'Desgaste associado a apertamento ou ranger dos dentes', text: 'a mordida e o risco de novas fraturas precisam ser avaliados antes da indicação.' },
+    ],
+    relatedPosts: ['faceta-de-resina-cuidados', 'recontorno-estetico-resina-composta'],
+    faqs: [
+      {
+        question: 'Faceta de resina sempre precisa de desgaste?',
+        answer:
+          'A necessidade de preparo depende da posição, da forma e do volume do dente. A avaliação permite explicar se há espaço para acrescentar resina e quanto preparo seria necessário.',
+      },
+      {
+        question: 'Faceta de resina e recontorno são a mesma coisa?',
+        answer:
+          'O recontorno atua em áreas pontuais, como uma borda ou um canto do dente. A faceta cobre uma área maior da frente do dente. A extensão da mudança ajuda a definir a opção.',
+      },
+      {
+        question: 'Qual a diferença entre a resina e a porcelana?',
+        answer:
+          'Na faceta direta, a resina é moldada sobre o dente. A faceta de porcelana é confeccionada fora da boca e depois fixada. A escolha considera preparo, manutenção, mordida e a mudança desejada.',
+      },
+      {
+        question: 'Quanto tempo dura uma faceta de resina?',
+        answer:
+          'A duração varia conforme o caso, a mordida, os hábitos e a manutenção. A resina pode manchar, perder brilho ou lascar com o tempo. Nas revisões, o dentista avalia se cabe polir, reparar ou substituir.',
+      },
+    ],
+    order: 9,
+  },
+
+  {
     slug: 'protese-dentaria',
     name: 'Prótese dentária',
     pageTitle: 'Prótese dentária em Cascavel, PR',
@@ -896,7 +970,7 @@ export const TREATMENTS: Treatment[] = [
           'Frequentemente sim, com implantes. As duas rotas mais comuns são a sobredentadura, removível mas presa a implantes, e o protocolo, que é uma prótese fixa parafusada. A viabilidade depende do osso disponível, avaliado por tomografia, e das condições de manutenção.',
       },
     ],
-    order: 9,
+    order: 10,
   },
 ]
 

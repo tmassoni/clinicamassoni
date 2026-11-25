@@ -49,6 +49,7 @@ const POST_IMAGES: Record<string, EditorialImage> = {
   // Prepared for the independently reviewed draft posts; no new URL is created here.
   'bruxismo-apertar-ranger-dentes': EDITORIAL_IMAGES.bruxismo,
   'perimplantite-manutencao-implantes': EDITORIAL_IMAGES.manutencao,
+  'faceta-de-resina-cuidados': EDITORIAL_IMAGES.avaliacao,
 }
 
 const TREATMENT_IMAGES: Record<string, EditorialImage> = {
@@ -60,6 +61,7 @@ const TREATMENT_IMAGES: Record<string, EditorialImage> = {
   'cirurgia-ortognatica': EDITORIAL_IMAGES.ortognatica,
   'cirurgia-plastica-periodontal': EDITORIAL_IMAGES.gengiva,
   'dentistica-restauradora': EDITORIAL_IMAGES.restauracao,
+  'facetas-de-resina': EDITORIAL_IMAGES.avaliacao,
   'protese-dentaria': EDITORIAL_IMAGES.protese,
 }
 
