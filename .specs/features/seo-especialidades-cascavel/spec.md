@@ -12,7 +12,7 @@ Atrair buscas específicas por atendimento odontológico em Cascavel e dar ao pa
 | SEO-02 | Ao abrir `/blog/faceta-de-resina-cuidados`, o leitor recebe HTTP 200, vê o H1 “Faceta de resina: cuidados e manutenção”, o crédito de Thiago e uma orientação sobre polimento ou reparo. O artigo leva ao tratamento de facetas e aparece em “Leia também” nesse tratamento. A página de Dentística e o artigo de recontorno levam diretamente ao serviço de facetas. |
 | SEO-03 | As duas rotas novas declaram canonical próprio em `www.clinicamassoni.com.br`, título HTML com o sufixo “Clínica Massoni” e autoria de Thiago. Cada rota consta uma vez no sitemap com data editorial de 25/11/2026. `llms.txt` acompanha o inventário e `llms-full.txt` inclui as duas páginas. |
 | SEO-04 | O guia existente sobre quando procurar um bucomaxilo apresenta “O que levar à primeira consulta?”, incluindo encaminhamento e exames já realizados quando disponíveis, além de informações sobre medicamentos. O cartão de agendamento em artigos e serviços leva à página de atendimento em Cascavel. |
-| SEO-05 | A descrição de busca da home apresenta os dois profissionais e suas áreas em até 160 caracteres. O título de busca, o H1 e a composição aprovada continuam iguais. |
+| SEO-05 | A descrição de busca da home apresenta o atendimento odontológico em Cascavel e identifica a especialização de cada profissional em até 160 caracteres. O título de busca, o H1 e a composição aprovada continuam iguais. |
 | SEO-06 | As duas páginas de facetas mostram o aviso educativo, usam ilustrações editoriais e incluem Dentística nos artigos relacionados. Nenhuma renderiza fotos clínicas dos posts relacionados. |
 
 ## Decisões editoriais

@@ -20,7 +20,7 @@ import { generateFAQSchema, serializeSchema } from '@/app/src/lib/seo-schemas'
 export const metadata: Metadata = {
   // Keep the concise search title explicit, independent of inherited templates.
   title: { absolute: `Dentista em ${CLINIC_ADDRESS_CITY} | ${DOCTOR_NAME}` },
-  description: `Clínica Massoni em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}. ${DOCTOR_NAME} atende em cirurgia bucomaxilofacial e implantes. ${DOCTOR_THIAGO_NAME} atua em dentística e estética dental.`,
+  description: `Atendimento odontológico em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}. O ${DOCTOR_NAME} é especialista em cirurgia bucomaxilofacial e o ${DOCTOR_THIAGO_NAME}, em dentística restauradora.`,
   keywords: [
     'dentista',
     'cascavel',

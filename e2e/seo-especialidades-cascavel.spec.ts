@@ -107,14 +107,14 @@ test('exibe o aviso educativo e mantém imagens clínicas fora das páginas de f
   }
 })
 
-test('apresenta as duas áreas na descrição da home e conserva a abertura', async ({ page }) => {
+test('apresenta o atendimento odontológico e as especializações na descrição da home', async ({ page }) => {
   expect((await page.goto('/'))?.status()).toBe(200)
   await expect(page).toHaveTitle('Dentista em Cascavel | Dr. Enor Massoni')
   await expect(page.getByRole('heading', { level: 1 }))
     .toHaveText(/Seu Sorriso\s*Completo e Saudável/)
   const description = await page.locator('meta[name="description"]').getAttribute('content')
   expect(description).toBe(
-    'Clínica Massoni em Cascavel, PR. Dr. Enor Massoni atende em cirurgia bucomaxilofacial e implantes. Dr. Thiago Massoni atua em dentística e estética dental.',
+    'Atendimento odontológico em Cascavel, PR. O Dr. Enor Massoni é especialista em cirurgia bucomaxilofacial e o Dr. Thiago Massoni, em dentística restauradora.',
   )
   expect(description?.length).toBeLessThanOrEqual(160)
 })
