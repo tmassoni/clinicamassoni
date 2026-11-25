@@ -30,3 +30,4 @@
 | Remover o título absoluto do tratamento de facetas | Uma asserção com Bun chamou `generateMetadata` na cópia. Com os dados íntegros, o título das duas rotas passou. Com a remoção, a asserção esperava o título completo em `title.absolute` e recebeu o título base como string. | Detectada |
 
 As três cópias temporárias foram descartadas.
+- O primeiro CI do relatório atingiu o limite de 30 segundos no teste geral de links. O ajuste faz a leitura após o DOM carregar e usa a lista de links já extraída, mantendo as asserções de resposta HTTP e de existência de âncora. A execução isolada com `CI=1 bun run test:e2e --workers=2` passou com 78 testes e os mesmos 4 skips.

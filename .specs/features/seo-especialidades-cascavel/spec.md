@@ -27,6 +27,7 @@ Atrair buscas específicas por atendimento odontológico em Cascavel e dar ao pa
 2. Preparação e chegada · guia atual de bucomaxilofacial, cartão de agendamento, CTA dos tratamentos, sitemap e Playwright · verificar SEO-04 · `feat(seo): orientar a primeira consulta em Cascavel`.
 3. Descrição da home e plano de lançamento · metadados, sitemap, estratégia, Playwright e capturas de revisão · verificar SEO-05 · `fix(seo): incluir as duas áreas na descrição da home`.
 4. Atribuição nos resultados de busca · metadados das duas páginas de facetas e Playwright · verificar título e autoria em SEO-03 · `fix(seo): atribuir as páginas de facetas à clínica e ao profissional`.
+5. Verificação de links no CI · navegar até o HTML que contém a âncora e manter as asserções de destino HTTP e presença de âncora · executar a suíte em dois workers · `fix(e2e): evitar navegação redundante no teste de links`.
 
 Cada etapa roda os contratos de conteúdo. A rodada termina com lint, build e Playwright desktop e mobile. A revisão independente registra o resultado em `validation.md`.
 
