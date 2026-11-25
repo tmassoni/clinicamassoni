@@ -14,6 +14,7 @@ import {
   ContactSection,
 } from '@/app/src/components/sections'
 import { HOME_FAQS } from '@/app/src/lib/home-faq'
+import { HOME_MARKDOWN_PATH } from '@/app/src/lib/markdown-routing'
 import { generateFAQSchema, serializeSchema } from '@/app/src/lib/seo-schemas'
 
 export const metadata: Metadata = {
@@ -30,8 +31,10 @@ export const metadata: Metadata = {
   ],
   alternates: {
     canonical: '/',
+    types: { 'text/markdown': HOME_MARKDOWN_PATH },
   },
   openGraph: {
+    type: 'website',
     title: `${DOCTOR_NAME} | Dentista em ${CLINIC_ADDRESS_CITY}`,
     description: `Dentista em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}, com foco em ${DOCTOR_SPECIALTY} e implantes dentários.`,
     url: '/',

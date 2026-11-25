@@ -137,7 +137,9 @@ export function Footer() {
 
             {/* Column 4 - Contact */}
             <div>
-              <h2 className="text-lg! font-bold mb-4 text-white">Contato</h2>
+              <h2 className="text-lg! font-bold mb-4 text-white">
+                <Link href="/contact" className="underline-offset-4 hover:underline">Contato</Link>
+              </h2>
               <ul className="space-y-4 text-sm">
                 <li className="flex items-start gap-3">
                   <Phone className="w-5 h-5 shrink-0 mt-0.5 text-white/60" />

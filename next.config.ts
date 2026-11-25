@@ -1,4 +1,9 @@
 import type { NextConfig } from 'next'
+import {
+  HOME_MARKDOWN_PATH,
+  MARKDOWN_FALLBACK_HEADER,
+  NOT_FOUND_MARKDOWN_PATH,
+} from './app/src/lib/markdown-routing'
 
 /**
  * Applied to every route. X-Frame-Options governs who may frame *us*; it does
@@ -38,7 +43,38 @@ const nextConfig: NextConfig = {
   },
 
   async headers() {
-    return [{ source: '/(.*)', headers: securityHeaders }]
+    return [
+      { source: '/(.*)', headers: securityHeaders },
+      {
+        // The same public URL can carry an HTML or Markdown document, including a 404.
+        source: '/((?!_next/|_vercel/).*)',
+        headers: [{ key: 'Vary', value: 'Accept' }],
+      },
+      {
+        source: '/',
+        headers: [{
+          key: 'Link',
+          value: `<${HOME_MARKDOWN_PATH}>; rel="alternate"; type="text/markdown", </llms.txt>; rel="describedby"`,
+        }],
+      },
+    ]
+  },
+
+  async rewrites() {
+    return {
+      beforeFiles: [],
+      // Keep the Portuguese pages as the canonical versions of the same content.
+      afterFiles: [
+        { source: '/about', destination: '/sobre' },
+        { source: '/privacy', destination: '/politica-de-privacidade' },
+      ],
+      // Only after Next has checked pages, generated slugs, and public files.
+      fallback: [{
+        source: '/:path+',
+        has: [{ type: 'header', key: MARKDOWN_FALLBACK_HEADER, value: '1' }],
+        destination: NOT_FOUND_MARKDOWN_PATH,
+      }],
+    }
   },
 
   async redirects() {

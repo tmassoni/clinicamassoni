@@ -184,6 +184,7 @@ describe('lastModified honesty', () => {
     // The practitioner facts and the ProfilePage schema live outside the
     // route file, so a change there is still a change to what /sobre says.
     '/locais-de-atendimento/cascavel': ['app/locais-de-atendimento/cascavel/page.tsx', 'app/src/lib/constants.ts'],
+    '/contact': ['app/contact/page.tsx', 'app/src/lib/constants.ts'],
     '/sobre': [
       'app/sobre/page.tsx',
       'app/src/lib/profile-schema.ts',
