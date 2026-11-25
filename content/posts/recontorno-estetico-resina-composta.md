@@ -3,7 +3,7 @@ title: 'Recontorno estético em resina: indicações e cuidados'
 metaDescription: 'Entenda o recontorno estético em resina: quando é indicado, diferenças para facetas, limites do tratamento e cuidados de manutenção.'
 slug: 'recontorno-estetico-resina-composta'
 publishDate: '2026-08-04'
-lastModified: '2026-11-13'
+lastModified: '2026-11-25'
 primaryKeyword: 'recontorno estético'
 secondaryKeywords:
   - 'recontorno estético com resina composta'
@@ -72,7 +72,7 @@ O procedimento é direto e normalmente ocorre em duas sessões.
 A diferença está em quanto do seu dente permanece.
 
 - **Recontorno estético** adiciona resina em pontos específicos para corrigir forma e proporção. Pouco ou nenhum desgaste, e reversível quando feito de forma puramente aditiva.
-- **Faceta de resina** cobre toda a face frontal do dente com resina, aplicada diretamente. Pode exigir algum preparo da superfície.
+- **[Faceta de resina](/tratamentos/facetas-de-resina)** cobre a face frontal do dente com resina aplicada diretamente. Pode exigir preparo da superfície.
 - **Lente de contato dental** é uma peça de porcelana feita em laboratório e cimentada sobre o dente. Envolve preparo do esmalte e é, na prática, irreversível.
 
 Nenhuma das três é melhor em abstrato. São indicações diferentes para problemas diferentes, e a escolha depende do quanto o dente precisa mudar, do estado do esmalte e do que o paciente espera em manutenção ao longo do tempo.

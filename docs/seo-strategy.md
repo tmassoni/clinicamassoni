@@ -5,10 +5,11 @@ redirect is permanent in `next.config.ts`, while the Vercel domain-level
 redirect still needs to be changed from 307 to 308. Every canonical, sitemap
 URL and schema `@id` uses this host.
 **Primary market:** Cascavel, PR (western Paraná)
-**Last updated:** 2026-11-13
+**Last updated:** 2026-11-25
 
 Plano operacional vigente: [SEO local e long-tail](plano-seo-local-long-tail-2026-11.md).
 Base de desempenho: [coleta do Search Console](seo-diagnostico-2026-11.md).
+Rodada de tratamento e conteúdo: [SEO de especialidades em Cascavel](../.specs/features/seo-especialidades-cascavel/spec.md).
 O plano distingue fatos, hipóteses, trabalho em PR e dependências da clínica.
 Blog e Perfil da Empresa avançam em paralelo; não há prazo de ranking prometido.
 
@@ -31,10 +32,10 @@ topical authority across the cluster and funnels internal links to whichever
 page owns the commercial intent. That mechanism only works if the ownership
 below is respected.
 
-### Built — service pages (9 + hub)
+### Built — service pages (10 + hub)
 
-**These own the commercial intent.** Built 2026-08-04; every post links up to
-one of them via its `ownerTreatment` frontmatter key.
+**These own the commercial intent.** Every post links up to one of them via
+its `ownerTreatment` frontmatter key.
 
 | Owner URL | Owns the query | Practitioner |
 |---|---|---|
@@ -47,6 +48,7 @@ one of them via its `ownerTreatment` frontmatter key.
 | `/tratamentos/cirurgia-ortognatica` | cirurgia ortognática Cascavel | Enor |
 | `/tratamentos/cirurgia-plastica-periodontal` | recessão gengival / recobrimento de raízes Cascavel | Enor |
 | `/tratamentos/dentistica-restauradora` | dentística restauradora Cascavel | Thiago |
+| `/tratamentos/facetas-de-resina` | facetas de resina em Cascavel | Thiago |
 | `/tratamentos/protese-dentaria` | prótese dentária Cascavel | Thiago |
 
 Deliberately still without a URL: cirurgias guiadas 3D (a differentiator, not a
@@ -61,7 +63,7 @@ local volume, covered by the buco-maxilo page).
 | Endereço e atendimento da clínica em Cascavel | `/locais-de-atendimento/cascavel` | marca + localização + agendamento | Endereço, horários, recepção e mapa; não replica as buscas de tratamento |
 | Educational hub | `/blog` | informational | Organizes articles; never competes with a service page |
 
-### Built — blog posts (19)
+### Built — blog posts (20)
 
 Each owns one informational question and links **up** to the service page that
 owns its commercial intent, declared in the post's `ownerTreatment` frontmatter.
@@ -87,9 +89,10 @@ owns its commercial intent, declared in the post's `ownerTreatment` frontmatter.
 | 17 | `traumatismo-facial-fraturas` | traumatismo facial | awareness | `cirurgia-bucomaxilofacial` |
 | 18 | `bruxismo-apertar-ranger-dentes` | bruxismo / apertar os dentes | awareness | `dentistica-restauradora` |
 | 19 | `perimplantite-manutencao-implantes` | perimplantite / acompanhamento de implantes | awareness | `implantes-dentarios` |
+| 20 | `faceta-de-resina-cuidados` | cuidados com faceta de resina | consideration | `facetas-de-resina` |
 
-Mix: 9 awareness, 10 consideration. Eleven attributed to Dr. Enor (surgical and
-implant clusters), eight to Dr. Thiago (restorative, prosthetic, preventive) —
+Eleven attributed to Dr. Enor (surgical and implant clusters), nine to Dr. Thiago
+(restorative, prosthetic, preventive) —
 each matching the practitioner's registered specialty, which is what makes the
 `Article.author` credential chain a real E-E-A-T signal rather than a formality.
 

@@ -25,7 +25,7 @@ test.describe('internal links resolve', () => {
     const brokenAnchors: string[] = []
 
     for (const entry of ENTRY_POINTS) {
-      await page.goto(entry)
+      await page.goto(entry, { waitUntil: 'domcontentloaded' })
 
       const hrefs = await page
         .locator('a[href^="/"], a[href^="#"]')
@@ -49,14 +49,13 @@ test.describe('internal links resolve', () => {
 
         // An anchor pointing at an id that no longer exists is silently dead.
         if (hash) {
-          await page.goto(target)
+          await page.goto(target, { waitUntil: 'domcontentloaded' })
           // Attribute selector rather than `#id` — CSS.escape is a browser API
           // and this runs in Node, and ids here contain accents.
           const count = await page.locator(`[id="${hash}"]`).count()
           if (count === 0) {
             brokenAnchors.push(`${entry} -> ${href} (no #${hash} on ${target})`)
           }
-          await page.goto(entry)
         }
       }
     }

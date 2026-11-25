@@ -4,6 +4,7 @@ import {
   CLINIC_ADDRESS_STATE,
   DOCTOR_NAME,
   DOCTOR_SPECIALTY,
+  DOCTOR_THIAGO_NAME,
 } from '@/app/src/lib/constants'
 import {
   HeroSection,
@@ -20,7 +21,7 @@ import { generateFAQSchema, serializeSchema } from '@/app/src/lib/seo-schemas'
 export const metadata: Metadata = {
   // Keep the concise search title explicit, independent of inherited templates.
   title: { absolute: `Dentista em ${CLINIC_ADDRESS_CITY} | ${DOCTOR_NAME}` },
-  description: `${DOCTOR_NAME} é dentista em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}, especialista em ${DOCTOR_SPECIALTY}, implantes dentários e cirurgia plástica periodontal.`,
+  description: `Atendimento odontológico em ${CLINIC_ADDRESS_CITY}, ${CLINIC_ADDRESS_STATE}. O ${DOCTOR_NAME} é especialista em cirurgia bucomaxilofacial e o ${DOCTOR_THIAGO_NAME}, em dentística restauradora.`,
   keywords: [
     'dentista',
     'cascavel',

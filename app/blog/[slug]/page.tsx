@@ -65,7 +65,7 @@ export async function generateMetadata({
     : undefined
 
   return {
-    title: post.title,
+    title: post.seoTitle ? { absolute: post.seoTitle } : post.title,
     description: post.metaDescription,
     keywords: [post.primaryKeyword, ...(post.secondaryKeywords ?? [])],
     authors: [{ name: post.authorProfile.name }],

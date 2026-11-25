@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { TrackedLinkButton } from '@/app/src/components/custom/TrackedLinkButton'
 import { cn } from '@/app/src/lib/utils'
 import {
@@ -69,7 +70,12 @@ export function BlogCtaCard({
           so this line sat left of the button above it.
         */}
         <p className="mt-5 max-w-none text-sm text-white/70">
-          Atendimento em {CLINIC_ADDRESS_CITY}, {CLINIC_ADDRESS_STATE}.
+          <Link
+            href="/locais-de-atendimento/cascavel"
+            className="underline underline-offset-4 hover:text-white"
+          >
+            Atendimento em {CLINIC_ADDRESS_CITY}, {CLINIC_ADDRESS_STATE}
+          </Link>
         </p>
       </div>
 

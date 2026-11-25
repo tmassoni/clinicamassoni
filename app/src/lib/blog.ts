@@ -20,6 +20,8 @@ export type PostAudience = 'patients' | 'referring-doctors' | 'general-public'
 
 export interface BlogPostFrontmatter {
   title: string
+  /** Complete HTML title when the inherited site suffix would misidentify the author. */
+  seoTitle?: string
   metaDescription: string
   slug: string
   publishDate: string

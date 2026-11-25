@@ -11,6 +11,7 @@ import { PostFAQ } from '@/app/src/components/blog/PostFAQ'
 import { PostCard } from '@/app/src/components/blog/PostCard'
 import { ArticleAside } from '@/app/src/components/blog/ArticleAside'
 import { getPostBySlug, slugifyHeading } from '@/app/src/lib/blog'
+import { MEDICAL_DISCLAIMER } from '@/app/src/lib/constants'
 import {
   generateTreatmentSchema,
   getAllTreatmentSlugs,
@@ -57,8 +58,9 @@ export async function generateMetadata({
   const pageUrl = getTreatmentUrl(treatment.slug)
 
   return {
-    title: treatment.pageTitle,
+    title: treatment.seoTitle ? { absolute: treatment.seoTitle } : treatment.pageTitle,
     description: treatment.metaDescription,
+    authors: [{ name: getTreatmentPractitioner(treatment).name }],
     keywords: treatment.keywords,
     alternates: { canonical: pageUrl },
     openGraph: generateOpenGraphMetadata({
@@ -213,6 +215,9 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
             </section>
 
             <PostFAQ faqs={treatment.faqs} />
+            <p className="mt-8 border-t border-accent/50 pt-5 text-sm leading-relaxed text-tertiary">
+              {MEDICAL_DISCLAIMER}
+            </p>
           </article>
           </div>
 
@@ -257,7 +262,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
         {/* Full container width from here — nothing below needs a reading measure. */}
         <BlogCtaCard
             heading="Agende uma avaliação"
-            body="A indicação depende de exame clínico e, na maioria dos casos, de exame de imagem. A avaliação define qual tratamento se aplica ao seu caso."
+            body="Na consulta, o profissional avalia seu caso, explica as opções e orienta se algum exame complementar é necessário."
             trackingLabel={`tratamento_cta_${treatment.slug}`}
             className="mt-12 sm:mt-16"
           />
