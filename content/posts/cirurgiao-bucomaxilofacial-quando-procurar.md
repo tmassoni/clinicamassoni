@@ -3,7 +3,7 @@ title: 'Cirurgião bucomaxilofacial: o que faz e quando procurar'
 metaDescription: 'O cirurgião bucomaxilofacial trata dentes retidos, cistos, traumas de face e deformidades dos maxilares. Veja quando o dentista encaminha para a especialidade.'
 slug: 'cirurgiao-bucomaxilofacial-quando-procurar'
 publishDate: '2026-08-04'
-lastModified: '2026-11-13'
+lastModified: '2026-11-25'
 primaryKeyword: 'cirurgião bucomaxilofacial'
 secondaryKeywords:
   - 'cirurgia buco-maxilo-facial'
@@ -87,8 +87,19 @@ Uma avaliação cirúrgica bem-feita raramente termina com uma cirurgia marcada 
 
 Essa última parte importa: existe caso em que acompanhar é uma conduta legítima, e um bom plano cirúrgico inclui explicar por que operar é — ou não é — a melhor opção agora.
 
+## O que levar à primeira consulta?
+
+Separe os documentos e exames que você já tem. Eles ajudam o profissional a entender por que a avaliação foi solicitada e quais informações ainda precisa reunir.
+
+- **Encaminhamento, se houver**. Leve o pedido ou o relato do dentista ou ortodontista. Se você marcou diretamente, anote o motivo da consulta e quando percebeu o problema.
+- **Exames já realizados**. Leve as imagens e os laudos relacionados à queixa, como uma radiografia ou tomografia, quando disponíveis. A avaliação define se é necessário algum exame adicional.
+- **Medicamentos e alergias**. Anote os nomes e as doses dos medicamentos em uso, alergias conhecidas, condições de saúde e cirurgias anteriores que possam orientar a avaliação.
+- **Perguntas para a consulta**. Anote o que você quer entender sobre o diagnóstico, as opções de cuidado e os próximos passos. Se recebeu orientações específicas no agendamento, consulte a equipe para esclarecer dúvidas.
+
+Fonte de apoio para o checklist de preparo. [Queen Elizabeth Hospital. Primeira consulta de cirurgia bucomaxilofacial](https://www.qehkl.nhs.uk/services/oral-and-maxillofacial-surgery/your-appointment/).
+
 ## Atendimento em Cascavel e região oeste do Paraná
 
 A clínica atende em Cascavel e recebe pacientes encaminhados por dentistas de toda a região oeste do Paraná. Para quem vem de outra cidade, vale organizar a avaliação e os exames de imagem no mesmo deslocamento sempre que possível — algo que pode ser combinado no agendamento.
 
-Se você foi encaminhado, leve consigo os exames já realizados e o relato do profissional que encaminhou. Isso encurta o caminho até o diagnóstico e evita repetir exames desnecessariamente.
+Veja o [endereço, os horários e como chegar à clínica](/locais-de-atendimento/cascavel).

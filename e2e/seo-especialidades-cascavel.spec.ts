@@ -3,6 +3,8 @@ import { expect, test } from '@playwright/test'
 const SITE = 'https://www.clinicamassoni.com.br'
 const FACETAS = '/tratamentos/facetas-de-resina'
 const MANUTENCAO = '/blog/faceta-de-resina-cuidados'
+const GUIA_BUCOMAXILO = '/blog/cirurgiao-bucomaxilofacial-quando-procurar'
+const ATENDIMENTO = '/locais-de-atendimento/cascavel'
 
 test('apresenta facetas de resina como serviço em Cascavel', async ({ page }) => {
   expect((await page.goto(FACETAS))?.status()).toBe(200)
@@ -62,4 +64,24 @@ test('publica as duas URLs canônicas nas superfícies de descoberta', async ({ 
     expect(indexText).toContain(`(${canonical})`)
     expect(fullText).toContain(`URL: ${canonical}`)
   }
+})
+
+test('orienta o preparo para a consulta com o bucomaxilo e abre a página de chegada', async ({ page }) => {
+  expect((await page.goto(GUIA_BUCOMAXILO))?.status()).toBe(200)
+  const article = page.getByRole('article').filter({
+    has: page.getByRole('heading', { name: 'O que levar à primeira consulta?' }),
+  })
+  await expect(article.getByRole('heading', { name: 'O que levar à primeira consulta?' })).toBeVisible()
+  for (const item of ['Encaminhamento, se houver', 'Exames já realizados', 'Medicamentos e alergias']) {
+    await expect(article.getByText(item, { exact: true })).toBeVisible()
+  }
+
+  const locationLink = page.locator('main aside')
+    .getByRole('link', { name: 'Atendimento em Cascavel, PR' })
+  await expect(locationLink).toHaveAttribute('href', ATENDIMENTO)
+  await locationLink.click()
+  await expect(page).toHaveURL(new RegExp(`${ATENDIMENTO}$`))
+
+  await page.goto('/tratamentos/cirurgia-bucomaxilofacial')
+  await expect(locationLink).toHaveAttribute('href', ATENDIMENTO)
 })

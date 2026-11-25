@@ -255,7 +255,7 @@ export default async function TreatmentPage({ params }: TreatmentPageProps) {
         {/* Full container width from here — nothing below needs a reading measure. */}
         <BlogCtaCard
             heading="Agende uma avaliação"
-            body="A indicação depende de exame clínico e, na maioria dos casos, de exame de imagem. A avaliação define qual tratamento se aplica ao seu caso."
+            body="Na consulta, o profissional avalia seu caso, explica as opções e orienta se algum exame complementar é necessário."
             trackingLabel={`tratamento_cta_${treatment.slug}`}
             className="mt-12 sm:mt-16"
           />
